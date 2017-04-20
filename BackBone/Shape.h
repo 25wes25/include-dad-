@@ -1,3 +1,8 @@
+
+#ifndef SHAPE_H
+#define SHAPE_H
+
+#include <stirng>
 enum class ShapeType
 {
 	LINE,
@@ -7,7 +12,6 @@ enum class ShapeType
 	ELLIPSE,
 	CIRCLE
 }
-
 enum class Color
 {
 	WHITE,
@@ -64,4 +68,9 @@ class Shape
 		void setPenCapStyle(enum PenCapStyle);
 		void setPenStyle(enum PenStyle);
 		void setPenColor(enum Color);
+		string getPenJoinStyle();
+		string getPenCapStyle();
+		string getPenStyle();
+		string setPenColor();
 }
+#endif //Shape_H
