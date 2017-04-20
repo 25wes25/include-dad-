@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>955</width>
-    <height>624</height>
+    <width>1088</width>
+    <height>673</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,8 +21,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>961</width>
-     <height>631</height>
+     <width>1091</width>
+     <height>691</height>
     </rect>
    </property>
    <property name="currentIndex">
@@ -35,10 +35,233 @@
     <widget class="QGraphicsView" name="graphicsView">
      <property name="geometry">
       <rect>
-       <x>5</x>
-       <y>11</y>
-       <width>941</width>
-       <height>581</height>
+       <x>180</x>
+       <y>10</y>
+       <width>901</width>
+       <height>641</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="shapeIdEdit">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>50</y>
+       <width>81</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="maxLength">
+      <number>3</number>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="shapeIdLabel">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>50</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Shape ID:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="penColorEdit">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>81</y>
+       <width>81</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="penStyleEdit">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>141</y>
+       <width>81</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QSlider" name="penWidthEdit">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>109</y>
+       <width>81</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="penColorLabel">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>77</y>
+       <width>71</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Pen Color:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="penWidthLabel">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>110</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Pen Width</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="penStyleLabel">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>140</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Pen Style:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="penCapStyleLabel">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>170</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Pen Cap Style:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="PenCapEdit">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>171</y>
+       <width>81</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="PenJoinLabel">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>200</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Pen Join Style:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="PenJoinEdit">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>201</y>
+       <width>81</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="BrushColorLabel">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>230</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Brush Color:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="brushColorEdit">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>231</y>
+       <width>81</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="brushStyleLabel">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>260</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Brush Style:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="brushStyleEdit">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>261</y>
+       <width>81</width>
+       <height>21</height>
       </rect>
      </property>
     </widget>
