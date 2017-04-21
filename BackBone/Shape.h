@@ -3,6 +3,7 @@
 #define SHAPE_H
 
 #include <string>
+#include <QPainter>
 enum class ShapeType
 {
 	LINE,
@@ -52,7 +53,7 @@ enum class BrushStyle
 	VER_PATTERN,
 	NO_BRUSH
 }
-class Shape
+class Shape:public QPainter
 {
 	private:
 		int id;
