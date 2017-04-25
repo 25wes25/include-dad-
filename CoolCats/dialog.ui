@@ -89,6 +89,51 @@
        <height>21</height>
       </rect>
      </property>
+     <item>
+      <property name="text">
+       <string>Black</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>White</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Gray</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Red</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Blue</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Green</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Yellow</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Cyan</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Magenta</string>
+      </property>
+     </item>
     </widget>
     <widget class="QComboBox" name="penStyleEdit">
      <property name="geometry">
@@ -99,6 +144,36 @@
        <height>21</height>
       </rect>
      </property>
+     <item>
+      <property name="text">
+       <string>No Pen</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Solid</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Dashed</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Dotted</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Dash-Dotted</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Dash-Dot-Dotted</string>
+      </property>
+     </item>
     </widget>
     <widget class="QSlider" name="penWidthEdit">
      <property name="geometry">
@@ -109,8 +184,32 @@
        <height>21</height>
       </rect>
      </property>
+     <property name="minimumSize">
+      <size>
+       <width>81</width>
+       <height>21</height>
+      </size>
+     </property>
+     <property name="minimum">
+      <number>0</number>
+     </property>
+     <property name="maximum">
+      <number>20</number>
+     </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="invertedAppearance">
+      <bool>false</bool>
+     </property>
+     <property name="invertedControls">
+      <bool>false</bool>
+     </property>
+     <property name="tickPosition">
+      <enum>QSlider::TicksBelow</enum>
+     </property>
+     <property name="tickInterval">
+      <number>5</number>
      </property>
     </widget>
     <widget class="QLabel" name="penColorLabel">
@@ -186,6 +285,21 @@
        <height>21</height>
       </rect>
      </property>
+     <item>
+      <property name="text">
+       <string>Flat</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Square</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Round</string>
+      </property>
+     </item>
     </widget>
     <widget class="QLabel" name="PenJoinLabel">
      <property name="geometry">
@@ -212,6 +326,21 @@
        <height>21</height>
       </rect>
      </property>
+     <item>
+      <property name="text">
+       <string>Miter</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Bevel</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Round</string>
+      </property>
+     </item>
     </widget>
     <widget class="QLabel" name="BrushColorLabel">
      <property name="geometry">
@@ -238,6 +367,51 @@
        <height>21</height>
       </rect>
      </property>
+     <item>
+      <property name="text">
+       <string>Black</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>White</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Gray</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Red</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Green</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Blue</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Yellow</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Cyan</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Magenta</string>
+      </property>
+     </item>
     </widget>
     <widget class="QLabel" name="brushStyleLabel">
      <property name="geometry">
@@ -264,6 +438,26 @@
        <height>21</height>
       </rect>
      </property>
+     <item>
+      <property name="text">
+       <string>Solid</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Horizontal</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Vertical</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>No Brush</string>
+      </property>
+     </item>
     </widget>
    </widget>
    <widget class="QWidget" name="tab_2">
