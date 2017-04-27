@@ -25,3 +25,6 @@ FORMS    += dialog.ui \
     loginscreen.ui
 
 DISTFILES +=
+
+RESOURCES += \
+    resources.qrc

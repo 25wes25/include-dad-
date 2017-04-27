@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/Images">
+        <file>2D Graphic Label.png</file>
+    </qresource>
+</RCC>
