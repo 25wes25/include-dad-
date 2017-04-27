@@ -1,10 +1,11 @@
 #include "dialog.h"
+#include "loginscreen.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Dialog w;
+    LoginScreen w;
     w.show();
 
     return a.exec();
