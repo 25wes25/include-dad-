@@ -12,3 +12,8 @@ LoginScreen::~LoginScreen()
 {
     delete ui;
 }
+
+void LoginScreen::on_loginButton_clicked()
+{
+
+}
