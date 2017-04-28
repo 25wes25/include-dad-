@@ -1,11 +1,20 @@
 #include "loginscreen.h"
 #include "ui_loginscreen.h"
+#include <QMovie>
+#include <QLabel>
 
 LoginScreen::LoginScreen(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::LoginScreen)
 {
     ui->setupUi(this);
+}
+
+void LoginScreen::startMovie(QMovie &gif)
+{
+    ui->label_4->setMovie(&gif);
+    //QLabel *gifLayer = new QLabel;
+    gif.start();
 }
 
 LoginScreen::~LoginScreen()

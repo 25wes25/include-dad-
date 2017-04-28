@@ -14,6 +14,7 @@ class LoginScreen : public QMainWindow
 
 public:
     explicit LoginScreen(QWidget *parent = 0);
+    void startMovie(QMovie &gif);
     ~LoginScreen();
 
 private slots:
