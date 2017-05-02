@@ -2,11 +2,11 @@
 
 #ifndef CIRCLE_H
 #define CIRCLE_H
-#include "Shape.h"
-class Circle:public Shape
+#include "Ellipse.h"
+class Circle:public Ellipse
 {
 	private:
-		double majorRadius;
+		double radius;
 		int x;
 		int y;
 	public:
@@ -15,11 +15,6 @@ class Circle:public Shape
 		Circle(Circle &copy);
 		Circle(Circle &&copy);
 		~Circle();
-	
-		void Move(int xDes, int yDes);
-		void Resize(double radiusIn);
-		void Draw();
-		void Erase();
 	
 }
 #endif
