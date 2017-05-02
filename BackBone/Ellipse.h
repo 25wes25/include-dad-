@@ -4,7 +4,9 @@
 class Ellipse:public Shape
 {
 	private:
-		double minorRadius;
+		double xRadius;
+		double yRadius;
+		
 	
 	public:
 	
