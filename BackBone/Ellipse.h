@@ -9,6 +9,11 @@ class Ellipse:public Shape
 		
 	
 	public:
+	Ellipse();
+	void Move(int xDes, int yDes);
+	void Resize(double radiusIn);
+	void Draw();
+	void Erase();
 	
 }
 #endif
