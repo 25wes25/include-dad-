@@ -10,5 +10,16 @@ class Circle:public Shape
 		int x;
 		int y;
 	public:
+		Circle();
+		Circle(int xIn, int yIn, double radiusIn);
+		Circle(Circle &copy);
+		Circle(Circle &&copy);
+		~Circle();
+	
+		void Move(int xDes, int yDes);
+		void Resize(double radiusIn);
+		void Draw();
+		void Erase();
+	
 }
 #endif
