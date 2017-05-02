@@ -4,7 +4,7 @@
 #include <QVector>
 
 //enum to declare what the user is allowed to
-enum status{ADMIN, GUEST};
+enum status{INVALID, ADMIN, GUEST};
 
 //individual user struct to be inputted into vector
 struct singleUser {
@@ -19,7 +19,8 @@ class UserList
     QVector<singleUser> users;
 public:
     UserList();
-    bool isUser(QString name, QString password);
+    bool addUser(QString name, QString password, status type);
+    status isUser(QString name, QString password);
     bool isNameTaken(QString name);
     QString getName();
     bool isAdmin();
