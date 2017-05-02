@@ -24,5 +24,18 @@ LoginScreen::~LoginScreen()
 
 void LoginScreen::on_loginButton_clicked()
 {
+    QString username;
+    QString password;
+    //converts the input into the above variables for cleanliness
+    username = ui->userNameEdit->text();
+    password = ui->passwordEdit->text();
+    //first will check non-user
+    if(userList.isUser(username, password) != 0)
+    {
+        //close first window
+        this->close();
+        //show dialog window
+        painter.show();
+    }
 
 }
