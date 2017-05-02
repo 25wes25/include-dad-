@@ -1,7 +1,7 @@
 #ifndef ELLIPSE_H
 #define ELLIPSE_H
-#include "Circle.h"
-class Ellipse:public Circle
+#include "Shape.h"
+class Ellipse:public Shape
 {
 	private:
 		double minorRadius;
