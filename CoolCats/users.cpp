@@ -7,7 +7,7 @@ UserList::UserList()
 
 void UserList::clear()
 {
-    users.clear();
+   // users.clear();
 }
 
 bool UserList::addUser(QString name, QString password, status type)
@@ -24,7 +24,8 @@ status UserList::isUser(QString name, QString password)
 {
     bool found = false;
     status userType;
-    for (int i = 0; i < users.size() && !found; i++)
+    int i;
+    for (i = 0; i < users.size() && !found; i++)
     {
         found = name == users[i].userName && password == users[i].password;
     }

@@ -23,6 +23,7 @@ public:
     status isUser(QString name, QString password);
     bool isNameTaken(QString name);
     QString getName();
+    void clear();
     bool isAdmin();
 };
 

@@ -12,9 +12,9 @@ LoginScreen::LoginScreen(QWidget *parent) :
 
 void LoginScreen::startMovie(QMovie &gif)
 {
-    ui->label_4->setMovie(&gif);
-    //QLabel *gifLayer = new QLabel;
-    gif.start();
+//    ui->label_4->setMovie(&gif);
+//    //QLabel *gifLayer = new QLabel;
+//    gif.start();
 }
 
 LoginScreen::~LoginScreen()
