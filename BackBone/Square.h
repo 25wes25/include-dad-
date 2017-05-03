@@ -3,11 +3,20 @@
 #include "Rectangle.h"
 class Square: public Rectangle
 {
-	private:
-		int x;
-		int y;
-		double length;
-	public:
-		
+    public:
+    Square();
+    Square(double s);
+    Square(Square &copy);
+    Square(Square &&copy);
+    ~Square();
+
+    // Mutators
+    void setSize(double s);
+
+    // Accessors
+    double getSize();
+
+    private:
+        double size;
 }
 #endif
