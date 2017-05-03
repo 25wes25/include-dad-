@@ -26,9 +26,9 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
-   <widget class="QWidget" name="tab">
+   <widget class="QWidget" name="Canvas">
     <attribute name="title">
      <string>Canvas</string>
     </attribute>
@@ -504,8 +504,21 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>1130</x>
+       <y>630</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Help</string>
+     </property>
+    </widget>
    </widget>
-   <widget class="QWidget" name="tab_2">
+   <widget class="QWidget" name="Table">
     <attribute name="title">
      <string>Table</string>
     </attribute>
@@ -517,6 +530,53 @@
        <width>931</width>
        <height>581</height>
       </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="About">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <attribute name="title">
+     <string>About</string>
+    </attribute>
+    <widget class="QLabel" name="contactUsLabel">
+     <property name="geometry">
+      <rect>
+       <x>810</x>
+       <y>130</y>
+       <width>211</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Contact us</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="mainenancePlanLabel">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>150</y>
+       <width>181</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Maintenance Plan</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="testimonialsLabel">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>330</y>
+       <width>201</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Testimonials</string>
      </property>
     </widget>
    </widget>
