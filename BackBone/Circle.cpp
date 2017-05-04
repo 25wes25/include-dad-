@@ -1,5 +1,5 @@
 #include "Circle.h"
-
+#include <cmath>
 Circle::Circle(): x{0},y{0},majorRadius{10}{}
 		
 Circle::Circle(int xIn, int yIn, double radiusIn):x{xIn},y{yIn},majorRadius{radiusIn}{}
@@ -40,6 +40,6 @@ void Circle::Erase()
 virtual bool Circle::is_Left_Clicked(QPoint& e)
 {
 	//get the point at which the mouse is clicked and sees if it is contained within this instance of the circle.
-	double circleFormula = ((e.x()-x)*(e.x()-x))+((e.y()-y)*(e.y()*y));
+	double circleFormula = ((abs(e.x())-x)*(abs(e.x())-x))+((abs(e.y())-y)*(abs(e.y())-y));
 	return (circleFormula<=majorRadius*majorRadius);
 }
