@@ -15,6 +15,8 @@ class Circle:public Ellipse
 		Circle(Circle &copy);
 		Circle(Circle &&copy);
 		~Circle();
+		
+		virtual bool is_Left_Clicked(QPoint &e);
 	
 }
 #endif

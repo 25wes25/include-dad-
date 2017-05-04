@@ -12,10 +12,13 @@ class Ellipse:public Shape
 
         // Mutators
 	void Move(int xDes, int yDes);
+	void Move(QPoint &xy);
 	void Resize(double radiusIn);
 
 	void Draw();
 	void Erase();
+	//accessors
+	virtual bool is_Left_Clicked(QPoint &xy);
 
     private:
         double xRadius;

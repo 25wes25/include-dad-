@@ -33,13 +33,9 @@ void Circle::Draw()
 {
 	QRect *bounds;
 }
-void Circle::Erase()
-{
-
-}
 virtual bool Circle::is_Left_Clicked(QPoint& e)
 {
 	//get the point at which the mouse is clicked and sees if it is contained within this instance of the circle.
-	double circleFormula = ((abs(e.x())-x)*(abs(e.x())-x))+((abs(e.y())-y)*(abs(e.y())-y));
+	double circleFormula = pow((abs(e.x())-x),2)+pow((abs(e.y())-y),2);
 	return (circleFormula<=majorRadius*majorRadius);
 }

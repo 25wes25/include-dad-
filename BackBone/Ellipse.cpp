@@ -1,5 +1,5 @@
 #include "Ellipse.h"
-
+#include <cmath>
 Ellipse::Ellipse()
 {
     xRadius = 0;
@@ -30,7 +30,12 @@ void Ellipse::Move(int xDes, int yDes)
     y = yDes;
     Draw();
 }
-		
+void Ellipse::Move(QPoint &xy)
+{
+    x = xy.x();
+    y = xy.y();
+    Draw();
+}		
 void Ellipse::Resize(double radiusIn)
 {
     majorAxis = radiusIn;
@@ -40,7 +45,9 @@ void Ellipse::Draw()
 {
     QRect *bounds;
 }
-void Circle::Erase()
+bool Ellipse::is_Left_Clicked(QPoint &xy)
 {
-
+	//general formula for ellipse centered at x,y datatypes
+	double ellipseFormula = (((double)(pow(abs(e.x())-x,2)/pow(xRadius,2)))+((double)(pow(abs(e.y())-y,2)/pow(yRadius,2)))))
+	return (ellipseFormula<=1);
 }
