@@ -15,6 +15,8 @@ class Square: public Rectangle
 
     // Accessors
     double getSize();
+	double getArea() {return (size*size)};
+	double getPerimeter {return (size*4)};
 
     private:
         double size;
