@@ -16,8 +16,10 @@ class Rectangle: public Shape
         void setLength(double l);
 
         // Accessors
-        double getWidth();
-        double getLength();
+        double getWidth() {return width};
+        double getLength() {return length};
+		double getArea()	{return (length*width)};
+		double getPerimeter() {return (length+length+width+width);
 
     private:
         double width;
