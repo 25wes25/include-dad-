@@ -41,7 +41,3 @@ void Rectangle::setLength(double l)
     length = l;
 }
 
-double Rectangle::getArea()
-{
-	return 
-}
