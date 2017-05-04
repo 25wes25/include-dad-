@@ -4,6 +4,7 @@
 
 #include <string>
 #include <QPainter>
+#include <QPoint>
 enum class ShapeType
 {
 	LINE,
@@ -65,6 +66,7 @@ class Shape:public QPainter
 	public:
 		virtual ~Shape()=0;
 		virtual void draw()=0;
+		virtual bool is_Left_Clicked(Qpoint &e);
 		void setPenJoinStyle(enum PenJoinStyle);
 		void setPenCapStyle(enum PenCapStyle);
 		void setPenStyle(enum PenStyle);
