@@ -37,3 +37,9 @@ void Circle::Erase()
 {
 
 }
+virtual bool Circle::is_Left_Clicked(QPoint& e)
+{
+	//get the point at which the mouse is clicked and sees if it is contained within this instance of the circle.
+	double circleFormula = ((e.x()-x)*(e.x()-x))+((e.y()-y)*(e.y()*y));
+	return (circleFormula<=majorRadius*majorRadius);
+}
