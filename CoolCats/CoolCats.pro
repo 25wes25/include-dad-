@@ -15,14 +15,17 @@ TEMPLATE = app
 SOURCES += main.cpp\
         dialog.cpp \
     loginscreen.cpp \
-    users.cpp
+    users.cpp \
+    maininterface.cpp
 
 HEADERS  += dialog.h \
     loginscreen.h \
-    users.h
+    users.h \
+    maininterface.h
 
 FORMS    += dialog.ui \
-    loginscreen.ui
+    loginscreen.ui \
+    maininterface.ui
 
 DISTFILES +=
 

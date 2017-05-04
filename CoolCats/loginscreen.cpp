@@ -30,12 +30,16 @@ void LoginScreen::on_loginButton_clicked()
     username = ui->userNameEdit->text();
     password = ui->passwordEdit->text();
     //first will check non-user
+    //close first window
+    this->close();
+    //show dialog window
+   interface.show();
     if(userList.isUser(username, password) != 0)
     {
         //close first window
         this->close();
         //show dialog window
-        painter.show();
+       interface.show();
     }
 
 }

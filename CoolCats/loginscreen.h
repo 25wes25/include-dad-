@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "dialog.h"
 #include "users.h"
+#include "maininterface.h"
 
 namespace Ui {
 class LoginScreen;
@@ -23,7 +24,8 @@ private slots:
 
 private:
     Ui::LoginScreen *ui;
-    Dialog painter;
+    //Dialog painter;
+    MainInterface interface;
     UserList userList;
 
 };

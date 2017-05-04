@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'dialog.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.9.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -16,13 +16,15 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGraphicsView>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
+#include <QtWidgets/QSplitter>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableWidget>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -30,28 +32,34 @@ QT_BEGIN_NAMESPACE
 class Ui_Dialog
 {
 public:
-    QTabWidget *tabWidget;
+    QTabWidget *Tabs;
     QWidget *Canvas;
-    QGraphicsView *graphicsView;
-    QLineEdit *shapeIdEdit;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout;
+    QSplitter *CanvasInfoSplitter;
+    QSplitter *ModSplitter;
+    QWidget *widget1;
+    QVBoxLayout *verticalLayout_2;
     QLabel *shapeIdLabel;
-    QComboBox *penColorEdit;
-    QComboBox *penStyleEdit;
-    QSlider *penWidthEdit;
     QLabel *penColorLabel;
     QLabel *penWidthLabel;
     QLabel *penStyleLabel;
     QLabel *penCapStyleLabel;
-    QComboBox *PenCapEdit;
     QLabel *PenJoinLabel;
-    QComboBox *PenJoinEdit;
     QLabel *BrushColorLabel;
-    QComboBox *brushColorEdit;
     QLabel *brushStyleLabel;
+    QWidget *widget2;
+    QVBoxLayout *InputLayout;
+    QLineEdit *shapeIdEdit;
+    QComboBox *penColorEdit;
+    QSlider *penWidthEdit;
+    QComboBox *penStyleEdit;
+    QComboBox *PenCapEdit;
+    QComboBox *PenJoinEdit;
+    QComboBox *brushColorEdit;
     QComboBox *brushStyleEdit;
     QTableWidget *layerTable;
-    QLabel *label;
-    QPushButton *pushButton;
+    QGraphicsView *graphicsView;
     QWidget *Table;
     QTableWidget *tableWidget;
     QWidget *About;
@@ -63,35 +71,105 @@ public:
     {
         if (Dialog->objectName().isEmpty())
             Dialog->setObjectName(QStringLiteral("Dialog"));
-        Dialog->resize(1241, 709);
+        Dialog->resize(1053, 715);
         Dialog->setLayoutDirection(Qt::LeftToRight);
-        tabWidget = new QTabWidget(Dialog);
-        tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(0, 10, 1241, 691));
+        Tabs = new QTabWidget(Dialog);
+        Tabs->setObjectName(QStringLiteral("Tabs"));
+        Tabs->setGeometry(QRect(0, 10, 1041, 728));
         Canvas = new QWidget();
         Canvas->setObjectName(QStringLiteral("Canvas"));
-        graphicsView = new QGraphicsView(Canvas);
-        graphicsView->setObjectName(QStringLiteral("graphicsView"));
-        graphicsView->setGeometry(QRect(180, 10, 901, 641));
-        shapeIdEdit = new QLineEdit(Canvas);
+        widget = new QWidget(Canvas);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(0, 20, 1021, 651));
+        horizontalLayout = new QHBoxLayout(widget);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        CanvasInfoSplitter = new QSplitter(widget);
+        CanvasInfoSplitter->setObjectName(QStringLiteral("CanvasInfoSplitter"));
+        CanvasInfoSplitter->setOrientation(Qt::Vertical);
+        ModSplitter = new QSplitter(CanvasInfoSplitter);
+        ModSplitter->setObjectName(QStringLiteral("ModSplitter"));
+        ModSplitter->setOrientation(Qt::Horizontal);
+        widget1 = new QWidget(ModSplitter);
+        widget1->setObjectName(QStringLiteral("widget1"));
+        verticalLayout_2 = new QVBoxLayout(widget1);
+        verticalLayout_2->setSpacing(6);
+        verticalLayout_2->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        shapeIdLabel = new QLabel(widget1);
+        shapeIdLabel->setObjectName(QStringLiteral("shapeIdLabel"));
+        shapeIdLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        verticalLayout_2->addWidget(shapeIdLabel);
+
+        penColorLabel = new QLabel(widget1);
+        penColorLabel->setObjectName(QStringLiteral("penColorLabel"));
+        penColorLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        verticalLayout_2->addWidget(penColorLabel);
+
+        penWidthLabel = new QLabel(widget1);
+        penWidthLabel->setObjectName(QStringLiteral("penWidthLabel"));
+        penWidthLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        verticalLayout_2->addWidget(penWidthLabel);
+
+        penStyleLabel = new QLabel(widget1);
+        penStyleLabel->setObjectName(QStringLiteral("penStyleLabel"));
+        penStyleLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        verticalLayout_2->addWidget(penStyleLabel);
+
+        penCapStyleLabel = new QLabel(widget1);
+        penCapStyleLabel->setObjectName(QStringLiteral("penCapStyleLabel"));
+        penCapStyleLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        verticalLayout_2->addWidget(penCapStyleLabel);
+
+        PenJoinLabel = new QLabel(widget1);
+        PenJoinLabel->setObjectName(QStringLiteral("PenJoinLabel"));
+        PenJoinLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        verticalLayout_2->addWidget(PenJoinLabel);
+
+        BrushColorLabel = new QLabel(widget1);
+        BrushColorLabel->setObjectName(QStringLiteral("BrushColorLabel"));
+        BrushColorLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        verticalLayout_2->addWidget(BrushColorLabel);
+
+        brushStyleLabel = new QLabel(widget1);
+        brushStyleLabel->setObjectName(QStringLiteral("brushStyleLabel"));
+        brushStyleLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        verticalLayout_2->addWidget(brushStyleLabel);
+
+        ModSplitter->addWidget(widget1);
+        widget2 = new QWidget(ModSplitter);
+        widget2->setObjectName(QStringLiteral("widget2"));
+        InputLayout = new QVBoxLayout(widget2);
+        InputLayout->setSpacing(6);
+        InputLayout->setContentsMargins(11, 11, 11, 11);
+        InputLayout->setObjectName(QStringLiteral("InputLayout"));
+        InputLayout->setContentsMargins(0, 0, 0, 0);
+        shapeIdEdit = new QLineEdit(widget2);
         shapeIdEdit->setObjectName(QStringLiteral("shapeIdEdit"));
-        shapeIdEdit->setGeometry(QRect(80, 50, 81, 21));
         shapeIdEdit->setLayoutDirection(Qt::LeftToRight);
         shapeIdEdit->setMaxLength(3);
         shapeIdEdit->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        shapeIdLabel = new QLabel(Canvas);
-        shapeIdLabel->setObjectName(QStringLiteral("shapeIdLabel"));
-        shapeIdLabel->setGeometry(QRect(0, 50, 71, 21));
-        shapeIdLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        penColorEdit = new QComboBox(Canvas);
+
+        InputLayout->addWidget(shapeIdEdit);
+
+        penColorEdit = new QComboBox(widget2);
         penColorEdit->setObjectName(QStringLiteral("penColorEdit"));
-        penColorEdit->setGeometry(QRect(80, 81, 81, 21));
-        penStyleEdit = new QComboBox(Canvas);
-        penStyleEdit->setObjectName(QStringLiteral("penStyleEdit"));
-        penStyleEdit->setGeometry(QRect(80, 141, 81, 21));
-        penWidthEdit = new QSlider(Canvas);
+
+        InputLayout->addWidget(penColorEdit);
+
+        penWidthEdit = new QSlider(widget2);
         penWidthEdit->setObjectName(QStringLiteral("penWidthEdit"));
-        penWidthEdit->setGeometry(QRect(80, 110, 81, 21));
         penWidthEdit->setMinimumSize(QSize(81, 21));
         penWidthEdit->setMinimum(0);
         penWidthEdit->setMaximum(20);
@@ -100,47 +178,37 @@ public:
         penWidthEdit->setInvertedControls(false);
         penWidthEdit->setTickPosition(QSlider::TicksBelow);
         penWidthEdit->setTickInterval(5);
-        penColorLabel = new QLabel(Canvas);
-        penColorLabel->setObjectName(QStringLiteral("penColorLabel"));
-        penColorLabel->setGeometry(QRect(0, 77, 71, 20));
-        penColorLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        penWidthLabel = new QLabel(Canvas);
-        penWidthLabel->setObjectName(QStringLiteral("penWidthLabel"));
-        penWidthLabel->setGeometry(QRect(0, 110, 71, 21));
-        penWidthLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        penStyleLabel = new QLabel(Canvas);
-        penStyleLabel->setObjectName(QStringLiteral("penStyleLabel"));
-        penStyleLabel->setGeometry(QRect(0, 140, 71, 21));
-        penStyleLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        penCapStyleLabel = new QLabel(Canvas);
-        penCapStyleLabel->setObjectName(QStringLiteral("penCapStyleLabel"));
-        penCapStyleLabel->setGeometry(QRect(0, 170, 71, 21));
-        penCapStyleLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        PenCapEdit = new QComboBox(Canvas);
+
+        InputLayout->addWidget(penWidthEdit);
+
+        penStyleEdit = new QComboBox(widget2);
+        penStyleEdit->setObjectName(QStringLiteral("penStyleEdit"));
+
+        InputLayout->addWidget(penStyleEdit);
+
+        PenCapEdit = new QComboBox(widget2);
         PenCapEdit->setObjectName(QStringLiteral("PenCapEdit"));
-        PenCapEdit->setGeometry(QRect(80, 171, 81, 21));
-        PenJoinLabel = new QLabel(Canvas);
-        PenJoinLabel->setObjectName(QStringLiteral("PenJoinLabel"));
-        PenJoinLabel->setGeometry(QRect(0, 200, 71, 21));
-        PenJoinLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        PenJoinEdit = new QComboBox(Canvas);
+
+        InputLayout->addWidget(PenCapEdit);
+
+        PenJoinEdit = new QComboBox(widget2);
         PenJoinEdit->setObjectName(QStringLiteral("PenJoinEdit"));
-        PenJoinEdit->setGeometry(QRect(80, 201, 81, 21));
-        BrushColorLabel = new QLabel(Canvas);
-        BrushColorLabel->setObjectName(QStringLiteral("BrushColorLabel"));
-        BrushColorLabel->setGeometry(QRect(0, 230, 71, 21));
-        BrushColorLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        brushColorEdit = new QComboBox(Canvas);
+
+        InputLayout->addWidget(PenJoinEdit);
+
+        brushColorEdit = new QComboBox(widget2);
         brushColorEdit->setObjectName(QStringLiteral("brushColorEdit"));
-        brushColorEdit->setGeometry(QRect(80, 231, 81, 21));
-        brushStyleLabel = new QLabel(Canvas);
-        brushStyleLabel->setObjectName(QStringLiteral("brushStyleLabel"));
-        brushStyleLabel->setGeometry(QRect(0, 260, 71, 21));
-        brushStyleLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        brushStyleEdit = new QComboBox(Canvas);
+
+        InputLayout->addWidget(brushColorEdit);
+
+        brushStyleEdit = new QComboBox(widget2);
         brushStyleEdit->setObjectName(QStringLiteral("brushStyleEdit"));
-        brushStyleEdit->setGeometry(QRect(80, 261, 81, 21));
-        layerTable = new QTableWidget(Canvas);
+
+        InputLayout->addWidget(brushStyleEdit);
+
+        ModSplitter->addWidget(widget2);
+        CanvasInfoSplitter->addWidget(ModSplitter);
+        layerTable = new QTableWidget(CanvasInfoSplitter);
         if (layerTable->columnCount() < 2)
             layerTable->setColumnCount(2);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
@@ -148,24 +216,25 @@ public:
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
         layerTable->setHorizontalHeaderItem(1, __qtablewidgetitem1);
         layerTable->setObjectName(QStringLiteral("layerTable"));
-        layerTable->setGeometry(QRect(1090, 70, 141, 341));
         layerTable->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
         layerTable->setAutoScrollMargin(16);
         layerTable->setColumnCount(2);
-        label = new QLabel(Canvas);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(1090, 45, 141, 21));
-        label->setAlignment(Qt::AlignCenter);
-        pushButton = new QPushButton(Canvas);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(1130, 630, 75, 23));
-        tabWidget->addTab(Canvas, QString());
+        CanvasInfoSplitter->addWidget(layerTable);
+
+        horizontalLayout->addWidget(CanvasInfoSplitter);
+
+        graphicsView = new QGraphicsView(widget);
+        graphicsView->setObjectName(QStringLiteral("graphicsView"));
+
+        horizontalLayout->addWidget(graphicsView);
+
+        Tabs->addTab(Canvas, QString());
         Table = new QWidget();
         Table->setObjectName(QStringLiteral("Table"));
         tableWidget = new QTableWidget(Table);
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
         tableWidget->setGeometry(QRect(10, 10, 931, 581));
-        tabWidget->addTab(Table, QString());
+        Tabs->addTab(Table, QString());
         About = new QWidget();
         About->setObjectName(QStringLiteral("About"));
         About->setEnabled(true);
@@ -178,11 +247,11 @@ public:
         testimonialsLabel = new QLabel(About);
         testimonialsLabel->setObjectName(QStringLiteral("testimonialsLabel"));
         testimonialsLabel->setGeometry(QRect(520, 330, 201, 16));
-        tabWidget->addTab(About, QString());
+        Tabs->addTab(About, QString());
 
         retranslateUi(Dialog);
 
-        tabWidget->setCurrentIndex(2);
+        Tabs->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(Dialog);
@@ -190,80 +259,78 @@ public:
 
     void retranslateUi(QDialog *Dialog)
     {
-        Dialog->setWindowTitle(QApplication::translate("Dialog", "Dialog", 0));
+        Dialog->setWindowTitle(QApplication::translate("Dialog", "Dialog", Q_NULLPTR));
+        shapeIdLabel->setText(QApplication::translate("Dialog", "Shape ID:", Q_NULLPTR));
+        penColorLabel->setText(QApplication::translate("Dialog", "Pen Color:", Q_NULLPTR));
+        penWidthLabel->setText(QApplication::translate("Dialog", "Pen Width", Q_NULLPTR));
+        penStyleLabel->setText(QApplication::translate("Dialog", "Pen Style:", Q_NULLPTR));
+        penCapStyleLabel->setText(QApplication::translate("Dialog", "Pen Cap Style:", Q_NULLPTR));
+        PenJoinLabel->setText(QApplication::translate("Dialog", "Pen Join Style:", Q_NULLPTR));
+        BrushColorLabel->setText(QApplication::translate("Dialog", "Brush Color:", Q_NULLPTR));
+        brushStyleLabel->setText(QApplication::translate("Dialog", "Brush Style:", Q_NULLPTR));
         shapeIdEdit->setText(QString());
-        shapeIdLabel->setText(QApplication::translate("Dialog", "Shape ID:", 0));
         penColorEdit->clear();
         penColorEdit->insertItems(0, QStringList()
-         << QApplication::translate("Dialog", "Black", 0)
-         << QApplication::translate("Dialog", "White", 0)
-         << QApplication::translate("Dialog", "Gray", 0)
-         << QApplication::translate("Dialog", "Red", 0)
-         << QApplication::translate("Dialog", "Blue", 0)
-         << QApplication::translate("Dialog", "Green", 0)
-         << QApplication::translate("Dialog", "Yellow", 0)
-         << QApplication::translate("Dialog", "Cyan", 0)
-         << QApplication::translate("Dialog", "Magenta", 0)
+         << QApplication::translate("Dialog", "Black", Q_NULLPTR)
+         << QApplication::translate("Dialog", "White", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Gray", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Red", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Blue", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Green", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Yellow", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Cyan", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Magenta", Q_NULLPTR)
         );
         penStyleEdit->clear();
         penStyleEdit->insertItems(0, QStringList()
-         << QApplication::translate("Dialog", "No Pen", 0)
-         << QApplication::translate("Dialog", "Solid", 0)
-         << QApplication::translate("Dialog", "Dashed", 0)
-         << QApplication::translate("Dialog", "Dotted", 0)
-         << QApplication::translate("Dialog", "Dash-Dotted", 0)
-         << QApplication::translate("Dialog", "Dash-Dot-Dotted", 0)
+         << QApplication::translate("Dialog", "No Pen", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Solid", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Dashed", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Dotted", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Dash-Dotted", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Dash-Dot-Dotted", Q_NULLPTR)
         );
-        penColorLabel->setText(QApplication::translate("Dialog", "Pen Color:", 0));
-        penWidthLabel->setText(QApplication::translate("Dialog", "Pen Width", 0));
-        penStyleLabel->setText(QApplication::translate("Dialog", "Pen Style:", 0));
-        penCapStyleLabel->setText(QApplication::translate("Dialog", "Pen Cap Style:", 0));
         PenCapEdit->clear();
         PenCapEdit->insertItems(0, QStringList()
-         << QApplication::translate("Dialog", "Flat", 0)
-         << QApplication::translate("Dialog", "Square", 0)
-         << QApplication::translate("Dialog", "Round", 0)
+         << QApplication::translate("Dialog", "Flat", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Square", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Round", Q_NULLPTR)
         );
-        PenJoinLabel->setText(QApplication::translate("Dialog", "Pen Join Style:", 0));
         PenJoinEdit->clear();
         PenJoinEdit->insertItems(0, QStringList()
-         << QApplication::translate("Dialog", "Miter", 0)
-         << QApplication::translate("Dialog", "Bevel", 0)
-         << QApplication::translate("Dialog", "Round", 0)
+         << QApplication::translate("Dialog", "Miter", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Bevel", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Round", Q_NULLPTR)
         );
-        BrushColorLabel->setText(QApplication::translate("Dialog", "Brush Color:", 0));
         brushColorEdit->clear();
         brushColorEdit->insertItems(0, QStringList()
-         << QApplication::translate("Dialog", "Black", 0)
-         << QApplication::translate("Dialog", "White", 0)
-         << QApplication::translate("Dialog", "Gray", 0)
-         << QApplication::translate("Dialog", "Red", 0)
-         << QApplication::translate("Dialog", "Green", 0)
-         << QApplication::translate("Dialog", "Blue", 0)
-         << QApplication::translate("Dialog", "Yellow", 0)
-         << QApplication::translate("Dialog", "Cyan", 0)
-         << QApplication::translate("Dialog", "Magenta", 0)
+         << QApplication::translate("Dialog", "Black", Q_NULLPTR)
+         << QApplication::translate("Dialog", "White", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Gray", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Red", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Green", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Blue", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Yellow", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Cyan", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Magenta", Q_NULLPTR)
         );
-        brushStyleLabel->setText(QApplication::translate("Dialog", "Brush Style:", 0));
         brushStyleEdit->clear();
         brushStyleEdit->insertItems(0, QStringList()
-         << QApplication::translate("Dialog", "No Brush", 0)
-         << QApplication::translate("Dialog", "Solid", 0)
-         << QApplication::translate("Dialog", "Horizontal", 0)
-         << QApplication::translate("Dialog", "Vertical", 0)
+         << QApplication::translate("Dialog", "No Brush", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Solid", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Horizontal", Q_NULLPTR)
+         << QApplication::translate("Dialog", "Vertical", Q_NULLPTR)
         );
         QTableWidgetItem *___qtablewidgetitem = layerTable->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("Dialog", "\"eye\"", 0));
+        ___qtablewidgetitem->setText(QApplication::translate("Dialog", "\"eye\"", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem1 = layerTable->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("Dialog", "ID", 0));
-        label->setText(QApplication::translate("Dialog", "Layers", 0));
-        pushButton->setText(QApplication::translate("Dialog", "Help", 0));
-        tabWidget->setTabText(tabWidget->indexOf(Canvas), QApplication::translate("Dialog", "Canvas", 0));
-        tabWidget->setTabText(tabWidget->indexOf(Table), QApplication::translate("Dialog", "Table", 0));
-        contactUsLabel->setText(QApplication::translate("Dialog", "Contact us", 0));
-        mainenancePlanLabel->setText(QApplication::translate("Dialog", "Maintenance Plan", 0));
-        testimonialsLabel->setText(QApplication::translate("Dialog", "Testimonials", 0));
-        tabWidget->setTabText(tabWidget->indexOf(About), QApplication::translate("Dialog", "About", 0));
+        ___qtablewidgetitem1->setText(QApplication::translate("Dialog", "ID", Q_NULLPTR));
+        Tabs->setTabText(Tabs->indexOf(Canvas), QApplication::translate("Dialog", "Canvas", Q_NULLPTR));
+        Tabs->setTabText(Tabs->indexOf(Table), QApplication::translate("Dialog", "Table", Q_NULLPTR));
+        contactUsLabel->setText(QApplication::translate("Dialog", "Contact us", Q_NULLPTR));
+        mainenancePlanLabel->setText(QApplication::translate("Dialog", "Maintenance Plan", Q_NULLPTR));
+        testimonialsLabel->setText(QApplication::translate("Dialog", "Testimonials", Q_NULLPTR));
+        Tabs->setTabText(Tabs->indexOf(About), QApplication::translate("Dialog", "About", Q_NULLPTR));
     } // retranslateUi
 
 };
