@@ -58,22 +58,22 @@ class Shape:public QPainter
 {
 	private:
 		int id;
-		float penwidth;
-		ShapeType type; 
-		Color penColor;
-		Color brushColor
-		PenStyle style;
+		bool isRender;
+		//float penwidth;
+		//ShapeType type; 
+		//Color penColor;
+		//Color brushColor
+		//PenStyle style;
 	public:
+		Shape(int idIn, bool isRender, int penColorEdit, int penWidthEdit, int penCapEdit,
+				int PenJoinEdit, int brushColorEdit, int penStyleEdit)
+		{
+			setBrush()
+		}
+		
 		virtual ~Shape()=0;
 		virtual void draw()=0;
 		virtual bool is_Left_Clicked(Qpoint &e);
-		void setPenJoinStyle(enum PenJoinStyle);
-		void setPenCapStyle(enum PenCapStyle);
-		void setPenStyle(enum PenStyle);
-		void setPenColor(enum Color);
-		string getPenJoinStyle();
-		string getPenCapStyle();
-		string getPenStyle();
-		string setPenColor();
+		
 }
 #endif //Shape_H
