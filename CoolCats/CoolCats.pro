@@ -13,18 +13,34 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        dialog.cpp \
+    canvas.cpp\
     loginscreen.cpp \
     users.cpp \
-    maininterface.cpp
+    maininterface.cpp \
+    Circle.cpp \
+    Ellipse.cpp \
+    Rectangle.cpp \
+    Square.cpp \
+    shape.cpp
 
-HEADERS  += dialog.h \
-    loginscreen.h \
+
+HEADERS  += loginscreen.h \
+    canvas.h\
     users.h \
-    maininterface.h
+    Vector.h\
+    maininterface.h \
+    Circle.h \
+    Ellipse.h \
+    Line.h \
+    PolyGon.h \
+    PolyLine.h \
+    Rectangle.h \
+    Square.h \
+    Vector.h \
+    shape.h
 
-FORMS    += dialog.ui \
-    loginscreen.ui \
+
+FORMS    += loginscreen.ui \
     maininterface.ui
 
 DISTFILES +=

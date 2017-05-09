@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'maininterface.ui'
 **
-** Created by: Qt User Interface Compiler version 5.9.0
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -476,7 +476,7 @@ public:
          << QApplication::translate("MainInterface", "Vertical", Q_NULLPTR)
         );
         QTableWidgetItem *___qtablewidgetitem = layerTable->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("MainInterface", "\"eye\"", Q_NULLPTR));
+        ___qtablewidgetitem->setText(QApplication::translate("MainInterface", "Visability", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem1 = layerTable->horizontalHeaderItem(1);
         ___qtablewidgetitem1->setText(QApplication::translate("MainInterface", "ID", Q_NULLPTR));
         AddObject_4->setText(QApplication::translate("MainInterface", "Add", Q_NULLPTR));
