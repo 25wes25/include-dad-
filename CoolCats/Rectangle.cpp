@@ -32,6 +32,11 @@ void Rectangle::setWidthLength(double w, double l)
     width = w;
     length = l;
 }
+void Rectangle::move(int xIn, int yIn)
+{
+    x=xIn;
+    y=yIn;
+}
 
 void Rectangle::setWidth(double w)
 {
