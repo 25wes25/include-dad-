@@ -2,7 +2,6 @@
 #define LOGINSCREEN_H
 
 #include <QMainWindow>
-#include "dialog.h"
 #include "users.h"
 #include "maininterface.h"
 

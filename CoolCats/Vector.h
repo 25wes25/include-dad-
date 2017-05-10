@@ -1,194 +1,231 @@
-#ifndef VECTOR_H_
-#define VECTOR_H_
+#ifndef Vector_H_
+#define Vector_H_
 #include <string>
 #include <sstream>
 #include <iomanip>
 #include <iostream>
+#include <algorithm> // std::copy
 #include "shape.h"
+
 using namespace std;
-/****************************************************
- * class Template: Vector
- * __________________________________________________
- * this templated class creates a dynamic data structure
- * in the for of a queue
- * ---------------------------------------------------
- * In:
- * 	the datatype the list is gonna construct
- *****************************************************/
-template<class nodeType>
+
+template <class Type>
 class Vector
 {
-private:
-    nodeType* Head;
-    int size;
-    int maxsize;
+    private:
+        Type* elem;	// Pointer to the elements (or 0)
+        int size_v;	// Size of the Vector
+        int space;	// Number of elements plus number of free slots (total size including empty slots)
+    public:
+        Vector();							// Default Constructor
+        explicit Vector(int s);				// Alternate Explicit Constructor
+        Vector(const Vector<Type>& src);    // Copy Constructor
+        ~Vector();							// Destructor
 
-public:
+        // Mutators
+        void resize(int newsize);
+        void push_back(Type element);
+        void reserve(int newalloc);
 
-    Vector();
-    ~Vector();
-    Vector(const Vector<nodeType>& copy);
 
-    // Mutators
-    void Push_Back(nodeType node);
-    void dequeue();
-    void setMaxSize(int x);
+        // Accessors
+        int size() const;
+        int capacity() const;
 
-    // Accessors
-    nodeType front();
-    int getSize();
-    bool isempty();
-    bool isfull();
-    string print();
-    void swap(int index1, int index2);
-    bool isValidIndex(int index);
+        // Operator Overloads
+        Vector<Type>& operator=(const Vector<Type>& src);
+        Type& operator[](int n);
+        const Type& operator[](int n) const;
 
-    //Everything below is unimplemented
-    nodeType& operator[](int x);
-
-    using iterator = nodeType*;
-    using const_iterator = const nodeType*;
-    iterator begin();
-    const iterator begin() const;
-    iterator end();
-    const iterator end() const;
-    iterator insert(iterator p, const nodeType& v);
-    iterator erase(iterator p);
+        // Iterators
+        using iterator = Type*;
+        using const_iterator = const Type*;
+        iterator begin();
+        const_iterator begin() const;
+        iterator end();
+        const_iterator end() const;
+        iterator insert(iterator p, const Type& val); 	// Insert a new element val before i
+        iterator erase(iterator p);						// Remove element pointed to by i
 };
 
-template<class nodeType>
-Vector<nodeType>::Vector(): size{0},maxsize{-1}
+/*
+ * ************************* Constructors/Destructors *************************
+ */
+
+template<class Type> // Default Constructor
+Vector<Type>::Vector() : size_v{0}, elem{nullptr}, space{0} {}
+
+template<class Type> // Alternate Explicit Constructor
+Vector<Type>::Vector(int s) : size_v{s}, elem{new Type[s]}, space{s}
 {
-    Head = new nodeType[0];
+    for (int i=0; i<size_v; ++i)
+    {
+        elem[i] = 0; // elements are initialized
+    }
 }
 
-
-template<class nodeType>
-Vector<nodeType>::~Vector()
+template<class Type> // Copy Constructor
+Vector<Type>::Vector(const Vector& src) : size_v{src.size_v}, elem{new Type[src.size_v]}, space{src.space}
 {
-    size =0;
-    maxsize=-1;
-    delete []Head;
-}
-template<class nodeType>
-Vector<nodeType>::Vector(const Vector<nodeType>& copy): size{copy.size},maxsize{copy.maxsize}
-{
-    delete []Head;
-    Head = copy.Head;
-}
-template<class nodeType>
-void Vector<nodeType>::setMaxSize(int x)
-{
-    maxsize = x;
-}
-template<class nodeType>
-void Vector<nodeType>::Push_Back(nodeType node)
-{
-    if(maxsize==-1||size<maxsize)
-    {
-        nodeType* temp = new nodeType[size+1];
-        temp[0] = node;
-        if(!(isempty()))
-        {
-            for(int i=0; i<size;i++)
-            {
-                temp[i+1] = Head[i];
-            }
-        }
-        delete []Head;
-        Head = temp;
-        size++;
-    }
-    else
-    {
-        //cout << "**List is full.**"<<endl<<"**"<<node << " was not added to the queue**\n\n";
-    }
-}
-template<class nodeType>
-void Vector<nodeType>::dequeue()
-{
-    if(!isempty())
-    {
-        nodeType* temp = new nodeType[size-1];
-        for(int i=0; i<size-1;i++)
-        {
-            temp[i] = Head[i];
-        }
-        delete []Head;
-        Head = temp;
-        size--;
-    }
-    else
-    {
-        //cout << "**Cannot dequeue an empty queue**\n\n";
-    }
-}
-template<class nodeType>
-int Vector<nodeType>::getSize()
-{
-    return size;
-}
-template<class nodeType>
-void Vector<nodeType>::swap(int index1, int index2)
-{
-    if(isValidIndex(index1)&& isValidIndex(index2))
-    {
-        nodeType* temp = Head[index1];
-        Head[index1] = Head[index2];
-        Head[index2] = temp;
-    }
-    // else do nothing
-}
-template<class nodeType>
-bool Vector<nodeType>::isValidIndex(int index)
-{
-    return(index>0&&index<size?true:false);
-}
-template<class nodeType>
-nodeType& Vector<nodeType>::operator [](int x)
-{
-    return Head[x];
+    copy(src.elem, src.elem + size_v, elem); 	// copy elements - std::copy() algorithm
 }
 
-template<class nodeType>
-nodeType Vector<nodeType>::front()
+template<class Type> // Destructor
+Vector<Type>::~Vector() {delete[] elem;}
+
+/*
+ * ****************************** Mutators ************************************
+ */
+
+template<class Type>
+void Vector<Type>::resize(int newsize)
 {
-    return Head[size-1];
+    reserve(newsize);
+    for (int i=size_v; i<newsize; ++i)
+    {
+        elem[i] = 0; // initialize new elements
+    }
+    size_v = newsize;
 }
-template<class nodeType>
-bool Vector<nodeType>::isempty()
+
+template<class Type>
+void Vector<Type>::push_back(Type element)
 {
-    if(size>0)
+    if (space == 0)
     {
-        return false;
+        reserve(8); // start with space for 8 elements
     }
-    else
+    else if (size_v == space)
     {
-        return true;
+        reserve(2*space); // get more space
     }
+    elem[size_v] = element;	// add element at end
+    ++size_v; // increase the size (size_v is the number of elements)
 }
-template<class nodeType>
-bool Vector<nodeType>::isfull()
+
+template<class Type>
+void Vector<Type>::reserve(int newalloc)
 {
-    if(size<maxsize)
+    if (newalloc <= space)
     {
-        return false;
+        return; // never decrease allocation
     }
-    else if(size == maxsize)
+    Type* temp = new Type[newalloc]; // allocate new space
+    for (int i=0; i<size_v; ++i)
     {
-        return true;
+        temp[i] = elem[i]; // copy old elements
     }
+    delete[] elem; // deallocate old space
+    elem = temp;
+    space = newalloc;
 }
-template<class nodeType>
-string Vector<nodeType>::print()
+
+/*
+ * **************************** Accessors *************************************
+ */
+
+template<class Type>
+int Vector<Type>::size() const {return size_v;}
+
+template<class Type>
+int Vector<Type>::capacity() const {return space;}
+
+/*
+ * ************************** Operator Overloads ******************************
+ */
+
+template<class Type>
+Vector<Type>& Vector<Type>::operator=(const Vector<Type>& src)
 {
-    ostringstream output;
-    cout << "Back of Queue\n";
-    for (int i=0; i<size ;i++)
-    {
-        cout << "Index #" << i << ": contains " << Head[i] << endl;
-    }
-    cout << "Front of Queue\n";
-    return output.str();
+    Type* temp = new Type[src.size_v]; // allocate new space
+    copy(src.elem, src.elem + src.size_v, temp); // copy elements - std::copy() algorithm
+    delete[] elem; // deallocate old space
+    elem = temp; // now we can reset elem
+    size_v = src.size_v;
+    return *this; // return a self-reference
 }
-#endif /* VECTOR_H_ */
+
+template<class Type>
+Type& Vector<Type>::operator[](int n) {return elem[n];}
+
+template<class Type>
+const Type& Vector<Type>::operator[](int n) const {return elem[n];}
+
+/*
+ * **************************** Iterators *************************************
+ */
+
+template<class Type>
+typename Vector<Type>::iterator Vector<Type>::begin()
+{
+    if (size_v == 0)
+    {
+        return nullptr;
+    }
+    return &elem[0];
+}
+
+template<class Type>
+typename Vector<Type>::const_iterator Vector<Type>::begin() const
+{
+    if (size_v == 0)
+    {
+        return nullptr;
+    }
+    return &elem[0];
+}
+
+template<class Type>
+typename Vector<Type>::iterator Vector<Type>::end()
+{
+    if (size_v == 0)
+    {
+        return nullptr;
+    }
+    return &elem[size_v];
+}
+
+template<class Type>
+typename Vector<Type>::const_iterator Vector<Type>::end() const
+{
+    if (size_v == 0)
+    {
+        return nullptr;
+    }
+    return &elem[size_v];
+}
+
+template<class Type>
+typename Vector<Type>::iterator Vector<Type>::insert(iterator i, const Type& val)
+{
+    int index = i - begin();
+    if (size() == capacity())
+    {
+        reserve(size()==0 ? 8 : 2*size()); // make sure we have space
+    }
+    ++size_v;
+    iterator ii = begin() + index; // the place to put value
+    for (iterator pos=end()-1; pos!=ii; --pos)
+    {
+        *pos = *(pos-1); // copy element one position to the right
+    }
+    *(begin() + index) = val; // insert value
+    return ii;
+}
+
+template<class Type>
+typename Vector<Type>::iterator Vector<Type>::erase(iterator i)
+{
+    if (i == end())
+    {
+        return i;
+    }
+    for (iterator pos=i+1; pos!=end(); ++pos)
+    {
+        *(pos-1) = *pos; // copy element one position to the left
+    }
+    delete (end()-1);
+    --size_v;
+    return i;
+}
+#endif /* Vector_H_ */

@@ -1,4 +1,3 @@
-#include "dialog.h"
 #include "loginscreen.h"
 #include <QMovie>
 #include <QApplication>
