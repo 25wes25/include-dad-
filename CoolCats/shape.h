@@ -16,28 +16,28 @@ class Shape
 {
     private:
         QString id;
-        static int objNum;
         bool isRender;
-
+        Qt::BrushStyle brushStyle;
+        Qt::GlobalColor penColorEdit;
+        double penWidthEdit;
+        Qt::PenCapStyle penCapEdit;
+        Qt::PenJoinStyle PenJoinEdit;
+        Qt::GlobalColor brushColorEdit;
+        Qt::PenStyle penStyleEdit;
     public:
-        Shape();
-        Shape(int idIn, bool isRenderIn, int brushStyle, int penColorEdit, int penWidthEdit, int penCapEdit,
-              int PenJoinEdit, int brushColorEdit, int penStyleEdit);
-        Shape(Shape &copy);
-        Shape(Shape &&move);
+
         Qt::BrushStyle intToBrushStyle(int index);
         Qt::GlobalColor intToColor(int index);
         Qt::PenCapStyle intToPenCap(int index);
         Qt::PenJoinStyle intToPenJoin(int index);
         Qt::PenStyle intToPenStyle(int index);
-
+        bool isRendered();
         virtual ~Shape();
-        virtual void move(QPoint &xy);
-        virtual void move(int x , int y);
-        virtual void resize(double x);
+        virtual void move(QPoint &xy)=0;
+        virtual void move(int x , int y)=0;
+        virtual void resize(double x)=0;
         virtual void Draw(Canvas *paintArea)=0;
-
-        virtual bool is_Left_Clicked(QPoint &e);
+        virtual bool is_Left_Clicked(QPoint &e)=0;
 
 };
 #endif //Shape End

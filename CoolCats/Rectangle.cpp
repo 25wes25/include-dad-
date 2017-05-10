@@ -5,8 +5,10 @@ Rectangle::Rectangle():x{25},y{25},width{10},length{10},Shape()
 
 }
 		
-Rectangle::Rectangle(double w, double l)
+Rectangle::Rectangle(int xIn, int yIn, double w, double l)
 {
+    x=xIn;
+    y=yIn;
     width = w;
     length = l;
 }
@@ -48,5 +50,12 @@ void Rectangle::Draw(Canvas *drawArea)
     painter.save();
     painter.drawRect(x-width,y-length,width,length);
     painter.restore();
+}
+bool Rectangle::is_Left_Clicked(QPoint &e)
+{
+    return  (x+width>e.x()&& //Check right side
+             x-width<e.x()&& //Check left side
+             y+length>e.y()&&//Check top
+             y-length<e.y());//CheckBottom
 }
 

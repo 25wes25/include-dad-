@@ -17,7 +17,9 @@ bool UserList::addUser(QString name, QString password, status type)
     newUser.password = password;
     newUser.userStatus = type;
 
-    users.push_back(newUser);
+    accVec.push_back(newUser);
+    //so will compile must change
+    return true;
 }
 
 status UserList::isUser(QString name, QString password)
@@ -25,13 +27,13 @@ status UserList::isUser(QString name, QString password)
     bool found = false;
     status userType;
     int i;
-    for (i = 0; i < users.size() && !found; i++)
+    for (i = 0; i < accVec.size() && !found; i++)
     {
-        found = name == users[i].userName && password == users[i].password;
+        found = name == accVec[i].userName && password == accVec[i].password;
     }
     if (found)
     {
-        userType = users[i].userStatus;
+        userType = accVec[i].userStatus;
     }
     else
     {
@@ -45,9 +47,9 @@ bool UserList::isNameTaken(QString name)
 {
     bool found = false;
 
-    for (int i = 0; i < users.size() && !found; i++)
+    for (int i = 0; i < accVec.size() && !found; i++)
     {
-        found = name == users[i].userName;
+        found = name == accVec[i].userName;
     }
 
     return found;

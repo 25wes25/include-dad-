@@ -263,5 +263,38 @@
  <resources>
   <include location="resources.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>userNameEdit</sender>
+   <signal>returnPressed()</signal>
+   <receiver>loginButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>546</x>
+     <y>196</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>645</x>
+     <y>347</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>passwordEdit</sender>
+   <signal>returnPressed()</signal>
+   <receiver>loginButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>360</x>
+     <y>234</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>641</x>
+     <y>351</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

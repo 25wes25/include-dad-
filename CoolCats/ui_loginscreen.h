@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'loginscreen.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.1
+** Created by: Qt User Interface Compiler version 5.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -146,18 +146,20 @@ public:
         LoginScreen->setStatusBar(statusbar);
 
         retranslateUi(LoginScreen);
+        QObject::connect(userNameEdit, SIGNAL(returnPressed()), loginButton, SLOT(click()));
+        QObject::connect(passwordEdit, SIGNAL(returnPressed()), loginButton, SLOT(click()));
 
         QMetaObject::connectSlotsByName(LoginScreen);
     } // setupUi
 
     void retranslateUi(QMainWindow *LoginScreen)
     {
-        LoginScreen->setWindowTitle(QApplication::translate("LoginScreen", "BS Paint", Q_NULLPTR));
+        LoginScreen->setWindowTitle(QApplication::translate("LoginScreen", "BS Paint", 0));
         Logo->setText(QString());
-        name_Label->setText(QApplication::translate("LoginScreen", "UserName:", Q_NULLPTR));
-        pass_Label->setText(QApplication::translate("LoginScreen", "Password:", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("LoginScreen", "Create User", Q_NULLPTR));
-        loginButton->setText(QApplication::translate("LoginScreen", "Login", Q_NULLPTR));
+        name_Label->setText(QApplication::translate("LoginScreen", "UserName:", 0));
+        pass_Label->setText(QApplication::translate("LoginScreen", "Password:", 0));
+        pushButton->setText(QApplication::translate("LoginScreen", "Create User", 0));
+        loginButton->setText(QApplication::translate("LoginScreen", "Login", 0));
     } // retranslateUi
 
 };

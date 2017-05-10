@@ -1,10 +1,6 @@
 #include "Ellipse.h"
 #include <cmath>
-Ellipse::Ellipse()
-{
-    xRadius = 0;
-    yRadius = 0;
-}
+Ellipse::Ellipse():Shape(),x{100},y{100},xRadius{100},yRadius{50}{}
 		
 Ellipse::Ellipse(int x, int y,double xR, double yR):x{x},
                                                     y{y},

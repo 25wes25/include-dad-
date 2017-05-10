@@ -25,13 +25,11 @@ void Circle::Move(int xDes, int yDes)
 {
 	x = xDes;
 	y = yDes;
-
 }
-void Circle::Move(QPoint moveTo)
+void Circle::Move(QPoint &moveTo)
 {
     x = moveTo.x();
     y = moveTo.y();
-
 }
 		
 void Circle::Resize(double radiusIn)

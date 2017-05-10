@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'maininterface.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.1
+** Created by: Qt User Interface Compiler version 5.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -81,10 +81,6 @@ public:
     QGraphicsView *RenderArea;
     QWidget *Table;
     QTableWidget *tableWidget;
-    QWidget *About;
-    QLabel *contactUsLabel;
-    QLabel *mainenancePlanLabel;
-    QLabel *testimonialsLabel;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuEdit;
@@ -352,19 +348,6 @@ public:
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
         tableWidget->setGeometry(QRect(10, 10, 931, 581));
         Tabs->addTab(Table, QString());
-        About = new QWidget();
-        About->setObjectName(QStringLiteral("About"));
-        About->setEnabled(true);
-        contactUsLabel = new QLabel(About);
-        contactUsLabel->setObjectName(QStringLiteral("contactUsLabel"));
-        contactUsLabel->setGeometry(QRect(810, 130, 211, 16));
-        mainenancePlanLabel = new QLabel(About);
-        mainenancePlanLabel->setObjectName(QStringLiteral("mainenancePlanLabel"));
-        mainenancePlanLabel->setGeometry(QRect(230, 150, 181, 16));
-        testimonialsLabel = new QLabel(About);
-        testimonialsLabel->setObjectName(QStringLiteral("testimonialsLabel"));
-        testimonialsLabel->setGeometry(QRect(520, 330, 201, 16));
-        Tabs->addTab(About, QString());
 
         gridLayout->addWidget(Tabs, 0, 0, 1, 1);
 
@@ -405,91 +388,87 @@ public:
 
     void retranslateUi(QMainWindow *MainInterface)
     {
-        MainInterface->setWindowTitle(QApplication::translate("MainInterface", "MainWindow", Q_NULLPTR));
-        actionMaintenance_Notes->setText(QApplication::translate("MainInterface", "Maintenance Notes", Q_NULLPTR));
-        actionTestimonials->setText(QApplication::translate("MainInterface", "Testimonials", Q_NULLPTR));
-        actionContact_Us->setText(QApplication::translate("MainInterface", "Contact Us", Q_NULLPTR));
-        actionTBD->setText(QApplication::translate("MainInterface", "TBD", Q_NULLPTR));
-        actionSave->setText(QApplication::translate("MainInterface", "Save", Q_NULLPTR));
-        actionSave_As->setText(QApplication::translate("MainInterface", "Save As...", Q_NULLPTR));
-        actionOpen->setText(QApplication::translate("MainInterface", "Open", Q_NULLPTR));
-        actionExit->setText(QApplication::translate("MainInterface", "Exit", Q_NULLPTR));
-        shapeIdLabel->setText(QApplication::translate("MainInterface", "Shape ID:", Q_NULLPTR));
-        penColorLabel->setText(QApplication::translate("MainInterface", "Pen Color:", Q_NULLPTR));
-        penWidthLabel->setText(QApplication::translate("MainInterface", "Pen Width", Q_NULLPTR));
-        penStyleLabel->setText(QApplication::translate("MainInterface", "Pen Style:", Q_NULLPTR));
-        penCapStyleLabel->setText(QApplication::translate("MainInterface", "Pen Cap Style:", Q_NULLPTR));
-        PenJoinLabel->setText(QApplication::translate("MainInterface", "Pen Join Style:", Q_NULLPTR));
-        BrushColorLabel->setText(QApplication::translate("MainInterface", "Brush Color:", Q_NULLPTR));
-        brushStyleLabel->setText(QApplication::translate("MainInterface", "Brush Style:", Q_NULLPTR));
+        MainInterface->setWindowTitle(QApplication::translate("MainInterface", "MainWindow", 0));
+        actionMaintenance_Notes->setText(QApplication::translate("MainInterface", "Maintenance Notes", 0));
+        actionTestimonials->setText(QApplication::translate("MainInterface", "Testimonials", 0));
+        actionContact_Us->setText(QApplication::translate("MainInterface", "Contact Us", 0));
+        actionTBD->setText(QApplication::translate("MainInterface", "TBD", 0));
+        actionSave->setText(QApplication::translate("MainInterface", "Save            (Ctrl + S)", 0));
+        actionSave_As->setText(QApplication::translate("MainInterface", "Save As...", 0));
+        actionOpen->setText(QApplication::translate("MainInterface", "Open", 0));
+        actionExit->setText(QApplication::translate("MainInterface", "Exit               (Esc)", 0));
+        shapeIdLabel->setText(QApplication::translate("MainInterface", "Shape ID:", 0));
+        penColorLabel->setText(QApplication::translate("MainInterface", "Pen Color:", 0));
+        penWidthLabel->setText(QApplication::translate("MainInterface", "Pen Width", 0));
+        penStyleLabel->setText(QApplication::translate("MainInterface", "Pen Style:", 0));
+        penCapStyleLabel->setText(QApplication::translate("MainInterface", "Pen Cap Style:", 0));
+        PenJoinLabel->setText(QApplication::translate("MainInterface", "Pen Join Style:", 0));
+        BrushColorLabel->setText(QApplication::translate("MainInterface", "Brush Color:", 0));
+        brushStyleLabel->setText(QApplication::translate("MainInterface", "Brush Style:", 0));
         shapeIdEdit->setText(QString());
         penColorEdit->clear();
         penColorEdit->insertItems(0, QStringList()
-         << QApplication::translate("MainInterface", "Black", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "White", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Gray", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Red", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Blue", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Green", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Yellow", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Cyan", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Magenta", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "Black", 0)
+         << QApplication::translate("MainInterface", "White", 0)
+         << QApplication::translate("MainInterface", "Gray", 0)
+         << QApplication::translate("MainInterface", "Red", 0)
+         << QApplication::translate("MainInterface", "Blue", 0)
+         << QApplication::translate("MainInterface", "Green", 0)
+         << QApplication::translate("MainInterface", "Yellow", 0)
+         << QApplication::translate("MainInterface", "Cyan", 0)
+         << QApplication::translate("MainInterface", "Magenta", 0)
         );
         penStyleEdit->clear();
         penStyleEdit->insertItems(0, QStringList()
-         << QApplication::translate("MainInterface", "No Pen", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Solid", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Dashed", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Dotted", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Dash-Dotted", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Dash-Dot-Dotted", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "No Pen", 0)
+         << QApplication::translate("MainInterface", "Solid", 0)
+         << QApplication::translate("MainInterface", "Dashed", 0)
+         << QApplication::translate("MainInterface", "Dotted", 0)
+         << QApplication::translate("MainInterface", "Dash-Dotted", 0)
+         << QApplication::translate("MainInterface", "Dash-Dot-Dotted", 0)
         );
         PenCapEdit->clear();
         PenCapEdit->insertItems(0, QStringList()
-         << QApplication::translate("MainInterface", "Flat", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Square", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Round", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "Flat", 0)
+         << QApplication::translate("MainInterface", "Square", 0)
+         << QApplication::translate("MainInterface", "Round", 0)
         );
         PenJoinEdit->clear();
         PenJoinEdit->insertItems(0, QStringList()
-         << QApplication::translate("MainInterface", "Miter", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Bevel", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Round", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "Miter", 0)
+         << QApplication::translate("MainInterface", "Bevel", 0)
+         << QApplication::translate("MainInterface", "Round", 0)
         );
         brushColorEdit->clear();
         brushColorEdit->insertItems(0, QStringList()
-         << QApplication::translate("MainInterface", "Black", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "White", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Gray", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Red", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Green", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Blue", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Yellow", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Cyan", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Magenta", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "Black", 0)
+         << QApplication::translate("MainInterface", "White", 0)
+         << QApplication::translate("MainInterface", "Gray", 0)
+         << QApplication::translate("MainInterface", "Red", 0)
+         << QApplication::translate("MainInterface", "Green", 0)
+         << QApplication::translate("MainInterface", "Blue", 0)
+         << QApplication::translate("MainInterface", "Yellow", 0)
+         << QApplication::translate("MainInterface", "Cyan", 0)
+         << QApplication::translate("MainInterface", "Magenta", 0)
         );
         brushStyleEdit->clear();
         brushStyleEdit->insertItems(0, QStringList()
-         << QApplication::translate("MainInterface", "No Brush", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Solid", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Horizontal", Q_NULLPTR)
-         << QApplication::translate("MainInterface", "Vertical", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "No Brush", 0)
+         << QApplication::translate("MainInterface", "Solid", 0)
+         << QApplication::translate("MainInterface", "Horizontal", 0)
+         << QApplication::translate("MainInterface", "Vertical", 0)
         );
         QTableWidgetItem *___qtablewidgetitem = layerTable->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("MainInterface", "Visability", Q_NULLPTR));
+        ___qtablewidgetitem->setText(QApplication::translate("MainInterface", "Visability", 0));
         QTableWidgetItem *___qtablewidgetitem1 = layerTable->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("MainInterface", "ID", Q_NULLPTR));
-        AddObject_4->setText(QApplication::translate("MainInterface", "Add", Q_NULLPTR));
-        DeleteObj->setText(QApplication::translate("MainInterface", "Delete", Q_NULLPTR));
-        Tabs->setTabText(Tabs->indexOf(Canvas), QApplication::translate("MainInterface", "Canvas", Q_NULLPTR));
-        Tabs->setTabText(Tabs->indexOf(Table), QApplication::translate("MainInterface", "Table", Q_NULLPTR));
-        contactUsLabel->setText(QApplication::translate("MainInterface", "Contact us", Q_NULLPTR));
-        mainenancePlanLabel->setText(QApplication::translate("MainInterface", "Maintenance Plan", Q_NULLPTR));
-        testimonialsLabel->setText(QApplication::translate("MainInterface", "Testimonials", Q_NULLPTR));
-        Tabs->setTabText(Tabs->indexOf(About), QApplication::translate("MainInterface", "About", Q_NULLPTR));
-        menuFile->setTitle(QApplication::translate("MainInterface", "File", Q_NULLPTR));
-        menuEdit->setTitle(QApplication::translate("MainInterface", "Edit", Q_NULLPTR));
-        menuAbout->setTitle(QApplication::translate("MainInterface", "About", Q_NULLPTR));
+        ___qtablewidgetitem1->setText(QApplication::translate("MainInterface", "ID", 0));
+        AddObject_4->setText(QApplication::translate("MainInterface", "Add", 0));
+        DeleteObj->setText(QApplication::translate("MainInterface", "Delete", 0));
+        Tabs->setTabText(Tabs->indexOf(Canvas), QApplication::translate("MainInterface", "Canvas", 0));
+        Tabs->setTabText(Tabs->indexOf(Table), QApplication::translate("MainInterface", "Table", 0));
+        menuFile->setTitle(QApplication::translate("MainInterface", "File", 0));
+        menuEdit->setTitle(QApplication::translate("MainInterface", "Edit", 0));
+        menuAbout->setTitle(QApplication::translate("MainInterface", "About", 0));
     } // retranslateUi
 
 };

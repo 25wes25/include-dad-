@@ -43,3 +43,12 @@ void LoginScreen::on_loginButton_clicked()
     }
 
 }
+
+void LoginScreen::on_pushButton_clicked()
+{
+    //close first window
+    //this->close(); dont close login
+    //show createUser window
+    userWindow.show();
+
+}
