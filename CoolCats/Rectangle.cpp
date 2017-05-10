@@ -1,19 +1,10 @@
 #include "Rectangle.h"
 #include <QPainter>
-Rectangle::Rectangle():x{25},y{25},width{10},length{10},Shape()
-{
-
-}
+Rectangle::Rectangle():x{25},y{25},width{10},length{10},Shape(){}
 		
-Rectangle::Rectangle(int xIn, int yIn, double w, double l)
-{
-    x=xIn;
-    y=yIn;
-    width = w;
-    length = l;
-}
+Rectangle::Rectangle(int xIn, int yIn, double w, double l):x{xIn},y{yIn},width{w},length{l},Shape(){}
 
-Rectangle::Rectangle(Rectangle &copy):width{copy.width},length{copy.length}{}
+Rectangle::Rectangle(Rectangle &copy):x{copy.x},y{copy.y},width{copy.width},length{copy.length}{}
 
 Rectangle::Rectangle(Rectangle &&copy)
 {
@@ -25,6 +16,8 @@ Rectangle::Rectangle(Rectangle &&copy)
 
 Rectangle::~Rectangle()
 {
+    x =0;
+    y = 0;
     width = 0;
     length = 0;
 }

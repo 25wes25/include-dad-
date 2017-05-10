@@ -4,6 +4,18 @@ bool Shape::isRendered()
 {
     return isRender;
 }
+Shape::Shape()
+{
+    id = "placeholder";
+    isRender=true;
+    brushStyle=Qt::BrushStyle(0);
+    penColorEdit=Qt::GlobalColor(0);
+    penWidthEdit=0;
+    penCapEdit= Qt::PenCapStyle(0);
+    PenJoinEdit=Qt::PenJoinStyle(0);
+    brushColorEdit=Qt::GlobalColor(0);
+    penStyleEdit=Qt::PenStyle(0);
+}
 
 Shape::~Shape()
 {

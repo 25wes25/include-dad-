@@ -2,7 +2,7 @@
 #define MAININTERFACE_H
 
 #include <QMainWindow>
-
+#include "canvas.h"
 namespace Ui {
 class MainInterface;
 }
@@ -17,6 +17,10 @@ public:
 
 private:
     Ui::MainInterface *ui;
+    Canvas *canvas;
+    QString CurrentFileName;
+
+    void saveFile();
 };
 
 #endif // MAININTERFACE_H

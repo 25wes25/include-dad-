@@ -25,7 +25,7 @@ class Shape
         Qt::GlobalColor brushColorEdit;
         Qt::PenStyle penStyleEdit;
     public:
-
+        Shape();
         Qt::BrushStyle intToBrushStyle(int index);
         Qt::GlobalColor intToColor(int index);
         Qt::PenCapStyle intToPenCap(int index);

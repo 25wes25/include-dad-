@@ -10,6 +10,7 @@ class Rectangle:public Shape
         int y;
         double width;
         double length;
+
     public:
         Rectangle();
         Rectangle(int x, int y, double w, double l);

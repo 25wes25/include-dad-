@@ -8,9 +8,9 @@
 #include <string>
 #include <QPainter>
 #include <QPoint>
-
+#include "shape.h"
 using namespace std;
-class Shape;
+
 
 class Canvas :public QWidget
 {

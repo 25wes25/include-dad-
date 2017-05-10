@@ -16,6 +16,5 @@ class Circle:public Ellipse
         virtual void Resize(double radiusIn);
         virtual void Draw();
 		virtual bool is_Left_Clicked(QPoint &e);
-	
 };
 #endif
