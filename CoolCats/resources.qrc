@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/Images">
-        <file>2D Graphic Label.png</file>
-        <file>fallingleaves.gif</file>
-    </qresource>
-</RCC>
