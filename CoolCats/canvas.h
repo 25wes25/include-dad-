@@ -9,6 +9,7 @@
 #include <QPainter>
 #include <QPoint>
 #include "shape.h"
+#include <QMouseEvent>
 using namespace std;
 
 
@@ -18,13 +19,15 @@ class Canvas :public QWidget
 public:
     Canvas(QWidget *parent=0);
     void addShape(Shape* add);
-    Shape* getCurrentShape(){return currentShape();}
+    Shape* getCurrentShape(){return currentShape;}
     void render();
 protected:
+    void mousePressEvent(QMouseEvent *event);
+    void mouseMoveEvent(QMouseEvent *event);
     void paintEvent(QPaintEvent *);
 private:
     Vector<Shape*> area;
-    Shape* currentShape();
+    Shape* currentShape;
 };
 
 

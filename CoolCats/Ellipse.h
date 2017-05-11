@@ -13,12 +13,12 @@ class Ellipse:public Shape
 
         // Mutators
     virtual void Move(int xDes, int yDes);
-    virtual void Move(QPoint &xy);
+    virtual void Move(QPoint xy);
     virtual void Resize(double radiusIn);
 
     virtual void Draw(Canvas *drawArea);
 	//accessors
-	virtual bool is_Left_Clicked(QPoint &xy);
+    virtual bool is_Left_Clicked(QPoint xy);
 
     protected:
     static int ellipseCounter;

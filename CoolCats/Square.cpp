@@ -28,7 +28,7 @@ void Square::Draw(Canvas *drawArea)
 {
     Rectangle::Draw(drawArea);
 }
-bool Square::is_Left_Clicked(QPoint &e)
+bool Square::is_Left_Clicked(QPoint e)
 {
     return Rectangle::is_Left_Clicked(e);
 }

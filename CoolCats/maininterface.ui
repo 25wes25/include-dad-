@@ -590,28 +590,6 @@
             </widget>
            </widget>
           </item>
-          <item>
-           <widget class="QGraphicsView" name="RenderArea">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>1000</width>
-              <height>500</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>0</width>
-              <height>500</height>
-             </size>
-            </property>
-           </widget>
-          </item>
          </layout>
         </item>
        </layout>
@@ -719,6 +697,11 @@
   <action name="actionNew">
    <property name="text">
     <string>New</string>
+   </property>
+  </action>
+  <action name="actionLoad">
+   <property name="text">
+    <string>Load</string>
    </property>
   </action>
  </widget>

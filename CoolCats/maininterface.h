@@ -20,6 +20,9 @@ private:
     Canvas *canvas;
     QString CurrentFileName;
 
+    void newCanvas(int x, int y);
+    void loadCanvas(QString filename);
+private slots:
     void saveFile();
 };
 
