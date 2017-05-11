@@ -20,6 +20,7 @@ public:
     Canvas(QWidget *parent=0);
     void addShape(Shape* add);
     Shape* getCurrentShape(){return currentShape;}
+    void clear();
     void render();
 protected:
     void mousePressEvent(QMouseEvent *event);

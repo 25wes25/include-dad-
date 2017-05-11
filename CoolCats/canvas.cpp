@@ -16,6 +16,10 @@ void Canvas::mousePressEvent(QMouseEvent *event)
         qDebug() << event->pos();
         found = area[i]->is_Left_Clicked(event->pos());
         qDebug() << found;
+        if(found)
+        {
+            currentShape = area[i];
+        }
     }
 }
 void Canvas::mouseMoveEvent(QMouseEvent *event)
@@ -54,6 +58,7 @@ void Canvas::addShape(Shape *add)
 }
 void Canvas::render()
 {
+   clear();
    for(int i=0;i<area.size();i++)
    {
        if(area[i]->isRendered())
@@ -62,4 +67,10 @@ void Canvas::render()
        }
    }
 }
+void Canvas::clear()
+{
+    QPainter painter(this);
+    painter.eraseRect(0,0,width()-1,height()-1);
+}
+
 

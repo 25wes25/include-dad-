@@ -19,7 +19,7 @@ private:
     Ui::MainInterface *ui;
     Canvas *canvas;
     QString CurrentFileName;
-
+    void modCurrentShape();
     void newCanvas(int x, int y);
     void loadCanvas(QString filename);
 private slots:
