@@ -25,6 +25,7 @@ public:
     QString getName();
     void clear();
     bool isAdmin();
+    void operator=(UserList object);
 
 private:
     //vector full of struct->accounts

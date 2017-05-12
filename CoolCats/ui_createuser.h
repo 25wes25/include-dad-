@@ -27,46 +27,62 @@ class Ui_createUser
 public:
     QLabel *label_2;
     QLabel *label;
-    QLineEdit *lineEdit_2;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_3;
-    QComboBox *comboBox;
+    QLineEdit *createPassEdit;
+    QLineEdit *createNameEdit;
+    QLineEdit *adminCode;
+    QComboBox *adminGuestCombo;
     QLabel *label_3;
     QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *createButton;
+    QLabel *label_4;
+    QLabel *ERRORADMINCODE;
 
     void setupUi(QDialog *createUser)
     {
         if (createUser->objectName().isEmpty())
             createUser->setObjectName(QStringLiteral("createUser"));
-        createUser->resize(409, 312);
+        createUser->resize(403, 298);
         label_2 = new QLabel(createUser);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(50, 160, 111, 21));
+        label_2->setGeometry(QRect(50, 135, 111, 21));
         label = new QLabel(createUser);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(50, 111, 91, 20));
-        lineEdit_2 = new QLineEdit(createUser);
-        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(50, 185, 301, 20));
-        lineEdit = new QLineEdit(createUser);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(50, 135, 301, 20));
-        lineEdit_3 = new QLineEdit(createUser);
-        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
-        lineEdit_3->setGeometry(QRect(190, 220, 161, 20));
-        comboBox = new QComboBox(createUser);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
-        comboBox->setGeometry(QRect(110, 220, 69, 22));
+        label->setGeometry(QRect(50, 86, 91, 20));
+        createPassEdit = new QLineEdit(createUser);
+        createPassEdit->setObjectName(QStringLiteral("createPassEdit"));
+        createPassEdit->setGeometry(QRect(50, 160, 301, 20));
+        createNameEdit = new QLineEdit(createUser);
+        createNameEdit->setObjectName(QStringLiteral("createNameEdit"));
+        createNameEdit->setGeometry(QRect(50, 110, 301, 20));
+        adminCode = new QLineEdit(createUser);
+        adminCode->setObjectName(QStringLiteral("adminCode"));
+        adminCode->setEnabled(false);
+        adminCode->setGeometry(QRect(190, 195, 161, 20));
+        adminGuestCombo = new QComboBox(createUser);
+        adminGuestCombo->setObjectName(QStringLiteral("adminGuestCombo"));
+        adminGuestCombo->setGeometry(QRect(110, 195, 69, 22));
         label_3 = new QLabel(createUser);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(50, 214, 51, 31));
+        label_3->setGeometry(QRect(50, 189, 51, 31));
         pushButton = new QPushButton(createUser);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(280, 250, 75, 23));
-        pushButton_2 = new QPushButton(createUser);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(200, 250, 75, 23));
+        pushButton->setGeometry(QRect(280, 225, 75, 23));
+        createButton = new QPushButton(createUser);
+        createButton->setObjectName(QStringLiteral("createButton"));
+        createButton->setGeometry(QRect(200, 225, 75, 23));
+        label_4 = new QLabel(createUser);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(50, 55, 301, 31));
+        QFont font;
+        font.setFamily(QStringLiteral("Plantagenet Cherokee"));
+        font.setPointSize(14);
+        font.setBold(true);
+        font.setWeight(75);
+        label_4->setFont(font);
+        label_4->setAlignment(Qt::AlignCenter);
+        ERRORADMINCODE = new QLabel(createUser);
+        ERRORADMINCODE->setObjectName(QStringLiteral("ERRORADMINCODE"));
+        ERRORADMINCODE->setGeometry(QRect(200, 250, 191, 21));
 
         retranslateUi(createUser);
 
@@ -78,14 +94,16 @@ public:
         createUser->setWindowTitle(QApplication::translate("createUser", "Dialog", 0));
         label_2->setText(QApplication::translate("createUser", "Desired Password:", 0));
         label->setText(QApplication::translate("createUser", "Desired Username:", 0));
-        comboBox->clear();
-        comboBox->insertItems(0, QStringList()
+        adminGuestCombo->clear();
+        adminGuestCombo->insertItems(0, QStringList()
          << QApplication::translate("createUser", "Guest", 0)
          << QApplication::translate("createUser", "Admin", 0)
         );
         label_3->setText(QApplication::translate("createUser", "User type:", 0));
         pushButton->setText(QApplication::translate("createUser", "Exit", 0));
-        pushButton_2->setText(QApplication::translate("createUser", "Create User", 0));
+        createButton->setText(QApplication::translate("createUser", "Create User", 0));
+        label_4->setText(QApplication::translate("createUser", "Create User", 0));
+        ERRORADMINCODE->setText(QString());
     } // retranslateUi
 
 };

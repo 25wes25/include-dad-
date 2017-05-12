@@ -1,5 +1,7 @@
 #include "loginscreen.h"
 #include "ui_loginscreen.h"
+#include "users.h"
+#include "createuser.h"
 #include <QMovie>
 #include <QLabel>
 
@@ -8,6 +10,7 @@ LoginScreen::LoginScreen(QWidget *parent) :
     ui(new Ui::LoginScreen)
 {
     ui->setupUi(this);
+    userWindow.setList(&userList);
 }
 
 void LoginScreen::startMovie(QMovie &gif)
@@ -31,9 +34,9 @@ void LoginScreen::on_loginButton_clicked()
     password = ui->passwordEdit->text();
     //first will check non-user
     //close first window
-    this->close();
+    //this->close();
     //show dialog window
-   interface.show();
+    //interface.show();
     if(userList.isUser(username, password) != 0)
     {
         //close first window

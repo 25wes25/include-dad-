@@ -7,7 +7,12 @@ UserList::UserList()
 
 void UserList::clear()
 {
-   // users.clear();
+    // users.clear();
+}
+
+void UserList::operator=(UserList object)
+{
+    accVec = object.accVec;
 }
 
 bool UserList::addUser(QString name, QString password, status type)

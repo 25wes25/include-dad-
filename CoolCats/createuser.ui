@@ -39,7 +39,7 @@
     <string>Desired Username:</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="createPassEdit">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -49,7 +49,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="createNameEdit">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -59,9 +59,9 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
+  <widget class="QLineEdit" name="adminCode">
    <property name="enabled">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="geometry">
     <rect>
@@ -72,7 +72,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="adminGuestCombo">
    <property name="geometry">
     <rect>
      <x>110</x>
@@ -118,7 +118,7 @@
     <string>Exit</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="createButton">
    <property name="geometry">
     <rect>
      <x>200</x>
@@ -135,14 +135,14 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>50</y>
+     <y>55</y>
      <width>301</width>
      <height>31</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Perpetua Titling MT</family>
+     <family>Plantagenet Cherokee</family>
      <pointsize>14</pointsize>
      <weight>75</weight>
      <bold>true</bold>
@@ -153,6 +153,19 @@
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="ERRORADMINCODE">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>250</y>
+     <width>191</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>
