@@ -12,8 +12,8 @@ class Circle:public Ellipse
 		Circle(Circle &copy);
 		Circle(Circle &&copy);
 		~Circle();
-        virtual void Move(int xDes, int yDes);
-        virtual void Move(QPoint xy);
+        virtual void move(int xDes, int yDes);
+        virtual void move(QPoint xy);
         virtual void Resize(double radiusIn);
         virtual void Draw(Canvas* area);
         virtual bool is_Left_Clicked(QPoint e);

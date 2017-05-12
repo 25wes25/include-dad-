@@ -2,6 +2,7 @@
 #define ELLIPSE_H
 #include "Shape.h"
 #include "canvas.h"
+#include <QDebug>
 class Ellipse:public Shape
 {	
     public:
@@ -12,13 +13,14 @@ class Ellipse:public Shape
     ~Ellipse();
 
         // Mutators
-    virtual void Move(int xDes, int yDes);
-    virtual void Move(QPoint xy);
+    virtual void move(int xDes, int yDes);
+    virtual void move(QPoint xy);
     virtual void Resize(double radiusIn);
 
     virtual void Draw(Canvas *drawArea);
 	//accessors
     virtual bool is_Left_Clicked(QPoint xy);
+    virtual void sayHi() {qDebug() << "Hello good sir " << x << ' ' << y;}
 
     protected:
     static int ellipseCounter;

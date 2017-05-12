@@ -38,6 +38,7 @@ class Shape
         virtual void resize(double x){}
         virtual void Draw(Canvas *paintArea){}
         virtual bool is_Left_Clicked(QPoint e){}
+        virtual void sayHi() {}
 
 };
 #endif //Shape End

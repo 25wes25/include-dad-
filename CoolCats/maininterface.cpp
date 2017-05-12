@@ -1,6 +1,7 @@
 #include "maininterface.h"
 #include "ui_maininterface.h"
 #include "Circle.h"
+#include <QDebug>
 MainInterface::MainInterface(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainInterface)

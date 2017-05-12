@@ -21,12 +21,12 @@ Circle::~Circle()
     yRadius=0;
 }
 	
-void Circle::Move(int xDes, int yDes)
+void Circle::move(int xDes, int yDes)
 {
 	x = xDes;
 	y = yDes;
 }
-void Circle::Move(QPoint moveTo)
+void Circle::move(QPoint moveTo)
 {
     x = moveTo.x();
     y = moveTo.y();

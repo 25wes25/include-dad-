@@ -6,12 +6,13 @@ Canvas::Canvas(QWidget *parent)
     setMinimumSize(1000,500);
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
-    update();
+    //update();
 }
 void Canvas::mousePressEvent(QMouseEvent *event)
 {
     bool found=false;
-    for(int i =0 ;i < area.size()&&!found;i++)
+    //Change the bounds
+    for(int i = area.size()-1 ;i >=0&&!found;i--)
     {
         qDebug() << event->pos();
         found = area[i]->is_Left_Clicked(event->pos());
@@ -31,18 +32,22 @@ void Canvas::mouseMoveEvent(QMouseEvent *event)
         qDebug() << event->pos();
         found = area[i]->is_Left_Clicked(event->pos());
         qDebug() << found;
+
         if(found)
         {
             area[i]->move(event->pos());
+            area[i]->sayHi();
         }
     }
     update();
+
 
 
 }
 
 void Canvas::paintEvent(QPaintEvent * /* event */)
 {
+    qDebug() << "Hello";
     render();
     //this QPainter object draws the background
     QPainter painter(this);

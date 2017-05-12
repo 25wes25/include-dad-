@@ -27,13 +27,13 @@ Ellipse::~Ellipse()
     yRadius = 0;
 }
 	
-void Ellipse::Move(int xDes, int yDes)
+void Ellipse::move(int xDes, int yDes)
 {
     x = xDes;
     y = yDes;
 
 }
-void Ellipse::Move(QPoint xy)
+void Ellipse::move(QPoint xy)
 {
     x = xy.x();
     y = xy.y();
