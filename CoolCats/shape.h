@@ -33,11 +33,12 @@ class Shape
         Qt::PenStyle intToPenStyle(int index);
         bool isRendered();
         virtual ~Shape();
-        virtual void move(QPoint &xy)=0;
-        virtual void move(int x , int y)=0;
-        virtual void resize(double x)=0;
-        virtual void Draw(Canvas *paintArea)=0;
-        virtual bool is_Left_Clicked(QPoint &e)=0;
+        virtual void move(QPoint xy){}
+        virtual void move(int x , int y){}
+        virtual void resize(double x){}
+        virtual void Draw(Canvas *paintArea){}
+        virtual bool is_Left_Clicked(QPoint e){}
+        virtual void sayHi() {}
 
 };
 #endif //Shape End

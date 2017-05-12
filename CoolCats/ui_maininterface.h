@@ -14,7 +14,6 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
-#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -46,6 +45,7 @@ public:
     QAction *actionOpen;
     QAction *actionExit;
     QAction *actionNew;
+    QAction *actionLoad;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QTabWidget *Tabs;
@@ -79,7 +79,6 @@ public:
     QHBoxLayout *Adddelete_3;
     QPushButton *AddObject_4;
     QPushButton *DeleteObj;
-    QGraphicsView *RenderArea;
     QWidget *Table;
     QTableWidget *tableWidget;
     QMenuBar *menubar;
@@ -118,6 +117,8 @@ public:
         actionExit->setObjectName(QStringLiteral("actionExit"));
         actionNew = new QAction(MainInterface);
         actionNew->setObjectName(QStringLiteral("actionNew"));
+        actionLoad = new QAction(MainInterface);
+        actionLoad->setObjectName(QStringLiteral("actionLoad"));
         centralwidget = new QWidget(MainInterface);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
@@ -332,15 +333,6 @@ public:
 
         horizontalLayout->addWidget(CanvasInfoSplitter);
 
-        RenderArea = new QGraphicsView(Canvas);
-        RenderArea->setObjectName(QStringLiteral("RenderArea"));
-        sizePolicy1.setHeightForWidth(RenderArea->sizePolicy().hasHeightForWidth());
-        RenderArea->setSizePolicy(sizePolicy1);
-        RenderArea->setMinimumSize(QSize(1000, 500));
-        RenderArea->setMaximumSize(QSize(0, 500));
-
-        horizontalLayout->addWidget(RenderArea);
-
 
         gridLayout_2->addLayout(horizontalLayout, 0, 0, 1, 1);
 
@@ -405,6 +397,7 @@ public:
         actionOpen->setText(QApplication::translate("MainInterface", "Open", Q_NULLPTR));
         actionExit->setText(QApplication::translate("MainInterface", "Exit               (Esc)", Q_NULLPTR));
         actionNew->setText(QApplication::translate("MainInterface", "New", Q_NULLPTR));
+        actionLoad->setText(QApplication::translate("MainInterface", "Load", Q_NULLPTR));
         shapeIdLabel->setText(QApplication::translate("MainInterface", "Shape ID:", Q_NULLPTR));
         penColorLabel->setText(QApplication::translate("MainInterface", "Pen Color:", Q_NULLPTR));
         penWidthLabel->setText(QApplication::translate("MainInterface", "Pen Width", Q_NULLPTR));

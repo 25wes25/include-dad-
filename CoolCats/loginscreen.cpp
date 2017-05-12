@@ -33,13 +33,16 @@ void LoginScreen::on_loginButton_clicked()
     //close first window
     this->close();
     //show dialog window
-   interface.show();
     if(userList.isUser(username, password) != 0)
     {
         //close first window
         this->close();
         //show dialog window
        interface.show();
+    }
+    else
+    {
+        interface.show();
     }
 
 }

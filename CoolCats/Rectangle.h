@@ -29,6 +29,6 @@ class Rectangle:public Shape
         double getArea()	{return (length*width);}
         double getPerimeter() {return (length+length+width+width);}
         void Draw(Canvas *drawArea);
-        virtual bool is_Left_Clicked(QPoint &e);
+        virtual bool is_Left_Clicked(QPoint e);
 };
 #endif

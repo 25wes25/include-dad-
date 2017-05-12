@@ -27,13 +27,13 @@ Ellipse::~Ellipse()
     yRadius = 0;
 }
 	
-void Ellipse::Move(int xDes, int yDes)
+void Ellipse::move(int xDes, int yDes)
 {
     x = xDes;
     y = yDes;
 
 }
-void Ellipse::Move(QPoint &xy)
+void Ellipse::move(QPoint xy)
 {
     x = xy.x();
     y = xy.y();
@@ -52,7 +52,7 @@ void Ellipse::Draw(Canvas *drawArea)
     painter.drawEllipse(QPoint(x,y),xRadius,yRadius);
     painter.restore();
 }
-bool Ellipse::is_Left_Clicked(QPoint &xy)
+bool Ellipse::is_Left_Clicked(QPoint xy)
 {
 	//general formula for ellipse centered at x,y datatypes
     double ellipseFormula = (((double)(pow(abs(xy.x())-x,2)/pow(xRadius,2)))+((double)(pow(abs(xy.y())-y,2)/pow(yRadius,2))));

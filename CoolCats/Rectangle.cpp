@@ -44,7 +44,7 @@ void Rectangle::Draw(Canvas *drawArea)
     painter.drawRect(x-width,y-length,width,length);
     painter.restore();
 }
-bool Rectangle::is_Left_Clicked(QPoint &e)
+bool Rectangle::is_Left_Clicked(QPoint e)
 {
     return  (x+width>e.x()&& //Check right side
              x-width<e.x()&& //Check left side
