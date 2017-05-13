@@ -135,15 +135,15 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>55</y>
+     <y>35</y>
      <width>301</width>
-     <height>31</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Plantagenet Cherokee</family>
-     <pointsize>14</pointsize>
+     <pointsize>19</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>

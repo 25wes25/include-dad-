@@ -1,11 +1,12 @@
 #include "loginscreen.h"
+#include "newnew.h"
 #include <QMovie>
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    LoginScreen w;
+    newnew w;
 
     QMovie weeabu(":/Images/fallingleaves.gif");
     w.startMovie(weeabu);

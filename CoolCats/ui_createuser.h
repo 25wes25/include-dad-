@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'createuser.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -72,10 +72,10 @@ public:
         createButton->setGeometry(QRect(200, 225, 75, 23));
         label_4 = new QLabel(createUser);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(50, 55, 301, 31));
+        label_4->setGeometry(QRect(50, 35, 301, 51));
         QFont font;
         font.setFamily(QStringLiteral("Plantagenet Cherokee"));
-        font.setPointSize(14);
+        font.setPointSize(19);
         font.setBold(true);
         font.setWeight(75);
         label_4->setFont(font);
@@ -91,18 +91,18 @@ public:
 
     void retranslateUi(QDialog *createUser)
     {
-        createUser->setWindowTitle(QApplication::translate("createUser", "Dialog", 0));
-        label_2->setText(QApplication::translate("createUser", "Desired Password:", 0));
-        label->setText(QApplication::translate("createUser", "Desired Username:", 0));
+        createUser->setWindowTitle(QApplication::translate("createUser", "Dialog", Q_NULLPTR));
+        label_2->setText(QApplication::translate("createUser", "Desired Password:", Q_NULLPTR));
+        label->setText(QApplication::translate("createUser", "Desired Username:", Q_NULLPTR));
         adminGuestCombo->clear();
         adminGuestCombo->insertItems(0, QStringList()
-         << QApplication::translate("createUser", "Guest", 0)
-         << QApplication::translate("createUser", "Admin", 0)
+         << QApplication::translate("createUser", "Guest", Q_NULLPTR)
+         << QApplication::translate("createUser", "Admin", Q_NULLPTR)
         );
-        label_3->setText(QApplication::translate("createUser", "User type:", 0));
-        pushButton->setText(QApplication::translate("createUser", "Exit", 0));
-        createButton->setText(QApplication::translate("createUser", "Create User", 0));
-        label_4->setText(QApplication::translate("createUser", "Create User", 0));
+        label_3->setText(QApplication::translate("createUser", "User type:", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("createUser", "Exit", Q_NULLPTR));
+        createButton->setText(QApplication::translate("createUser", "Create User", Q_NULLPTR));
+        label_4->setText(QApplication::translate("createUser", "Create User", Q_NULLPTR));
         ERRORADMINCODE->setText(QString());
     } // retranslateUi
 

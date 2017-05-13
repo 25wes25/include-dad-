@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     Rectangle.cpp \
     shape.cpp \
     Square.cpp \
-    createuser.cpp
+    createuser.cpp \
+    newnew.cpp
 
 HEADERS  += \
     loginscreen.h \
@@ -38,12 +39,14 @@ HEADERS  += \
     shape.h \
     Square.h \
     Vector.h \
-    createuser.h
+    createuser.h \
+    newnew.h
 
 FORMS    += \
     loginscreen.ui \
     maininterface.ui \
-    createuser.ui
+    createuser.ui \
+    newnew.ui
 
 DISTFILES +=
 

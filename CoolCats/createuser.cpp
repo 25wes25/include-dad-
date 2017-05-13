@@ -46,7 +46,7 @@ void createUser::on_createButton_clicked()
             //adds the user as a Guest
             accounts->addUser(createUser.userName,createUser.password,createUser.userStatus);
             //set test to who added
-            ui->ERRORADMINCODE->setText("Added "+createUser.userName+"as Guest");
+            ui->ERRORADMINCODE->setText("Added "+createUser.userName+" as Guest");
         }
         else
         {
@@ -56,7 +56,7 @@ void createUser::on_createButton_clicked()
                 //adds the user to the vector as an admin
                 accounts->addUser(createUser.userName,createUser.password,createUser.userStatus);
                 //set test to who added
-                ui->ERRORADMINCODE->setText("Added "+createUser.userName+"as Admin");
+                ui->ERRORADMINCODE->setText("Added "+createUser.userName+" as Admin");
             }
             else
             {
