@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'maininterface.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.1
+** Created by: Qt User Interface Compiler version 5.9.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -14,7 +14,6 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
-#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -45,6 +44,8 @@ public:
     QAction *actionSave_As;
     QAction *actionOpen;
     QAction *actionExit;
+    QAction *actionNew;
+    QAction *actionLoad;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QTabWidget *Tabs;
@@ -55,6 +56,7 @@ public:
     QSplitter *InputSplitter;
     QWidget *layoutWidget_2;
     QVBoxLayout *LabelLayout;
+    QLabel *ShapeTypeLabel;
     QLabel *shapeIdLabel;
     QLabel *penColorLabel;
     QLabel *penWidthLabel;
@@ -65,6 +67,7 @@ public:
     QLabel *brushStyleLabel;
     QWidget *layoutWidget_3;
     QVBoxLayout *InputLayout;
+    QComboBox *ShapeTypeEdit;
     QLineEdit *shapeIdEdit;
     QComboBox *penColorEdit;
     QSlider *penWidthEdit;
@@ -78,13 +81,8 @@ public:
     QHBoxLayout *Adddelete_3;
     QPushButton *AddObject_4;
     QPushButton *DeleteObj;
-    QGraphicsView *RenderArea;
     QWidget *Table;
     QTableWidget *tableWidget;
-    QWidget *About;
-    QLabel *contactUsLabel;
-    QLabel *mainenancePlanLabel;
-    QLabel *testimonialsLabel;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuEdit;
@@ -119,6 +117,10 @@ public:
         actionOpen->setObjectName(QStringLiteral("actionOpen"));
         actionExit = new QAction(MainInterface);
         actionExit->setObjectName(QStringLiteral("actionExit"));
+        actionNew = new QAction(MainInterface);
+        actionNew->setObjectName(QStringLiteral("actionNew"));
+        actionLoad = new QAction(MainInterface);
+        actionLoad->setObjectName(QStringLiteral("actionLoad"));
         centralwidget = new QWidget(MainInterface);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
@@ -155,6 +157,13 @@ public:
         LabelLayout->setSpacing(0);
         LabelLayout->setObjectName(QStringLiteral("LabelLayout"));
         LabelLayout->setContentsMargins(0, 30, 0, 30);
+        ShapeTypeLabel = new QLabel(layoutWidget_2);
+        ShapeTypeLabel->setObjectName(QStringLiteral("ShapeTypeLabel"));
+        sizePolicy1.setHeightForWidth(ShapeTypeLabel->sizePolicy().hasHeightForWidth());
+        ShapeTypeLabel->setSizePolicy(sizePolicy1);
+
+        LabelLayout->addWidget(ShapeTypeLabel);
+
         shapeIdLabel = new QLabel(layoutWidget_2);
         shapeIdLabel->setObjectName(QStringLiteral("shapeIdLabel"));
         sizePolicy1.setHeightForWidth(shapeIdLabel->sizePolicy().hasHeightForWidth());
@@ -226,6 +235,11 @@ public:
         InputLayout->setSpacing(0);
         InputLayout->setObjectName(QStringLiteral("InputLayout"));
         InputLayout->setContentsMargins(0, 30, 0, 30);
+        ShapeTypeEdit = new QComboBox(layoutWidget_3);
+        ShapeTypeEdit->setObjectName(QStringLiteral("ShapeTypeEdit"));
+
+        InputLayout->addWidget(ShapeTypeEdit);
+
         shapeIdEdit = new QLineEdit(layoutWidget_3);
         shapeIdEdit->setObjectName(QStringLiteral("shapeIdEdit"));
         sizePolicy1.setHeightForWidth(shapeIdEdit->sizePolicy().hasHeightForWidth());
@@ -333,15 +347,6 @@ public:
 
         horizontalLayout->addWidget(CanvasInfoSplitter);
 
-        RenderArea = new QGraphicsView(Canvas);
-        RenderArea->setObjectName(QStringLiteral("RenderArea"));
-        sizePolicy1.setHeightForWidth(RenderArea->sizePolicy().hasHeightForWidth());
-        RenderArea->setSizePolicy(sizePolicy1);
-        RenderArea->setMinimumSize(QSize(1000, 500));
-        RenderArea->setMaximumSize(QSize(0, 500));
-
-        horizontalLayout->addWidget(RenderArea);
-
 
         gridLayout_2->addLayout(horizontalLayout, 0, 0, 1, 1);
 
@@ -352,19 +357,6 @@ public:
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
         tableWidget->setGeometry(QRect(10, 10, 931, 581));
         Tabs->addTab(Table, QString());
-        About = new QWidget();
-        About->setObjectName(QStringLiteral("About"));
-        About->setEnabled(true);
-        contactUsLabel = new QLabel(About);
-        contactUsLabel->setObjectName(QStringLiteral("contactUsLabel"));
-        contactUsLabel->setGeometry(QRect(810, 130, 211, 16));
-        mainenancePlanLabel = new QLabel(About);
-        mainenancePlanLabel->setObjectName(QStringLiteral("mainenancePlanLabel"));
-        mainenancePlanLabel->setGeometry(QRect(230, 150, 181, 16));
-        testimonialsLabel = new QLabel(About);
-        testimonialsLabel->setObjectName(QStringLiteral("testimonialsLabel"));
-        testimonialsLabel->setGeometry(QRect(520, 330, 201, 16));
-        Tabs->addTab(About, QString());
 
         gridLayout->addWidget(Tabs, 0, 0, 1, 1);
 
@@ -386,6 +378,7 @@ public:
         menubar->addAction(menuFile->menuAction());
         menubar->addAction(menuEdit->menuAction());
         menubar->addAction(menuAbout->menuAction());
+        menuFile->addAction(actionNew);
         menuFile->addAction(actionSave);
         menuFile->addAction(actionSave_As);
         menuFile->addAction(actionOpen);
@@ -410,10 +403,16 @@ public:
         actionTestimonials->setText(QApplication::translate("MainInterface", "Testimonials", Q_NULLPTR));
         actionContact_Us->setText(QApplication::translate("MainInterface", "Contact Us", Q_NULLPTR));
         actionTBD->setText(QApplication::translate("MainInterface", "TBD", Q_NULLPTR));
-        actionSave->setText(QApplication::translate("MainInterface", "Save", Q_NULLPTR));
+        actionSave->setText(QApplication::translate("MainInterface", "Save            (Ctrl + S)", Q_NULLPTR));
+#ifndef QT_NO_SHORTCUT
+        actionSave->setShortcut(QApplication::translate("MainInterface", "Ctrl+S", Q_NULLPTR));
+#endif // QT_NO_SHORTCUT
         actionSave_As->setText(QApplication::translate("MainInterface", "Save As...", Q_NULLPTR));
         actionOpen->setText(QApplication::translate("MainInterface", "Open", Q_NULLPTR));
-        actionExit->setText(QApplication::translate("MainInterface", "Exit", Q_NULLPTR));
+        actionExit->setText(QApplication::translate("MainInterface", "Exit               (Esc)", Q_NULLPTR));
+        actionNew->setText(QApplication::translate("MainInterface", "New", Q_NULLPTR));
+        actionLoad->setText(QApplication::translate("MainInterface", "Load", Q_NULLPTR));
+        ShapeTypeLabel->setText(QApplication::translate("MainInterface", "TextLabel", Q_NULLPTR));
         shapeIdLabel->setText(QApplication::translate("MainInterface", "Shape ID:", Q_NULLPTR));
         penColorLabel->setText(QApplication::translate("MainInterface", "Pen Color:", Q_NULLPTR));
         penWidthLabel->setText(QApplication::translate("MainInterface", "Pen Width", Q_NULLPTR));
@@ -422,6 +421,17 @@ public:
         PenJoinLabel->setText(QApplication::translate("MainInterface", "Pen Join Style:", Q_NULLPTR));
         BrushColorLabel->setText(QApplication::translate("MainInterface", "Brush Color:", Q_NULLPTR));
         brushStyleLabel->setText(QApplication::translate("MainInterface", "Brush Style:", Q_NULLPTR));
+        ShapeTypeEdit->clear();
+        ShapeTypeEdit->insertItems(0, QStringList()
+         << QApplication::translate("MainInterface", "Line", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "PolyLine", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "PolyGon", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "Circle", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "Ellipse", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "Square", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "Rectangle", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "Text", Q_NULLPTR)
+        );
         shapeIdEdit->setText(QString());
         penColorEdit->clear();
         penColorEdit->insertItems(0, QStringList()
@@ -483,10 +493,6 @@ public:
         DeleteObj->setText(QApplication::translate("MainInterface", "Delete", Q_NULLPTR));
         Tabs->setTabText(Tabs->indexOf(Canvas), QApplication::translate("MainInterface", "Canvas", Q_NULLPTR));
         Tabs->setTabText(Tabs->indexOf(Table), QApplication::translate("MainInterface", "Table", Q_NULLPTR));
-        contactUsLabel->setText(QApplication::translate("MainInterface", "Contact us", Q_NULLPTR));
-        mainenancePlanLabel->setText(QApplication::translate("MainInterface", "Maintenance Plan", Q_NULLPTR));
-        testimonialsLabel->setText(QApplication::translate("MainInterface", "Testimonials", Q_NULLPTR));
-        Tabs->setTabText(Tabs->indexOf(About), QApplication::translate("MainInterface", "About", Q_NULLPTR));
         menuFile->setTitle(QApplication::translate("MainInterface", "File", Q_NULLPTR));
         menuEdit->setTitle(QApplication::translate("MainInterface", "Edit", Q_NULLPTR));
         menuAbout->setTitle(QApplication::translate("MainInterface", "About", Q_NULLPTR));

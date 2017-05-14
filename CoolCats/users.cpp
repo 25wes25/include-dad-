@@ -18,6 +18,7 @@ bool UserList::addUser(QString name, QString password, status type)
     newUser.userStatus = type;
 
     users.push_back(newUser);
+    return  true;
 }
 
 status UserList::isUser(QString name, QString password)

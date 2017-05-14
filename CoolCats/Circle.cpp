@@ -1,6 +1,6 @@
 #include "Circle.h"
 #include <cmath>
-Circle::Circle(): Ellipse(0,0,10,10){}
+Circle::Circle(): Ellipse(200,200,100,100){}
 		
 Circle::Circle(int xIn, int yIn, double radiusIn): Ellipse(xIn,yIn,radiusIn,radiusIn){}
 
@@ -12,7 +12,8 @@ Circle::Circle(Circle && copy)
     this->y = copy.y;
     this->xRadius = copy.xRadius;
     this->yRadius = copy.yRadius;
-}		
+}
+
 Circle::~Circle()
 {
 	x=0;
@@ -21,17 +22,15 @@ Circle::~Circle()
     yRadius=0;
 }
 	
-void Circle::Move(int xDes, int yDes)
+void Circle::move(int xDes, int yDes)
 {
 	x = xDes;
 	y = yDes;
-
 }
-void Circle::Move(QPoint moveTo)
+void Circle::move(QPoint moveTo)
 {
     x = moveTo.x();
     y = moveTo.y();
-
 }
 		
 void Circle::Resize(double radiusIn)
@@ -39,12 +38,14 @@ void Circle::Resize(double radiusIn)
     xRadius = radiusIn;
     yRadius = radiusIn;
 
-}		
-void Circle::Draw()
-{
-
 }
-bool Circle::is_Left_Clicked(QPoint& e)
+
+void Circle::Draw(Canvas *drawArea)
+{
+    Ellipse::Draw(drawArea);
+}
+
+bool Circle::is_Left_Clicked(QPoint e)
 {
 	//get the point at which the mouse is clicked and sees if it is contained within this instance of the circle.
 	double circleFormula = pow((abs(e.x())-x),2)+pow((abs(e.y())-y),2);
