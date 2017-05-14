@@ -22,8 +22,8 @@ SOURCES += main.cpp\
     Rectangle.cpp \
     shape.cpp \
     Square.cpp \
-    polyline.cpp \
-    line.cpp
+    line.cpp \
+    polyline.cpp
 
 HEADERS  += \
     loginscreen.h \
@@ -32,13 +32,13 @@ HEADERS  += \
     canvas.h \
     Circle.h \
     Ellipse.h \
-    Line.h \
     PolyGon.h \
-    PolyLine.h \
     Rectangle.h \
     shape.h \
     Square.h \
-    Vector.h
+    Vector.h \
+    Line.h \
+    PolyLine.h
 
 FORMS    += \
     loginscreen.ui \

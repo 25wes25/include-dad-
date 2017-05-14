@@ -68,7 +68,7 @@ protected slots:
     }
     void changeEllipseAxis(double xRin, double yRin)
     {
-        if(Ellipse *c = dynamic_cast<Ellipse*>(canvas->getCurrentShape()))
+        if(Ellipse *e = dynamic_cast<Ellipse*>(canvas->getCurrentShape()))
         {
             //c->
         }

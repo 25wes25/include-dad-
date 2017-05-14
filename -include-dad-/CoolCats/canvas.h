@@ -10,6 +10,7 @@
 #include <QPoint>
 #include "shape.h"
 #include <QMouseEvent>
+#include "PolyLine.h"
 using namespace std;
 
 
@@ -19,6 +20,7 @@ class Canvas :public QWidget
 private:
     Vector<Shape*> area;
     Shape* currentShape;
+    bool getPointInputs;
 public:
     Canvas(QWidget *parent=0);
     void addShape(Shape* add);

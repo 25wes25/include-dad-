@@ -67,9 +67,7 @@ class Shape
         virtual void move(int x , int y){x=-1;y=-1;}
         virtual void resize(double x){x=-1;}
         virtual void Draw(Canvas *paintArea){paintArea;}
-        virtual bool is_Left_Clicked(QPoint e){e;}
-        virtual void sayHi();
-
+        virtual bool is_Left_Clicked(QPoint e){return false;}
 };
 #endif //Shape End
 

@@ -104,37 +104,37 @@ void MainInterface::upDateCurrentShape()
 void MainInterface::on_ShapeTypeEdit_currentIndexChanged(int index)
 {
 
-    switch(index)
-    {
-    case 0:
-        //Line
-        Line *l = new Line();
-        canvas->setCurrentShape(l);
-        canvas->addShape(l);
-        emit PointInput();
-        break;
-    case 1:
-        PolyLine *l = new PolyLine();
-        canvas->setCurrentShape(l);
-        emit PointInput();
-        break;
-    case 2:
-        //PolyGon
-        break;
-    case 3:
-        //Circle
-        break;
-    case 4:
-        //Ellipse
-        break;
-    case 5:
-        //Square
-        break;
-    case 6:
-        //Rectangle
-        break;
-    case 7:
-        //Text
-        break;
-    }
+//    switch(index)
+//    {
+//    case 0:
+//        //Line
+//        Line *l = new Line();
+//        canvas->setCurrentShape(l);
+//        canvas->addShape(l);
+//        emit PointInput();
+//        break;
+//    case 1:
+//        PolyLine *l = new PolyLine();
+//        canvas->setCurrentShape(l);
+//        emit PointInput();
+//        break;
+//    case 2:
+//        //PolyGon
+//        break;
+//    case 3:
+//        //Circle
+//        break;
+//    case 4:
+//        //Ellipse
+//        break;
+//    case 5:
+//        //Square
+//        break;
+//    case 6:
+//        //Rectangle
+//        break;
+//    case 7:
+//        //Text
+//        break;
+//    }
 }

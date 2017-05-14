@@ -1,5 +1,5 @@
 #include "shape.h"
-
+#include "canvas.h"
 bool Shape::isRendered()
 {
     return isRender;

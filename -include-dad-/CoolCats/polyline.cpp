@@ -1,4 +1,10 @@
 #include "PolyLine.h"
+PolyLine::PolyLine():Line(){}
+
+PolyLine::~PolyLine()
+{
+    Line::Poly.clear();
+}
 
 void PolyLine::Draw(Canvas *drawArea)
 {
@@ -7,7 +13,7 @@ void PolyLine::Draw(Canvas *drawArea)
     painter.drawLines(Poly);
     painter.restore();
 }
-void PolyLine::push_new_point(QPoint &xy)
+void PolyLine::push_new_point(QPoint xy)
 {
     if(Poly.size()%2==0&&Poly.size()!=0)
     {

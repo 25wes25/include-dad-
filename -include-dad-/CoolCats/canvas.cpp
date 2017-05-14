@@ -3,6 +3,8 @@
 Canvas::Canvas(QWidget *parent)
     :QWidget(parent)
 {
+    getPointInputs = false;
+    currentShape = nullptr;
     setMinimumSize(1000,500);
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
@@ -60,7 +62,7 @@ void Canvas::mouseMoveEvent(QMouseEvent *event)
        event->y()>0&&
        event->y()<this->height())
     {
-        if(!mousePointInput())
+        if(!getPointInputs)
         {
             for(i =area.size()-1;i >=0&&!found;i--)
             {
@@ -76,7 +78,10 @@ void Canvas::mouseMoveEvent(QMouseEvent *event)
         }
         else
         {
-            //constantly render the point that the line is on
+            if(Line *l = dynamic_cast<Line*>(currentShape))
+            {
+                l->moveLastPoint(event->pos());
+            }
         }
     }
     update();

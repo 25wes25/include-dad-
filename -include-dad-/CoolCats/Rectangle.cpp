@@ -1,4 +1,5 @@
 #include "Rectangle.h"
+#include "canvas.h"
 #include <QPainter>
 Rectangle::Rectangle():x{25},y{25},width{10},length{10},Shape(){}
 		
