@@ -39,6 +39,7 @@ public:
     // Accessors
     QString GetShapeType(); // Returns a string based of the type of shape
     QString GetShapePerimeterArea(bool choice); // 0 returns Area, 1 returns Perimeter
+    bool HasPerimeterArea(const Shape& shape); // Returns false if shape does not have Area and Perimeter
 
 private:
     Ui::MainInterface *ui;
@@ -48,16 +49,17 @@ private:
     Testimonials testimonialsWindow;
     Contact contactWindow;
 
+
     // Private Helper Functions
-    void OutputToTable(); // Outputs vector's contents, called after sorts
+    void OutputToTable(); // Outputs vector's contents, called after sorts.
     // Extra Credit, compares two shapes area or perimeter based off passed bool.
     bool CompareShapeAreaPerimeter(QString LhsID, QString RhsID, bool choice); // 0 for Area, 1 for Perimeter.
     void CustomSort(); // Extra Credit, sorts by something idk
 
     // Constant Integers
     const int SHAPE_TABLE_COL_SIZE = 11; // Total collumns for tableWidget
-    const int AREA = 0; // Area bool used for GetShapePerimeterArea(bool choice)
-    const int PERIMETER = 1; // Area bool used for GetShapePerimeterArea(bool choice)
+    const bool AREA = 0; // Area bool used for GetShapePerimeterArea(bool choice)
+    const bool PERIMETER = 1; // Area bool used for GetShapePerimeterArea(bool choice)
 
 
 protected slots:

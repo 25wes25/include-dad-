@@ -90,55 +90,55 @@ QString MainInterface::GetShapePerimeterArea(bool choice)
     {
         if(Circle* c= dynamic_cast<Circle*>(canvas->getCurrentShape()))
         {
-            if (choice == 0)
+            if (choice == AREA)
             {
-                //return QString::number(c->getArea());
+                return QString::number(c->getArea());
             }
-            else if (choice == 1)
+            else if (choice == PERIMETER)
             {
-                //return QString::number(c->getPerimeter());
+                return QString::number(c->getPerimeter());
             }
         }
         else if(Ellipse* e = dynamic_cast<Ellipse*>(canvas->getCurrentShape()))
         {
-            if (choice == 0)
+            if (choice == AREA)
             {
-                //return QString::number(e->getArea());
+                return QString::number(e->getArea());
             }
-            else if (choice == 1)
+            else if (choice == PERIMETER)
             {
-                //return QString::number(e->getPerimeter());
+                return QString::number(e->getPerimeter());
             }
         }
         else if(Square* s = dynamic_cast<Square*>(canvas->getCurrentShape()))
         {
-            if (choice == 0)
+            if (choice == AREA)
             {
                 return QString::number(s->getArea());
             }
-            else if (choice == 1)
+            else if (choice == PERIMETER)
             {
                 return QString::number(s->getPerimeter());
             }
         }
         else if(Rectangle* r = dynamic_cast<Rectangle*>(canvas->getCurrentShape()))
         {
-            if (choice == 0)
+            if (choice == AREA)
             {
                 return QString::number(r->getArea());
             }
-            else if (choice == 1)
+            else if (choice == PERIMETER)
             {
                 return QString::number(r->getPerimeter());
             }
         }
 //        else if(Polygon* pg = dynamic_cast<PolyGon*>(canvas->getCurrentShape()))
 //        {
-//            if (choice == 0)
+//            if (choice == AREA)
 //            {
 //                return QString::number(pg->getArea());
 //            }
-//            else if (choice == 1)
+//            else if (choice == PERIMETER)
 //            {
 //                return QString::number(pg->getPerimeter());
 //            }
@@ -148,6 +148,24 @@ QString MainInterface::GetShapePerimeterArea(bool choice)
             return "";
         }
     }
+}
+
+bool MainInterface::HasPerimeterArea(const Shape& shape)
+{
+    bool valid = true;
+//    if(Line* l = dynamic_cast<Line*>(shape))
+//    {
+//        valid = false;
+//    }
+//    else if(PolyLine* pl = dynamic_cast<PolyLine*>(shape))
+//    {
+//        valid = false;
+//    }
+//    else if(Text* t = dynamic_cast<Text*>(shape))
+//    {
+//        valid = false;
+//    }
+    return valid;
 }
 
 void MainInterface::saveFile()
@@ -331,17 +349,109 @@ void MainInterface::OutputToTable()
 void MainInterface::on_button_SortID_clicked()
 {
     // Sort by ID
+    /*
+    for(int x=0; x<canvas->getShapeNum(); x++)
+    {
+        for(int y=0; y<canvas->getShapeNum()-1; y++)
+        {
+            if(Canvas[y]->GetID() > Canvas[y+1]->GetID())
+            {
+                Shape* temp = Canvas[y+1];
+                Canvas[y+1] = Canvas[y];
+                Canvas[y] = temp;
+            }
+        }
+    }
+    */
     //OutputToTable();
 }
 
 void MainInterface::on_button_SortArea_clicked()
 {
+    bool valid = false;
     // Sort by Area
+    /*
+    for(int x=0; x<canvas->getShapeNum(); x++)
+    {
+        for(int y=0; y<canvas->getShapeNum()-1; y++)
+        {
+            if (HasPerimeterArea(Canvas[y]) == true && HasPerimeterArea(Canvas[y+1]) == true)
+            {
+                if(Canvas[y]->getArea() > Canvas[y+1]->getArea())
+                {
+                    Shape* temp = Canvas[y+1];
+                    Canvas[y+1] = Canvas[y];
+                    Canvas[y] = temp;
+                }
+            }
+            else if (HasPerimeterArea(Canvas[y]) == true && HasPerimeterArea(Canvas[y+1]) == false)
+            {
+                int i = y+1;
+                while(valid == false && i < canvas->getShapeNum()-1)
+                {
+                    i++;
+                    if (HasPerimeterArea(Canvas[i]) == true)
+                    {
+                        valid = true;
+                    }
+                }
+                if (valid == true)
+                {
+                    if(Canvas[y]->getArea() > Canvas[y+1]->getArea())
+                    {
+                        Shape* temp = Canvas[i];
+                        Canvas[i] = Canvas[y];
+                        Canvas[y] = temp;
+                    }
+                }
+            }
+        }
+    }
+    */
     //OutputToTable();
 }
 
 void MainInterface::on_button_SortPerimeter_clicked()
 {
+    bool valid = false;
     // Sort by Perimeter
+    /*
+    for(int x=0; x<canvas->getShapeNum(); x++)
+    {
+        for(int y=0; y<canvas->getShapeNum()-1; y++)
+        {
+            if (HasPerimeterArea(Canvas[y]) == true && HasPerimeterArea(Canvas[y+1]) == true)
+            {
+                if(Canvas[y]->getPerimeter() > Canvas[y+1]->getPerimeter())
+                {
+                    Shape* temp = Canvas[y+1];
+                    Canvas[y+1] = Canvas[y];
+                    Canvas[y] = temp;
+                }
+            }
+            else if (HasPerimeterArea(Canvas[y]) == true && HasPerimeterArea(Canvas[y+1]) == false)
+            {
+                int i = y+1;
+                while(valid == false && i < canvas->getShapeNum()-1)
+                {
+                    i++;
+                    if (HasPerimeterArea(Canvas[i]) == true)
+                    {
+                        valid = true;
+                    }
+                }
+                if (valid == true)
+                {
+                    if(Canvas[y]->getPerimeter() > Canvas[y+1]->getPerimeter())
+                    {
+                        Shape* temp = Canvas[i];
+                        Canvas[i] = Canvas[y];
+                        Canvas[y] = temp;
+                    }
+                }
+            }
+        }
+    }
+    */
     //OutputToTable();
 }

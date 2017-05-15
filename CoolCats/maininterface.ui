@@ -36,7 +36,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="Tabs">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Canvas">
        <property name="sizePolicy">
@@ -720,44 +720,38 @@
          </property>
         </column>
        </widget>
-       <widget class="QPushButton" name="button_SortID">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>1120</x>
-          <y>70</y>
-          <width>71</width>
-          <height>21</height>
+          <y>10</y>
+          <width>94</width>
+          <height>83</height>
          </rect>
         </property>
-        <property name="text">
-         <string>Sort by ID</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="button_SortArea">
-        <property name="geometry">
-         <rect>
-          <x>1120</x>
-          <y>100</y>
-          <width>80</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Sort by Area</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="button_SortPerimeter">
-        <property name="geometry">
-         <rect>
-          <x>1120</x>
-          <y>130</y>
-          <width>101</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Sort by Perimeter</string>
-        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QPushButton" name="button_SortPerimeter">
+           <property name="text">
+            <string>Sort by Perimeter</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="button_SortArea">
+           <property name="text">
+            <string>Sort by Area</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="button_SortID">
+           <property name="text">
+            <string>Sort by ID</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </widget>
      </widget>
@@ -770,7 +764,7 @@
      <x>0</x>
      <y>0</y>
      <width>1300</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

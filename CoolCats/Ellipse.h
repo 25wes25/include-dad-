@@ -3,6 +3,7 @@
 #include "Shape.h"
 #include "canvas.h"
 #include <QDebug>
+#include <cmath>
 class Ellipse:public Shape
 {	
     public:
@@ -12,13 +13,15 @@ class Ellipse:public Shape
     Ellipse(Ellipse &&copy);
     ~Ellipse();
 
-        // Mutators
+    // Mutators
     virtual void move(int xDes, int yDes);
     virtual void move(QPoint xy);
     virtual void Resize(double radiusIn);
-
     virtual void Draw(Canvas *drawArea);
-	//accessors
+
+    // Accessors
+    double getArea(){return pi*xRadius*yRadius;}
+    double getPerimeter(){return 2*pi*sqrt((pow(xRadius,2)+pow(yRadius,2))/2);}
     virtual bool is_Left_Clicked(QPoint xy);
     virtual void sayHi() {qDebug() << "Hello good sir " << x << ' ' << y;}
 
@@ -28,6 +31,7 @@ class Ellipse:public Shape
     int y;
     double xRadius;
     double yRadius;
+    const double pi = 3.14159265359; // PI constant used to calculate Area and Perimeter
 	
 };
 #endif
