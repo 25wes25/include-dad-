@@ -36,7 +36,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="Tabs">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="Canvas">
        <property name="sizePolicy">
@@ -660,9 +660,103 @@
          <rect>
           <x>10</x>
           <y>10</y>
-          <width>931</width>
+          <width>1101</width>
           <height>581</height>
          </rect>
+        </property>
+        <column>
+         <property name="text">
+          <string>Shape ID</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Type</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Area</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Perimeter</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Pen Color</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Pen Width</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Pen Style</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Pen Cap Style</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Pen Join Style</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Brush Color</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Brush Style</string>
+         </property>
+        </column>
+       </widget>
+       <widget class="QPushButton" name="button_SortID">
+        <property name="geometry">
+         <rect>
+          <x>1120</x>
+          <y>70</y>
+          <width>71</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Sort by ID</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="button_SortArea">
+        <property name="geometry">
+         <rect>
+          <x>1120</x>
+          <y>100</y>
+          <width>80</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Sort by Area</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="button_SortPerimeter">
+        <property name="geometry">
+         <rect>
+          <x>1120</x>
+          <y>130</y>
+          <width>101</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Sort by Perimeter</string>
         </property>
        </widget>
       </widget>

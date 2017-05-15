@@ -63,13 +63,22 @@ class Shape
         Qt::PenStyle intToPenStyle(int index);
         bool isRendered();
         virtual ~Shape();
+
+        // Accessors
+        QString GetID();
+        QString GetPenColor();
+        QString GetPenWidth();
+        QString GetPenStyle();
+        QString GetPenCapStyle();
+        QString GetPenJoinStyle();
+        QString GetBrushColor();
+        QString GetBrushStyle();
+
         virtual void move(QPoint xy){xy = QPoint(0,0);}
         virtual void move(int x , int y){x=-1;y=-1;}
         virtual void resize(double x){x=-1;}
         virtual void Draw(Canvas *paintArea){paintArea;}
-        virtual bool is_Left_Clicked(QPoint e){e;}
-        virtual void sayHi();
-
+        virtual bool is_Left_Clicked(QPoint e){return false;}
 };
 #endif //Shape End
 

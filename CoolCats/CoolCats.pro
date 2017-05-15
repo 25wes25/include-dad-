@@ -22,9 +22,11 @@ SOURCES += main.cpp\
     Rectangle.cpp \
     shape.cpp \
     Square.cpp \
-    polyline.cpp \
     line.cpp \
-    maintenancenotes.cpp
+    polyline.cpp \
+    maintenancenotes.cpp \
+    testimonials.cpp \
+    contact.cpp
 
 HEADERS  += \
     loginscreen.h \
@@ -33,19 +35,23 @@ HEADERS  += \
     canvas.h \
     Circle.h \
     Ellipse.h \
-    Line.h \
     PolyGon.h \
-    PolyLine.h \
     Rectangle.h \
     shape.h \
     Square.h \
     Vector.h \
-    maintenancenotes.h
+    PolyLine.h \
+    line.h \
+    maintenancenotes.h \
+    testimonials.h \
+    contact.h
 
 FORMS    += \
     loginscreen.ui \
     maininterface.ui \
-    maintenancenotes.ui
+    maintenancenotes.ui \
+    testimonials.ui \
+    contact.ui
 
 DISTFILES +=
 

@@ -1,4 +1,10 @@
 #include "PolyLine.h"
+PolyLine::PolyLine():Line(){}
+
+PolyLine::~PolyLine()
+{
+    Line::Poly.clear();
+}
 
 void PolyLine::Draw(Canvas *drawArea)
 {
@@ -7,7 +13,7 @@ void PolyLine::Draw(Canvas *drawArea)
     painter.drawLines(Poly);
     painter.restore();
 }
-void PolyLine::push_new_point(QPoint &xy)
+void PolyLine::push_Back_point(QPoint xy)
 {
     if(Poly.size()%2==0&&Poly.size()!=0)
     {
@@ -18,4 +24,20 @@ void PolyLine::push_new_point(QPoint &xy)
     {
         Poly.push_back(xy);
     }
+}
+void PolyLine::push_Back_point(int x, int y)
+{
+    if(Poly.size()%2==0&&Poly.size()!=0)
+    {
+        Poly.push_back(Poly[Poly.size()-1]);
+        Poly.push_back(QPoint(x,y));
+    }
+    else
+    {
+        Poly.push_back(QPoint(x,y));
+    }
+}
+bool PolyLine::is_Left_Clicked(QPoint e)
+{
+    return true;
 }

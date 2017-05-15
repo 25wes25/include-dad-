@@ -1,14 +1,13 @@
 #ifndef MAINTENANCENOTES_H
 #define MAINTENANCENOTES_H
 
-#include <QMainWindow>
-#include "maininterface.h"
+#include <QDialog>
 
 namespace Ui {
 class MaintenanceNotes;
 }
 
-class MaintenanceNotes : public QMainWindow
+class MaintenanceNotes : public QDialog
 {
     Q_OBJECT
 

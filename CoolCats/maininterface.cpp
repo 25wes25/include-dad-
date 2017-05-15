@@ -9,6 +9,9 @@ MainInterface::MainInterface(QWidget *parent) :
 {
     ui->setupUi(this);
     connect(ui->actionMaintenance_Notes, SIGNAL(triggered(bool)), this, SLOT(MaintenanceNotesClicked()));
+    connect(ui->actionTestimonials, SIGNAL(triggered(bool)), this, SLOT(TestimonialsClicked()));
+    connect(ui->actionContact_Us, SIGNAL(triggered(bool)), this, SLOT(ContactClicked()));
+    connect(ui->actionExit, SIGNAL(triggered(bool)), this, SLOT(Exit()));
     ui->penWidthEdit->setMinimum(0);
     ui->penWidthEdit->setMaximum(125);
     ui->penWidthEdit->setSliderPosition(15);
@@ -40,6 +43,111 @@ void MainInterface::loadCanvas(QString filename)
 MainInterface::~MainInterface()
 {
     delete ui;
+}
+
+QString MainInterface::GetShapeType()
+{
+    if(canvas->getCurrentShape()!=nullptr)
+    {
+       if(Circle* c= dynamic_cast<Circle*>(canvas->getCurrentShape()))
+       {
+           return "Circle";
+       }
+       else if(Ellipse* e = dynamic_cast<Ellipse*>(canvas->getCurrentShape()))
+       {
+           return "Ellipse";
+       }
+       else if(Square* s = dynamic_cast<Square*>(canvas->getCurrentShape()))
+       {
+           return "Square";
+       }
+       else if(Rectangle* r = dynamic_cast<Rectangle*>(canvas->getCurrentShape()))
+       {
+           return "Rectangle";
+       }
+    // else if(Line* l = dynamic_cast<Line*>(canvas->getCurrentShape()))
+    // {
+    //     return "Line";
+    // }
+    // else if(PolyLine* pl = dynamic_cast<PolyLine*>(canvas->getCurrentShape()))
+    // {
+    //     return "PolyLine";
+    // }
+    // else if(Polygon* pg = dynamic_cast<PolyGon*>(canvas->getCurrentShape()))
+    // {
+    //     return "Polygon";
+    // }
+    // else if(Text* t = dynamic_cast<Text*>(canvas->getCurrentShape()))
+    // {
+    //     return "Text";
+    // }
+    }
+}
+
+QString MainInterface::GetShapePerimeterArea(bool choice)
+{
+    if(canvas->getCurrentShape()!=nullptr)
+    {
+        if(Circle* c= dynamic_cast<Circle*>(canvas->getCurrentShape()))
+        {
+            if (choice == 0)
+            {
+                //return QString::number(c->getArea());
+            }
+            else if (choice == 1)
+            {
+                //return QString::number(c->getPerimeter());
+            }
+        }
+        else if(Ellipse* e = dynamic_cast<Ellipse*>(canvas->getCurrentShape()))
+        {
+            if (choice == 0)
+            {
+                //return QString::number(e->getArea());
+            }
+            else if (choice == 1)
+            {
+                //return QString::number(e->getPerimeter());
+            }
+        }
+        else if(Square* s = dynamic_cast<Square*>(canvas->getCurrentShape()))
+        {
+            if (choice == 0)
+            {
+                return QString::number(s->getArea());
+            }
+            else if (choice == 1)
+            {
+                return QString::number(s->getPerimeter());
+            }
+        }
+        else if(Rectangle* r = dynamic_cast<Rectangle*>(canvas->getCurrentShape()))
+        {
+            if (choice == 0)
+            {
+                return QString::number(r->getArea());
+            }
+            else if (choice == 1)
+            {
+                return QString::number(r->getPerimeter());
+            }
+        }
+//        else if(Polygon* pg = dynamic_cast<PolyGon*>(canvas->getCurrentShape()))
+//        {
+//            if (choice == 0)
+//            {
+//                return QString::number(pg->getArea());
+//            }
+//            else if (choice == 1)
+//            {
+//                return QString::number(pg->getPerimeter());
+//            }
+//        }
+        else
+        {
+            return "";
+        }
+    }
 }
 
 void MainInterface::saveFile()
@@ -90,7 +198,7 @@ void MainInterface::upDateCurrentShape()
     // {
     //     //output and create edit comboboxex and sliders based off of the pointer e
     // }
-    // else if(Polygon * pg = dynamic_cast<PolyGon*>(canvas->getCurrentShape()))
+    // else if(Polygon* pg = dynamic_cast<PolyGon*>(canvas->getCurrentShape()))
     // {
 
     // }
@@ -100,48 +208,140 @@ void MainInterface::upDateCurrentShape()
     // }
     }
 }
-
-void MainInterface::MaintenanceNotesClicked()
+void MainInterface::Exit()
 {
-    maintenance.show();
+    this->close();
 }
 
-/*
 void MainInterface::on_ShapeTypeEdit_currentIndexChanged(int index)
 {
 
-    switch(index)
+//    switch(index)
+//    {
+//    case 0:
+//        //Line
+//        Line *l = new Line();
+//        canvas->setCurrentShape(l);
+//        canvas->addShape(l);
+//        emit PointInput();
+//        break;
+//    case 1:
+//        PolyLine *l = new PolyLine();
+//        canvas->setCurrentShape(l);
+//        emit PointInput();
+//        break;
+//    case 2:
+//        //PolyGon
+//        break;
+//    case 3:
+//        //Circle
+//        break;
+//    case 4:
+//        //Ellipse
+//        break;
+//    case 5:
+//        //Square
+//        break;
+//    case 6:
+//        //Rectangle
+//        break;
+//    case 7:
+//        //Text
+//        break;
+//    }
+}
+
+void MainInterface::MaintenanceNotesClicked()
+{
+    maintenanceWindow.show();
+}
+
+void MainInterface::TestimonialsClicked()
+{
+    testimonialsWindow.show();
+}
+
+void MainInterface::ContactClicked()
+{
+    contactWindow.show();
+}
+/*
+void MainInterface::OutputToTable()
+{
+    ui->tableWidget->clearContents();
+    ui->tableWidget->setRowCount(0);
+    ui->tableWidget->setColumnCount(SHAPE_TABLE_COL_SIZE);
+    for (int row = 0; row < canvas->getShapeNum(); row++)
     {
-    case 0:
-        //Line
-        Line *l = new Line();
-        canvas->setCurrentShape(l);
-        canvas->addShape(l);
-        emit PointInput();
-        break;
-    case 1:
-        PolyLine *l = new PolyLine();
-        canvas->setCurrentShape(l);
-        emit PointInput();
-        break;
-    case 2:
-        //PolyGon
-        break;
-    case 3:
-        //Circle
-        break;
-    case 4:
-        //Ellipse
-        break;
-    case 5:
-        //Square
-        break;
-    case 6:
-        //Rectangle
-        break;
-    case 7:
-        //Text
-        break;
+        ui->tableWidget->insertRow(row);
+        for (int col = 0; col < SHAPE_TABLE_COL_SIZE; col++)
+        {
+            switch(col)
+            {
+                         // Creates and outputs QTableWidgetItem Shape ID
+                case 0 : ui->tableWidget->setItem(row,col,new QTableWidgetItem(
+                         canvas[row]->GetID()));
+                    break;
+                         // Creates and outputs QTableWidgetItem Type
+                case 1 : ui->tableWidget->setItem(row,col,new QTableWidgetItem(
+                         GetShapeType()));
+                    break;
+                        // Creates and outputs QTableWidgetItem Area
+                case 2 : ui->tableWidget->setItem(row,col,new QTableWidgetItem(
+                         GetShapePerimeterArea(AREA)));
+                   break;
+                         // Creates and outputs QTableWidgetItem Perimeter
+                case 3 : ui->tableWidget->setItem(row,col,new QTableWidgetItem(
+                         GetShapePerimeterArea(PERIMETER)));
+                    break;
+                         // Creates and outputs QTableWidgetItem Pen Color
+                case 4 : ui->tableWidget->setItem(row,col,new QTableWidgetItem(
+                         canvas[row]->GetPenColor()));
+                    break;
+                         // Creates and outputs QTableWidgetItem Pen Width
+                case 5 : ui->tableWidget->setItem(row,col,new QTableWidgetItem(
+                         canvas[row]->GetPenWidth()));
+                    break;
+                         // Creates and outputs QTableWidgetItem Pen Style
+                case 6 : ui->tableWidget->setItem(row,col,new QTableWidgetItem(
+                         canvas[row]->GetPenStyle()));
+                    break;
+                         // Creates and outputs QTableWidgetItem Pen Cap Style
+                case 7 : ui->tableWidget->setItem(row,col,new QTableWidgetItem(
+                         canvas[row]->GetPenCapStyle()));
+                    break;
+                         // Creates and outputs QTableWidgetItem Pen Join Style
+                case 8 : ui->tableWidget->setItem(row,col,new QTableWidgetItem(
+                         canvas[row]->GetPenJoinStyle()));
+                    break;
+                         // Creates and outputs QTableWidgetItem Brush Color
+                case 9 : ui->tableWidget->setItem(row,col,new QTableWidgetItem(
+                         canvas[row]->GetBrushColor()));
+                    break;
+                         // Creates and outputs QTableWidgetItem Brush Style
+                case 10 : ui->tableWidget->setItem(row,col,new QTableWidgetItem(
+                          canvas[row]->GetBrushStyle()));
+                    break;
+            }
+        }
     }
 }
 */
+
+void MainInterface::on_button_SortID_clicked()
+{
+    // Sort by ID
+    //OutputToTable();
+}
+
+void MainInterface::on_button_SortArea_clicked()
+{
+    // Sort by Area
+    //OutputToTable();
+}
+
+void MainInterface::on_button_SortPerimeter_clicked()
+{
+    // Sort by Perimeter
+    //OutputToTable();
+}

@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include "maintenancenotes.h"
+#include "testimonials.h"
+#include "contact.h"
 #include "canvas.h"
 #include "Circle.h"
 #include "Square.h"
@@ -33,11 +35,30 @@ public:
     void changeCurrentShape(Qt::PenCapStyle penCapIn);
     void changeCurrentShape(Qt::PenJoinStyle penJoinIn);
     void changeCurrentShape(Qt::PenStyle penStyleIn);
+
+    // Accessors
+    QString GetShapeType(); // Returns a string based of the type of shape
+    QString GetShapePerimeterArea(bool choice); // 0 returns Area, 1 returns Perimeter
+
 private:
     Ui::MainInterface *ui;
     Canvas *canvas;
     QString CurrentFileName;
-    MaintenanceNotes maintenance;
+    MaintenanceNotes maintenanceWindow;
+    Testimonials testimonialsWindow;
+    Contact contactWindow;
+
+    // Private Helper Functions
+    void OutputToTable(); // Outputs vector's contents, called after sorts
+    // Extra Credit, compares two shapes area or perimeter based off passed bool.
+    bool CompareShapeAreaPerimeter(QString LhsID, QString RhsID, bool choice); // 0 for Area, 1 for Perimeter.
+    void CustomSort(); // Extra Credit, sorts by something idk
+
+    // Constant Integers
+    const int SHAPE_TABLE_COL_SIZE = 11; // Total collumns for tableWidget
+    const int AREA = 0; // Area bool used for GetShapePerimeterArea(bool choice)
+    const int PERIMETER = 1; // Area bool used for GetShapePerimeterArea(bool choice)
+
 
 protected slots:
     //The following methods are situational based off of the
@@ -70,21 +91,27 @@ protected slots:
     }
     void changeEllipseAxis(double xRin, double yRin)
     {
-        if(Ellipse *c = dynamic_cast<Ellipse*>(canvas->getCurrentShape()))
+        if(Ellipse *e = dynamic_cast<Ellipse*>(canvas->getCurrentShape()))
         {
             //c->
         }
     }
 signals:
     void PointInput();
-public slots:
+private slots:
     void saveFile();
     void upDateCurrentShape();
-
-    void MaintenanceNotesClicked();
-
+    void Exit();
 
     void on_ShapeTypeEdit_currentIndexChanged(int index);
+
+    void MaintenanceNotesClicked();
+    void TestimonialsClicked();
+    void ContactClicked();
+
+    void on_button_SortID_clicked();
+    void on_button_SortArea_clicked();
+    void on_button_SortPerimeter_clicked();
 };
 
 #endif // MAININTERFACE_H

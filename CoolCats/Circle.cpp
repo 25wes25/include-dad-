@@ -12,8 +12,7 @@ Circle::Circle(Circle && copy)
     this->y = copy.y;
     this->xRadius = copy.xRadius;
     this->yRadius = copy.yRadius;
-}
-
+}		
 Circle::~Circle()
 {
 	x=0;
@@ -38,13 +37,11 @@ void Circle::Resize(double radiusIn)
     xRadius = radiusIn;
     yRadius = radiusIn;
 
-}
-
+}		
 void Circle::Draw(Canvas *drawArea)
 {
     Ellipse::Draw(drawArea);
 }
-
 bool Circle::is_Left_Clicked(QPoint e)
 {
 	//get the point at which the mouse is clicked and sees if it is contained within this instance of the circle.

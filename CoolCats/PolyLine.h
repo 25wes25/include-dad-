@@ -3,14 +3,14 @@
 
 #include "Line.h"
 
-
-class PolyLine:public Line
+class PolyLine: public Line
 {
 	public:
-        PolyLine():Line(){}
+        PolyLine();
         ~PolyLine();
-        void push_new_point(QPoint &xy);
-        void Draw(Canvas *drawArea);
-        bool is_Left_Clicked(QPoint &e);
+        virtual void push_Back_point(QPoint xy);
+        virtual void push_Back_point(int x, int y);
+        virtual void Draw(Canvas *drawArea);
+        virtual bool is_Left_Clicked(QPoint e);
 };
 #endif
