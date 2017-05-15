@@ -99,6 +99,19 @@
                 <number>30</number>
                </property>
                <item>
+                <widget class="QLabel" name="ShapeTypeLabel">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>TextLabel</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
                 <widget class="QLabel" name="shapeIdLabel">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -239,6 +252,50 @@
                <property name="bottomMargin">
                 <number>30</number>
                </property>
+               <item>
+                <widget class="QComboBox" name="ShapeTypeEdit">
+                 <item>
+                  <property name="text">
+                   <string>Line</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>PolyLine</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>PolyGon</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Circle</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Ellipse</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Square</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Rectangle</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Text</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
                <item>
                 <widget class="QLineEdit" name="shapeIdEdit">
                  <property name="sizePolicy">
@@ -603,10 +660,98 @@
          <rect>
           <x>10</x>
           <y>10</y>
-          <width>931</width>
+          <width>1101</width>
           <height>581</height>
          </rect>
         </property>
+        <column>
+         <property name="text">
+          <string>Shape ID</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Type</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Area</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Perimeter</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Pen Color</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Pen Width</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Pen Style</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Pen Cap Style</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Pen Join Style</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Brush Color</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Brush Style</string>
+         </property>
+        </column>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>1120</x>
+          <y>10</y>
+          <width>94</width>
+          <height>83</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QPushButton" name="button_SortID">
+           <property name="text">
+            <string>Sort by ID</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="button_SortArea">
+           <property name="text">
+            <string>Sort by Area</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="button_SortPerimeter">
+           <property name="text">
+            <string>Sort by Perimeter</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </widget>
      </widget>
@@ -646,9 +791,16 @@
     <addaction name="actionTestimonials"/>
     <addaction name="actionContact_Us"/>
    </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionHelp"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuAbout"/>
+   <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionMaintenance_Notes">
@@ -702,6 +854,11 @@
   <action name="actionLoad">
    <property name="text">
     <string>Load</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Help</string>
    </property>
   </action>
  </widget>

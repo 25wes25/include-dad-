@@ -21,7 +21,13 @@ SOURCES += main.cpp\
     Ellipse.cpp \
     Rectangle.cpp \
     shape.cpp \
-    Square.cpp
+    Square.cpp \
+    line.cpp \
+    polyline.cpp \
+    maintenancenotes.cpp \
+    testimonials.cpp \
+    contact.cpp \
+    help.cpp
 
 HEADERS  += \
     loginscreen.h \
@@ -30,17 +36,25 @@ HEADERS  += \
     canvas.h \
     Circle.h \
     Ellipse.h \
-    Line.h \
     PolyGon.h \
-    PolyLine.h \
     Rectangle.h \
     shape.h \
     Square.h \
-    Vector.h
+    Vector.h \
+    PolyLine.h \
+    line.h \
+    maintenancenotes.h \
+    testimonials.h \
+    contact.h \
+    help.h
 
 FORMS    += \
     loginscreen.ui \
-    maininterface.ui
+    maininterface.ui \
+    maintenancenotes.ui \
+    testimonials.ui \
+    contact.ui \
+    help.ui
 
 DISTFILES +=
 
