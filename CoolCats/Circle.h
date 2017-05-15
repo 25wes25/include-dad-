@@ -12,6 +12,11 @@ class Circle:public Ellipse
 		Circle(Circle &copy);
 		Circle(Circle &&copy);
 		~Circle();
+
+        // Accessors
+        double getArea(){return pi*xRadius*xRadius;}
+        double getPerimeter(){return 2*pi*xRadius;}
+
         virtual void move(int xDes, int yDes);
         virtual void move(QPoint xy);
         virtual void Resize(double radiusIn);

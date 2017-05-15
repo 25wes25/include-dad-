@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'loginscreen.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.9.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -152,12 +152,12 @@ public:
 
     void retranslateUi(QMainWindow *LoginScreen)
     {
-        LoginScreen->setWindowTitle(QApplication::translate("LoginScreen", "BS Paint", 0));
+        LoginScreen->setWindowTitle(QApplication::translate("LoginScreen", "BS Paint", Q_NULLPTR));
         Logo->setText(QString());
-        name_Label->setText(QApplication::translate("LoginScreen", "UserName:", 0));
-        pass_Label->setText(QApplication::translate("LoginScreen", "Password:", 0));
-        pushButton->setText(QApplication::translate("LoginScreen", "Create User", 0));
-        loginButton->setText(QApplication::translate("LoginScreen", "Login", 0));
+        name_Label->setText(QApplication::translate("LoginScreen", "UserName:", Q_NULLPTR));
+        pass_Label->setText(QApplication::translate("LoginScreen", "Password:", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("LoginScreen", "Create User", Q_NULLPTR));
+        loginButton->setText(QApplication::translate("LoginScreen", "Login", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -1,56 +1,91 @@
 #include "canvas.h"
 #include <QDebug>
+#include "PolyLine.h"
 Canvas::Canvas(QWidget *parent)
     :QWidget(parent)
 {
+    getPointInputs = false;
+    currentShape = nullptr;
     setMinimumSize(1000,500);
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
-    //connect(this, SIGNAL(setShapeisClicked()),this,SLOT(isClicked()));
     //update();
 }
 void Canvas::mousePressEvent(QMouseEvent *event)
 {
     bool found=false;
-    //Change the bounds
-    for(int i = area.size()-1 ;i >=0&&!found;i--)
+    //Check to make sure mouse inputs are inside the plane
+    if(event->x()>0 &&
+       event->x()<this->width()&&
+       event->y()>0 &&
+       event->y() < this->height())
     {
-        qDebug() << event->pos();
-        found = area[i]->is_Left_Clicked(event->pos());
-        qDebug() << found;
-        if(found)
+        if(!mousePointInput())
         {
-            setCurrentShape(area[i]);
+            //parse the array
+            for(int i = area.size()-1 ;i >=0&&!found;i--)
+            {
+                //IF - if you are selecting a shape
+                qDebug() << event->pos();
+                found = area[i]->is_Left_Clicked(event->pos());
+                qDebug() << found;
+                if(found)
+                {
+                    setCurrentShape(area[i]);
+                }
+                else
+                {
+                    setCurrentShape(nullptr);
+
+                }
+            }
+            emit isClicked();
         }
+        //ELSE - you must be getting point inputs for the following classes
+        // line, polyline, polygon
         else
         {
-            setCurrentShape(nullptr);
+            //Note for later we do not need a polyLine class
+            //we just get an array of points and pass it into
+            //a regular line class that contains a counter to the number of points located in the array.
+            //ex. if(#of points > 2 then the shapetype is a polyline. else it a regular line)
+            //polygon must be handled here as well as it receives mouse input coordinate points
         }
     }
-    emit isClicked();
 
 }
 void Canvas::mouseMoveEvent(QMouseEvent *event)
 {
     bool found=false;
     int i =0;
-    for(i =0;i < area.size()&&!found;i++)
+    if(event->x()>0 &&
+       event->x()<this->width()&&
+       event->y()>0&&
+       event->y()<this->height())
     {
-        qDebug() << event->pos();
-        found = area[i]->is_Left_Clicked(event->pos());
-        qDebug() << found;
-
-        if(found)
+        if(!getPointInputs)
         {
-            area[i]->move(event->pos());
-            area[i]->sayHi();
+            for(i =area.size()-1;i >=0&&!found;i--)
+            {
+                qDebug() << event->pos();
+                found = area[i]->is_Left_Clicked(event->pos());
+                qDebug() << found;
+
+                if(found)
+                {
+                    area[i]->move(event->pos());
+                }
+            }
+        }
+        else
+        {
+            if(Line *l = dynamic_cast<Line*>(currentShape))
+            {
+                l->moveLastPoint(event->pos());
+            }
         }
     }
     update();
-
-
-
-
 }
 
 
@@ -86,5 +121,14 @@ void Canvas::clear()
     QPainter painter(this);
     painter.eraseRect(0,0,width()-1,height()-1);
 }
-
+int Canvas::getShapeNum() const
+{
+    return area.size();
+}
+/*
+Shape& Canvas::operator[](int x) const
+{
+    return area[x];
+}
+*/
 

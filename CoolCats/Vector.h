@@ -5,7 +5,6 @@
 #include <iomanip>
 #include <iostream>
 #include <algorithm> // std::copy
-#include "shape.h"
 
 using namespace std;
 
@@ -45,6 +44,7 @@ class Vector
         iterator end();
         const_iterator end() const;
         iterator insert(iterator p, const Type& val); 	// Insert a new element val before i
+
         iterator erase(iterator p);						// Remove element pointed to by i
 };
 
