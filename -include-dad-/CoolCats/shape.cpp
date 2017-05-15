@@ -16,6 +16,25 @@ Shape::Shape()
     brushColorEdit=Qt::GlobalColor(0);
     penStyleEdit=Qt::PenStyle(0);
 }
+Shape::Shape(    QString idIn,
+                 bool isRender,
+                 Qt::BrushStyle brushIn,
+                 Qt::GlobalColor pencolorIn,
+                 double width,
+                 Qt::PenCapStyle penCapIn,
+                 Qt::PenJoinStyle penJoinIn,
+                 Qt::GlobalColor brushColorIn,
+                 Qt::PenStyle penStyleIn)
+                 :id{idIn},
+                  isRender{true},
+                  brushStyle{brushIn},
+                  penColorEdit{pencolorIn},
+                  penWidthEdit{width},
+                  penCapEdit{penCapIn},
+                  PenJoinEdit{penJoinIn},
+                  brushColorEdit{brushColorIn},
+                  penStyleEdit{penStyleIn}{}
+
 
 Shape::~Shape()
 {

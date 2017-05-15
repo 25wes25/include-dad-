@@ -1,5 +1,6 @@
 #include "canvas.h"
 #include <QDebug>
+#include "PolyLine.h"
 Canvas::Canvas(QWidget *parent)
     :QWidget(parent)
 {

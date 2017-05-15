@@ -10,7 +10,7 @@
 #include <QPoint>
 #include "shape.h"
 #include <QMouseEvent>
-#include "PolyLine.h"
+
 using namespace std;
 
 

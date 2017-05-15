@@ -37,8 +37,8 @@ HEADERS  += \
     shape.h \
     Square.h \
     Vector.h \
-    Line.h \
-    PolyLine.h
+    PolyLine.h \
+    line.h
 
 FORMS    += \
     loginscreen.ui \
