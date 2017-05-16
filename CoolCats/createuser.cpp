@@ -1,6 +1,5 @@
 #include "createuser.h"
 #include "ui_createuser.h"
-//#include "loginscreen.h"
 #include "users.h"
 
 createUser::createUser(QWidget *parent) :
