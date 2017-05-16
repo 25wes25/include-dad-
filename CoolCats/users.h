@@ -29,7 +29,7 @@ public:
 
 private:
     //vector full of struct->accounts
-    Vector<singleUser> accVec;
+    QVector<singleUser> accVec;
 };
 
 #endif // USERS_H
