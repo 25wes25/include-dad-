@@ -32,9 +32,12 @@ status UserList::isUser(QString name, QString password)
     bool found = false;
     status userType;
     int i;
-    for (i = 0; i < accVec.size() && !found; i++)
+    for (i = 0; i < accVec.size()-1 && !found; i++)
     {
-        found = name == accVec[i].userName && password == accVec[i].password;
+        if(accVec[i].userName == name && accVec[i].password == password)
+        {
+            found = true;
+        }
     }
     if (found)
     {
