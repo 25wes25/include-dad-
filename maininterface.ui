@@ -561,9 +561,9 @@
         </property>
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
-          <widget class="QPushButton" name="button_SortPerimeter">
+          <widget class="QPushButton" name="button_SortID">
            <property name="text">
-            <string>Sort by Perimeter</string>
+            <string>Sort by ID</string>
            </property>
           </widget>
          </item>
@@ -575,9 +575,9 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="button_SortID">
+          <widget class="QPushButton" name="button_SortPerimeter">
            <property name="text">
-            <string>Sort by ID</string>
+            <string>Sort by Perimeter</string>
            </property>
           </widget>
          </item>

@@ -86,9 +86,9 @@ public:
     QTableWidget *tableWidget;
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
-    QPushButton *button_SortPerimeter;
-    QPushButton *button_SortArea;
     QPushButton *button_SortID;
+    QPushButton *button_SortArea;
+    QPushButton *button_SortPerimeter;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuEdit;
@@ -395,20 +395,20 @@ public:
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        button_SortPerimeter = new QPushButton(layoutWidget);
-        button_SortPerimeter->setObjectName(QStringLiteral("button_SortPerimeter"));
+        button_SortID = new QPushButton(layoutWidget);
+        button_SortID->setObjectName(QStringLiteral("button_SortID"));
 
-        verticalLayout->addWidget(button_SortPerimeter);
+        verticalLayout->addWidget(button_SortID);
 
         button_SortArea = new QPushButton(layoutWidget);
         button_SortArea->setObjectName(QStringLiteral("button_SortArea"));
 
         verticalLayout->addWidget(button_SortArea);
 
-        button_SortID = new QPushButton(layoutWidget);
-        button_SortID->setObjectName(QStringLiteral("button_SortID"));
+        button_SortPerimeter = new QPushButton(layoutWidget);
+        button_SortPerimeter->setObjectName(QStringLiteral("button_SortPerimeter"));
 
-        verticalLayout->addWidget(button_SortID);
+        verticalLayout->addWidget(button_SortPerimeter);
 
         Tabs->addTab(Table, QString());
 
@@ -519,9 +519,9 @@ public:
         ___qtablewidgetitem11->setText(QApplication::translate("MainInterface", "Brush Color", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem12 = tableWidget->horizontalHeaderItem(10);
         ___qtablewidgetitem12->setText(QApplication::translate("MainInterface", "Brush Style", Q_NULLPTR));
-        button_SortPerimeter->setText(QApplication::translate("MainInterface", "Sort by Perimeter", Q_NULLPTR));
-        button_SortArea->setText(QApplication::translate("MainInterface", "Sort by Area", Q_NULLPTR));
         button_SortID->setText(QApplication::translate("MainInterface", "Sort by ID", Q_NULLPTR));
+        button_SortArea->setText(QApplication::translate("MainInterface", "Sort by Area", Q_NULLPTR));
+        button_SortPerimeter->setText(QApplication::translate("MainInterface", "Sort by Perimeter", Q_NULLPTR));
         Tabs->setTabText(Tabs->indexOf(Table), QApplication::translate("MainInterface", "Table", Q_NULLPTR));
         menuFile->setTitle(QApplication::translate("MainInterface", "File", Q_NULLPTR));
         menuEdit->setTitle(QApplication::translate("MainInterface", "Edit", Q_NULLPTR));

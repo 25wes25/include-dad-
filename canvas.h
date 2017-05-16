@@ -31,7 +31,7 @@ public:
 
     void clear();
     void render();
-    operator[](int x) const;
+    Shape& operator[](int x);
 protected:
     void mousePressEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);

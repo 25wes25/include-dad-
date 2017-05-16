@@ -153,10 +153,9 @@ int Canvas::getShapeNum() const
 {
     return area.size();
 }
-/*
-Shape& Canvas::operator[](int x) const
+
+Shape& Canvas::operator[](int x)
 {
-    return area[x];
+    return *area[x];
 }
-*/
 

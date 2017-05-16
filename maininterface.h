@@ -133,6 +133,7 @@ private slots:
     void Exit();
 
     void on_ShapeTypeEdit_currentIndexChanged(int index);
+    void OnHorizontaAxisEllipseChanged();
 
     void MaintenanceNotesClicked();
     void TestimonialsClicked();

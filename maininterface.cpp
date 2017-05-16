@@ -74,8 +74,8 @@ MainInterface::MainInterface(QWidget *parent) :
     //INITIALIZE DYNAMIC LABELS
     tempLabel1 = new QLabel();
     tempLabel2 = new QLabel();
-    horizontalSlider = new QSlider();
-    verticalSlider = new QSlider();
+    horizontalSlider = new QSlider(Qt::Horizontal);
+    verticalSlider = new QSlider(Qt::Horizontal);
 
     horizontalSlider->setMinimum(0);
     horizontalSlider->setMaximum(500);
@@ -317,6 +317,11 @@ void MainInterface::CircleUISet()
     ui->brushStyleEdit->setEnabled(true);
 
 }
+void MainInterface::sliderMoved(int value)
+{
+    horizontalSlider->setSliderPosition(value);
+}
+
 void MainInterface::EllipseUISet()
 {
     RefreshUI();
@@ -328,10 +333,20 @@ void MainInterface::EllipseUISet()
 
     ui->InputLayout->addWidget(horizontalSlider,0,Qt::AlignRight);
     ui->InputLayout->addWidget(verticalSlider,0,Qt::AlignRight);
+    connect(horizontalSlider, SIGNAL(sliderMoved(int value)), this, SLOT(OnHorizontaAxisEllipseChanged()));
     ui->brushColorEdit->setEnabled(true);
     ui->brushStyleEdit->setEnabled(true);
 
+
 }
+void MainInterface::OnHorizontaAxisEllipseChanged()
+{
+    if (Ellipse* e = dynamic_cast<Ellipse*>(canvas->getCurrentShape()))
+    {
+        e->SetX(horizontalSlider->sliderPosition());
+    }
+}
+
 void MainInterface::SquareUISet()
 {
     RefreshUI();
@@ -380,8 +395,8 @@ void MainInterface::RefreshUI()
     delete horizontalSlider;
     tempLabel1 = new QLabel;
     tempLabel2 = new QLabel;
-    horizontalSlider = new QSlider;
-    verticalSlider = new QSlider;
+    horizontalSlider = new QSlider(Qt::Horizontal);
+    verticalSlider = new QSlider(Qt::Horizontal);
     horizontalSlider->setMinimum(0);
     horizontalSlider->setMaximum(500);
     horizontalSlider->setSliderPosition(100);
@@ -455,9 +470,9 @@ void MainInterface::HelpClicked()
 {
     helpWindow.show();
 }
-/*
 void MainInterface::OutputToTable()
 {
+    /*
     ui->tableWidget->clearContents();
     ui->tableWidget->setRowCount(0);
     ui->tableWidget->setColumnCount(SHAPE_TABLE_COL_SIZE);
@@ -515,10 +530,10 @@ void MainInterface::OutputToTable()
             }
         }
     }
+    */
 }
-*/
 
-void SortID()
+void MainInterface::SortID()
 {
     // Sort by ID
     /*
@@ -526,18 +541,18 @@ void SortID()
     {
         for(int y=0; y<canvas->getShapeNum()-1; y++)
         {
-            if(Canvas[y]->GetID() > Canvas[y+1]->GetID())
+            if(canvas[y]->GetID() > canvas[y+1]->GetID())
             {
-                Shape* temp = Canvas[y+1];
-                Canvas[y+1] = Canvas[y];
-                Canvas[y] = temp;
+                Shape* temp = canvas[y+1];
+                canvas[y+1] = canvas[y];
+                canvas[y] = temp;
             }
         }
     }
     */
 }
 
-void SortArea()
+void MainInterface::SortArea()
 {
     bool valid = false;
     // Sort by Area
@@ -581,7 +596,7 @@ void SortArea()
     */
 }
 
-void SortPerimeter()
+void MainInterface::SortPerimeter()
 {
     bool valid = false;
     // Sort by Perimeter
