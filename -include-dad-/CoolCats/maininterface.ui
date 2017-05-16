@@ -107,7 +107,7 @@
                   </sizepolicy>
                  </property>
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string>Add Shape:</string>
                  </property>
                 </widget>
                </item>
@@ -311,7 +311,7 @@
                   <string/>
                  </property>
                  <property name="maxLength">
-                  <number>3</number>
+                  <number>10</number>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -326,51 +326,6 @@
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
-                 <item>
-                  <property name="text">
-                   <string>Black</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>White</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Gray</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Red</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Blue</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Green</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Yellow</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Cyan</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Magenta</string>
-                  </property>
-                 </item>
                 </widget>
                </item>
                <item>
@@ -418,36 +373,6 @@
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
-                 <item>
-                  <property name="text">
-                   <string>No Pen</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Solid</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Dashed</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Dotted</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Dash-Dotted</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Dash-Dot-Dotted</string>
-                  </property>
-                 </item>
                 </widget>
                </item>
                <item>
@@ -458,21 +383,6 @@
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
-                 <item>
-                  <property name="text">
-                   <string>Flat</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Square</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Round</string>
-                  </property>
-                 </item>
                 </widget>
                </item>
                <item>
@@ -483,21 +393,6 @@
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
-                 <item>
-                  <property name="text">
-                   <string>Miter</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Bevel</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Round</string>
-                  </property>
-                 </item>
                 </widget>
                </item>
                <item>
@@ -508,51 +403,6 @@
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
-                 <item>
-                  <property name="text">
-                   <string>Black</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>White</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Gray</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Red</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Green</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Blue</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Yellow</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Cyan</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Magenta</string>
-                  </property>
-                 </item>
                 </widget>
                </item>
                <item>
@@ -563,26 +413,6 @@
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
-                 <item>
-                  <property name="text">
-                   <string>No Brush</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Solid</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Horizontal</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Vertical</string>
-                  </property>
-                 </item>
                 </widget>
                </item>
               </layout>
@@ -628,9 +458,9 @@
              </column>
             </widget>
             <widget class="QWidget" name="layoutWidget_4">
-             <layout class="QHBoxLayout" name="Adddelete_3">
+             <layout class="QHBoxLayout" name="Adddelete">
               <item>
-               <widget class="QPushButton" name="AddObject_4">
+               <widget class="QPushButton" name="AddObject">
                 <property name="text">
                  <string>Add</string>
                 </property>
@@ -660,10 +490,98 @@
          <rect>
           <x>10</x>
           <y>10</y>
-          <width>931</width>
+          <width>1101</width>
           <height>581</height>
          </rect>
         </property>
+        <column>
+         <property name="text">
+          <string>Shape ID</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Type</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Area</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Perimeter</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Pen Color</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Pen Width</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Pen Style</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Pen Cap Style</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Pen Join Style</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Brush Color</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Brush Style</string>
+         </property>
+        </column>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>1120</x>
+          <y>10</y>
+          <width>94</width>
+          <height>83</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QPushButton" name="button_SortPerimeter">
+           <property name="text">
+            <string>Sort by Perimeter</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="button_SortArea">
+           <property name="text">
+            <string>Sort by Area</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="button_SortID">
+           <property name="text">
+            <string>Sort by ID</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </widget>
      </widget>

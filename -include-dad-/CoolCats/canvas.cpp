@@ -1,6 +1,6 @@
 #include "canvas.h"
 #include <QDebug>
-#include "PolyLine.h"
+#include "PolyGon.h"
 Canvas::Canvas(QWidget *parent)
     :QWidget(parent)
 {
@@ -20,7 +20,12 @@ void Canvas::mousePressEvent(QMouseEvent *event)
        event->y()>0 &&
        event->y() < this->height())
     {
-        if(!mousePointInput())
+        if(event->button() == Qt::RightButton)
+        {
+            qDebug() << "stop getting mouse inputs(mouse)";
+            getPointInputs=false;
+        }
+        if(!getPointInputs)
         {
             //parse the array
             for(int i = area.size()-1 ;i >=0&&!found;i--)
@@ -36,8 +41,11 @@ void Canvas::mousePressEvent(QMouseEvent *event)
                 else
                 {
                     setCurrentShape(nullptr);
-
                 }
+            }
+            if(!found)
+            {
+                setCurrentShape(nullptr);
             }
             emit isClicked();
         }
@@ -45,14 +53,30 @@ void Canvas::mousePressEvent(QMouseEvent *event)
         // line, polyline, polygon
         else
         {
-            //Note for later we do not need a polyLine class
-            //we just get an array of points and pass it into
-            //a regular line class that contains a counter to the number of points located in the array.
-            //ex. if(#of points > 2 then the shapetype is a polyline. else it a regular line)
-            //polygon must be handled here as well as it receives mouse input coordinate points
+            if(Polygon* pg = dynamic_cast<Polygon*>(currentShape))
+            {
+                pg->push_Back_point(event->pos());
+
+            }
+            else if(PolyLine* pl = dynamic_cast<PolyLine*>(currentShape) )
+            {
+                pl->push_Back_point(event->pos());
+            }
+            else if(Line* l = dynamic_cast<Line*>(currentShape))
+            {
+                 if(l->getPointnum()<=1)
+                 {
+                    l->push_Back_point(event->pos());
+                 }
+                 if(l->getPointnum()>=2)
+                 {
+                     qDebug() << "stoping the mouse input";
+                     getPointInputs=false;
+                 }
+            }
         }
     }
-
+    update();
 }
 void Canvas::mouseMoveEvent(QMouseEvent *event)
 {
@@ -77,13 +101,6 @@ void Canvas::mouseMoveEvent(QMouseEvent *event)
                 }
             }
         }
-        else
-        {
-            if(Line *l = dynamic_cast<Line*>(currentShape))
-            {
-                l->moveLastPoint(event->pos());
-            }
-        }
     }
     update();
 }
@@ -91,7 +108,7 @@ void Canvas::mouseMoveEvent(QMouseEvent *event)
 
 void Canvas::paintEvent(QPaintEvent * /* event */)
 {
-    qDebug() << "Hello";
+    qDebug() << "PaintEvent";
     render();
     //this QPainter object draws the background
     QPainter painter(this);
@@ -101,15 +118,26 @@ void Canvas::paintEvent(QPaintEvent * /* event */)
     painter.drawRect(0,0,width()-1,height()-1);
     painter.restore();
 }
+void Canvas::keyPressEvent(QKeyEvent *key)
+{
+    if(Qt::Key(key->key())==Qt::Key_Return)
+    {
+        getPointInputs = false;
+    }
+    qDebug() << (key->text());
+    setMouseTracking(false);
+}
 void Canvas::addShape(Shape *add)
 {
     area.push_back(add);
+    update();
 }
 void Canvas::render()
 {
    clear();
    for(int i=0;i<area.size();i++)
    {
+       qDebug() <<area[i]->isRendered() << "Is the current shape rendering?";
        if(area[i]->isRendered())
        {
            area[i]->Draw(this);
@@ -121,5 +149,14 @@ void Canvas::clear()
     QPainter painter(this);
     painter.eraseRect(0,0,width()-1,height()-1);
 }
-
+int Canvas::getShapeNum() const
+{
+    return area.size();
+}
+/*
+Shape& Canvas::operator[](int x) const
+{
+    return area[x];
+}
+*/
 

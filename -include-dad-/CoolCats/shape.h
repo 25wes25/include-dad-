@@ -24,6 +24,7 @@ class Shape
         Qt::PenJoinStyle PenJoinEdit;
         Qt::GlobalColor brushColorEdit;
         Qt::PenStyle penStyleEdit;
+
     public:
         Shape();
         //constructor for hard coded data.
@@ -63,6 +64,18 @@ class Shape
         Qt::PenStyle intToPenStyle(int index);
         bool isRendered();
         virtual ~Shape();
+        void configurePainter(QPainter &p);
+        // Accessors
+        QString GetID();
+        QString GetPenColor();
+        QString GetPenWidth();
+        QString GetPenStyle();
+        QString GetPenCapStyle();
+        QString GetPenJoinStyle();
+        QString GetBrushColor();
+        QString GetBrushStyle();
+
+
         virtual void move(QPoint xy){xy = QPoint(0,0);}
         virtual void move(int x , int y){x=-1;y=-1;}
         virtual void resize(double x){x=-1;}

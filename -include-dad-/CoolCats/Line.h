@@ -5,13 +5,16 @@
 #include "Shape.h"
 #include "canvas.h"
 #include <QVector>
+#include <QPolygon>
 class Line: public Shape
 {
     protected:
-        QVector<QPoint> Poly;
+
+        QPolygon points;
+        int point_counter;
     public:
         Line();
-        Line(QVector<QPoint> e);
+        Line(QPolygon e);
         Line(  QString idIn,
                Qt::BrushStyle brushStyleIn,
                Qt::GlobalColor brushColorIn,
@@ -22,12 +25,21 @@ class Line: public Shape
                Qt::PenStyle penStyleIn,
                int x,
                int y);
-        virtual ~Line(){Poly.clear();}
+        Line(  QString idIn,
+               Qt::BrushStyle brushStyleIn,
+               Qt::GlobalColor brushColorIn,
+               double penWidthIn,
+               Qt::GlobalColor penColorIn,
+               Qt::PenCapStyle penCapIn,
+               Qt::PenJoinStyle penJoinIn,
+               Qt::PenStyle penStyleIn);
+        virtual ~Line(){}
         virtual void push_Back_point(QPoint e);
         virtual void push_Back_point(int x, int y);
-        void moveLastPoint(QPoint e);
+        virtual void moveLastPoint(QPoint e);
         virtual void Draw(Canvas *drawArea);
         virtual bool is_Left_Clicked(QPoint e);
+        int getPointnum(){return point_counter;}
 };
 #endif
 

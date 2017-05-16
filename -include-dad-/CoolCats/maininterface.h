@@ -2,6 +2,9 @@
 #define MAININTERFACE_H
 
 #include <QMainWindow>
+#include "maintenancenotes.h"
+#include "testimonials.h"
+#include "contact.h"
 #include "canvas.h"
 #include "Circle.h"
 #include "Square.h"
@@ -9,6 +12,8 @@
 #include "PolyLine.h"
 #include "PolyGon.h"
 #include <QMouseEvent>
+#include <QLabel>
+#include <QSlider>
 using namespace std;
 namespace Ui {
 class MainInterface;
@@ -32,10 +37,50 @@ public:
     void changeCurrentShape(Qt::PenCapStyle penCapIn);
     void changeCurrentShape(Qt::PenJoinStyle penJoinIn);
     void changeCurrentShape(Qt::PenStyle penStyleIn);
+
+    // Accessors
+    QString GetShapeType(); // Returns a string based of the type of shape
+    QString GetShapePerimeterArea(bool choice); // 0 returns Area, 1 returns Perimeter
+    bool HasPerimeterArea(const Shape& shape); // Returns false if shape does not have Area and Perimeter
+
 private:
+    //QWidget's shown on screen
     Ui::MainInterface *ui;
+    QLabel *tempLabel1;
+    QLabel *tempLabel2;
+    QSlider *horizontalSlider;
+    QSlider *verticalSlider;
     Canvas *canvas;
+
+    //data containsers
     QString CurrentFileName;
+    MaintenanceNotes maintenanceWindow;
+    //Other Windows to be opened.
+    Testimonials testimonialsWindow;
+    Contact contactWindow;
+
+
+    // Private Helper Functions
+    void OutputToTable(); // Outputs vector's contents, called after sorts.
+    // Extra Credit, compares two shapes area or perimeter based off passed bool.
+    bool CompareShapeAreaPerimeter(QString LhsID, QString RhsID, bool choice); // 0 for Area, 1 for Perimeter.
+    void CustomSort(); // Extra Credit, sorts by something idk
+
+    void CircleUISet();
+    void EllipseUISet();
+    void SquareUISet();
+    void RectangleUISet();
+    void LineUISet();
+    void PolyGonUISet();
+    void TextUISet();
+    void RefreshUI();
+
+
+    // Constant Integers
+    const int SHAPE_TABLE_COL_SIZE = 11; // Total collumns for tableWidget
+    const bool AREA = 0; // Area bool used for GetShapePerimeterArea(bool choice)
+    const bool PERIMETER = 1; // Area bool used for GetShapePerimeterArea(bool choice)
+
 
 protected slots:
     //The following methods are situational based off of the
@@ -73,14 +118,24 @@ protected slots:
             //c->
         }
     }
+
 signals:
     void PointInput();
 private slots:
     void saveFile();
     void upDateCurrentShape();
-
+    void Exit();
 
     void on_ShapeTypeEdit_currentIndexChanged(int index);
+
+    void MaintenanceNotesClicked();
+    void TestimonialsClicked();
+    void ContactClicked();
+
+    void on_button_SortID_clicked();
+    void on_button_SortArea_clicked();
+    void on_button_SortPerimeter_clicked();
+    void on_AddObject_clicked();
 };
 
 #endif // MAININTERFACE_H
