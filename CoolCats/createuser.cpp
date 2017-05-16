@@ -1,6 +1,6 @@
 #include "createuser.h"
 #include "ui_createuser.h"
-#include "loginscreen.h"
+//#include "loginscreen.h"
 #include "users.h"
 
 createUser::createUser(QWidget *parent) :
@@ -15,18 +15,29 @@ createUser::~createUser()
     delete ui;
 }
 
-void createUser::setList(UserList* object)
+bool createUser::isUser(QString name, QString password)
 {
-    accounts = object;
+    bool user = false;
+    if(accounts.isUser(name,password) != 0)
+    {
+        user = true;
+    }
+    return user;
+}
+
+void createUser::setList(UserList& object)
+{
+    //accounts = object;
+    object = accounts;
 }
 
 void createUser::on_pushButton_clicked()
 {
-    //close this window
+    ui->adminCode->clear();
+    ui->createNameEdit->clear();
+    ui->createPassEdit->clear();
     this->close();
-    //re-open the previous window
-    LoginScreen w;
-    w.show();
+
 }
 
 
@@ -35,7 +46,7 @@ void createUser::on_createButton_clicked()
     singleUser createUser;
     QString desiredUsername = ui->createNameEdit->text();
     //set the above variables to the input line edits
-    if(accounts->isNameTaken(desiredUsername) == false)
+    if(accounts.isNameTaken(desiredUsername) == false)
     {
         createUser.userName = ui->createNameEdit->text();
         createUser.password = ui->createPassEdit->text();
@@ -44,7 +55,7 @@ void createUser::on_createButton_clicked()
         {
             createUser.userStatus = GUEST;
             //adds the user as a Guest
-            accounts->addUser(createUser.userName,createUser.password,createUser.userStatus);
+            accounts.addUser(createUser.userName,createUser.password,createUser.userStatus);
             //set test to who added
             ui->ERRORADMINCODE->setText("Added "+createUser.userName+" as Guest");
         }
@@ -54,7 +65,7 @@ void createUser::on_createButton_clicked()
             {
                 createUser.userStatus = ADMIN;
                 //adds the user to the vector as an admin
-                accounts->addUser(createUser.userName,createUser.password,createUser.userStatus);
+                accounts.addUser(createUser.userName,createUser.password,createUser.userStatus);
                 //set test to who added
                 ui->ERRORADMINCODE->setText("Added "+createUser.userName+" as Admin");
             }

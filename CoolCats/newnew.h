@@ -2,7 +2,9 @@
 #define NEWNEW_H
 
 #include <QDialog>
-
+#include "users.h"
+#include "maininterface.h"
+#include "createuser.h"
 namespace Ui {
 class newnew;
 }
@@ -16,8 +18,17 @@ public:
     void startMovie(QMovie &gif);
     ~newnew();
 
+private slots:
+
+    void on_loginButton_clicked();
+
+    void on_createButton_clicked();
+
 private:
     Ui::newnew *ui;
+    MainInterface interface;
+    UserList userObject;
+    createUser createWindow;
 };
 
 #endif // NEWNEW_H

@@ -16,8 +16,8 @@ class createUser : public QDialog
 public:
     explicit createUser(QWidget *parent = 0);
     ~createUser();
-    bool isUser(string name, string password);
-    void setList(UserList* object);
+    bool isUser(QString name, QString password);
+    void setList(UserList& object);
 
 private slots:
     void on_pushButton_clicked();
@@ -28,7 +28,7 @@ private slots:
 
 private:
     Ui::createUser *ui;
-    UserList* accounts;
+    UserList accounts;
     QString adminGUID = "12345";
 };
 

@@ -25,12 +25,12 @@ class Ui_newnew
 {
 public:
     QLabel *label;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_2;
+    QLineEdit *nameEdit;
+    QLineEdit *passwordEdit;
     QLabel *label_2;
     QLabel *label_3;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *createButton;
+    QPushButton *loginButton;
     QPushButton *pushButton_3;
     QLabel *falling;
 
@@ -48,24 +48,24 @@ public:
         label->setFont(font);
         label->setPixmap(QPixmap(QString::fromUtf8(":/Images/2D Graphic Label.png")));
         label->setScaledContents(true);
-        lineEdit = new QLineEdit(newnew);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(60, 150, 461, 20));
-        lineEdit_2 = new QLineEdit(newnew);
-        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(60, 191, 461, 20));
+        nameEdit = new QLineEdit(newnew);
+        nameEdit->setObjectName(QStringLiteral("nameEdit"));
+        nameEdit->setGeometry(QRect(60, 150, 461, 20));
+        passwordEdit = new QLineEdit(newnew);
+        passwordEdit->setObjectName(QStringLiteral("passwordEdit"));
+        passwordEdit->setGeometry(QRect(60, 191, 461, 20));
         label_2 = new QLabel(newnew);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(60, 130, 101, 20));
         label_3 = new QLabel(newnew);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(60, 169, 151, 31));
-        pushButton = new QPushButton(newnew);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(440, 220, 75, 23));
-        pushButton_2 = new QPushButton(newnew);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(360, 220, 75, 23));
+        createButton = new QPushButton(newnew);
+        createButton->setObjectName(QStringLiteral("createButton"));
+        createButton->setGeometry(QRect(440, 220, 75, 23));
+        loginButton = new QPushButton(newnew);
+        loginButton->setObjectName(QStringLiteral("loginButton"));
+        loginButton->setGeometry(QRect(360, 220, 75, 23));
         pushButton_3 = new QPushButton(newnew);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setGeometry(QRect(510, 400, 75, 23));
@@ -77,16 +77,16 @@ public:
         falling->raise();
         label->raise();
         label_3->raise();
-        pushButton_2->raise();
-        lineEdit->raise();
+        loginButton->raise();
+        nameEdit->raise();
         pushButton_3->raise();
-        lineEdit_2->raise();
+        passwordEdit->raise();
         label_2->raise();
-        pushButton->raise();
+        createButton->raise();
 
         retranslateUi(newnew);
-        QObject::connect(lineEdit, SIGNAL(returnPressed()), pushButton_2, SLOT(click()));
-        QObject::connect(lineEdit_2, SIGNAL(returnPressed()), pushButton_2, SLOT(click()));
+        QObject::connect(nameEdit, SIGNAL(returnPressed()), loginButton, SLOT(click()));
+        QObject::connect(passwordEdit, SIGNAL(returnPressed()), loginButton, SLOT(click()));
 
         QMetaObject::connectSlotsByName(newnew);
     } // setupUi
@@ -97,8 +97,8 @@ public:
         label->setText(QString());
         label_2->setText(QApplication::translate("newnew", "Username:", Q_NULLPTR));
         label_3->setText(QApplication::translate("newnew", "Password:", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("newnew", "Create User", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("newnew", "Login", Q_NULLPTR));
+        createButton->setText(QApplication::translate("newnew", "Create User", Q_NULLPTR));
+        loginButton->setText(QApplication::translate("newnew", "Login", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("newnew", "Help!", Q_NULLPTR));
         falling->setText(QString());
     } // retranslateUi
