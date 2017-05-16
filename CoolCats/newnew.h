@@ -19,16 +19,23 @@ public:
     ~newnew();
 
 private slots:
+    void onUserSent(const singleUser &);
 
     void on_loginButton_clicked();
 
     void on_createButton_clicked();
+
+    void on_userswitch_toggled(bool checked);
+
+    void on_userCombo_currentIndexChanged(const QString &arg1);
 
 private:
     Ui::newnew *ui;
     MainInterface interface;
     UserList userObject;
     createUser createWindow;
+    //admin code to create an admin user
+    QString adminGUID = "12345";
 };
 
 #endif // NEWNEW_H
