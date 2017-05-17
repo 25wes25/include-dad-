@@ -28,6 +28,8 @@ class Ellipse:public Shape
     virtual void Draw(Canvas *drawArea);
 
     // Accessors
+    void SetX(double xIn);
+    void SetY(double yIn);
     double getArea(){return pi*xRadius*yRadius;}
     double getPerimeter(){return 2*pi*sqrt((pow(xRadius,2)+pow(yRadius,2))/2);}
     virtual bool is_Left_Clicked(QPoint xy);

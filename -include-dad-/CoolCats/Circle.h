@@ -4,9 +4,17 @@
 #define CIRCLE_H
 #include "Ellipse.h"
 #include "canvas.h"
+/**
+ * @brief The Circle class
+ *
+ *
+ *
+ *
+ */
 class Circle:public Ellipse
 {
 	public:
+
 		Circle();
 		Circle(int xIn, int yIn, double radiusIn);
         Circle(QString idIn,

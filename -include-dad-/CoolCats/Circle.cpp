@@ -6,6 +6,20 @@ Circle::Circle(int xIn, int yIn, double radiusIn): Ellipse(xIn,yIn,radiusIn,radi
 
 Circle::Circle(Circle &copy):Ellipse(copy.x,copy.y,copy.xRadius,copy.yRadius){}
 
+/**
+ * @brief Circle::Circle
+ *  A class that will render a circle based on the params. It will only render to
+ * the custom type canvas.
+ * @param idIn -  specifies the string that represents the object
+ * @param brushStyleIn -  specifies the style of the brush
+ * @param brushColorIn - specifies the brush's color
+ * @param penWidthIn -  specifies the width of the pen
+ * @param penColorIn - Specifies the Color of the pen
+ * @param penCapIn - Specifies how the end of the line will cap.
+ * @param penJoinIn - Specifies how the pen will join.
+ * @param penStyleIn -  The style of the pen.
+ * @param xR - The Radius of the circle goemetric object
+ */
 Circle::Circle(QString idIn,
                Qt::BrushStyle brushStyleIn,
                Qt::GlobalColor brushColorIn,
@@ -39,6 +53,11 @@ Circle::~Circle()
     yRadius=0;
 }
 	
+/**
+ * @brief Circle::move
+ * @param xDes
+ * @param yDes
+ */
 void Circle::move(int xDes, int yDes)
 {
 	x = xDes;
@@ -60,6 +79,11 @@ void Circle::Draw(Canvas *drawArea)
 {
     Ellipse::Draw(drawArea);
 }
+/**
+ * @brief Circle::is_Left_Clicked
+ * @param e
+ * @return
+ */
 bool Circle::is_Left_Clicked(QPoint e)
 {
 	//get the point at which the mouse is clicked and sees if it is contained within this instance of the circle.

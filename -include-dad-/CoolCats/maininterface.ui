@@ -561,9 +561,9 @@
         </property>
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
-          <widget class="QPushButton" name="button_SortPerimeter">
+          <widget class="QPushButton" name="button_SortID">
            <property name="text">
-            <string>Sort by Perimeter</string>
+            <string>Sort by ID</string>
            </property>
           </widget>
          </item>
@@ -575,9 +575,9 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="button_SortID">
+          <widget class="QPushButton" name="button_SortPerimeter">
            <property name="text">
-            <string>Sort by ID</string>
+            <string>Sort by Perimeter</string>
            </property>
           </widget>
          </item>
@@ -594,7 +594,7 @@
      <x>0</x>
      <y>0</y>
      <width>1300</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -621,9 +621,16 @@
     <addaction name="actionTestimonials"/>
     <addaction name="actionContact_Us"/>
    </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionHelp"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuAbout"/>
+   <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionMaintenance_Notes">
@@ -677,6 +684,11 @@
   <action name="actionLoad">
    <property name="text">
     <string>Load</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Help</string>
    </property>
   </action>
  </widget>

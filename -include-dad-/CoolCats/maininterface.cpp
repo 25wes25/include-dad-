@@ -16,6 +16,7 @@ MainInterface::MainInterface(QWidget *parent) :
     connect(ui->actionTestimonials, SIGNAL(triggered(bool)), this, SLOT(TestimonialsClicked()));
     connect(ui->actionContact_Us, SIGNAL(triggered(bool)), this, SLOT(ContactClicked()));
     connect(ui->actionExit, SIGNAL(triggered(bool)), this, SLOT(Exit()));
+	connect(ui->actionHelp, SIGNAL(triggered(bool)), this, SLOT(HelpClicked()));
     //END MENU BAR SIGNAL AND SLOT CONNECTIONS
 
     //INITIALIZE THE UI
@@ -73,8 +74,8 @@ MainInterface::MainInterface(QWidget *parent) :
     //INITIALIZE DYNAMIC LABELS
     tempLabel1 = new QLabel();
     tempLabel2 = new QLabel();
-    horizontalSlider = new QSlider();
-    verticalSlider = new QSlider();
+    horizontalSlider = new QSlider(Qt::Horizontal);
+    verticalSlider = new QSlider(Qt::Horizontal);
 
     horizontalSlider->setMinimum(0);
     horizontalSlider->setMaximum(500);
@@ -316,6 +317,11 @@ void MainInterface::CircleUISet()
     ui->brushStyleEdit->setEnabled(true);
 
 }
+//void MainInterface::sliderMoved(int value)
+//{
+//    horizontalSlider->setSliderPosition(value);
+//}
+
 void MainInterface::EllipseUISet()
 {
     RefreshUI();
@@ -327,10 +333,20 @@ void MainInterface::EllipseUISet()
 
     ui->InputLayout->addWidget(horizontalSlider,0,Qt::AlignRight);
     ui->InputLayout->addWidget(verticalSlider,0,Qt::AlignRight);
+    connect(horizontalSlider, SIGNAL(sliderMoved(int value)), this, SLOT(OnHorizontaAxisEllipseChanged()));
     ui->brushColorEdit->setEnabled(true);
     ui->brushStyleEdit->setEnabled(true);
 
+
 }
+void MainInterface::OnHorizontaAxisEllipseChanged()
+{
+    if (Ellipse* e = dynamic_cast<Ellipse*>(canvas->getCurrentShape()))
+    {
+        e->SetX(horizontalSlider->sliderPosition());
+    }
+}
+
 void MainInterface::SquareUISet()
 {
     RefreshUI();
@@ -379,8 +395,8 @@ void MainInterface::RefreshUI()
     delete horizontalSlider;
     tempLabel1 = new QLabel;
     tempLabel2 = new QLabel;
-    horizontalSlider = new QSlider;
-    verticalSlider = new QSlider;
+    horizontalSlider = new QSlider(Qt::Horizontal);
+    verticalSlider = new QSlider(Qt::Horizontal);
     horizontalSlider->setMinimum(0);
     horizontalSlider->setMaximum(500);
     horizontalSlider->setSliderPosition(100);
@@ -450,9 +466,13 @@ void MainInterface::ContactClicked()
 {
     contactWindow.show();
 }
-/*
+void MainInterface::HelpClicked()
+{
+    helpWindow.show();
+}
 void MainInterface::OutputToTable()
 {
+    /*
     ui->tableWidget->clearContents();
     ui->tableWidget->setRowCount(0);
     ui->tableWidget->setColumnCount(SHAPE_TABLE_COL_SIZE);
@@ -510,10 +530,10 @@ void MainInterface::OutputToTable()
             }
         }
     }
+    */
 }
-*/
 
-void MainInterface::on_button_SortID_clicked()
+void MainInterface::SortID()
 {
     // Sort by ID
     /*
@@ -521,19 +541,18 @@ void MainInterface::on_button_SortID_clicked()
     {
         for(int y=0; y<canvas->getShapeNum()-1; y++)
         {
-            if(Canvas[y]->GetID() > Canvas[y+1]->GetID())
+            if(canvas[y]->GetID() > canvas[y+1]->GetID())
             {
-                Shape* temp = Canvas[y+1];
-                Canvas[y+1] = Canvas[y];
-                Canvas[y] = temp;
+                Shape* temp = canvas[y+1];
+                canvas[y+1] = canvas[y];
+                canvas[y] = temp;
             }
         }
     }
     */
-    //OutputToTable();
 }
 
-void MainInterface::on_button_SortArea_clicked()
+void MainInterface::SortArea()
 {
     bool valid = false;
     // Sort by Area
@@ -575,10 +594,9 @@ void MainInterface::on_button_SortArea_clicked()
         }
     }
     */
-    //OutputToTable();
 }
 
-void MainInterface::on_button_SortPerimeter_clicked()
+void MainInterface::SortPerimeter()
 {
     bool valid = false;
     // Sort by Perimeter
@@ -620,6 +638,23 @@ void MainInterface::on_button_SortPerimeter_clicked()
         }
     }
     */
+}
+
+void MainInterface::on_button_SortID_clicked()
+{
+    //SortID();
+    //OutputToTable();
+}
+
+void MainInterface::on_button_SortArea_clicked()
+{
+    //SortArea();
+    //OutputToTable();
+}
+
+void MainInterface::on_button_SortPerimeter_clicked()
+{
+    //SortPerimeter();
     //OutputToTable();
 }
 

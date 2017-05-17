@@ -5,6 +5,7 @@
 #include "maintenancenotes.h"
 #include "testimonials.h"
 #include "contact.h"
+#include "help.h"
 #include "canvas.h"
 #include "Circle.h"
 #include "Square.h"
@@ -54,14 +55,19 @@ private:
 
     //data containsers
     QString CurrentFileName;
-    MaintenanceNotes maintenanceWindow;
     //Other Windows to be opened.
+	MaintenanceNotes maintenanceWindow;
     Testimonials testimonialsWindow;
     Contact contactWindow;
+	Help helpWindow;
 
 
     // Private Helper Functions
     void OutputToTable(); // Outputs vector's contents, called after sorts.
+	// Sorts
+    void SortID();
+    void SortArea();
+    void SortPerimeter();
     // Extra Credit, compares two shapes area or perimeter based off passed bool.
     bool CompareShapeAreaPerimeter(QString LhsID, QString RhsID, bool choice); // 0 for Area, 1 for Perimeter.
     void CustomSort(); // Extra Credit, sorts by something idk
@@ -127,10 +133,12 @@ private slots:
     void Exit();
 
     void on_ShapeTypeEdit_currentIndexChanged(int index);
+    void OnHorizontaAxisEllipseChanged();
 
     void MaintenanceNotesClicked();
     void TestimonialsClicked();
     void ContactClicked();
+	void HelpClicked();
 
     void on_button_SortID_clicked();
     void on_button_SortArea_clicked();

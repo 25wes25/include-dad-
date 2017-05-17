@@ -61,7 +61,16 @@ void Ellipse::Resize(double radiusIn)
     xRadius = radiusIn;
     yRadius = radiusIn;
 
-}		
+}
+void Ellipse::SetX(double xIn)
+{
+    xRadius = xIn;
+}
+void Ellipse::SetY(double yIn)
+{
+    yRadius = yIn;
+}
+
 void Ellipse::Draw(Canvas *drawArea)
 {
     QPainter painter(drawArea);

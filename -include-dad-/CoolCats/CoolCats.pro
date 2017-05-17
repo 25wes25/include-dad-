@@ -27,7 +27,9 @@ SOURCES += main.cpp\
     maintenancenotes.cpp \
     testimonials.cpp \
     contact.cpp \
-    Polygon.cpp
+    Polygon.cpp \
+    help.cpp \
+    newnew.cpp
 
 HEADERS  += \
     loginscreen.h \
@@ -45,14 +47,18 @@ HEADERS  += \
     line.h \
     maintenancenotes.h \
     testimonials.h \
-    contact.h
+    contact.h \
+    help.h \
+    newnew.h
 
 FORMS    += \
     loginscreen.ui \
     maininterface.ui \
     maintenancenotes.ui \
     testimonials.ui \
-    contact.ui
+    contact.ui \
+    help.ui \
+    newnew.ui
 
 DISTFILES +=
 
