@@ -1,0 +1,82 @@
+\hypertarget{class_vector}{}\section{Vector$<$ Type $>$ Class Template Reference}
+\label{class_vector}\index{Vector$<$ Type $>$@{Vector$<$ Type $>$}}
+
+
+The \hyperlink{class_vector}{Vector} class -\/ the templated vector class that is used mainly as a way to store all of the shape pointers that will be drawn on the canvas this was given to us in class; with little modification to some of the functions works very similar to the S\+TL vector.  
+
+
+
+
+{\ttfamily \#include $<$Vector.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_vector_a192547a2a73f8cfafc6bbf8bad4484bc}\label{class_vector_a192547a2a73f8cfafc6bbf8bad4484bc}} 
+using {\bfseries iterator} = Type $\ast$
+\item 
+\mbox{\Hypertarget{class_vector_ac26885176589bc18e98f69b6917aee51}\label{class_vector_ac26885176589bc18e98f69b6917aee51}} 
+using {\bfseries const\+\_\+iterator} = const Type $\ast$
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_vector_a8ca8eb892b0cd3f738434dff339d5d5d}\label{class_vector_a8ca8eb892b0cd3f738434dff339d5d5d}} 
+{\bfseries Vector} (int s)
+\item 
+\mbox{\Hypertarget{class_vector_a59fa44181957a5149face8088a516932}\label{class_vector_a59fa44181957a5149face8088a516932}} 
+{\bfseries Vector} (const \hyperlink{class_vector}{Vector}$<$ Type $>$ \&src)
+\item 
+\mbox{\Hypertarget{class_vector_a24626edee91fdf5f8ea79c20a127c77d}\label{class_vector_a24626edee91fdf5f8ea79c20a127c77d}} 
+void {\bfseries resize} (int newsize)
+\item 
+\mbox{\Hypertarget{class_vector_a4e0731a1b33a932943f57869acc622fd}\label{class_vector_a4e0731a1b33a932943f57869acc622fd}} 
+void {\bfseries push\+\_\+back} (Type element)
+\item 
+\mbox{\Hypertarget{class_vector_abb56dece0fc435cfeb4da8a469606e59}\label{class_vector_abb56dece0fc435cfeb4da8a469606e59}} 
+void {\bfseries reserve} (int newalloc)
+\item 
+\mbox{\Hypertarget{class_vector_aa2cd243dd27f6e21b4d240929fb96878}\label{class_vector_aa2cd243dd27f6e21b4d240929fb96878}} 
+int {\bfseries size} () const
+\item 
+\mbox{\Hypertarget{class_vector_ae0c31c5131b18b6e5a1e24c31fc38fca}\label{class_vector_ae0c31c5131b18b6e5a1e24c31fc38fca}} 
+int {\bfseries capacity} () const
+\item 
+\mbox{\Hypertarget{class_vector_a7e9dcb119d679a109ef0fe34d884451c}\label{class_vector_a7e9dcb119d679a109ef0fe34d884451c}} 
+\hyperlink{class_vector}{Vector}$<$ Type $>$ \& {\bfseries operator=} (const \hyperlink{class_vector}{Vector}$<$ Type $>$ \&src)
+\item 
+\mbox{\Hypertarget{class_vector_a1858c8faef5af17ad87eacede83ef0d8}\label{class_vector_a1858c8faef5af17ad87eacede83ef0d8}} 
+Type \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int n)
+\item 
+\mbox{\Hypertarget{class_vector_afcf679a0343376f9cc44e31b9d51338c}\label{class_vector_afcf679a0343376f9cc44e31b9d51338c}} 
+const Type \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int n) const
+\item 
+\mbox{\Hypertarget{class_vector_a679da56b02db310bbe560567749a38af}\label{class_vector_a679da56b02db310bbe560567749a38af}} 
+iterator {\bfseries begin} ()
+\item 
+\mbox{\Hypertarget{class_vector_a81f211393ac5acf7ea0a021d81456b60}\label{class_vector_a81f211393ac5acf7ea0a021d81456b60}} 
+const\+\_\+iterator {\bfseries begin} () const
+\item 
+\mbox{\Hypertarget{class_vector_ab4384e8d78cc67530edcff225becb88b}\label{class_vector_ab4384e8d78cc67530edcff225becb88b}} 
+iterator {\bfseries end} ()
+\item 
+\mbox{\Hypertarget{class_vector_a90af5eec59b6d5252dfb6139c43dcead}\label{class_vector_a90af5eec59b6d5252dfb6139c43dcead}} 
+const\+\_\+iterator {\bfseries end} () const
+\item 
+\mbox{\Hypertarget{class_vector_aec5c8c190b418825e31204d26a13b923}\label{class_vector_aec5c8c190b418825e31204d26a13b923}} 
+iterator {\bfseries insert} (iterator p, const Type \&val)
+\item 
+\mbox{\Hypertarget{class_vector_a77c26be8457ea5786f01da40e59c0404}\label{class_vector_a77c26be8457ea5786f01da40e59c0404}} 
+iterator {\bfseries erase} (iterator p)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Type$>$\newline
+class Vector$<$ Type $>$}
+
+The \hyperlink{class_vector}{Vector} class -\/ the templated vector class that is used mainly as a way to store all of the shape pointers that will be drawn on the canvas this was given to us in class; with little modification to some of the functions works very similar to the S\+TL vector. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Vector.\+h\end{DoxyCompactItemize}

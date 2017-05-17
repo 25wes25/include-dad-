@@ -1,0 +1,105 @@
+\hypertarget{class_polygon}{}\section{Polygon Class Reference}
+\label{class_polygon}\index{Polygon@{Polygon}}
+
+
+The \hyperlink{class_polygon}{Polygon} class -\/ derives form the Polyline class set to make polygon shapes.  
+
+
+
+
+{\ttfamily \#include $<$Poly\+Gon.\+h$>$}
+
+Inheritance diagram for Polygon\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_polygon}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_polygon_a500d5ae5db7a63abe140f6f050f5d626}\label{class_polygon_a500d5ae5db7a63abe140f6f050f5d626}} 
+{\bfseries Polygon} (Q\+String id\+In, Qt\+::\+Brush\+Style brush\+Style\+In, Qt\+::\+Global\+Color brush\+Color\+In, double pen\+Width\+In, Qt\+::\+Global\+Color pen\+Color\+In, Qt\+::\+Pen\+Cap\+Style pen\+Cap\+In, Qt\+::\+Pen\+Join\+Style pen\+Join\+In, Qt\+::\+Pen\+Style pen\+Style\+In)
+\item 
+virtual void \hyperlink{class_polygon_ad57f4b375c6858bfe34c095bfeb38d5a}{push\+\_\+\+Back\+\_\+point} (Q\+Point xy)
+\begin{DoxyCompactList}\small\item\em push\+\_\+\+Back\+\_\+point -\/ just like class\+::line we use the pushback virtual functions to obtain the mouse input coordinates on where to create the polyline \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_polygon_ac61aa8a55c4f57c8242af92e0f65aa0a}\label{class_polygon_ac61aa8a55c4f57c8242af92e0f65aa0a}} 
+virtual void {\bfseries push\+\_\+\+Back\+\_\+point} (int x, int y)
+\item 
+virtual void \hyperlink{class_polygon_a9271921d96331c203efcdb50e0ebd64c}{Draw} (\hyperlink{class_canvas}{Canvas} $\ast$draw\+Area)
+\begin{DoxyCompactList}\small\item\em Draw. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_polygon_ab17f2f8ae9489fba4030fbb4a99e7ea6}{is\+\_\+\+Left\+\_\+\+Clicked} (Q\+Point e)
+\begin{DoxyCompactList}\small\item\em is\+\_\+\+Left\+\_\+\+Clicked -\/ mouse input \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_polygon}{Polygon} class -\/ derives form the Polyline class set to make polygon shapes. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_polygon_a9271921d96331c203efcdb50e0ebd64c}\label{class_polygon_a9271921d96331c203efcdb50e0ebd64c}} 
+\index{Polygon@{Polygon}!Draw@{Draw}}
+\index{Draw@{Draw}!Polygon@{Polygon}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Polygon\+::\+Draw (\begin{DoxyParamCaption}\item[{\hyperlink{class_canvas}{Canvas} $\ast$}]{draw\+Area }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draw. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em draw\+Area} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_poly_line_ac42ca364849f33b899a929bf57163730}{Poly\+Line}.
+
+\mbox{\Hypertarget{class_polygon_ab17f2f8ae9489fba4030fbb4a99e7ea6}\label{class_polygon_ab17f2f8ae9489fba4030fbb4a99e7ea6}} 
+\index{Polygon@{Polygon}!is\+\_\+\+Left\+\_\+\+Clicked@{is\+\_\+\+Left\+\_\+\+Clicked}}
+\index{is\+\_\+\+Left\+\_\+\+Clicked@{is\+\_\+\+Left\+\_\+\+Clicked}!Polygon@{Polygon}}
+\subsubsection{\texorpdfstring{is\+\_\+\+Left\+\_\+\+Clicked()}{is\_Left\_Clicked()}}
+{\footnotesize\ttfamily bool Polygon\+::is\+\_\+\+Left\+\_\+\+Clicked (\begin{DoxyParamCaption}\item[{Q\+Point}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+is\+\_\+\+Left\+\_\+\+Clicked -\/ mouse input 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_poly_line_a349f5b14d3ab568ae6776a3d5fd6f956}{Poly\+Line}.
+
+\mbox{\Hypertarget{class_polygon_ad57f4b375c6858bfe34c095bfeb38d5a}\label{class_polygon_ad57f4b375c6858bfe34c095bfeb38d5a}} 
+\index{Polygon@{Polygon}!push\+\_\+\+Back\+\_\+point@{push\+\_\+\+Back\+\_\+point}}
+\index{push\+\_\+\+Back\+\_\+point@{push\+\_\+\+Back\+\_\+point}!Polygon@{Polygon}}
+\subsubsection{\texorpdfstring{push\+\_\+\+Back\+\_\+point()}{push\_Back\_point()}}
+{\footnotesize\ttfamily void Polygon\+::push\+\_\+\+Back\+\_\+point (\begin{DoxyParamCaption}\item[{Q\+Point}]{xy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+push\+\_\+\+Back\+\_\+point -\/ just like class\+::line we use the pushback virtual functions to obtain the mouse input coordinates on where to create the polyline 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xy} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_poly_line_afbc3a0e59abcd27bdb58027796e91c3a}{Poly\+Line}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Poly\+Gon.\+h\item 
+Polygon.\+cpp\end{DoxyCompactItemize}

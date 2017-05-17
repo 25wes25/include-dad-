@@ -1,0 +1,107 @@
+\hypertarget{class_square}{}\section{Square Class Reference}
+\label{class_square}\index{Square@{Square}}
+Inheritance diagram for Square\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_square}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_square_a5f961462240a582c0435860b84b49aa7}\label{class_square_a5f961462240a582c0435860b84b49aa7}} 
+{\bfseries Square} (int x, int y, double s)
+\item 
+\mbox{\Hypertarget{class_square_a467ac8214b403ae54eb70c632710e591}\label{class_square_a467ac8214b403ae54eb70c632710e591}} 
+{\bfseries Square} (Q\+String id\+In, Qt\+::\+Brush\+Style brush\+Style\+In, Qt\+::\+Global\+Color brush\+Color\+In, double pen\+Width\+In, Qt\+::\+Global\+Color pen\+Color\+In, Qt\+::\+Pen\+Cap\+Style pen\+Cap\+In, Qt\+::\+Pen\+Join\+Style pen\+Join\+In, Qt\+::\+Pen\+Style pen\+Style\+In, double xR)
+\item 
+\mbox{\Hypertarget{class_square_a47e8c3e52b0cee679b9d2e3b53ad4da6}\label{class_square_a47e8c3e52b0cee679b9d2e3b53ad4da6}} 
+{\bfseries Square} (\hyperlink{class_square}{Square} \&copy)
+\item 
+\mbox{\Hypertarget{class_square_aa18cd8139b5b19cf95852d4c0801705c}\label{class_square_aa18cd8139b5b19cf95852d4c0801705c}} 
+{\bfseries Square} (\hyperlink{class_square}{Square} \&\&copy)
+\item 
+\mbox{\Hypertarget{class_square_a5f6ea125b5218b4abd87b591d4d3a3b8}\label{class_square_a5f6ea125b5218b4abd87b591d4d3a3b8}} 
+void {\bfseries set\+Size} (double s)
+\item 
+\mbox{\Hypertarget{class_square_a81ac7c0d1056d92aa8e380948f58b76c}\label{class_square_a81ac7c0d1056d92aa8e380948f58b76c}} 
+virtual double {\bfseries get\+Area} ()
+\item 
+\mbox{\Hypertarget{class_square_a7f112541e11aca59b90fa866b3104718}\label{class_square_a7f112541e11aca59b90fa866b3104718}} 
+virtual double {\bfseries get\+Perimeter} ()
+\item 
+virtual void \hyperlink{class_square_a49d1e790212e18cb43d7647385cafa20}{move} (Q\+Point xy)
+\begin{DoxyCompactList}\small\item\em move -\/ handles moving the shape and recieves in mouse input \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_square_a30b97f9d3fbd7d226a887ac157b827a0}{Draw} (\hyperlink{class_canvas}{Canvas} $\ast$draw\+Area)
+\begin{DoxyCompactList}\small\item\em Draw -\/ draws the shape\+: virtual. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_square_aaf0989a3dba67b2502f3a306e0136e69}{is\+\_\+\+Left\+\_\+\+Clicked} (Q\+Point e)
+\begin{DoxyCompactList}\small\item\em is\+\_\+\+Left\+\_\+\+Clicked -\/ mouse input \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_square_a30b97f9d3fbd7d226a887ac157b827a0}\label{class_square_a30b97f9d3fbd7d226a887ac157b827a0}} 
+\index{Square@{Square}!Draw@{Draw}}
+\index{Draw@{Draw}!Square@{Square}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Square\+::\+Draw (\begin{DoxyParamCaption}\item[{\hyperlink{class_canvas}{Canvas} $\ast$}]{paint\+Area }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draw -\/ draws the shape\+: virtual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em paint\+Area} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_rectangle_afe989f9ae3ceffd9825b4f1492d764f3}{Rectangle}.
+
+\mbox{\Hypertarget{class_square_aaf0989a3dba67b2502f3a306e0136e69}\label{class_square_aaf0989a3dba67b2502f3a306e0136e69}} 
+\index{Square@{Square}!is\+\_\+\+Left\+\_\+\+Clicked@{is\+\_\+\+Left\+\_\+\+Clicked}}
+\index{is\+\_\+\+Left\+\_\+\+Clicked@{is\+\_\+\+Left\+\_\+\+Clicked}!Square@{Square}}
+\subsubsection{\texorpdfstring{is\+\_\+\+Left\+\_\+\+Clicked()}{is\_Left\_Clicked()}}
+{\footnotesize\ttfamily bool Square\+::is\+\_\+\+Left\+\_\+\+Clicked (\begin{DoxyParamCaption}\item[{Q\+Point}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+is\+\_\+\+Left\+\_\+\+Clicked -\/ mouse input 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_rectangle_ade126ee824e394b9c38d2e67a30d1a7d}{Rectangle}.
+
+\mbox{\Hypertarget{class_square_a49d1e790212e18cb43d7647385cafa20}\label{class_square_a49d1e790212e18cb43d7647385cafa20}} 
+\index{Square@{Square}!move@{move}}
+\index{move@{move}!Square@{Square}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Square\+::move (\begin{DoxyParamCaption}\item[{Q\+Point}]{xy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+move -\/ handles moving the shape and recieves in mouse input 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xy} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_rectangle_abeeafbc4d44bf241cf655e850f3ce3f3}{Rectangle}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Square.\+h\item 
+Square.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,181 @@
+\hypertarget{class_circle}{}\section{Circle Class Reference}
+\label{class_circle}\index{Circle@{Circle}}
+
+
+The \hyperlink{class_circle}{Circle} class.  
+
+
+
+
+{\ttfamily \#include $<$Circle.\+h$>$}
+
+Inheritance diagram for Circle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_circle}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_circle_ab672be11e6bca406b9c4f3feb4b4aad3}\label{class_circle_ab672be11e6bca406b9c4f3feb4b4aad3}} 
+{\bfseries Circle} (int x\+In, int y\+In, double radius\+In)
+\item 
+\hyperlink{class_circle_a4b41e38613114920686bbfea15ded361}{Circle} (Q\+String id\+In, Qt\+::\+Brush\+Style brush\+Style\+In, Qt\+::\+Global\+Color brush\+Color\+In, double pen\+Width\+In, Qt\+::\+Global\+Color pen\+Color\+In, Qt\+::\+Pen\+Cap\+Style pen\+Cap\+In, Qt\+::\+Pen\+Join\+Style pen\+Join\+In, Qt\+::\+Pen\+Style pen\+Style\+In, double xR)
+\begin{DoxyCompactList}\small\item\em Circle\+::\+Circle A class that will render a circle based on the params. It will only render to the custom type canvas. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_circle_a5df00ac5563cbef6e87faa7f2c2a446b}\label{class_circle_a5df00ac5563cbef6e87faa7f2c2a446b}} 
+{\bfseries Circle} (\hyperlink{class_circle}{Circle} \&copy)
+\item 
+\mbox{\Hypertarget{class_circle_a3e4cff49aa70b470ca6abb2923970d80}\label{class_circle_a3e4cff49aa70b470ca6abb2923970d80}} 
+{\bfseries Circle} (\hyperlink{class_circle}{Circle} \&\&copy)
+\item 
+\mbox{\Hypertarget{class_circle_a99fe1cbabbf3a9ccae51832376c5e8d4}\label{class_circle_a99fe1cbabbf3a9ccae51832376c5e8d4}} 
+double {\bfseries get\+Area} ()
+\item 
+\mbox{\Hypertarget{class_circle_afee5f4743c89e48e462e5f56aa605669}\label{class_circle_afee5f4743c89e48e462e5f56aa605669}} 
+double {\bfseries get\+Perimeter} ()
+\item 
+virtual void \hyperlink{class_circle_a6ed1a2d29c5dc49a2ae3051449576577}{move} (int x\+Des, int y\+Des)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_circle_a6ed1a2d29c5dc49a2ae3051449576577}{Circle\+::move}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_circle_a5f02de3ad7e992a689b9f9e88643076c}{move} (Q\+Point xy)
+\begin{DoxyCompactList}\small\item\em move -\/ handles moving the shape and recieves in mouse input \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_circle_a1d04f83b447f9e4a03cca186b929e083}\label{class_circle_a1d04f83b447f9e4a03cca186b929e083}} 
+virtual void {\bfseries Resize} (double radius\+In)
+\item 
+virtual void \hyperlink{class_circle_a5bebd94955572edce0ad10208a449772}{Draw} (\hyperlink{class_canvas}{Canvas} $\ast$area)
+\begin{DoxyCompactList}\small\item\em Draw -\/ draws the shape\+: virtual. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_circle_a1661bb4e324cce0196a6aa1195c26c73}{is\+\_\+\+Left\+\_\+\+Clicked} (Q\+Point e)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_circle_a1661bb4e324cce0196a6aa1195c26c73}{Circle\+::is\+\_\+\+Left\+\_\+\+Clicked}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_circle}{Circle} class. 
+
+
+\begin{DoxyItemize}
+\item derived from the ellipse class 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_circle_a4b41e38613114920686bbfea15ded361}\label{class_circle_a4b41e38613114920686bbfea15ded361}} 
+\index{Circle@{Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!Circle@{Circle}}
+\subsubsection{\texorpdfstring{Circle()}{Circle()}}
+{\footnotesize\ttfamily Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{Q\+String}]{id\+In,  }\item[{Qt\+::\+Brush\+Style}]{brush\+Style\+In,  }\item[{Qt\+::\+Global\+Color}]{brush\+Color\+In,  }\item[{double}]{pen\+Width\+In,  }\item[{Qt\+::\+Global\+Color}]{pen\+Color\+In,  }\item[{Qt\+::\+Pen\+Cap\+Style}]{pen\+Cap\+In,  }\item[{Qt\+::\+Pen\+Join\+Style}]{pen\+Join\+In,  }\item[{Qt\+::\+Pen\+Style}]{pen\+Style\+In,  }\item[{double}]{xR }\end{DoxyParamCaption})}
+
+
+
+Circle\+::\+Circle A class that will render a circle based on the params. It will only render to the custom type canvas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+In} & -\/ specifies the string that represents the object \\
+\hline
+{\em brush\+Style\+In} & -\/ specifies the style of the brush \\
+\hline
+{\em brush\+Color\+In} & -\/ specifies the brush\textquotesingle{}s color \\
+\hline
+{\em pen\+Width\+In} & -\/ specifies the width of the pen \\
+\hline
+{\em pen\+Color\+In} & -\/ Specifies the Color of the pen \\
+\hline
+{\em pen\+Cap\+In} & -\/ Specifies how the end of the line will cap. \\
+\hline
+{\em pen\+Join\+In} & -\/ Specifies how the pen will join. \\
+\hline
+{\em pen\+Style\+In} & -\/ The style of the pen. \\
+\hline
+{\em xR} & -\/ The Radius of the circle goemetric object \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_circle_a5bebd94955572edce0ad10208a449772}\label{class_circle_a5bebd94955572edce0ad10208a449772}} 
+\index{Circle@{Circle}!Draw@{Draw}}
+\index{Draw@{Draw}!Circle@{Circle}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Circle\+::\+Draw (\begin{DoxyParamCaption}\item[{\hyperlink{class_canvas}{Canvas} $\ast$}]{paint\+Area }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draw -\/ draws the shape\+: virtual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em paint\+Area} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_ellipse_aaf9524151dc799501327f72c75e0f010}{Ellipse}.
+
+\mbox{\Hypertarget{class_circle_a1661bb4e324cce0196a6aa1195c26c73}\label{class_circle_a1661bb4e324cce0196a6aa1195c26c73}} 
+\index{Circle@{Circle}!is\+\_\+\+Left\+\_\+\+Clicked@{is\+\_\+\+Left\+\_\+\+Clicked}}
+\index{is\+\_\+\+Left\+\_\+\+Clicked@{is\+\_\+\+Left\+\_\+\+Clicked}!Circle@{Circle}}
+\subsubsection{\texorpdfstring{is\+\_\+\+Left\+\_\+\+Clicked()}{is\_Left\_Clicked()}}
+{\footnotesize\ttfamily bool Circle\+::is\+\_\+\+Left\+\_\+\+Clicked (\begin{DoxyParamCaption}\item[{Q\+Point}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\hyperlink{class_circle_a1661bb4e324cce0196a6aa1195c26c73}{Circle\+::is\+\_\+\+Left\+\_\+\+Clicked}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_ellipse_ab3ba6c9f068fc37808778c74f1273f69}{Ellipse}.
+
+\mbox{\Hypertarget{class_circle_a6ed1a2d29c5dc49a2ae3051449576577}\label{class_circle_a6ed1a2d29c5dc49a2ae3051449576577}} 
+\index{Circle@{Circle}!move@{move}}
+\index{move@{move}!Circle@{Circle}}
+\subsubsection{\texorpdfstring{move()}{move()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Circle\+::move (\begin{DoxyParamCaption}\item[{int}]{x\+Des,  }\item[{int}]{y\+Des }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\hyperlink{class_circle_a6ed1a2d29c5dc49a2ae3051449576577}{Circle\+::move}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Des} & \\
+\hline
+{\em y\+Des} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_ellipse}{Ellipse}.
+
+\mbox{\Hypertarget{class_circle_a5f02de3ad7e992a689b9f9e88643076c}\label{class_circle_a5f02de3ad7e992a689b9f9e88643076c}} 
+\index{Circle@{Circle}!move@{move}}
+\index{move@{move}!Circle@{Circle}}
+\subsubsection{\texorpdfstring{move()}{move()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Circle\+::move (\begin{DoxyParamCaption}\item[{Q\+Point}]{xy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+move -\/ handles moving the shape and recieves in mouse input 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xy} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_ellipse_a8f5c5a4d8051009fee6d861f163c96dd}{Ellipse}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Circle.\+h\item 
+Circle.\+cpp\end{DoxyCompactItemize}

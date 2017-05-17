@@ -1,0 +1,133 @@
+\hypertarget{class_line}{}\section{Line Class Reference}
+\label{class_line}\index{Line@{Line}}
+
+
+The \hyperlink{class_line}{Line} class -\/ derived from the abstarct shape class\+: can manipulate all of the pen and brush styles and colors.  
+
+
+
+
+{\ttfamily \#include $<$Line.\+h$>$}
+
+Inheritance diagram for Line\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_line}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_line_abad71cdf25c42d0794814bbfb4a21db8}\label{class_line_abad71cdf25c42d0794814bbfb4a21db8}} 
+{\bfseries Line} (Q\+Polygon e)
+\item 
+\mbox{\Hypertarget{class_line_ae007adde85949ea26e74987d09a7c3e5}\label{class_line_ae007adde85949ea26e74987d09a7c3e5}} 
+{\bfseries Line} (Q\+String id\+In, Qt\+::\+Brush\+Style brush\+Style\+In, Qt\+::\+Global\+Color brush\+Color\+In, double pen\+Width\+In, Qt\+::\+Global\+Color pen\+Color\+In, Qt\+::\+Pen\+Cap\+Style pen\+Cap\+In, Qt\+::\+Pen\+Join\+Style pen\+Join\+In, Qt\+::\+Pen\+Style pen\+Style\+In, int x, int y)
+\item 
+\mbox{\Hypertarget{class_line_abf6160ef558a50fab058f2e33561a102}\label{class_line_abf6160ef558a50fab058f2e33561a102}} 
+{\bfseries Line} (Q\+String id\+In, Qt\+::\+Brush\+Style brush\+Style\+In, Qt\+::\+Global\+Color brush\+Color\+In, double pen\+Width\+In, Qt\+::\+Global\+Color pen\+Color\+In, Qt\+::\+Pen\+Cap\+Style pen\+Cap\+In, Qt\+::\+Pen\+Join\+Style pen\+Join\+In, Qt\+::\+Pen\+Style pen\+Style\+In)
+\item 
+virtual void \hyperlink{class_line_a01ac38eae66f157868daee1b4764b242}{push\+\_\+\+Back\+\_\+point} (Q\+Point e)
+\begin{DoxyCompactList}\small\item\em push\+\_\+\+Back\+\_\+point -\/ how the line is actually created, pushing back two points will tell the canvas where exactly to construct the line and where to stop based off of mouse input \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_line_a7f82d921d86db81eea79bd4f8452024c}\label{class_line_a7f82d921d86db81eea79bd4f8452024c}} 
+virtual void {\bfseries push\+\_\+\+Back\+\_\+point} (int x, int y)
+\item 
+\mbox{\Hypertarget{class_line_af882f56947a1c83eaac5ce1d9e0088a8}\label{class_line_af882f56947a1c83eaac5ce1d9e0088a8}} 
+virtual void {\bfseries move\+Last\+Point} (Q\+Point e)
+\item 
+virtual void \hyperlink{class_line_ae645f8a7f03439fa3428f81b1ddb4ffc}{Draw} (\hyperlink{class_canvas}{Canvas} $\ast$draw\+Area)
+\begin{DoxyCompactList}\small\item\em Draw -\/ draws the shape\+: virtual. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_line_a79c3891fefd740e6a3cfcdb57a105995}{is\+\_\+\+Left\+\_\+\+Clicked} (Q\+Point e)
+\begin{DoxyCompactList}\small\item\em is\+\_\+\+Left\+\_\+\+Clicked -\/ mouse input \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_line_ad0e0cc191a40c9203e6e8f753d837f01}\label{class_line_ad0e0cc191a40c9203e6e8f753d837f01}} 
+int {\bfseries get\+Pointnum} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_line_acb42aa5b881c81224994fdcd80227e73}\label{class_line_acb42aa5b881c81224994fdcd80227e73}} 
+Q\+Polygon {\bfseries points}
+\item 
+\mbox{\Hypertarget{class_line_a0954f1ba173e19a23eb88b3c56d59c04}\label{class_line_a0954f1ba173e19a23eb88b3c56d59c04}} 
+int {\bfseries point\+\_\+counter}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_line}{Line} class -\/ derived from the abstarct shape class\+: can manipulate all of the pen and brush styles and colors. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_line_ae645f8a7f03439fa3428f81b1ddb4ffc}\label{class_line_ae645f8a7f03439fa3428f81b1ddb4ffc}} 
+\index{Line@{Line}!Draw@{Draw}}
+\index{Draw@{Draw}!Line@{Line}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Line\+::\+Draw (\begin{DoxyParamCaption}\item[{\hyperlink{class_canvas}{Canvas} $\ast$}]{paint\+Area }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draw -\/ draws the shape\+: virtual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em paint\+Area} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_shape_ad7cc6a5e97b0971d50999bce4396127a}{Shape}.
+
+
+
+Reimplemented in \hyperlink{class_polygon_a9271921d96331c203efcdb50e0ebd64c}{Polygon}, and \hyperlink{class_poly_line_ac42ca364849f33b899a929bf57163730}{Poly\+Line}.
+
+\mbox{\Hypertarget{class_line_a79c3891fefd740e6a3cfcdb57a105995}\label{class_line_a79c3891fefd740e6a3cfcdb57a105995}} 
+\index{Line@{Line}!is\+\_\+\+Left\+\_\+\+Clicked@{is\+\_\+\+Left\+\_\+\+Clicked}}
+\index{is\+\_\+\+Left\+\_\+\+Clicked@{is\+\_\+\+Left\+\_\+\+Clicked}!Line@{Line}}
+\subsubsection{\texorpdfstring{is\+\_\+\+Left\+\_\+\+Clicked()}{is\_Left\_Clicked()}}
+{\footnotesize\ttfamily bool Line\+::is\+\_\+\+Left\+\_\+\+Clicked (\begin{DoxyParamCaption}\item[{Q\+Point}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+is\+\_\+\+Left\+\_\+\+Clicked -\/ mouse input 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_shape_ab2d47c913eb287843e61b2d48e422ced}{Shape}.
+
+
+
+Reimplemented in \hyperlink{class_polygon_ab17f2f8ae9489fba4030fbb4a99e7ea6}{Polygon}, and \hyperlink{class_poly_line_a349f5b14d3ab568ae6776a3d5fd6f956}{Poly\+Line}.
+
+\mbox{\Hypertarget{class_line_a01ac38eae66f157868daee1b4764b242}\label{class_line_a01ac38eae66f157868daee1b4764b242}} 
+\index{Line@{Line}!push\+\_\+\+Back\+\_\+point@{push\+\_\+\+Back\+\_\+point}}
+\index{push\+\_\+\+Back\+\_\+point@{push\+\_\+\+Back\+\_\+point}!Line@{Line}}
+\subsubsection{\texorpdfstring{push\+\_\+\+Back\+\_\+point()}{push\_Back\_point()}}
+{\footnotesize\ttfamily void Line\+::push\+\_\+\+Back\+\_\+point (\begin{DoxyParamCaption}\item[{Q\+Point}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+push\+\_\+\+Back\+\_\+point -\/ how the line is actually created, pushing back two points will tell the canvas where exactly to construct the line and where to stop based off of mouse input 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_polygon_ad57f4b375c6858bfe34c095bfeb38d5a}{Polygon}, and \hyperlink{class_poly_line_afbc3a0e59abcd27bdb58027796e91c3a}{Poly\+Line}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Line.\+h\item 
+line.\+cpp\end{DoxyCompactItemize}

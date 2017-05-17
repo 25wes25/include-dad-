@@ -1,0 +1,143 @@
+\hypertarget{class_rectangle}{}\section{Rectangle Class Reference}
+\label{class_rectangle}\index{Rectangle@{Rectangle}}
+
+
+The \hyperlink{class_rectangle}{Rectangle} class -\/ derives from abstract base class\+: shape.  
+
+
+
+
+{\ttfamily \#include $<$Rectangle.\+h$>$}
+
+Inheritance diagram for Rectangle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_rectangle}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_rectangle_a45ea4c7e76ce39d3a84104302469459c}\label{class_rectangle_a45ea4c7e76ce39d3a84104302469459c}} 
+{\bfseries Rectangle} (int x, int y, double w, double l)
+\item 
+\mbox{\Hypertarget{class_rectangle_ad2c25ea89c4241b8bce1d4f5968986cb}\label{class_rectangle_ad2c25ea89c4241b8bce1d4f5968986cb}} 
+{\bfseries Rectangle} (Q\+String id\+In, Qt\+::\+Brush\+Style brush\+Style\+In, Qt\+::\+Global\+Color brush\+Color\+In, double pen\+Width\+In, Qt\+::\+Global\+Color pen\+Color\+In, Qt\+::\+Pen\+Cap\+Style pen\+Cap\+In, Qt\+::\+Pen\+Join\+Style pen\+Join\+In, Qt\+::\+Pen\+Style pen\+Style\+In, double xR, double yR)
+\item 
+\mbox{\Hypertarget{class_rectangle_a777b92b37ee95a1285bd7dddf8c61a40}\label{class_rectangle_a777b92b37ee95a1285bd7dddf8c61a40}} 
+{\bfseries Rectangle} (\hyperlink{class_rectangle}{Rectangle} \&copy)
+\item 
+\mbox{\Hypertarget{class_rectangle_a3237955de5a7ae91bb0f617bc245c55e}\label{class_rectangle_a3237955de5a7ae91bb0f617bc245c55e}} 
+{\bfseries Rectangle} (\hyperlink{class_rectangle}{Rectangle} \&\&copy)
+\item 
+\mbox{\Hypertarget{class_rectangle_a248979d5af0684e056dcb4715f4b1e1e}\label{class_rectangle_a248979d5af0684e056dcb4715f4b1e1e}} 
+void {\bfseries set\+Width\+Length} (double w, double l)
+\item 
+\mbox{\Hypertarget{class_rectangle_a73685e64359134d26b57886aca27c1e7}\label{class_rectangle_a73685e64359134d26b57886aca27c1e7}} 
+void {\bfseries set\+Width} (double w)
+\item 
+\mbox{\Hypertarget{class_rectangle_a4401ebc484718df223089cb442a2f813}\label{class_rectangle_a4401ebc484718df223089cb442a2f813}} 
+void {\bfseries set\+Length} (double l)
+\item 
+virtual void \hyperlink{class_rectangle_abeeafbc4d44bf241cf655e850f3ce3f3}{move} (Q\+Point xy)
+\begin{DoxyCompactList}\small\item\em move -\/ handles moving the shape and recieves in mouse input \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_rectangle_a9911b718370d9f9c987c1c5f85379b09}\label{class_rectangle_a9911b718370d9f9c987c1c5f85379b09}} 
+double {\bfseries get\+Width} ()
+\item 
+\mbox{\Hypertarget{class_rectangle_a64b31e74ec44911d5fb567f4be9cc1da}\label{class_rectangle_a64b31e74ec44911d5fb567f4be9cc1da}} 
+double {\bfseries get\+Length} ()
+\item 
+\mbox{\Hypertarget{class_rectangle_afcc7d35ebcfbd504f3a7d7c78ef425bc}\label{class_rectangle_afcc7d35ebcfbd504f3a7d7c78ef425bc}} 
+double {\bfseries get\+Area} ()
+\item 
+\mbox{\Hypertarget{class_rectangle_ad173a67339cc3f7c1590c71a07b6d08d}\label{class_rectangle_ad173a67339cc3f7c1590c71a07b6d08d}} 
+double {\bfseries get\+Perimeter} ()
+\item 
+void \hyperlink{class_rectangle_afe989f9ae3ceffd9825b4f1492d764f3}{Draw} (\hyperlink{class_canvas}{Canvas} $\ast$draw\+Area)
+\begin{DoxyCompactList}\small\item\em Draw -\/ draws the shape\+: virtual. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_rectangle_ade126ee824e394b9c38d2e67a30d1a7d}{is\+\_\+\+Left\+\_\+\+Clicked} (Q\+Point e)
+\begin{DoxyCompactList}\small\item\em is\+\_\+\+Left\+\_\+\+Clicked -\/ mouse input \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_rectangle}{Rectangle} class -\/ derives from abstract base class\+: shape. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_rectangle_afe989f9ae3ceffd9825b4f1492d764f3}\label{class_rectangle_afe989f9ae3ceffd9825b4f1492d764f3}} 
+\index{Rectangle@{Rectangle}!Draw@{Draw}}
+\index{Draw@{Draw}!Rectangle@{Rectangle}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Rectangle\+::\+Draw (\begin{DoxyParamCaption}\item[{\hyperlink{class_canvas}{Canvas} $\ast$}]{paint\+Area }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draw -\/ draws the shape\+: virtual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em paint\+Area} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_shape_ad7cc6a5e97b0971d50999bce4396127a}{Shape}.
+
+
+
+Reimplemented in \hyperlink{class_square_a30b97f9d3fbd7d226a887ac157b827a0}{Square}.
+
+\mbox{\Hypertarget{class_rectangle_ade126ee824e394b9c38d2e67a30d1a7d}\label{class_rectangle_ade126ee824e394b9c38d2e67a30d1a7d}} 
+\index{Rectangle@{Rectangle}!is\+\_\+\+Left\+\_\+\+Clicked@{is\+\_\+\+Left\+\_\+\+Clicked}}
+\index{is\+\_\+\+Left\+\_\+\+Clicked@{is\+\_\+\+Left\+\_\+\+Clicked}!Rectangle@{Rectangle}}
+\subsubsection{\texorpdfstring{is\+\_\+\+Left\+\_\+\+Clicked()}{is\_Left\_Clicked()}}
+{\footnotesize\ttfamily bool Rectangle\+::is\+\_\+\+Left\+\_\+\+Clicked (\begin{DoxyParamCaption}\item[{Q\+Point}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+is\+\_\+\+Left\+\_\+\+Clicked -\/ mouse input 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_shape_ab2d47c913eb287843e61b2d48e422ced}{Shape}.
+
+
+
+Reimplemented in \hyperlink{class_square_aaf0989a3dba67b2502f3a306e0136e69}{Square}.
+
+\mbox{\Hypertarget{class_rectangle_abeeafbc4d44bf241cf655e850f3ce3f3}\label{class_rectangle_abeeafbc4d44bf241cf655e850f3ce3f3}} 
+\index{Rectangle@{Rectangle}!move@{move}}
+\index{move@{move}!Rectangle@{Rectangle}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Rectangle\+::move (\begin{DoxyParamCaption}\item[{Q\+Point}]{xy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+move -\/ handles moving the shape and recieves in mouse input 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xy} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_shape_a26d57a0589b0fd7ff03a4b5ad8dc530a}{Shape}.
+
+
+
+Reimplemented in \hyperlink{class_square_a49d1e790212e18cb43d7647385cafa20}{Square}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Rectangle.\+h\item 
+Rectangle.\+cpp\end{DoxyCompactItemize}

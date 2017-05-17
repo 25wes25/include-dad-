@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/Images">
+        <file>2D Graphic Label.png</file>
+        <file>fallingleaves.gif</file>
+        <file>Inter-Protocol.png</file>
+        <file>On Play.png</file>
+        <file>Cloud Based Software.png</file>
+        <file>Picstagram.png</file>
+        <file>Increment Systems.png</file>
+        <file>News Prints.png</file>
+        <file>MaintenanceNotes.png</file>
+        <file>CantactUs.png</file>
+    </qresource>
+</RCC>

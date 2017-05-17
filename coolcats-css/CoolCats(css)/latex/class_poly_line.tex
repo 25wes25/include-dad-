@@ -1,0 +1,120 @@
+\hypertarget{class_poly_line}{}\section{Poly\+Line Class Reference}
+\label{class_poly_line}\index{Poly\+Line@{Poly\+Line}}
+
+
+The \hyperlink{class_poly_line}{Poly\+Line} class -\/ derives from line.  
+
+
+
+
+{\ttfamily \#include $<$Poly\+Line.\+h$>$}
+
+Inheritance diagram for Poly\+Line\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_poly_line}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_poly_line_a5f896d603d3f1d495ba4cb647c771a96}\label{class_poly_line_a5f896d603d3f1d495ba4cb647c771a96}} 
+{\bfseries Poly\+Line} (Q\+String id\+In, Qt\+::\+Brush\+Style brush\+Style\+In, Qt\+::\+Global\+Color brush\+Color\+In, double pen\+Width\+In, Qt\+::\+Global\+Color pen\+Color\+In, Qt\+::\+Pen\+Cap\+Style pen\+Cap\+In, Qt\+::\+Pen\+Join\+Style pen\+Join\+In, Qt\+::\+Pen\+Style pen\+Style\+In)
+\item 
+virtual void \hyperlink{class_poly_line_afbc3a0e59abcd27bdb58027796e91c3a}{push\+\_\+\+Back\+\_\+point} (Q\+Point xy)
+\begin{DoxyCompactList}\small\item\em push\+\_\+\+Back\+\_\+point -\/ see polygon/line documentation of the functions below \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_poly_line_a3a2483c862ffa1f31157d7fd510dca6c}\label{class_poly_line_a3a2483c862ffa1f31157d7fd510dca6c}} 
+virtual void {\bfseries push\+\_\+\+Back\+\_\+point} (int x, int y)
+\item 
+\mbox{\Hypertarget{class_poly_line_a73a4db1130cb26bba52e750ae27e7fd8}\label{class_poly_line_a73a4db1130cb26bba52e750ae27e7fd8}} 
+virtual void {\bfseries move\+Last\+Point} (Q\+Point e)
+\item 
+virtual void \hyperlink{class_poly_line_ac42ca364849f33b899a929bf57163730}{Draw} (\hyperlink{class_canvas}{Canvas} $\ast$draw\+Area)
+\begin{DoxyCompactList}\small\item\em Draw -\/ draws the shape\+: virtual. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_poly_line_a349f5b14d3ab568ae6776a3d5fd6f956}{is\+\_\+\+Left\+\_\+\+Clicked} (Q\+Point e)
+\begin{DoxyCompactList}\small\item\em is\+\_\+\+Left\+\_\+\+Clicked -\/ mouse input \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_poly_line}{Poly\+Line} class -\/ derives from line. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_poly_line_ac42ca364849f33b899a929bf57163730}\label{class_poly_line_ac42ca364849f33b899a929bf57163730}} 
+\index{Poly\+Line@{Poly\+Line}!Draw@{Draw}}
+\index{Draw@{Draw}!Poly\+Line@{Poly\+Line}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Poly\+Line\+::\+Draw (\begin{DoxyParamCaption}\item[{\hyperlink{class_canvas}{Canvas} $\ast$}]{paint\+Area }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draw -\/ draws the shape\+: virtual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em paint\+Area} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_line_ae645f8a7f03439fa3428f81b1ddb4ffc}{Line}.
+
+
+
+Reimplemented in \hyperlink{class_polygon_a9271921d96331c203efcdb50e0ebd64c}{Polygon}.
+
+\mbox{\Hypertarget{class_poly_line_a349f5b14d3ab568ae6776a3d5fd6f956}\label{class_poly_line_a349f5b14d3ab568ae6776a3d5fd6f956}} 
+\index{Poly\+Line@{Poly\+Line}!is\+\_\+\+Left\+\_\+\+Clicked@{is\+\_\+\+Left\+\_\+\+Clicked}}
+\index{is\+\_\+\+Left\+\_\+\+Clicked@{is\+\_\+\+Left\+\_\+\+Clicked}!Poly\+Line@{Poly\+Line}}
+\subsubsection{\texorpdfstring{is\+\_\+\+Left\+\_\+\+Clicked()}{is\_Left\_Clicked()}}
+{\footnotesize\ttfamily bool Poly\+Line\+::is\+\_\+\+Left\+\_\+\+Clicked (\begin{DoxyParamCaption}\item[{Q\+Point}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+is\+\_\+\+Left\+\_\+\+Clicked -\/ mouse input 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_line_a79c3891fefd740e6a3cfcdb57a105995}{Line}.
+
+
+
+Reimplemented in \hyperlink{class_polygon_ab17f2f8ae9489fba4030fbb4a99e7ea6}{Polygon}.
+
+\mbox{\Hypertarget{class_poly_line_afbc3a0e59abcd27bdb58027796e91c3a}\label{class_poly_line_afbc3a0e59abcd27bdb58027796e91c3a}} 
+\index{Poly\+Line@{Poly\+Line}!push\+\_\+\+Back\+\_\+point@{push\+\_\+\+Back\+\_\+point}}
+\index{push\+\_\+\+Back\+\_\+point@{push\+\_\+\+Back\+\_\+point}!Poly\+Line@{Poly\+Line}}
+\subsubsection{\texorpdfstring{push\+\_\+\+Back\+\_\+point()}{push\_Back\_point()}}
+{\footnotesize\ttfamily void Poly\+Line\+::push\+\_\+\+Back\+\_\+point (\begin{DoxyParamCaption}\item[{Q\+Point}]{xy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+push\+\_\+\+Back\+\_\+point -\/ see polygon/line documentation of the functions below 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xy} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_line_a01ac38eae66f157868daee1b4764b242}{Line}.
+
+
+
+Reimplemented in \hyperlink{class_polygon_ad57f4b375c6858bfe34c095bfeb38d5a}{Polygon}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Poly\+Line.\+h\item 
+polyline.\+cpp\end{DoxyCompactItemize}

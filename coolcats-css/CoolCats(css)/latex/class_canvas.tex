@@ -1,0 +1,80 @@
+\hypertarget{class_canvas}{}\section{Canvas Class Reference}
+\label{class_canvas}\index{Canvas@{Canvas}}
+
+
+The \hyperlink{class_canvas}{Canvas} class This class is a modified Q\+Widget that will define an area on which 2d objects will be rendered. It gets and receives mouse inputs for moving object, and mouse inputs for getting points for the geometric shapes\+: \hyperlink{class_line}{Line}, Polyline, Poly\+Gon. Based on which shape is selected it allows the user to change it using dynamic casting of the \hyperlink{class_shape}{Shape} Pointer and shape specific mutators.  
+
+
+
+
+{\ttfamily \#include $<$canvas.\+h$>$}
+
+Inheritance diagram for Canvas\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_canvas}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_canvas_a100162adb347f04ad3ec5ce0c2e118f7}\label{class_canvas_a100162adb347f04ad3ec5ce0c2e118f7}} 
+void {\bfseries mouse\+Point\+Input} ()
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_canvas_ab17abdfec6f1ca1d682420f0a124e8f4}\label{class_canvas_ab17abdfec6f1ca1d682420f0a124e8f4}} 
+void {\bfseries is\+Clicked} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_canvas_a5525075d65b32480dd518d382946e0ea}\label{class_canvas_a5525075d65b32480dd518d382946e0ea}} 
+{\bfseries Canvas} (Q\+Widget $\ast$parent=0)
+\item 
+\mbox{\Hypertarget{class_canvas_a2e467a527500d7936c510db72e154ce6}\label{class_canvas_a2e467a527500d7936c510db72e154ce6}} 
+void {\bfseries add\+Shape} (\hyperlink{class_shape}{Shape} $\ast$add)
+\item 
+\mbox{\Hypertarget{class_canvas_ac4bf60e8e094e90a16a4b525e89889ec}\label{class_canvas_ac4bf60e8e094e90a16a4b525e89889ec}} 
+\hyperlink{class_shape}{Shape} $\ast$ {\bfseries get\+Current\+Shape} ()
+\item 
+\mbox{\Hypertarget{class_canvas_abfa07c6ffae9507dd2bff77ef26db804}\label{class_canvas_abfa07c6ffae9507dd2bff77ef26db804}} 
+int {\bfseries get\+Shape\+Num} () const
+\item 
+\mbox{\Hypertarget{class_canvas_ab973843b8722be986bb17ee02ca47488}\label{class_canvas_ab973843b8722be986bb17ee02ca47488}} 
+void {\bfseries set\+Current\+Shape} (\hyperlink{class_shape}{Shape} $\ast$e)
+\item 
+\mbox{\Hypertarget{class_canvas_ac4559a6535f497f17415032632aa9f6a}\label{class_canvas_ac4559a6535f497f17415032632aa9f6a}} 
+void {\bfseries clear} ()
+\item 
+\mbox{\Hypertarget{class_canvas_a47b2f0b05d0aaeb93029e28cb2228746}\label{class_canvas_a47b2f0b05d0aaeb93029e28cb2228746}} 
+void {\bfseries render} ()
+\item 
+\mbox{\Hypertarget{class_canvas_a96fdffb7f3f92b4522e3c320e151ac72}\label{class_canvas_a96fdffb7f3f92b4522e3c320e151ac72}} 
+\hyperlink{class_shape}{Shape} \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int x)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_canvas_abc2200972cf33fd8991d4759955eb0d8}\label{class_canvas_abc2200972cf33fd8991d4759955eb0d8}} 
+void {\bfseries mouse\+Press\+Event} (Q\+Mouse\+Event $\ast$event)
+\item 
+\mbox{\Hypertarget{class_canvas_a9fb4b83a1067ddc2aa04676f51dc5a47}\label{class_canvas_a9fb4b83a1067ddc2aa04676f51dc5a47}} 
+void {\bfseries mouse\+Move\+Event} (Q\+Mouse\+Event $\ast$event)
+\item 
+\mbox{\Hypertarget{class_canvas_a0e5ff2b8662659da1687eb31ad41d119}\label{class_canvas_a0e5ff2b8662659da1687eb31ad41d119}} 
+void {\bfseries paint\+Event} (Q\+Paint\+Event $\ast$)
+\item 
+\mbox{\Hypertarget{class_canvas_a3bcc6c012c67e727125cf2d138e944b8}\label{class_canvas_a3bcc6c012c67e727125cf2d138e944b8}} 
+void {\bfseries key\+Press\+Event} (Q\+Key\+Event $\ast$key)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_canvas}{Canvas} class This class is a modified Q\+Widget that will define an area on which 2d objects will be rendered. It gets and receives mouse inputs for moving object, and mouse inputs for getting points for the geometric shapes\+: \hyperlink{class_line}{Line}, Polyline, Poly\+Gon. Based on which shape is selected it allows the user to change it using dynamic casting of the \hyperlink{class_shape}{Shape} Pointer and shape specific mutators. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+canvas.\+h\item 
+canvas.\+cpp\end{DoxyCompactItemize}

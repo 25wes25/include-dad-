@@ -1,0 +1,158 @@
+\hypertarget{class_shape}{}\section{Shape Class Reference}
+\label{class_shape}\index{Shape@{Shape}}
+
+
+The \hyperlink{class_shape}{Shape} class -\/ base abstract class-\/parent to all other shape classes-\/holds all of the private data types that change or access pen/brush attributes; is also what is held in the shape vector class.  
+
+
+
+
+{\ttfamily \#include $<$shape.\+h$>$}
+
+Inheritance diagram for Shape\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_shape}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_shape_ab41921d0dd6e4480d9232e2556991863}\label{class_shape_ab41921d0dd6e4480d9232e2556991863}} 
+{\bfseries Shape} (Q\+String id\+In, bool is\+Render, Qt\+::\+Brush\+Style brush\+In, Qt\+::\+Global\+Color pencolor\+In, double width, Qt\+::\+Pen\+Cap\+Style pen\+Cap\+In, Qt\+::\+Pen\+Join\+Style pen\+Join\+In, Qt\+::\+Global\+Color brush\+Color\+In, Qt\+::\+Pen\+Style pen\+Style\+In)
+\item 
+\mbox{\Hypertarget{class_shape_ae7a27992cf927eb09b31ac38b11f1d8d}\label{class_shape_ae7a27992cf927eb09b31ac38b11f1d8d}} 
+{\bfseries Shape} (Q\+String id\+In, bool is\+Render, Q\+String brush\+In, Q\+String pen\+Color\+In, double width, Q\+String pen\+Cap\+In, Q\+String Pen\+Join\+In, Q\+String Brush\+Color\+In, Q\+String Pen\+Style\+In)
+\item 
+\mbox{\Hypertarget{class_shape_a14489e501cf05219c32ee79e6331d3ef}\label{class_shape_a14489e501cf05219c32ee79e6331d3ef}} 
+{\bfseries Shape} (Q\+String id\+In, bool is\+Render, int brush\+In, int pen\+Color\+In, double width, int pen\+Cap\+In, int Pen\+Join\+In, int Brush\+Color\+In, int Pen\+Style\+In)
+\item 
+\mbox{\Hypertarget{class_shape_a51e4f98296596a66ed673690267f9849}\label{class_shape_a51e4f98296596a66ed673690267f9849}} 
+Qt\+::\+Brush\+Style {\bfseries int\+To\+Brush\+Style} (int index)
+\item 
+\mbox{\Hypertarget{class_shape_a63318b91c48c0184a7cc99567768f6eb}\label{class_shape_a63318b91c48c0184a7cc99567768f6eb}} 
+Qt\+::\+Global\+Color {\bfseries int\+To\+Color} (int index)
+\item 
+\mbox{\Hypertarget{class_shape_ab9a6d3653678500542c6ef83cbf8b68c}\label{class_shape_ab9a6d3653678500542c6ef83cbf8b68c}} 
+Qt\+::\+Pen\+Cap\+Style {\bfseries int\+To\+Pen\+Cap} (int index)
+\item 
+\mbox{\Hypertarget{class_shape_a06bbdbf344d0ecdc764ce59b6a95368d}\label{class_shape_a06bbdbf344d0ecdc764ce59b6a95368d}} 
+Qt\+::\+Pen\+Join\+Style {\bfseries int\+To\+Pen\+Join} (int index)
+\item 
+\mbox{\Hypertarget{class_shape_ad4c0545fbc55a595504dedb0f9d6f6e4}\label{class_shape_ad4c0545fbc55a595504dedb0f9d6f6e4}} 
+Qt\+::\+Pen\+Style {\bfseries int\+To\+Pen\+Style} (int index)
+\item 
+\mbox{\Hypertarget{class_shape_a219c9f9c30588dd10462d7c0a634fad3}\label{class_shape_a219c9f9c30588dd10462d7c0a634fad3}} 
+bool {\bfseries is\+Rendered} ()
+\item 
+\mbox{\Hypertarget{class_shape_a41fd467475c084321064a35e1fdd983f}\label{class_shape_a41fd467475c084321064a35e1fdd983f}} 
+void {\bfseries configure\+Painter} (Q\+Painter \&p)
+\item 
+\mbox{\Hypertarget{class_shape_ab94f8b25d05839c7227c6deddcc48b9f}\label{class_shape_ab94f8b25d05839c7227c6deddcc48b9f}} 
+Q\+String {\bfseries Get\+ID} ()
+\item 
+\mbox{\Hypertarget{class_shape_a9bbe42c30c0393922840703a97016f88}\label{class_shape_a9bbe42c30c0393922840703a97016f88}} 
+Q\+String {\bfseries Get\+Pen\+Color} ()
+\item 
+\mbox{\Hypertarget{class_shape_a936495776867dbfdd5eb7575a13c844d}\label{class_shape_a936495776867dbfdd5eb7575a13c844d}} 
+Q\+String {\bfseries Get\+Pen\+Width} ()
+\item 
+\mbox{\Hypertarget{class_shape_af533bf51d240c2015123b3ea37e21464}\label{class_shape_af533bf51d240c2015123b3ea37e21464}} 
+Q\+String {\bfseries Get\+Pen\+Style} ()
+\item 
+\mbox{\Hypertarget{class_shape_a7273d75f1aa60eab01ee49830ccc4c81}\label{class_shape_a7273d75f1aa60eab01ee49830ccc4c81}} 
+Q\+String {\bfseries Get\+Pen\+Cap\+Style} ()
+\item 
+\mbox{\Hypertarget{class_shape_a3850dedfd2b83302510ba817209ab40f}\label{class_shape_a3850dedfd2b83302510ba817209ab40f}} 
+Q\+String {\bfseries Get\+Pen\+Join\+Style} ()
+\item 
+\mbox{\Hypertarget{class_shape_ace50307bf23aa364eab8f52531a9d35d}\label{class_shape_ace50307bf23aa364eab8f52531a9d35d}} 
+Q\+String {\bfseries Get\+Brush\+Color} ()
+\item 
+\mbox{\Hypertarget{class_shape_a9ff424ba6bc200c826be8a71e6d2727b}\label{class_shape_a9ff424ba6bc200c826be8a71e6d2727b}} 
+Q\+String {\bfseries Get\+Brush\+Style} ()
+\item 
+virtual void \hyperlink{class_shape_a26d57a0589b0fd7ff03a4b5ad8dc530a}{move} (Q\+Point xy)
+\begin{DoxyCompactList}\small\item\em move -\/ handles moving the shape and recieves in mouse input \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_shape_aff9e910aba74bd21a349d358b4aec86a}\label{class_shape_aff9e910aba74bd21a349d358b4aec86a}} 
+virtual void {\bfseries move} (int x, int y)
+\item 
+\mbox{\Hypertarget{class_shape_ab5523ae50b25161b3a64c7728de99e1f}\label{class_shape_ab5523ae50b25161b3a64c7728de99e1f}} 
+virtual void {\bfseries resize} (double x)
+\item 
+virtual void \hyperlink{class_shape_ad7cc6a5e97b0971d50999bce4396127a}{Draw} (\hyperlink{class_canvas}{Canvas} $\ast$paint\+Area)
+\begin{DoxyCompactList}\small\item\em Draw -\/ draws the shape\+: virtual. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_shape_ab2d47c913eb287843e61b2d48e422ced}{is\+\_\+\+Left\+\_\+\+Clicked} (Q\+Point e)
+\begin{DoxyCompactList}\small\item\em is\+\_\+\+Left\+\_\+\+Clicked -\/ mouse input \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_shape}{Shape} class -\/ base abstract class-\/parent to all other shape classes-\/holds all of the private data types that change or access pen/brush attributes; is also what is held in the shape vector class. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_shape_ad7cc6a5e97b0971d50999bce4396127a}\label{class_shape_ad7cc6a5e97b0971d50999bce4396127a}} 
+\index{Shape@{Shape}!Draw@{Draw}}
+\index{Draw@{Draw}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily virtual void Shape\+::\+Draw (\begin{DoxyParamCaption}\item[{\hyperlink{class_canvas}{Canvas} $\ast$}]{paint\+Area }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Draw -\/ draws the shape\+: virtual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em paint\+Area} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_line_ae645f8a7f03439fa3428f81b1ddb4ffc}{Line}, \hyperlink{class_rectangle_afe989f9ae3ceffd9825b4f1492d764f3}{Rectangle}, \hyperlink{class_circle_a5bebd94955572edce0ad10208a449772}{Circle}, \hyperlink{class_polygon_a9271921d96331c203efcdb50e0ebd64c}{Polygon}, \hyperlink{class_ellipse_aaf9524151dc799501327f72c75e0f010}{Ellipse}, \hyperlink{class_poly_line_ac42ca364849f33b899a929bf57163730}{Poly\+Line}, and \hyperlink{class_square_a30b97f9d3fbd7d226a887ac157b827a0}{Square}.
+
+\mbox{\Hypertarget{class_shape_ab2d47c913eb287843e61b2d48e422ced}\label{class_shape_ab2d47c913eb287843e61b2d48e422ced}} 
+\index{Shape@{Shape}!is\+\_\+\+Left\+\_\+\+Clicked@{is\+\_\+\+Left\+\_\+\+Clicked}}
+\index{is\+\_\+\+Left\+\_\+\+Clicked@{is\+\_\+\+Left\+\_\+\+Clicked}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{is\+\_\+\+Left\+\_\+\+Clicked()}{is\_Left\_Clicked()}}
+{\footnotesize\ttfamily virtual bool Shape\+::is\+\_\+\+Left\+\_\+\+Clicked (\begin{DoxyParamCaption}\item[{Q\+Point}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+is\+\_\+\+Left\+\_\+\+Clicked -\/ mouse input 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_line_a79c3891fefd740e6a3cfcdb57a105995}{Line}, \hyperlink{class_rectangle_ade126ee824e394b9c38d2e67a30d1a7d}{Rectangle}, \hyperlink{class_polygon_ab17f2f8ae9489fba4030fbb4a99e7ea6}{Polygon}, \hyperlink{class_circle_a1661bb4e324cce0196a6aa1195c26c73}{Circle}, \hyperlink{class_ellipse_ab3ba6c9f068fc37808778c74f1273f69}{Ellipse}, \hyperlink{class_poly_line_a349f5b14d3ab568ae6776a3d5fd6f956}{Poly\+Line}, and \hyperlink{class_square_aaf0989a3dba67b2502f3a306e0136e69}{Square}.
+
+\mbox{\Hypertarget{class_shape_a26d57a0589b0fd7ff03a4b5ad8dc530a}\label{class_shape_a26d57a0589b0fd7ff03a4b5ad8dc530a}} 
+\index{Shape@{Shape}!move@{move}}
+\index{move@{move}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily virtual void Shape\+::move (\begin{DoxyParamCaption}\item[{Q\+Point}]{xy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+move -\/ handles moving the shape and recieves in mouse input 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xy} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_circle_a5f02de3ad7e992a689b9f9e88643076c}{Circle}, \hyperlink{class_rectangle_abeeafbc4d44bf241cf655e850f3ce3f3}{Rectangle}, \hyperlink{class_ellipse_a8f5c5a4d8051009fee6d861f163c96dd}{Ellipse}, and \hyperlink{class_square_a49d1e790212e18cb43d7647385cafa20}{Square}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+shape.\+h\item 
+shape.\+cpp\end{DoxyCompactItemize}

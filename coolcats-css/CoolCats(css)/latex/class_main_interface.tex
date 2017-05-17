@@ -1,0 +1,174 @@
+\hypertarget{class_main_interface}{}\section{Main\+Interface Class Reference}
+\label{class_main_interface}\index{Main\+Interface@{Main\+Interface}}
+
+
+The \hyperlink{class_main_interface}{Main\+Interface} class hold all of the shape classes, handles the changing of shapes via public methods; changing all of the pen and brush styles as well as method that returns the area/perimeter of said shapes.  
+
+
+
+
+{\ttfamily \#include $<$maininterface.\+h$>$}
+
+Inheritance diagram for Main\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_interface}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_main_interface_aafb8558985bae8b8bc0d58dd0161cb02}\label{class_main_interface_aafb8558985bae8b8bc0d58dd0161cb02}} 
+void {\bfseries Point\+Input} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_main_interface_a50ec59f9dc5489bbb18baae382dbc7ad}\label{class_main_interface_a50ec59f9dc5489bbb18baae382dbc7ad}} 
+{\bfseries Main\+Interface} (Q\+Widget $\ast$parent=0)
+\item 
+\mbox{\Hypertarget{class_main_interface_aa5a995b2c60c8c0db5b20a7ff86967d1}\label{class_main_interface_aa5a995b2c60c8c0db5b20a7ff86967d1}} 
+void {\bfseries mod\+Current\+Shape} ()
+\item 
+\mbox{\Hypertarget{class_main_interface_a14e51324b57ebe718257526edd9bde1f}\label{class_main_interface_a14e51324b57ebe718257526edd9bde1f}} 
+void {\bfseries new\+Canvas} (int x, int y)
+\item 
+\mbox{\Hypertarget{class_main_interface_a9e6c88b90697f4c22c4f417387178782}\label{class_main_interface_a9e6c88b90697f4c22c4f417387178782}} 
+void {\bfseries load\+Canvas} (Q\+String filename)
+\item 
+\mbox{\Hypertarget{class_main_interface_a166ca373227ab4e426c7c669b5e7cc09}\label{class_main_interface_a166ca373227ab4e426c7c669b5e7cc09}} 
+void {\bfseries change\+Current\+Shape} (Q\+String id\+In)
+\item 
+\mbox{\Hypertarget{class_main_interface_a7c709f184a028ddfb6b2f61617f76a8b}\label{class_main_interface_a7c709f184a028ddfb6b2f61617f76a8b}} 
+void {\bfseries change\+Current\+Shape} (bool is\+Render)
+\item 
+\mbox{\Hypertarget{class_main_interface_a71ab1f383076fca6850f0dce45ce14a1}\label{class_main_interface_a71ab1f383076fca6850f0dce45ce14a1}} 
+void {\bfseries change\+Current\+Shape} (Qt\+::\+Brush\+Style brush\+Style\+In)
+\item 
+\mbox{\Hypertarget{class_main_interface_af544e40190178d6bfed28264fac5e58d}\label{class_main_interface_af544e40190178d6bfed28264fac5e58d}} 
+void {\bfseries change\+Current\+Shape} (Qt\+::\+Global\+Color Color\+In)
+\item 
+\mbox{\Hypertarget{class_main_interface_af108c59184eb9dab9878f1f43524dd25}\label{class_main_interface_af108c59184eb9dab9878f1f43524dd25}} 
+void {\bfseries change\+Current\+Shape} (double penwidth\+IN)
+\item 
+\mbox{\Hypertarget{class_main_interface_ac39889223f88222ab8b8fa624c07c465}\label{class_main_interface_ac39889223f88222ab8b8fa624c07c465}} 
+void {\bfseries change\+Current\+Shape} (Qt\+::\+Pen\+Cap\+Style pen\+Cap\+In)
+\item 
+\mbox{\Hypertarget{class_main_interface_a15666aefb9526f54640ca363cf2d3b0f}\label{class_main_interface_a15666aefb9526f54640ca363cf2d3b0f}} 
+void {\bfseries change\+Current\+Shape} (Qt\+::\+Pen\+Join\+Style pen\+Join\+In)
+\item 
+\mbox{\Hypertarget{class_main_interface_a10a9313895f905135fdec689d34e7311}\label{class_main_interface_a10a9313895f905135fdec689d34e7311}} 
+void {\bfseries change\+Current\+Shape} (Qt\+::\+Pen\+Style pen\+Style\+In)
+\item 
+Q\+String \hyperlink{class_main_interface_a56a79641ec2a69ce589d01d22a26d41c}{Get\+Shape\+Type} ()
+\begin{DoxyCompactList}\small\item\em Get\+Shape\+Type -\/ Returns a string based of the type of shape. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_main_interface_a4ccc1a9e32a7ad88caceb2acde07c565}{Get\+Shape\+Perimeter\+Area} (bool choice)
+\begin{DoxyCompactList}\small\item\em Get\+Shape\+Perimeter\+Area -\/ 0 returns Area, 1 returns Perimeter. \end{DoxyCompactList}\item 
+bool \hyperlink{class_main_interface_a5f424dd6f675ae1b55d39c60755cd464}{Has\+Perimeter\+Area} (const \hyperlink{class_shape}{Shape} \&shape)
+\begin{DoxyCompactList}\small\item\em Has\+Perimeter\+Area -\/ Returns false if shape does not have Area and Perimeter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_main_interface_a30d5b73b6b048b5ef9a1095db3a9df23}{change\+Rectdimensions} (double length, double width)
+\begin{DoxyCompactList}\small\item\em change\+Rectdimensions -\/ The following methods are situational based off of the type of instance of the shape class there is. i.\+e. rectangle square circle elliser etc. These will probably need to be slots activated when the ui widget is clicked signal \end{DoxyCompactList}\item 
+void \hyperlink{class_main_interface_a0331ae438758b87a4658a227d35e39dc}{change\+Squaredimensions} (double length)
+\begin{DoxyCompactList}\small\item\em change\+Squaredimensions -\/ example. You use the dynamic casting to in the boolean statment to check if the current shape is an instance of a square. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_interface_ab9802c99985d57469a9124ae925af8e5}\label{class_main_interface_ab9802c99985d57469a9124ae925af8e5}} 
+void {\bfseries change\+Circle\+Radius} (double radius\+In)
+\item 
+\mbox{\Hypertarget{class_main_interface_af4007d63c3726dce8e968f7d6472fecf}\label{class_main_interface_af4007d63c3726dce8e968f7d6472fecf}} 
+void {\bfseries change\+Ellipse\+Axis} (double x\+Rin, double y\+Rin)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_main_interface}{Main\+Interface} class hold all of the shape classes, handles the changing of shapes via public methods; changing all of the pen and brush styles as well as method that returns the area/perimeter of said shapes. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_main_interface_a30d5b73b6b048b5ef9a1095db3a9df23}\label{class_main_interface_a30d5b73b6b048b5ef9a1095db3a9df23}} 
+\index{Main\+Interface@{Main\+Interface}!change\+Rectdimensions@{change\+Rectdimensions}}
+\index{change\+Rectdimensions@{change\+Rectdimensions}!Main\+Interface@{Main\+Interface}}
+\subsubsection{\texorpdfstring{change\+Rectdimensions}{changeRectdimensions}}
+{\footnotesize\ttfamily void Main\+Interface\+::change\+Rectdimensions (\begin{DoxyParamCaption}\item[{double}]{length,  }\item[{double}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [slot]}}
+
+
+
+change\+Rectdimensions -\/ The following methods are situational based off of the type of instance of the shape class there is. i.\+e. rectangle square circle elliser etc. These will probably need to be slots activated when the ui widget is clicked signal 
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & \\
+\hline
+{\em width} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_interface_a0331ae438758b87a4658a227d35e39dc}\label{class_main_interface_a0331ae438758b87a4658a227d35e39dc}} 
+\index{Main\+Interface@{Main\+Interface}!change\+Squaredimensions@{change\+Squaredimensions}}
+\index{change\+Squaredimensions@{change\+Squaredimensions}!Main\+Interface@{Main\+Interface}}
+\subsubsection{\texorpdfstring{change\+Squaredimensions}{changeSquaredimensions}}
+{\footnotesize\ttfamily void Main\+Interface\+::change\+Squaredimensions (\begin{DoxyParamCaption}\item[{double}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [slot]}}
+
+
+
+change\+Squaredimensions -\/ example. You use the dynamic casting to in the boolean statment to check if the current shape is an instance of a square. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_interface_a4ccc1a9e32a7ad88caceb2acde07c565}\label{class_main_interface_a4ccc1a9e32a7ad88caceb2acde07c565}} 
+\index{Main\+Interface@{Main\+Interface}!Get\+Shape\+Perimeter\+Area@{Get\+Shape\+Perimeter\+Area}}
+\index{Get\+Shape\+Perimeter\+Area@{Get\+Shape\+Perimeter\+Area}!Main\+Interface@{Main\+Interface}}
+\subsubsection{\texorpdfstring{Get\+Shape\+Perimeter\+Area()}{GetShapePerimeterArea()}}
+{\footnotesize\ttfamily Q\+String Main\+Interface\+::\+Get\+Shape\+Perimeter\+Area (\begin{DoxyParamCaption}\item[{bool}]{choice }\end{DoxyParamCaption})}
+
+
+
+Get\+Shape\+Perimeter\+Area -\/ 0 returns Area, 1 returns Perimeter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em choice} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_main_interface_a56a79641ec2a69ce589d01d22a26d41c}\label{class_main_interface_a56a79641ec2a69ce589d01d22a26d41c}} 
+\index{Main\+Interface@{Main\+Interface}!Get\+Shape\+Type@{Get\+Shape\+Type}}
+\index{Get\+Shape\+Type@{Get\+Shape\+Type}!Main\+Interface@{Main\+Interface}}
+\subsubsection{\texorpdfstring{Get\+Shape\+Type()}{GetShapeType()}}
+{\footnotesize\ttfamily Q\+String Main\+Interface\+::\+Get\+Shape\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get\+Shape\+Type -\/ Returns a string based of the type of shape. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_main_interface_a5f424dd6f675ae1b55d39c60755cd464}\label{class_main_interface_a5f424dd6f675ae1b55d39c60755cd464}} 
+\index{Main\+Interface@{Main\+Interface}!Has\+Perimeter\+Area@{Has\+Perimeter\+Area}}
+\index{Has\+Perimeter\+Area@{Has\+Perimeter\+Area}!Main\+Interface@{Main\+Interface}}
+\subsubsection{\texorpdfstring{Has\+Perimeter\+Area()}{HasPerimeterArea()}}
+{\footnotesize\ttfamily bool Main\+Interface\+::\+Has\+Perimeter\+Area (\begin{DoxyParamCaption}\item[{const \hyperlink{class_shape}{Shape} \&}]{shape }\end{DoxyParamCaption})}
+
+
+
+Has\+Perimeter\+Area -\/ Returns false if shape does not have Area and Perimeter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shape} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+maininterface.\+h\item 
+maininterface.\+cpp\end{DoxyCompactItemize}

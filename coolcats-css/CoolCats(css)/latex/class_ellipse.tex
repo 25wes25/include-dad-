@@ -1,0 +1,167 @@
+\hypertarget{class_ellipse}{}\section{Ellipse Class Reference}
+\label{class_ellipse}\index{Ellipse@{Ellipse}}
+
+
+The \hyperlink{class_ellipse}{Ellipse} class -\/ parent to circle class, handles move functions as well as area and perimeter coming from the virtual base class.  
+
+
+
+
+{\ttfamily \#include $<$Ellipse.\+h$>$}
+
+Inheritance diagram for Ellipse\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_ellipse}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ellipse_aeb485faf04752402afb7269c04d8c9fc}\label{class_ellipse_aeb485faf04752402afb7269c04d8c9fc}} 
+{\bfseries Ellipse} (int x, int y, double xR, double yR)
+\item 
+\mbox{\Hypertarget{class_ellipse_a0024e8c9f0a3b7dcba13dd463313552b}\label{class_ellipse_a0024e8c9f0a3b7dcba13dd463313552b}} 
+{\bfseries Ellipse} (Q\+String id\+In, Qt\+::\+Brush\+Style brush\+Style\+In, Qt\+::\+Global\+Color brush\+Color\+In, double pen\+Width\+In, Qt\+::\+Global\+Color pen\+Color\+In, Qt\+::\+Pen\+Cap\+Style pen\+Cap\+In, Qt\+::\+Pen\+Join\+Style pen\+Join\+In, Qt\+::\+Pen\+Style pen\+Style\+In, double xR, double yR)
+\item 
+\mbox{\Hypertarget{class_ellipse_a68d1db1ff440a5390c3d2b961095fc90}\label{class_ellipse_a68d1db1ff440a5390c3d2b961095fc90}} 
+{\bfseries Ellipse} (\hyperlink{class_ellipse}{Ellipse} \&copy)
+\item 
+\mbox{\Hypertarget{class_ellipse_a02e36e6e3dc5d7aed93945a960b7a261}\label{class_ellipse_a02e36e6e3dc5d7aed93945a960b7a261}} 
+{\bfseries Ellipse} (\hyperlink{class_ellipse}{Ellipse} \&\&copy)
+\item 
+\mbox{\Hypertarget{class_ellipse_a951f44f301984fac6364ef2746d796c6}\label{class_ellipse_a951f44f301984fac6364ef2746d796c6}} 
+virtual void {\bfseries move} (int x\+Des, int y\+Des)
+\item 
+virtual void \hyperlink{class_ellipse_a8f5c5a4d8051009fee6d861f163c96dd}{move} (Q\+Point xy)
+\begin{DoxyCompactList}\small\item\em move -\/ handles moving the shape and recieves in mouse input \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ellipse_add1d1c291306985bcbf7cffbebcf4514}\label{class_ellipse_add1d1c291306985bcbf7cffbebcf4514}} 
+virtual void {\bfseries Resize} (double radius\+In)
+\item 
+virtual void \hyperlink{class_ellipse_aaf9524151dc799501327f72c75e0f010}{Draw} (\hyperlink{class_canvas}{Canvas} $\ast$draw\+Area)
+\begin{DoxyCompactList}\small\item\em Draw -\/ draws the shape\+: virtual. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ellipse_ad36cbee77639c82f50b763d2b9bbdcf0}\label{class_ellipse_ad36cbee77639c82f50b763d2b9bbdcf0}} 
+void {\bfseries SetX} (double x\+In)
+\item 
+\mbox{\Hypertarget{class_ellipse_a79f8116ec899b31ef5f2281e44b90c1f}\label{class_ellipse_a79f8116ec899b31ef5f2281e44b90c1f}} 
+void {\bfseries SetY} (double y\+In)
+\item 
+\mbox{\Hypertarget{class_ellipse_a3b6a92ab290475f2c6eb5a930b31d741}\label{class_ellipse_a3b6a92ab290475f2c6eb5a930b31d741}} 
+double {\bfseries get\+Area} ()
+\item 
+\mbox{\Hypertarget{class_ellipse_a6b5ac7a4f1e68f9c5a66f0d8d66acc3c}\label{class_ellipse_a6b5ac7a4f1e68f9c5a66f0d8d66acc3c}} 
+double {\bfseries get\+Perimeter} ()
+\item 
+virtual bool \hyperlink{class_ellipse_ab3ba6c9f068fc37808778c74f1273f69}{is\+\_\+\+Left\+\_\+\+Clicked} (Q\+Point xy)
+\begin{DoxyCompactList}\small\item\em is\+\_\+\+Left\+\_\+\+Clicked -\/ mouse input \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ellipse_a8382720255d2a9625e3d785324d2f9f7}\label{class_ellipse_a8382720255d2a9625e3d785324d2f9f7}} 
+virtual void {\bfseries say\+Hi} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ellipse_a70771f8c320a2ae285a04fa97e808ff0}\label{class_ellipse_a70771f8c320a2ae285a04fa97e808ff0}} 
+int {\bfseries x}
+\item 
+\mbox{\Hypertarget{class_ellipse_a37ca7f50a9df28e00428077cc1a38a3a}\label{class_ellipse_a37ca7f50a9df28e00428077cc1a38a3a}} 
+int {\bfseries y}
+\item 
+\mbox{\Hypertarget{class_ellipse_a8e0e2fa0f3200a997f4b0567e588c823}\label{class_ellipse_a8e0e2fa0f3200a997f4b0567e588c823}} 
+double {\bfseries x\+Radius}
+\item 
+\mbox{\Hypertarget{class_ellipse_a83614d1aaa446b1f8e404b6bc3cc8c19}\label{class_ellipse_a83614d1aaa446b1f8e404b6bc3cc8c19}} 
+double {\bfseries y\+Radius}
+\item 
+\mbox{\Hypertarget{class_ellipse_af632e808976bdd5598bbae897cc359d7}\label{class_ellipse_af632e808976bdd5598bbae897cc359d7}} 
+const double {\bfseries pi} = 3.\+14159265359
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ellipse_ad58a3d79058ccc3a31b3fc6bc6cd9a30}\label{class_ellipse_ad58a3d79058ccc3a31b3fc6bc6cd9a30}} 
+static int {\bfseries ellipse\+Counter}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_ellipse}{Ellipse} class -\/ parent to circle class, handles move functions as well as area and perimeter coming from the virtual base class. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ellipse_aaf9524151dc799501327f72c75e0f010}\label{class_ellipse_aaf9524151dc799501327f72c75e0f010}} 
+\index{Ellipse@{Ellipse}!Draw@{Draw}}
+\index{Draw@{Draw}!Ellipse@{Ellipse}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Ellipse\+::\+Draw (\begin{DoxyParamCaption}\item[{\hyperlink{class_canvas}{Canvas} $\ast$}]{paint\+Area }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draw -\/ draws the shape\+: virtual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em paint\+Area} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_shape_ad7cc6a5e97b0971d50999bce4396127a}{Shape}.
+
+
+
+Reimplemented in \hyperlink{class_circle_a5bebd94955572edce0ad10208a449772}{Circle}.
+
+\mbox{\Hypertarget{class_ellipse_ab3ba6c9f068fc37808778c74f1273f69}\label{class_ellipse_ab3ba6c9f068fc37808778c74f1273f69}} 
+\index{Ellipse@{Ellipse}!is\+\_\+\+Left\+\_\+\+Clicked@{is\+\_\+\+Left\+\_\+\+Clicked}}
+\index{is\+\_\+\+Left\+\_\+\+Clicked@{is\+\_\+\+Left\+\_\+\+Clicked}!Ellipse@{Ellipse}}
+\subsubsection{\texorpdfstring{is\+\_\+\+Left\+\_\+\+Clicked()}{is\_Left\_Clicked()}}
+{\footnotesize\ttfamily bool Ellipse\+::is\+\_\+\+Left\+\_\+\+Clicked (\begin{DoxyParamCaption}\item[{Q\+Point}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+is\+\_\+\+Left\+\_\+\+Clicked -\/ mouse input 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_shape_ab2d47c913eb287843e61b2d48e422ced}{Shape}.
+
+
+
+Reimplemented in \hyperlink{class_circle_a1661bb4e324cce0196a6aa1195c26c73}{Circle}.
+
+\mbox{\Hypertarget{class_ellipse_a8f5c5a4d8051009fee6d861f163c96dd}\label{class_ellipse_a8f5c5a4d8051009fee6d861f163c96dd}} 
+\index{Ellipse@{Ellipse}!move@{move}}
+\index{move@{move}!Ellipse@{Ellipse}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Ellipse\+::move (\begin{DoxyParamCaption}\item[{Q\+Point}]{xy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+move -\/ handles moving the shape and recieves in mouse input 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xy} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_shape_a26d57a0589b0fd7ff03a4b5ad8dc530a}{Shape}.
+
+
+
+Reimplemented in \hyperlink{class_circle_a5f02de3ad7e992a689b9f9e88643076c}{Circle}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Ellipse.\+h\item 
+Ellipse.\+cpp\end{DoxyCompactItemize}
