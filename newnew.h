@@ -4,7 +4,6 @@
 #include <QDialog>
 #include "users.h"
 #include "maininterface.h"
-#include "createuser.h"
 namespace Ui {
 class newnew;
 }
@@ -33,7 +32,6 @@ private:
     Ui::newnew *ui;
     MainInterface interface;
     UserList userObject;
-    createUser createWindow;
     //admin code to create an admin user
     QString adminGUID = "12345";
 };

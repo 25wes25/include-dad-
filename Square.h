@@ -6,14 +6,6 @@ class Square: public Rectangle
     public:
     Square();
     Square(int x, int y, double s);
-    Square(QString idIn,
-            Qt::BrushStyle brushStyleIn,
-            Qt::GlobalColor brushColorIn,
-            double penWidthIn,
-            Qt::GlobalColor penColorIn,
-            Qt::PenCapStyle penCapIn,
-            Qt::PenJoinStyle penJoinIn,
-            Qt::PenStyle penStyleIn,double xR);
     Square(Square &copy);
     Square(Square &&copy);
     ~Square();
@@ -24,8 +16,7 @@ class Square: public Rectangle
     // Accessors
     virtual double getArea();
     virtual double getPerimeter();
-    virtual void move(QPoint xy);
     virtual void Draw(Canvas *drawArea);
-    virtual bool is_Left_Clicked(QPoint e);
+    virtual bool is_Left_Clicked(QPoint &e);
 };
 #endif

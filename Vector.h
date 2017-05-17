@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <iostream>
 #include <algorithm> // std::copy
+#include "shape.h"
 
 using namespace std;
 
@@ -44,7 +45,6 @@ class Vector
         iterator end();
         const_iterator end() const;
         iterator insert(iterator p, const Type& val); 	// Insert a new element val before i
-
         iterator erase(iterator p);						// Remove element pointed to by i
 };
 
@@ -94,6 +94,10 @@ void Vector<Type>::push_back(Type element)
     if (space == 0)
     {
         reserve(8); // start with space for 8 elements
+    }
+    else if (size_v == 0 && space == 0)
+    {
+        reserve(1); // get more space
     }
     else if (size_v == space)
     {

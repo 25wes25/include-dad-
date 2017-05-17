@@ -8,44 +8,23 @@
 #include <string>
 #include <QPainter>
 #include <QPoint>
-#include "shape.h"
-#include <QMouseEvent>
-#include <QKeyEvent>
-#include <QDebug>
-using namespace std;
 
+using namespace std;
+class Shape;
 
 class Canvas :public QWidget
 {
     Q_OBJECT
-private:
-    Vector<Shape*> area;
-    Shape* currentShape;
-    bool getPointInputs;
 public:
     Canvas(QWidget *parent=0);
     void addShape(Shape* add);
-    Shape* getCurrentShape(){return currentShape;}
-    int getShapeNum() const;
-    void setCurrentShape(Shape* e){currentShape = e;}
-
-    void clear();
+    Shape* getCurrentShape(){return currentShape();}
     void render();
-    Shape& operator[](int x);
 protected:
-    void mousePressEvent(QMouseEvent *event);
-    void mouseMoveEvent(QMouseEvent *event);
     void paintEvent(QPaintEvent *);
-    void keyPressEvent(QKeyEvent *key);
-
-signals:
-  void isClicked();
-public slots:
-  void mousePointInput(){getPointInputs = !getPointInputs;
-                        qDebug() << "Slot activating"<<getPointInputs;}
-
-
-
+private:
+    Vector<Shape*> area;
+    Shape* currentShape();
 };
 
 
