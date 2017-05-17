@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'maininterface.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.1
+** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -46,6 +46,7 @@ public:
     QAction *actionExit;
     QAction *actionNew;
     QAction *actionLoad;
+    QAction *actionHelp;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QTabWidget *Tabs;
@@ -85,13 +86,14 @@ public:
     QTableWidget *tableWidget;
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
-    QPushButton *button_SortPerimeter;
-    QPushButton *button_SortArea;
     QPushButton *button_SortID;
+    QPushButton *button_SortArea;
+    QPushButton *button_SortPerimeter;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuEdit;
     QMenu *menuAbout;
+    QMenu *menuHelp;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainInterface)
@@ -126,6 +128,8 @@ public:
         actionNew->setObjectName(QStringLiteral("actionNew"));
         actionLoad = new QAction(MainInterface);
         actionLoad->setObjectName(QStringLiteral("actionLoad"));
+        actionHelp = new QAction(MainInterface);
+        actionHelp->setObjectName(QStringLiteral("actionHelp"));
         centralwidget = new QWidget(MainInterface);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
@@ -391,20 +395,20 @@ public:
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        button_SortPerimeter = new QPushButton(layoutWidget);
-        button_SortPerimeter->setObjectName(QStringLiteral("button_SortPerimeter"));
+        button_SortID = new QPushButton(layoutWidget);
+        button_SortID->setObjectName(QStringLiteral("button_SortID"));
 
-        verticalLayout->addWidget(button_SortPerimeter);
+        verticalLayout->addWidget(button_SortID);
 
         button_SortArea = new QPushButton(layoutWidget);
         button_SortArea->setObjectName(QStringLiteral("button_SortArea"));
 
         verticalLayout->addWidget(button_SortArea);
 
-        button_SortID = new QPushButton(layoutWidget);
-        button_SortID->setObjectName(QStringLiteral("button_SortID"));
+        button_SortPerimeter = new QPushButton(layoutWidget);
+        button_SortPerimeter->setObjectName(QStringLiteral("button_SortPerimeter"));
 
-        verticalLayout->addWidget(button_SortID);
+        verticalLayout->addWidget(button_SortPerimeter);
 
         Tabs->addTab(Table, QString());
 
@@ -413,13 +417,15 @@ public:
         MainInterface->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainInterface);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1300, 21));
+        menubar->setGeometry(QRect(0, 0, 1300, 20));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         menuEdit = new QMenu(menubar);
         menuEdit->setObjectName(QStringLiteral("menuEdit"));
         menuAbout = new QMenu(menubar);
         menuAbout->setObjectName(QStringLiteral("menuAbout"));
+        menuHelp = new QMenu(menubar);
+        menuHelp->setObjectName(QStringLiteral("menuHelp"));
         MainInterface->setMenuBar(menubar);
         statusbar = new QStatusBar(MainInterface);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -428,6 +434,7 @@ public:
         menubar->addAction(menuFile->menuAction());
         menubar->addAction(menuEdit->menuAction());
         menubar->addAction(menuAbout->menuAction());
+        menubar->addAction(menuHelp->menuAction());
         menuFile->addAction(actionNew);
         menuFile->addAction(actionSave);
         menuFile->addAction(actionSave_As);
@@ -437,6 +444,7 @@ public:
         menuAbout->addAction(actionMaintenance_Notes);
         menuAbout->addAction(actionTestimonials);
         menuAbout->addAction(actionContact_Us);
+        menuHelp->addAction(actionHelp);
 
         retranslateUi(MainInterface);
 
@@ -460,6 +468,7 @@ public:
         actionExit->setText(QApplication::translate("MainInterface", "Exit               (Esc)", Q_NULLPTR));
         actionNew->setText(QApplication::translate("MainInterface", "New", Q_NULLPTR));
         actionLoad->setText(QApplication::translate("MainInterface", "Load", Q_NULLPTR));
+        actionHelp->setText(QApplication::translate("MainInterface", "Help", Q_NULLPTR));
         ShapeTypeLabel->setText(QApplication::translate("MainInterface", "Add Shape:", Q_NULLPTR));
         shapeIdLabel->setText(QApplication::translate("MainInterface", "Shape ID:", Q_NULLPTR));
         penColorLabel->setText(QApplication::translate("MainInterface", "Pen Color:", Q_NULLPTR));
@@ -510,13 +519,14 @@ public:
         ___qtablewidgetitem11->setText(QApplication::translate("MainInterface", "Brush Color", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem12 = tableWidget->horizontalHeaderItem(10);
         ___qtablewidgetitem12->setText(QApplication::translate("MainInterface", "Brush Style", Q_NULLPTR));
-        button_SortPerimeter->setText(QApplication::translate("MainInterface", "Sort by Perimeter", Q_NULLPTR));
-        button_SortArea->setText(QApplication::translate("MainInterface", "Sort by Area", Q_NULLPTR));
         button_SortID->setText(QApplication::translate("MainInterface", "Sort by ID", Q_NULLPTR));
+        button_SortArea->setText(QApplication::translate("MainInterface", "Sort by Area", Q_NULLPTR));
+        button_SortPerimeter->setText(QApplication::translate("MainInterface", "Sort by Perimeter", Q_NULLPTR));
         Tabs->setTabText(Tabs->indexOf(Table), QApplication::translate("MainInterface", "Table", Q_NULLPTR));
         menuFile->setTitle(QApplication::translate("MainInterface", "File", Q_NULLPTR));
         menuEdit->setTitle(QApplication::translate("MainInterface", "Edit", Q_NULLPTR));
         menuAbout->setTitle(QApplication::translate("MainInterface", "About", Q_NULLPTR));
+        menuHelp->setTitle(QApplication::translate("MainInterface", "Help", Q_NULLPTR));
     } // retranslateUi
 
 };

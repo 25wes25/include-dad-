@@ -2,6 +2,7 @@
 #define USERS_H
 
 #include <QVector>
+#include "Vector.h"
 
 //enum to declare what the user is allowed to
 enum status{INVALID, ADMIN, GUEST};
@@ -15,8 +16,7 @@ struct singleUser {
 
 class UserList
 {
-    //holding all the users
-    QVector<singleUser> users;
+
 public:
     UserList();
     bool addUser(QString name, QString password, status type);
@@ -25,6 +25,11 @@ public:
     QString getName();
     void clear();
     bool isAdmin();
+    void operator=(UserList object);
+
+private:
+    //vector full of struct->accounts
+    Vector<singleUser> accVec;
 };
 
 #endif // USERS_H
