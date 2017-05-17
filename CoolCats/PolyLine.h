@@ -1,16 +1,13 @@
 #ifndef POLYLINE_H
 #define POLYLINE_H
-
+#include "Vector.h"
 #include "Line.h"
-
-class PolyLine: public Line
+#include "canvas.h"
+class PolyLine
 {
+	private:
+        Vector<Line> Poly;
 	public:
-        PolyLine();
-        ~PolyLine();
-        virtual void push_Back_point(QPoint xy);
-        virtual void push_Back_point(int x, int y);
-        virtual void Draw(Canvas *drawArea);
-        virtual bool is_Left_Clicked(QPoint e);
+        void Draw(Canvas *drawArea);
 };
 #endif

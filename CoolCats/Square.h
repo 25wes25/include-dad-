@@ -17,6 +17,6 @@ class Square: public Rectangle
     virtual double getArea();
     virtual double getPerimeter();
     virtual void Draw(Canvas *drawArea);
-    virtual bool is_Left_Clicked(QPoint e);
+    virtual bool is_Left_Clicked(QPoint &e);
 };
 #endif

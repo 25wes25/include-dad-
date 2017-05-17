@@ -15,18 +15,23 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_MaintenanceNotes
 {
 public:
+    QLabel *MaintenanceNotesImage;
 
     void setupUi(QDialog *MaintenanceNotes)
     {
         if (MaintenanceNotes->objectName().isEmpty())
             MaintenanceNotes->setObjectName(QStringLiteral("MaintenanceNotes"));
         MaintenanceNotes->resize(720, 480);
+        MaintenanceNotesImage = new QLabel(MaintenanceNotes);
+        MaintenanceNotesImage->setObjectName(QStringLiteral("MaintenanceNotesImage"));
+        MaintenanceNotesImage->setGeometry(QRect(10, 30, 681, 421));
 
         retranslateUi(MaintenanceNotes);
 
@@ -36,6 +41,7 @@ public:
     void retranslateUi(QDialog *MaintenanceNotes)
     {
         MaintenanceNotes->setWindowTitle(QApplication::translate("MaintenanceNotes", "Dialog", Q_NULLPTR));
+        MaintenanceNotesImage->setText(QApplication::translate("MaintenanceNotes", "<html><head/><body><p><img src=\":/Images/MaintenanceNotes.png\"/></p></body></html>", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -3,7 +3,6 @@
 #ifndef CIRCLE_H
 #define CIRCLE_H
 #include "Ellipse.h"
-#include "canvas.h"
 class Circle:public Ellipse
 {
 	public:
@@ -12,15 +11,11 @@ class Circle:public Ellipse
 		Circle(Circle &copy);
 		Circle(Circle &&copy);
 		~Circle();
-
-        // Accessors
-        double getArea(){return pi*xRadius*xRadius;}
-        double getPerimeter(){return 2*pi*xRadius;}
-
-        virtual void move(int xDes, int yDes);
-        virtual void move(QPoint xy);
+        virtual void Move(int xDes, int yDes);
+        virtual void Move(QPoint &xy);
         virtual void Resize(double radiusIn);
-        virtual void Draw(Canvas* area);
-        virtual bool is_Left_Clicked(QPoint e);
+        virtual void Draw();
+		virtual bool is_Left_Clicked(QPoint &e);
+	
 };
 #endif

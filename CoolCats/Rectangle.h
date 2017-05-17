@@ -10,7 +10,6 @@ class Rectangle:public Shape
         int y;
         double width;
         double length;
-
     public:
         Rectangle();
         Rectangle(int x, int y, double w, double l);
@@ -29,6 +28,6 @@ class Rectangle:public Shape
         double getArea()	{return (length*width);}
         double getPerimeter() {return (length+length+width+width);}
         void Draw(Canvas *drawArea);
-        virtual bool is_Left_Clicked(QPoint e);
+        virtual bool is_Left_Clicked(QPoint &e);
 };
 #endif
