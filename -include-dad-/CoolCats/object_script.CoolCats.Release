@@ -17,6 +17,8 @@ INPUT(
 ./release\Polygon.o
 ./release\help.o
 ./release\newnew.o
+./release\textmanip.o
+./release\text.o
 ./release\qrc_resources.o
 ./release\moc_loginscreen.o
 ./release\moc_maininterface.o

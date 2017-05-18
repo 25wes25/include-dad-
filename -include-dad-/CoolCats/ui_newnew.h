@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'newnew.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -123,19 +123,19 @@ public:
 
     void retranslateUi(QDialog *newnew)
     {
-        newnew->setWindowTitle(QApplication::translate("newnew", "Dialog", 0));
+        newnew->setWindowTitle(QApplication::translate("newnew", "Dialog", Q_NULLPTR));
         label->setText(QString());
-        label_2->setText(QApplication::translate("newnew", "Username:", 0));
-        label_3->setText(QApplication::translate("newnew", "Password:", 0));
-        createButton->setText(QApplication::translate("newnew", "Create User", 0));
-        loginButton->setText(QApplication::translate("newnew", "Login", 0));
-        pushButton_3->setText(QApplication::translate("newnew", "Help!", 0));
+        label_2->setText(QApplication::translate("newnew", "Username:", Q_NULLPTR));
+        label_3->setText(QApplication::translate("newnew", "Password:", Q_NULLPTR));
+        createButton->setText(QApplication::translate("newnew", "Create User", Q_NULLPTR));
+        loginButton->setText(QApplication::translate("newnew", "Login", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("newnew", "Help!", Q_NULLPTR));
         falling->setText(QString());
-        userswitch->setText(QApplication::translate("newnew", "create user", 0));
+        userswitch->setText(QApplication::translate("newnew", "create user", Q_NULLPTR));
         userCombo->clear();
         userCombo->insertItems(0, QStringList()
-         << QApplication::translate("newnew", "Guest", 0)
-         << QApplication::translate("newnew", "Admin", 0)
+         << QApplication::translate("newnew", "Guest", Q_NULLPTR)
+         << QApplication::translate("newnew", "Admin", Q_NULLPTR)
         );
         codeLabel->setText(QString());
         ERRORADMINCODE->setText(QString());

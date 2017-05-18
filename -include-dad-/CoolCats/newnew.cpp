@@ -11,6 +11,7 @@ newnew::newnew(QWidget *parent) :
 {
     ui->setupUi(this);
     //userObject.addUser("coolcat", "12345", ADMIN);
+   // connect(interface,SIGNAL(Logout()),this,SLOT(onLogout()));
 }
 
 void newnew::startMovie(QMovie &gif)
@@ -36,6 +37,7 @@ void newnew::on_loginButton_clicked()
         //close first window
         this->close();
         //show dialog window
+       interface.setuserLevel(ADMIN/*userObject.isUser(ui->nameEdit->text(), ui->passwordEdit->text())*/);
        interface.show();
     }
 }
@@ -116,4 +118,8 @@ void newnew::on_userCombo_currentIndexChanged(const QString &arg1)
         ui->adminCode->setEnabled(true);
         ui->codeLabel->setText("Please Enter an Admin Code");
     }
+}
+void newnew::onLogout()
+{
+    this->open();
 }

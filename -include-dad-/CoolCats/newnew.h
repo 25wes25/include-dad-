@@ -28,6 +28,8 @@ private slots:
     void on_userswitch_toggled(bool checked);
 
     void on_userCombo_currentIndexChanged(const QString &arg1);
+public slots:
+    void onLogout();
 
 private:
     Ui::newnew *ui;

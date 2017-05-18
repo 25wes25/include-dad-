@@ -17,7 +17,7 @@ PolyLine::PolyLine(int tempId, QTextStream &input)
         Ignore(input, ' ');
         input >> tempY;
         push_Back_point(tempX, tempY);
-    }while(input.read(1) == ',');
+    }while(input.read(1) == ",");
 
     Ignore(input, ':');
     input.read(1);

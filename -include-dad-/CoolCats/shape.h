@@ -70,6 +70,7 @@ class Shape
         QString GetID();
         QString GetPenColor();
         QString GetPenWidth();
+        int GetPenWidthInt(){return penWidthEdit;}
         QString GetPenStyle();
         QString GetPenCapStyle();
         QString GetPenJoinStyle();
