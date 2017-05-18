@@ -9,15 +9,15 @@
 #include "canvas.h"
 #include "Circle.h"
 #include "Square.h"
-#include "Line.h"
-#include "PolyLine.h"
 #include "PolyGon.h"
 #include "text.h"
 #include "Vector.h"
+#include "users.h"
 #include <QMouseEvent>
 #include <QLabel>
 #include <QSlider>
 #include <QDir>
+#include <QTextStream>
 using namespace std;
 namespace Ui {
 class MainInterface;
@@ -46,7 +46,8 @@ public:
     QString GetShapeType(); // Returns a string based of the type of shape
     QString GetShapePerimeterArea(bool choice); // 0 returns Area, 1 returns Perimeter
     bool HasPerimeterArea(const Shape& shape); // Returns false if shape does not have Area and Perimeter
-
+    //Mutators
+    void setuserLevel(status level){userLevel=level;}
 private:
     //QWidget's shown on screen
     Ui::MainInterface *ui;
@@ -64,6 +65,7 @@ private:
     Testimonials testimonialsWindow;
     Contact contactWindow;
 	Help helpWindow;
+    status userLevel;
 
 
     // Private Helper Functions
@@ -78,6 +80,7 @@ private:
     bool CompareShapeAreaPerimeter(QString LhsID, QString RhsID, bool choice); // 0 for Area, 1 for Perimeter.
     void CustomSort(); // Extra Credit, sorts by something idk
 
+    //BEGIN FUNCTIONS THE DEFINE THE UI
     void CircleUISet();
     void EllipseUISet();
     void SquareUISet();
@@ -86,7 +89,8 @@ private:
     void PolyGonUISet();
     void TextUISet();
     void RefreshUI();
-
+    void DisableUI();
+    //END FUNCTIONS THE DEFINE THE UI
 
     // Constant Integers
     const int SHAPE_TABLE_COL_SIZE = 11; // Total collumns for tableWidget
@@ -133,6 +137,7 @@ protected slots:
 
 signals:
     void PointInput();
+    void Logout();
 private slots:
     void saveFile();
     void upDateCurrentShape();

@@ -1,4 +1,5 @@
 #include "Line.h"
+#include "Circle.h"
 #include "canvas.h"
 Line::Line():Shape()
 {
@@ -104,21 +105,38 @@ void Line::push_Back_point(QPoint e)
 }
 void Line::push_Back_point(int x, int y)
 {
-
     point_counter++;
     points << QPoint(x,y);
 }
 
-void Line::moveLastPoint(QPoint e)
+void Line::movevertex(QPoint e)
 {
-    if(point_counter>=2)
-    {
-        points.setPoint(point_counter-1,e);
-    }
+//    int i =0;
+//    Circle *tempPointer;
+//    bool found = false;
+//    for( i=0 ; (i < point_counter && !found); i++)
+//    {
+//        tempPointer = new Circle(points.point(i).x(),points.point(i).y(),GetPenWidthInt());
+//        found = tempPointer->is_Left_Clicked(e);
+//    }
+//    points.setPoint(i,e);
 }
 
 bool Line::is_Left_Clicked(QPoint e)
 {
+//    int i =0;
+//    Circle *tempPointer;
+//    bool found = false;
+//    if(point_counter>1)
+//    {
+//    while(i<point_counter&&!found)
+//    {
+//        tempPointer = new Circle(points.point(i).x(),points.point(i).y(),GetPenWidthInt());
+//        found = tempPointer->is_Left_Clicked(e);
+//        i++;
+
+//    }
+//    return found;
+//    }
     return false;
-    //I got the alg in my branch
 }

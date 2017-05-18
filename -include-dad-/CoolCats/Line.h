@@ -38,7 +38,7 @@ class Line: public Shape
         virtual void Print(QTextStream& output);
         virtual void push_Back_point(QPoint e);
         virtual void push_Back_point(int x, int y);
-        virtual void moveLastPoint(QPoint e);
+        virtual void movevertex(QPoint e);
         virtual void Draw(Canvas *drawArea);
         virtual bool is_Left_Clicked(QPoint e);
         int getPointnum(){return point_counter;}

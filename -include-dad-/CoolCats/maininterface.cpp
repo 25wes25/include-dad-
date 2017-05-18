@@ -67,6 +67,7 @@ MainInterface::MainInterface(QWidget *parent) :
     ui->brushStyleEdit->addItem(tr("Horizontal"),static_cast<int>(Qt::HorPattern));
     ui->brushStyleEdit->addItem(tr("Vertical"),static_cast<int>(Qt::VerPattern));
     ui->brushStyleEdit->addItem(tr("No Brush"),static_cast<int>(Qt::NoBrush));
+
     //end - Associate combo box indicies with QT enums
 
 
@@ -86,6 +87,11 @@ MainInterface::MainInterface(QWidget *parent) :
     tempLabel1->setSizePolicy(QSizePolicy(QSizePolicy::Fixed,QSizePolicy::Fixed));
     tempLabel2->setSizePolicy(QSizePolicy(QSizePolicy::Fixed,QSizePolicy::Fixed));
 
+    ui->LabelLayout->addWidget(tempLabel1,0,Qt::AlignLeft);
+    ui->LabelLayout->addWidget(tempLabel2,0,Qt::AlignLeft);
+
+    ui->InputLayout->addWidget(horizontalSlider,0,Qt::AlignLeft);
+    ui->InputLayout->addWidget(verticalSlider,0,Qt::AlignLeft);
     //INITIALIZE THE DRAWING CANVAS
     canvas = new Canvas();
     connect(ui->actionSave,SIGNAL(triggered(bool)),this, SLOT(saveFile()));    
@@ -105,6 +111,7 @@ MainInterface::MainInterface(QWidget *parent) :
     saveName = SavePath.path();
     qDebug() << SavePath.path();
     Load();
+
 }
 
 
@@ -183,7 +190,7 @@ void MainInterface::Load()
         }
         else
         {
-            while (input.read(1) != '\n' || input.read(1) != '\n');
+            while (input.read(1) != "\n" || input.read(1) != "\n");
         }
         input.readLine();
     }
@@ -378,16 +385,16 @@ void MainInterface::upDateCurrentShape()
        }
        else if(PolyLine* pl = dynamic_cast<PolyLine*>(canvas->getCurrentShape()))
        {
-         //output and create edit comboboxex and sliders based off of the pointer e
+            LineUISet();
        }
-    // else if(Polygon* pg = dynamic_cast<PolyGon*>(canvas->getCurrentShape()))
-    // {
+       else if(Polygon* pg = dynamic_cast<Polygon*>(canvas->getCurrentShape()))
+       {
+            PolyGonUISet();
+       }
+       else if(Text* t = dynamic_cast<Text*>(canvas->getCurrentShape()))
+       {
 
-    // }
-    // else if(Text* t = dynamic_cast<Text*>(canvas->getCurrentShape()))
-    // {
-
-    // }
+       }
     }
     else
     {
@@ -396,36 +403,41 @@ void MainInterface::upDateCurrentShape()
 }
 void MainInterface::Exit()
 {
+    emit Logout();
     this->close();
+
 }
 void MainInterface::CircleUISet()
 {
     RefreshUI();
     //output the info from the new circle object c to the
     tempLabel1->setText("Axis Length:");
-    ui->LabelLayout->addWidget(tempLabel1,0,Qt::AlignRight);
-    ui->InputLayout->addWidget(horizontalSlider,0,Qt::AlignRight);
+    ui->LabelLayout->addWidget(tempLabel1,0,Qt::AlignLeft);
+    ui->InputLayout->addWidget(horizontalSlider,0,Qt::AlignLeft);
+
+    tempLabel1->show();
+    horizontalSlider->show();
     ui->brushColorEdit->setEnabled(true);
     ui->brushStyleEdit->setEnabled(true);
 
 }
-//void MainInterface::sliderMoved(int value)
-//{
-//    horizontalSlider->setSliderPosition(value);
-//}
 
 void MainInterface::EllipseUISet()
 {
     RefreshUI();
     tempLabel1->setText("Horizontal Axis Length:");
     tempLabel2->setText("Vertical Axis Length:");
+    ui->LabelLayout->addWidget(tempLabel1,0,Qt::AlignLeft);
+    ui->LabelLayout->addWidget(tempLabel2,0,Qt::AlignLeft);
+    ui->InputLayout->addWidget(horizontalSlider,0,Qt::AlignLeft);
+    ui->InputLayout->addWidget(verticalSlider,0,Qt::AlignLeft);
 
-    ui->LabelLayout->addWidget(tempLabel1,0,Qt::AlignRight);
-    ui->LabelLayout->addWidget(tempLabel2,0,Qt::AlignRight);
+    tempLabel1->show();
+    tempLabel2->show();
 
-    ui->InputLayout->addWidget(horizontalSlider,0,Qt::AlignRight);
-    ui->InputLayout->addWidget(verticalSlider,0,Qt::AlignRight);
-    connect(horizontalSlider, SIGNAL(sliderMoved(int value)), this, SLOT(OnHorizontaAxisEllipseChanged()));
+    horizontalSlider->show();
+    verticalSlider->show();
+
     ui->brushColorEdit->setEnabled(true);
     ui->brushStyleEdit->setEnabled(true);
 
@@ -454,10 +466,7 @@ void MainInterface::RectangleUISet()
     tempLabel1->setText("Length:");
     tempLabel2->setText("Width:");
     ui->LabelLayout->addWidget(tempLabel1,0,Qt::AlignRight);
-    ui->LabelLayout->addWidget(tempLabel2,0,Qt::AlignRight);
-
     ui->InputLayout->addWidget(horizontalSlider,0,Qt::AlignRight);
-    ui->InputLayout->addWidget(verticalSlider,0,Qt::AlignRight);
 
 
 }
@@ -467,8 +476,6 @@ void MainInterface::LineUISet()
     ui->brushColorEdit->setEnabled(false);
     ui->brushStyleEdit->setEnabled(false);
 }
-
-
 void MainInterface::PolyGonUISet()
 {
     RefreshUI();
@@ -481,28 +488,21 @@ void MainInterface::RefreshUI()
     ui->LabelLayout->removeWidget(tempLabel2);
     ui->InputLayout->removeWidget(horizontalSlider);
     ui->InputLayout->removeWidget(verticalSlider);
-    delete tempLabel1;
-    delete tempLabel2;
-    delete verticalSlider;
-    delete horizontalSlider;
-    tempLabel1 = new QLabel;
-    tempLabel2 = new QLabel;
-    horizontalSlider = new QSlider(Qt::Horizontal);
-    verticalSlider = new QSlider(Qt::Horizontal);
-    horizontalSlider->setMinimum(0);
-    horizontalSlider->setMaximum(500);
-    horizontalSlider->setSliderPosition(100);
-    verticalSlider->setMinimum(0);
-    verticalSlider->setMaximum(500);
-    verticalSlider->setSliderPosition(100);
-    tempLabel1->setSizePolicy(QSizePolicy(QSizePolicy::Fixed,QSizePolicy::Fixed));
-    tempLabel2->setSizePolicy(QSizePolicy(QSizePolicy::Fixed,QSizePolicy::Fixed));
+    tempLabel1->hide();
+    tempLabel2->hide();
+    horizontalSlider->hide();
+    verticalSlider->hide();
 }
-
 //void TextUISet();
 //{
 //    //nothing yet
 //}
+void MainInterface::DisableUI()
+{
+    ui->InputLayout->setEnabled(false);
+    ui->LabelLayout->setEnabled(false);
+}
+
 void MainInterface::on_ShapeTypeEdit_currentIndexChanged(int index)
 {
 
@@ -519,7 +519,7 @@ void MainInterface::on_ShapeTypeEdit_currentIndexChanged(int index)
         break;
     }
     case 2:
-        //PolyGon
+        PolyGonUISet();
         break;
     case 3:
     {
@@ -528,20 +528,21 @@ void MainInterface::on_ShapeTypeEdit_currentIndexChanged(int index)
     }
     case 4:
     {
-        //Ellipse
+
         EllipseUISet();
         break;
     }
     case 5:
-        //Square
+        SquareUISet();
         break;
     case 6:
-        //Rectangle
+        RectangleUISet();
         break;
     case 7:
         //Text
         break;
     }
+    canvas->setCurrentShape(nullptr);
 }
 
 void MainInterface::MaintenanceNotesClicked()
@@ -752,180 +753,188 @@ void MainInterface::on_button_SortPerimeter_clicked()
 
 void MainInterface::on_AddObject_clicked()
 {
-    //Get the current shape and it's relavant information
-    if(canvas->getCurrentShape()!=nullptr)
+    if(userLevel!=GUEST)
     {
-        //this if statment is true if it can properly dynamic cast this pointer.
-        //this if statement tree is very specific on it's ordering due to certain
-        //heirarchies
+        //Get the current shape and it's relavant information
+        if(canvas->getCurrentShape()!=nullptr)
+        {
+            //this if statment is true if it can properly dynamic cast this pointer.
+            //this if statement tree is very specific on it's ordering due to certain
+            //heirarchies
 
-        if(Circle* c= dynamic_cast<Circle*>(canvas->getCurrentShape()))
-        {
-             CircleUISet();
-        }
-        else if(Ellipse* e = dynamic_cast<Ellipse*>(canvas->getCurrentShape()))
-        {
-             EllipseUISet();
-        }
-        else if(Square* s = dynamic_cast<Square*>(canvas->getCurrentShape()))
-        {
-             SquareUISet();
-        }
-        else if(Rectangle* r = dynamic_cast<Rectangle*>(canvas->getCurrentShape()))
-        {
-             RectangleUISet();
-        }
-        else if(Line* l = dynamic_cast<Line*>(canvas->getCurrentShape()))
-        {
-             LineUISet();
-        }
-     // else if(PolyLine* pl = dynamic_cast<PolyLine*>(canvas->getCurrentShape()))
-     // {
-     //     //output and create edit comboboxex and sliders based off of the pointer e
-     // }
-     // else if(Polygon* pg = dynamic_cast<PolyGon*>(canvas->getCurrentShape()))
-     // {
+            if(Circle* c= dynamic_cast<Circle*>(canvas->getCurrentShape()))
+            {
+                 CircleUISet();
+            }
+            else if(Ellipse* e = dynamic_cast<Ellipse*>(canvas->getCurrentShape()))
+            {
+                 EllipseUISet();
+            }
+            else if(Square* s = dynamic_cast<Square*>(canvas->getCurrentShape()))
+            {
+                 SquareUISet();
+            }
+            else if(Rectangle* r = dynamic_cast<Rectangle*>(canvas->getCurrentShape()))
+            {
+                 RectangleUISet();
+            }
+            else if(Line* l = dynamic_cast<Line*>(canvas->getCurrentShape()))
+            {
+                 LineUISet();
+            }
+         // else if(PolyLine* pl = dynamic_cast<PolyLine*>(canvas->getCurrentShape()))
+         // {
+         //     //output and create edit comboboxex and sliders based off of the pointer e
+         // }
+         // else if(Polygon* pg = dynamic_cast<PolyGon*>(canvas->getCurrentShape()))
+         // {
 
-     // }
-     // else if(Text* t = dynamic_cast<Text*>(canvas->getCurrentShape()))
-     // {
+         // }
+         // else if(Text* t = dynamic_cast<Text*>(canvas->getCurrentShape()))
+         // {
 
-     // }
-    }//- End if
-    //Else
-    //you gather all of the currently set combo box options
-    // and throw them into the relavant shape constructor and push.
+         // }
+        }//- End if
+
+        //Else
+        //you gather all of the currently set combo box options
+        // and throw them into the relavant shape constructor and push.
+        else
+        {
+            switch(ui->ShapeTypeEdit->currentIndex())
+            {
+            case 0:
+            {
+                //Line
+                qDebug() << "Creating new line";
+                LineUISet();
+                Line *l = new Line(ui->shapeIdEdit->text(),
+                                   Qt::BrushStyle(ui->brushStyleEdit->itemData(ui->brushStyleEdit->currentIndex(),IdRole).toInt()),
+                                   Qt::GlobalColor(ui->brushColorEdit->itemData(ui->brushColorEdit->currentIndex(),IdRole).toInt()),
+                                   ui->penWidthEdit->value(),
+                                   Qt::GlobalColor(ui->penColorEdit->itemData(ui->penColorEdit->currentIndex(),IdRole).toInt()),
+                                   Qt::PenCapStyle(ui->PenCapEdit->itemData(ui->PenCapEdit->currentIndex(),IdRole).toInt()),
+                                   Qt::PenJoinStyle(ui->PenJoinEdit->itemData(ui->PenJoinEdit->currentIndex(),IdRole).toInt()),
+                                   Qt::PenStyle(ui->penStyleEdit->itemData(ui->penStyleEdit->currentIndex(),IdRole).toInt())
+                                   );
+                canvas->setCurrentShape(l);
+                canvas->addShape(l);
+                emit PointInput();
+                break;
+            }
+            case 1:
+            {
+                LineUISet();
+                PolyLine *pl = new PolyLine(ui->shapeIdEdit->text(),
+                                           Qt::BrushStyle(ui->brushStyleEdit->itemData(ui->brushStyleEdit->currentIndex(),IdRole).toInt()),
+                                           Qt::GlobalColor(ui->brushColorEdit->itemData(ui->brushColorEdit->currentIndex(),IdRole).toInt()),
+                                           ui->penWidthEdit->value(),
+                                           Qt::GlobalColor(ui->penColorEdit->itemData(ui->penColorEdit->currentIndex(),IdRole).toInt()),
+                                           Qt::PenCapStyle(ui->PenCapEdit->itemData(ui->PenCapEdit->currentIndex(),IdRole).toInt()),
+                                           Qt::PenJoinStyle(ui->PenJoinEdit->itemData(ui->PenJoinEdit->currentIndex(),IdRole).toInt()),
+                                           Qt::PenStyle(ui->penStyleEdit->itemData(ui->penStyleEdit->currentIndex(),IdRole).toInt())
+                                           );
+
+                canvas->setCurrentShape(pl);
+                canvas->addShape(pl);
+                emit PointInput();
+                break;
+            }
+            case 2:
+            {
+                //PolyGon
+                PolyGonUISet();
+                Polygon *pg = new Polygon(ui->shapeIdEdit->text(),
+                                           Qt::BrushStyle(ui->brushStyleEdit->itemData(ui->brushStyleEdit->currentIndex(),IdRole).toInt()),
+                                           Qt::GlobalColor(ui->brushColorEdit->itemData(ui->brushColorEdit->currentIndex(),IdRole).toInt()),
+                                           ui->penWidthEdit->value(),
+                                           Qt::GlobalColor(ui->penColorEdit->itemData(ui->penColorEdit->currentIndex(),IdRole).toInt()),
+                                           Qt::PenCapStyle(ui->PenCapEdit->itemData(ui->PenCapEdit->currentIndex(),IdRole).toInt()),
+                                           Qt::PenJoinStyle(ui->PenJoinEdit->itemData(ui->PenJoinEdit->currentIndex(),IdRole).toInt()),
+                                           Qt::PenStyle(ui->penStyleEdit->itemData(ui->penStyleEdit->currentIndex(),IdRole).toInt())
+                                           );
+
+                canvas->setCurrentShape(pg);
+                canvas->addShape(pg);
+                emit PointInput();
+                break;
+            }
+            case 3:
+            {
+                //Circle
+                CircleUISet();
+                Circle *cc = new Circle(ui->shapeIdEdit->text(),
+                                        Qt::BrushStyle(ui->brushStyleEdit->itemData(ui->brushStyleEdit->currentIndex(),IdRole).toInt()),
+                                        Qt::GlobalColor(ui->brushColorEdit->itemData(ui->brushColorEdit->currentIndex(),IdRole).toInt()),
+                                        ui->penWidthEdit->value(),
+                                        Qt::GlobalColor(ui->penColorEdit->itemData(ui->penColorEdit->currentIndex(),IdRole).toInt()),
+                                        Qt::PenCapStyle(ui->PenCapEdit->itemData(ui->PenCapEdit->currentIndex(),IdRole).toInt()),
+                                        Qt::PenJoinStyle(ui->PenJoinEdit->itemData(ui->PenJoinEdit->currentIndex(),IdRole).toInt()),
+                                        Qt::PenStyle(ui->penStyleEdit->itemData(ui->penStyleEdit->currentIndex(),IdRole).toInt()),
+                                        horizontalSlider->value());
+                canvas->setCurrentShape(cc);
+                canvas->addShape(cc);
+                break;
+            }
+            case 4:
+            {
+                //Ellipse
+                EllipseUISet();
+                Ellipse *ec = new Ellipse(ui->shapeIdEdit->text(),
+                                        Qt::BrushStyle(ui->brushStyleEdit->itemData(ui->brushStyleEdit->currentIndex(),IdRole).toInt()),
+                                        Qt::GlobalColor(ui->brushColorEdit->itemData(ui->brushColorEdit->currentIndex(),IdRole).toInt()),
+                                        ui->penWidthEdit->value(),
+                                        Qt::GlobalColor(ui->penColorEdit->itemData(ui->penColorEdit->currentIndex(),IdRole).toInt()),
+                                        Qt::PenCapStyle(ui->PenCapEdit->itemData(ui->PenCapEdit->currentIndex(),IdRole).toInt()),
+                                        Qt::PenJoinStyle(ui->PenJoinEdit->itemData(ui->PenJoinEdit->currentIndex(),IdRole).toInt()),
+                                        Qt::PenStyle(ui->penStyleEdit->itemData(ui->penStyleEdit->currentIndex(),IdRole).toInt()),
+                                        horizontalSlider->value(),verticalSlider->value());
+                canvas->setCurrentShape(ec);
+                canvas->addShape(ec);
+                break;
+            }
+            case 5:
+            {
+                //Square
+                SquareUISet();
+                Square *sc = new Square(ui->shapeIdEdit->text(),
+                                        Qt::BrushStyle(ui->brushStyleEdit->itemData(ui->brushStyleEdit->currentIndex(),IdRole).toInt()),
+                                        Qt::GlobalColor(ui->brushColorEdit->itemData(ui->brushColorEdit->currentIndex(),IdRole).toInt()),
+                                        ui->penWidthEdit->value(),
+                                        Qt::GlobalColor(ui->penColorEdit->itemData(ui->penColorEdit->currentIndex(),IdRole).toInt()),
+                                        Qt::PenCapStyle(ui->PenCapEdit->itemData(ui->PenCapEdit->currentIndex(),IdRole).toInt()),
+                                        Qt::PenJoinStyle(ui->PenJoinEdit->itemData(ui->PenJoinEdit->currentIndex(),IdRole).toInt()),
+                                        Qt::PenStyle(ui->penStyleEdit->itemData(ui->penStyleEdit->currentIndex(),IdRole).toInt()),
+                                        horizontalSlider->value());
+                canvas->setCurrentShape(sc);
+                canvas->addShape(sc);
+                break;
+            }
+            case 6:
+            {
+                //Rectangle
+                RectangleUISet();
+                Rectangle *rc = new Rectangle(ui->shapeIdEdit->text(),
+                                        Qt::BrushStyle(ui->brushStyleEdit->itemData(ui->brushStyleEdit->currentIndex(),IdRole).toInt()),
+                                        Qt::GlobalColor(ui->brushColorEdit->itemData(ui->brushColorEdit->currentIndex(),IdRole).toInt()),
+                                        ui->penWidthEdit->value(),
+                                        Qt::GlobalColor(ui->penColorEdit->itemData(ui->penColorEdit->currentIndex(),IdRole).toInt()),
+                                        Qt::PenCapStyle(ui->PenCapEdit->itemData(ui->PenCapEdit->currentIndex(),IdRole).toInt()),
+                                        Qt::PenJoinStyle(ui->PenJoinEdit->itemData(ui->PenJoinEdit->currentIndex(),IdRole).toInt()),
+                                        Qt::PenStyle(ui->penStyleEdit->itemData(ui->penStyleEdit->currentIndex(),IdRole).toInt()),
+                                        horizontalSlider->value(),verticalSlider->value());
+                canvas->setCurrentShape(rc);
+                canvas->addShape(rc);
+                break;
+            }
+        //        case 7:
+        //            //Text
+        //            break;
+            }
+        }
+    }
     else
     {
-        switch(ui->ShapeTypeEdit->currentIndex())
-        {
-        case 0:
-        {
-            //Line
-            qDebug() << "Creating new line";
-            LineUISet();
-            Line *l = new Line(ui->shapeIdEdit->text(),
-                               Qt::BrushStyle(ui->brushStyleEdit->itemData(ui->brushStyleEdit->currentIndex(),IdRole).toInt()),
-                               Qt::GlobalColor(ui->brushColorEdit->itemData(ui->brushColorEdit->currentIndex(),IdRole).toInt()),
-                               ui->penWidthEdit->value(),
-                               Qt::GlobalColor(ui->penColorEdit->itemData(ui->penColorEdit->currentIndex(),IdRole).toInt()),
-                               Qt::PenCapStyle(ui->PenCapEdit->itemData(ui->PenCapEdit->currentIndex(),IdRole).toInt()),
-                               Qt::PenJoinStyle(ui->PenJoinEdit->itemData(ui->PenJoinEdit->currentIndex(),IdRole).toInt()),
-                               Qt::PenStyle(ui->penStyleEdit->itemData(ui->penStyleEdit->currentIndex(),IdRole).toInt())
-                               );
-            canvas->setCurrentShape(l);
-            canvas->addShape(l);
-            emit PointInput();
-            break;
-        }
-        case 1:
-        {
-            LineUISet();
-            PolyLine *pl = new PolyLine(ui->shapeIdEdit->text(),
-                                       Qt::BrushStyle(ui->brushStyleEdit->itemData(ui->brushStyleEdit->currentIndex(),IdRole).toInt()),
-                                       Qt::GlobalColor(ui->brushColorEdit->itemData(ui->brushColorEdit->currentIndex(),IdRole).toInt()),
-                                       ui->penWidthEdit->value(),
-                                       Qt::GlobalColor(ui->penColorEdit->itemData(ui->penColorEdit->currentIndex(),IdRole).toInt()),
-                                       Qt::PenCapStyle(ui->PenCapEdit->itemData(ui->PenCapEdit->currentIndex(),IdRole).toInt()),
-                                       Qt::PenJoinStyle(ui->PenJoinEdit->itemData(ui->PenJoinEdit->currentIndex(),IdRole).toInt()),
-                                       Qt::PenStyle(ui->penStyleEdit->itemData(ui->penStyleEdit->currentIndex(),IdRole).toInt())
-                                       );
-
-            canvas->setCurrentShape(pl);
-            canvas->addShape(pl);
-            emit PointInput();
-            break;
-        }
-        case 2:
-        {
-            //PolyGon
-            PolyGonUISet();
-            Polygon *pg = new Polygon(ui->shapeIdEdit->text(),
-                                       Qt::BrushStyle(ui->brushStyleEdit->itemData(ui->brushStyleEdit->currentIndex(),IdRole).toInt()),
-                                       Qt::GlobalColor(ui->brushColorEdit->itemData(ui->brushColorEdit->currentIndex(),IdRole).toInt()),
-                                       ui->penWidthEdit->value(),
-                                       Qt::GlobalColor(ui->penColorEdit->itemData(ui->penColorEdit->currentIndex(),IdRole).toInt()),
-                                       Qt::PenCapStyle(ui->PenCapEdit->itemData(ui->PenCapEdit->currentIndex(),IdRole).toInt()),
-                                       Qt::PenJoinStyle(ui->PenJoinEdit->itemData(ui->PenJoinEdit->currentIndex(),IdRole).toInt()),
-                                       Qt::PenStyle(ui->penStyleEdit->itemData(ui->penStyleEdit->currentIndex(),IdRole).toInt())
-                                       );
-
-            canvas->setCurrentShape(pg);
-            canvas->addShape(pg);
-            emit PointInput();
-            break;
-        }
-        case 3:
-        {
-            //Circle
-            CircleUISet();
-            Circle *cc = new Circle(ui->shapeIdEdit->text(),
-                                    Qt::BrushStyle(ui->brushStyleEdit->itemData(ui->brushStyleEdit->currentIndex(),IdRole).toInt()),
-                                    Qt::GlobalColor(ui->brushColorEdit->itemData(ui->brushColorEdit->currentIndex(),IdRole).toInt()),
-                                    ui->penWidthEdit->value(),
-                                    Qt::GlobalColor(ui->penColorEdit->itemData(ui->penColorEdit->currentIndex(),IdRole).toInt()),
-                                    Qt::PenCapStyle(ui->PenCapEdit->itemData(ui->PenCapEdit->currentIndex(),IdRole).toInt()),
-                                    Qt::PenJoinStyle(ui->PenJoinEdit->itemData(ui->PenJoinEdit->currentIndex(),IdRole).toInt()),
-                                    Qt::PenStyle(ui->penStyleEdit->itemData(ui->penStyleEdit->currentIndex(),IdRole).toInt()),
-                                    horizontalSlider->value());
-            canvas->setCurrentShape(cc);
-            canvas->addShape(cc);
-            break;
-        }
-        case 4:
-        {
-            //Ellipse
-            EllipseUISet();
-            Ellipse *ec = new Ellipse(ui->shapeIdEdit->text(),
-                                    Qt::BrushStyle(ui->brushStyleEdit->itemData(ui->brushStyleEdit->currentIndex(),IdRole).toInt()),
-                                    Qt::GlobalColor(ui->brushColorEdit->itemData(ui->brushColorEdit->currentIndex(),IdRole).toInt()),
-                                    ui->penWidthEdit->value(),
-                                    Qt::GlobalColor(ui->penColorEdit->itemData(ui->penColorEdit->currentIndex(),IdRole).toInt()),
-                                    Qt::PenCapStyle(ui->PenCapEdit->itemData(ui->PenCapEdit->currentIndex(),IdRole).toInt()),
-                                    Qt::PenJoinStyle(ui->PenJoinEdit->itemData(ui->PenJoinEdit->currentIndex(),IdRole).toInt()),
-                                    Qt::PenStyle(ui->penStyleEdit->itemData(ui->penStyleEdit->currentIndex(),IdRole).toInt()),
-                                    horizontalSlider->value(),verticalSlider->value());
-            canvas->setCurrentShape(ec);
-            canvas->addShape(ec);
-            break;
-        }
-        case 5:
-        {
-            //Square
-            SquareUISet();
-            Square *sc = new Square(ui->shapeIdEdit->text(),
-                                    Qt::BrushStyle(ui->brushStyleEdit->itemData(ui->brushStyleEdit->currentIndex(),IdRole).toInt()),
-                                    Qt::GlobalColor(ui->brushColorEdit->itemData(ui->brushColorEdit->currentIndex(),IdRole).toInt()),
-                                    ui->penWidthEdit->value(),
-                                    Qt::GlobalColor(ui->penColorEdit->itemData(ui->penColorEdit->currentIndex(),IdRole).toInt()),
-                                    Qt::PenCapStyle(ui->PenCapEdit->itemData(ui->PenCapEdit->currentIndex(),IdRole).toInt()),
-                                    Qt::PenJoinStyle(ui->PenJoinEdit->itemData(ui->PenJoinEdit->currentIndex(),IdRole).toInt()),
-                                    Qt::PenStyle(ui->penStyleEdit->itemData(ui->penStyleEdit->currentIndex(),IdRole).toInt()),
-                                    horizontalSlider->value());
-            canvas->setCurrentShape(sc);
-            canvas->addShape(sc);
-            break;
-        }
-        case 6:
-        {
-            //Rectangle
-            RectangleUISet();
-            Rectangle *rc = new Rectangle(ui->shapeIdEdit->text(),
-                                    Qt::BrushStyle(ui->brushStyleEdit->itemData(ui->brushStyleEdit->currentIndex(),IdRole).toInt()),
-                                    Qt::GlobalColor(ui->brushColorEdit->itemData(ui->brushColorEdit->currentIndex(),IdRole).toInt()),
-                                    ui->penWidthEdit->value(),
-                                    Qt::GlobalColor(ui->penColorEdit->itemData(ui->penColorEdit->currentIndex(),IdRole).toInt()),
-                                    Qt::PenCapStyle(ui->PenCapEdit->itemData(ui->PenCapEdit->currentIndex(),IdRole).toInt()),
-                                    Qt::PenJoinStyle(ui->PenJoinEdit->itemData(ui->PenJoinEdit->currentIndex(),IdRole).toInt()),
-                                    Qt::PenStyle(ui->penStyleEdit->itemData(ui->penStyleEdit->currentIndex(),IdRole).toInt()),
-                                    horizontalSlider->value(),verticalSlider->value());
-            canvas->setCurrentShape(rc);
-            canvas->addShape(rc);
-            break;
-        }
-//        case 7:
-//            //Text
-//            break;
-        }
+        DisableUI();
     }
 }
