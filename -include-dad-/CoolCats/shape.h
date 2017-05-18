@@ -9,12 +9,13 @@
 #include <QString>
 #include <QPainter>
 #include <QPoint>
+#include <QTextStream>
 class Canvas;
 
 
 class Shape
 {
-    private:
+    protected:
         QString id;
         bool isRender;
         Qt::BrushStyle brushStyle;
@@ -76,6 +77,7 @@ class Shape
         QString GetBrushStyle();
 
 
+        virtual void Print(QTextStream& output);
         virtual void move(QPoint xy){xy = QPoint(0,0);}
         virtual void move(int x , int y){x=-1;y=-1;}
         virtual void resize(double x){x=-1;}

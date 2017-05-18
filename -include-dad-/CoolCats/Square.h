@@ -5,6 +5,7 @@ class Square: public Rectangle
 {
     public:
     Square();
+    Square(int tempId, QTextStream& input);
     Square(int x, int y, double s);
     Square(QString idIn,
             Qt::BrushStyle brushStyleIn,
@@ -22,6 +23,7 @@ class Square: public Rectangle
     void setSize(double s);
 
     // Accessors
+    virtual void Print(QTextStream& output);
     virtual double getArea();
     virtual double getPerimeter();
     virtual void move(QPoint xy);

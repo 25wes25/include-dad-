@@ -1,6 +1,43 @@
 #include "Square.h"
 
 Square::Square():Rectangle(100,100,100,100){}
+
+Square::Square(int tempId, QTextStream &input)
+{
+    id = QString::number(tempId);
+
+    Ignore(input, ' ');
+    input >> x;
+
+    Ignore(input, ' ');
+    input >> y;
+
+    Ignore(input, ' ');
+    input >> width;
+    length = width;
+
+    input.readLine();
+    Ignore(input, ' ');
+    penColorEdit = StringToColor(input.readLine());
+
+    Ignore(input, ' ');
+    input >> penWidthEdit;
+
+    Ignore(input, ' ');
+    penStyleEdit = StringToPen(input.readLine());
+
+    Ignore(input, ' ');
+    penCapEdit = StringToCap(input.readLine());
+
+    Ignore(input, ' ');
+    PenJoinEdit = StringToJoin(input.readLine());
+
+    Ignore(input, ' ');
+    brushColorEdit = StringToColor(input.readLine());
+
+    Ignore(input, ' ');
+    brushStyle = StringToBrush(input.readLine());
+}
 		
 Square::Square(int x, int y , double s):Rectangle(x,y,s,s){}
 
@@ -32,6 +69,21 @@ void Square::setSize(double s)
 {
    Rectangle::setLength(s);
    Rectangle::setWidth(s);
+}
+
+void Square::Print(QTextStream &output)
+{
+    output << "ShapeId: " << id << endl;
+    output << "ShapeType: Square" << endl;
+    output << "ShapeDimensions: " << x << ", " << y << ", "
+           << width<< endl;
+    output << "PenColor: " << ColorToString(penColorEdit) << endl;
+    output << "PenWidth: " << penWidthEdit << endl;
+    output << "PenStyle: " << PenToString(penStyleEdit) << endl;
+    output << "PenCapStyle: " << CapToString(penCapEdit) << endl;
+    output << "PenJoinStyle: " << JoinToString(PenJoinEdit) << endl;
+    output << "BrushColor: " << ColorToString(brushColorEdit) << endl;
+    output << "BrushStyle: " << BrushToString(brushStyle) << endl;
 }
 
 double Square::getArea()

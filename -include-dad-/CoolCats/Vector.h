@@ -25,6 +25,7 @@ class Vector
         void resize(int newsize);
         void push_back(Type element);
         void reserve(int newalloc);
+        void clear();
 
 
         // Accessors
@@ -118,6 +119,13 @@ void Vector<Type>::reserve(int newalloc)
     delete[] elem; // deallocate old space
     elem = temp;
     space = newalloc;
+}
+
+template<class Type>
+void Vector<Type>::clear()
+{
+    delete[] elem;
+    size_v = 0;
 }
 
 /*
