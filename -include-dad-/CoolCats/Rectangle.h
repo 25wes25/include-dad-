@@ -5,7 +5,7 @@
 
 class Rectangle:public Shape
 {
-    private:
+    protected:
         int x;
         int y;
         double width;
@@ -13,6 +13,7 @@ class Rectangle:public Shape
 
     public:
         Rectangle();
+        Rectangle(int tempId, QTextStream& input);
         Rectangle(int x, int y, double w, double l);
         Rectangle(QString idIn,
                   Qt::BrushStyle brushStyleIn,
@@ -33,6 +34,7 @@ class Rectangle:public Shape
         virtual void move(QPoint xy);
 
         // Accessors
+        virtual void Print(QTextStream& output);
         double getWidth() {return width;}
         double getLength() {return length;}
         double getArea()	{return (length*width);}

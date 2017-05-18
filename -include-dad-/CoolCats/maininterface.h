@@ -12,9 +12,12 @@
 #include "Line.h"
 #include "PolyLine.h"
 #include "PolyGon.h"
+#include "text.h"
+#include "Vector.h"
 #include <QMouseEvent>
 #include <QLabel>
 #include <QSlider>
+#include <QDir>
 using namespace std;
 namespace Ui {
 class MainInterface;
@@ -52,6 +55,7 @@ private:
     QSlider *horizontalSlider;
     QSlider *verticalSlider;
     Canvas *canvas;
+    QString saveName;
 
     //data containsers
     QString CurrentFileName;
@@ -63,6 +67,8 @@ private:
 
 
     // Private Helper Functions
+    void Load();
+    void Save();
     void OutputToTable(); // Outputs vector's contents, called after sorts.
 	// Sorts
     void SortID();

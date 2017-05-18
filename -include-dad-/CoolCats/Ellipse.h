@@ -8,6 +8,7 @@ class Ellipse:public Shape
 {	
     public:
 	Ellipse();
+    Ellipse(int tempId, QTextStream& input);
     Ellipse(int x, int y, double xR, double yR);
     Ellipse(QString idIn,
              Qt::BrushStyle brushStyleIn,
@@ -28,6 +29,7 @@ class Ellipse:public Shape
     virtual void Draw(Canvas *drawArea);
 
     // Accessors
+    virtual void Print(QTextStream& output);
     void SetX(double xIn);
     void SetY(double yIn);
     double getArea(){return pi*xRadius*yRadius;}

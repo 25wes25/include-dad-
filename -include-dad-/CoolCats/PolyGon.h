@@ -8,6 +8,7 @@ class Polygon: public PolyLine
 public:
 	//Defining datamember structure later
     Polygon();
+    Polygon(int tempId, QTextStream& input);
     Polygon( QString idIn,
              Qt::BrushStyle brushStyleIn,
              Qt::GlobalColor brushColorIn,
@@ -17,6 +18,7 @@ public:
              Qt::PenJoinStyle penJoinIn,
              Qt::PenStyle penStyleIn);
     ~Polygon();
+    virtual void Print(QTextStream& output);
     virtual void push_Back_point(QPoint xy);
     virtual void push_Back_point(int x, int y);
     virtual void Draw(Canvas *drawArea);

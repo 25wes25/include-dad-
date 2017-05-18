@@ -1,6 +1,49 @@
 #include "Circle.h"
 #include <cmath>
 Circle::Circle(): Ellipse(200,200,100,100){}
+
+Circle::Circle(int tempId, QTextStream &input)
+{
+    id = QString::number(tempId);
+
+    int tempX;
+    int tempY;
+
+    Ignore(input, ' ');
+    input >> x;
+
+    Ignore(input, ' ');
+    input >> y;
+
+    Ignore(input, ' ');
+    input >> xRadius;
+    yRadius = xRadius;
+
+    x+= xRadius;
+    y+= yRadius;
+
+    input.readLine();
+    Ignore(input, ' ');
+    penColorEdit = StringToColor(input.readLine());
+
+    Ignore(input, ' ');
+    input >> penWidthEdit;
+
+    Ignore(input, ' ');
+    penStyleEdit = StringToPen(input.readLine());
+
+    Ignore(input, ' ');
+    penCapEdit = StringToCap(input.readLine());
+
+    Ignore(input, ' ');
+    PenJoinEdit = StringToJoin(input.readLine());
+
+    Ignore(input, ' ');
+    brushColorEdit = StringToColor(input.readLine());
+
+    Ignore(input, ' ');
+    brushStyle = StringToBrush(input.readLine());
+}
 		
 Circle::Circle(int xIn, int yIn, double radiusIn): Ellipse(xIn,yIn,radiusIn,radiusIn){}
 
@@ -51,6 +94,21 @@ Circle::~Circle()
 	y=0;
     xRadius=0;
     yRadius=0;
+}
+
+void Circle::Print(QTextStream &output)
+{
+    output << "ShapeId: " << id << endl;
+    output << "ShapeType: Circle" << endl;
+    output << "ShapeDimensions: " << x - xRadius<< ", " << y - yRadius << ", "
+           << xRadius << endl;
+    output << "PenColor: " << ColorToString(penColorEdit) << endl;
+    output << "PenWidth: " << penWidthEdit << endl;
+    output << "PenStyle: " << PenToString(penStyleEdit) << endl;
+    output << "PenCapStyle: " << CapToString(penCapEdit) << endl;
+    output << "PenJoinStyle: " << JoinToString(PenJoinEdit) << endl;
+    output << "BrushColor: " << ColorToString(brushColorEdit) << endl;
+    output << "BrushStyle: " << BrushToString(brushStyle) << endl;
 }
 	
 /**

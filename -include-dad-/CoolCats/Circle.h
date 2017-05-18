@@ -16,6 +16,7 @@ class Circle:public Ellipse
 	public:
 
 		Circle();
+        Circle(int tempId, QTextStream& input);
 		Circle(int xIn, int yIn, double radiusIn);
         Circle(QString idIn,
                  Qt::BrushStyle brushStyleIn,
@@ -33,6 +34,7 @@ class Circle:public Ellipse
         double getArea(){return pi*xRadius*xRadius;}
         double getPerimeter(){return 2*pi*xRadius;}
 
+        virtual void Print(QTextStream& output);
         virtual void move(int xDes, int yDes);
         virtual void move(QPoint xy);
         virtual void Resize(double radiusIn);

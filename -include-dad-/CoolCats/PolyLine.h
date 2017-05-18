@@ -7,6 +7,7 @@ class PolyLine: public Line
 {
 	public:
         PolyLine();
+        PolyLine(int tempId, QTextStream& input);
         PolyLine(QString idIn,
                  Qt::BrushStyle brushStyleIn,
                  Qt::GlobalColor brushColorIn,
@@ -16,6 +17,7 @@ class PolyLine: public Line
                  Qt::PenJoinStyle penJoinIn,
                  Qt::PenStyle penStyleIn);
         ~PolyLine();
+        virtual void Print(QTextStream& output);
         virtual void push_Back_point(QPoint xy);
         virtual void push_Back_point(int x, int y);
         virtual void moveLastPoint(QPoint e);

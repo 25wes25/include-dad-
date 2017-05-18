@@ -15,6 +15,7 @@ class Line: public Shape
     public:
         Line();
         Line(QPolygon e);
+        Line(int newId, QTextStream& input);
         Line(  QString idIn,
                Qt::BrushStyle brushStyleIn,
                Qt::GlobalColor brushColorIn,
@@ -34,6 +35,7 @@ class Line: public Shape
                Qt::PenJoinStyle penJoinIn,
                Qt::PenStyle penStyleIn);
         virtual ~Line(){}
+        virtual void Print(QTextStream& output);
         virtual void push_Back_point(QPoint e);
         virtual void push_Back_point(int x, int y);
         virtual void moveLastPoint(QPoint e);

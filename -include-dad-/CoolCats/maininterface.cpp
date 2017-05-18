@@ -93,6 +93,18 @@ MainInterface::MainInterface(QWidget *parent) :
     connect(this,SIGNAL(PointInput()),canvas,SLOT(mousePointInput()));
 
     ui->horizontalLayout->addWidget(canvas,0,Qt::AlignRight);
+
+    QDir SavePath = QDir::currentPath();
+
+    while (SavePath.dirName() != "-include-dad-" && SavePath.cdUp());
+    if(!SavePath.cd("Saves"))
+    {
+        SavePath.mkdir("Saves");
+        SavePath.cd("Saves");
+    }
+    saveName = SavePath.path();
+    qDebug() << SavePath.path();
+    Load();
 }
 
 
@@ -111,7 +123,87 @@ void MainInterface::loadCanvas(QString filename)
 
 MainInterface::~MainInterface()
 {
+    Save();
     delete ui;
+}
+
+void MainInterface::Load()
+{
+    QFile inFile(saveName + "/Shapes.txt");
+    Vector<Shape *> area;
+    inFile.open(QIODevice::ReadOnly);
+
+    QTextStream input(&inFile);
+
+    int tempId;
+    QString shapeType;
+
+    area.clear();
+
+    while(!input.atEnd())
+    {
+        Ignore(input,' ');
+        input >> tempId;
+        input.readLine();
+        Ignore(input,' ');
+        shapeType = input.readLine();
+
+        qDebug() << shapeType;
+        if (shapeType == "Line")
+        {
+            area.push_back(new Line(tempId, input));
+        }
+        else if (shapeType == "Polyline")
+        {
+            area.push_back(new PolyLine(tempId, input));
+        }
+        else if (shapeType == "Polygon")
+        {
+            area.push_back(new Polygon(tempId, input));
+        }
+        else if (shapeType == "Rectangle")
+        {
+            area.push_back(new Rectangle(tempId, input));
+        }
+        else if (shapeType == "Square")
+        {
+            area.push_back(new Square(tempId, input));
+        }
+        else if (shapeType == "Ellipse")
+        {
+            area.push_back(new Ellipse(tempId, input));
+        }
+        else if (shapeType == "Circle")
+        {
+            area.push_back(new Circle(tempId, input));
+        }
+        else if (shapeType == "Text")
+        {
+            area.push_back(new Text(tempId, input));
+        }
+        else
+        {
+            while (input.read(1) != '\n' || input.read(1) != '\n');
+        }
+        input.readLine();
+    }
+    canvas->setShapeList(area);
+}
+
+void MainInterface::Save()
+{
+    QFile outFile(saveName + "/Shapes.txt");
+    Vector<Shape *>& area = canvas->getShapeList();
+    outFile.remove();
+    outFile.open(QIODevice::WriteOnly);
+
+    QTextStream output(&outFile);
+
+    for (int i = 0; i < area.size(); i++)
+    {
+        area[i]->Print(output);
+        output << endl;
+    }
 }
 
 QString MainInterface::GetShapeType()

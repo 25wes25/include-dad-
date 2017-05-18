@@ -2,6 +2,60 @@
 #include "canvas.h"
 #include <QPainter>
 Rectangle::Rectangle():x{25},y{25},width{10},length{10},Shape(){}
+
+Rectangle::Rectangle(int tempId, QTextStream &input)
+{
+    id = QString::number(tempId);
+
+    int tempX;
+    int tempY;
+
+    Ignore(input, ' ');
+    input >> x;
+
+    Ignore(input, ' ');
+    input >> y;
+
+    Ignore(input, ' ');
+    input >> tempX;
+    if (tempX < x)
+    {
+        swap(tempX,x);
+    }
+    width = tempX - x;
+
+    Ignore(input, ' ');
+    input >> tempY;
+    if (tempY < y)
+    {
+        swap(tempY,y);
+    }
+    length = tempY - y;
+
+    qDebug() << x << y << width << length;
+
+    input.readLine();
+    Ignore(input, ' ');
+    penColorEdit = StringToColor(input.readLine());
+
+    Ignore(input, ' ');
+    input >> penWidthEdit;
+
+    Ignore(input, ' ');
+    penStyleEdit = StringToPen(input.readLine());
+
+    Ignore(input, ' ');
+    penCapEdit = StringToCap(input.readLine());
+
+    Ignore(input, ' ');
+    PenJoinEdit = StringToJoin(input.readLine());
+
+    Ignore(input, ' ');
+    brushColorEdit = StringToColor(input.readLine());
+
+    Ignore(input, ' ');
+    brushStyle = StringToBrush(input.readLine());
+}
 		
 Rectangle::Rectangle(int xIn, int yIn, double w, double l):x{xIn},y{yIn},width{w},length{l},Shape(){}
 
@@ -59,8 +113,23 @@ void Rectangle::setLength(double l)
 }
 void Rectangle::move(QPoint xy)
 {
-    x=xy.x();
-    y=xy.y();
+    x=xy.x() - width/2;
+    y=xy.y() - length/2;
+}
+
+void Rectangle::Print(QTextStream &output)
+{
+    output << "ShapeId: " << id << endl;
+    output << "ShapeType: Rectangle" << endl;
+    output << "ShapeDimensions: " << x << ", " << y << ", "
+           << x + width << ", " << y + length << endl;
+    output << "PenColor: " << ColorToString(penColorEdit) << endl;
+    output << "PenWidth: " << penWidthEdit << endl;
+    output << "PenStyle: " << PenToString(penStyleEdit) << endl;
+    output << "PenCapStyle: " << CapToString(penCapEdit) << endl;
+    output << "PenJoinStyle: " << JoinToString(PenJoinEdit) << endl;
+    output << "BrushColor: " << ColorToString(brushColorEdit) << endl;
+    output << "BrushStyle: " << BrushToString(brushStyle) << endl;
 }
 
 void Rectangle::Draw(Canvas *drawArea)
@@ -68,7 +137,7 @@ void Rectangle::Draw(Canvas *drawArea)
     QPainter painter(drawArea);
     configurePainter(painter);
     painter.save();
-    painter.drawRect(x-width,y-length,width,length);
+    painter.drawRect(x,y,width,length);
     painter.restore();
 }
 bool Rectangle::is_Left_Clicked(QPoint e)

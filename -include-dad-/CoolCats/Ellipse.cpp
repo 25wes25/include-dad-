@@ -1,6 +1,61 @@
 #include "Ellipse.h"
 #include <cmath>
 Ellipse::Ellipse():Shape(),x{100},y{100},xRadius{100},yRadius{50}{}
+
+Ellipse::Ellipse(int tempId, QTextStream &input)
+{
+    id = QString::number(tempId);
+
+    int tempX;
+    int tempY;
+
+    Ignore(input, ' ');
+    input >> x;
+
+    Ignore(input, ' ');
+    input >> y;
+
+    Ignore(input, ' ');
+    input >> tempX;
+    if(tempX < x)
+    {
+        swap(tempX,x);
+    }
+    xRadius = (tempX - x)/2;
+
+    Ignore(input, ' ');
+    input >> tempY;
+    if (tempY < y)
+    {
+        swap(tempY,y);
+    }
+    yRadius = (tempY - y)/2;
+
+    x += xRadius;
+    y += yRadius;
+
+    input.readLine();
+    Ignore(input, ' ');
+    penColorEdit = StringToColor(input.readLine());
+
+    Ignore(input, ' ');
+    input >> penWidthEdit;
+
+    Ignore(input, ' ');
+    penStyleEdit = StringToPen(input.readLine());
+
+    Ignore(input, ' ');
+    penCapEdit = StringToCap(input.readLine());
+
+    Ignore(input, ' ');
+    PenJoinEdit = StringToJoin(input.readLine());
+
+    Ignore(input, ' ');
+    brushColorEdit = StringToColor(input.readLine());
+
+    Ignore(input, ' ');
+    brushStyle = StringToBrush(input.readLine());
+}
 		
 Ellipse::Ellipse(int x, int y,double xR, double yR):x{x},
                                                     y{y},
@@ -76,8 +131,23 @@ void Ellipse::Draw(Canvas *drawArea)
     QPainter painter(drawArea);
     this->configurePainter(painter);
     painter.save();
-    painter.drawEllipse(QPoint(x,y),xRadius,yRadius);
+    painter.drawEllipse(QPoint(x,y),int(xRadius),int(yRadius));
     painter.restore();
+}
+
+void Ellipse::Print(QTextStream &output)
+{
+    output << "ShapeId: " << id << endl;
+    output << "ShapeType: Ellipse" << endl;
+    output << "ShapeDimensions: " << x - xRadius << ", " << y - yRadius << ", "
+           << x + xRadius << ", " << y + yRadius << endl;
+    output << "PenColor: " << ColorToString(penColorEdit) << endl;
+    output << "PenWidth: " << penWidthEdit << endl;
+    output << "PenStyle: " << PenToString(penStyleEdit) << endl;
+    output << "PenCapStyle: " << CapToString(penCapEdit) << endl;
+    output << "PenJoinStyle: " << JoinToString(PenJoinEdit) << endl;
+    output << "BrushColor: " << ColorToString(brushColorEdit) << endl;
+    output << "BrushStyle: " << BrushToString(brushStyle) << endl;
 }
 bool Ellipse::is_Left_Clicked(QPoint xy)
 {

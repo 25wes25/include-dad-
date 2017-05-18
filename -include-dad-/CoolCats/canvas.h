@@ -12,6 +12,7 @@
 #include <QMouseEvent>
 #include <QKeyEvent>
 #include <QDebug>
+#include "textmanip.h"
 using namespace std;
 /**
  * @brief The Canvas class
@@ -41,7 +42,8 @@ public:
     Shape* getCurrentShape(){return currentShape;}
     int getShapeNum() const;
     void setCurrentShape(Shape* e){currentShape = e;}
-
+    void setShapeList(const Vector<Shape *>& newArea);
+    Vector<Shape *>& getShapeList();
     void clear();
     void render();
     Shape& operator[](int x);

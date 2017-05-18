@@ -1,5 +1,40 @@
 #include "PolyLine.h"
 PolyLine::PolyLine():Line(){}
+
+PolyLine::PolyLine(int tempId, QTextStream &input)
+{
+    id = QString::number(tempId);
+    point_counter = 0;
+    points.clear();
+
+    int tempX;
+    int tempY;
+
+    do
+    {
+        Ignore(input, ' ');
+        input >> tempX;
+        Ignore(input, ' ');
+        input >> tempY;
+        push_Back_point(tempX, tempY);
+    }while(input.read(1) == ',');
+
+    Ignore(input, ':');
+    input.read(1);
+    penColorEdit = StringToColor(input.readLine());
+
+    Ignore(input, ' ');
+    input >> penWidthEdit;
+
+    Ignore(input, ' ');
+    penStyleEdit = StringToPen(input.readLine());
+
+    Ignore(input, ' ');
+    penCapEdit = StringToCap(input.readLine());
+
+    Ignore(input, ' ');
+    PenJoinEdit = StringToJoin(input.readLine());
+}
 PolyLine::PolyLine(QString idIn,
                    Qt::BrushStyle brushStyleIn,
                    Qt::GlobalColor brushColorIn,
@@ -12,6 +47,32 @@ PolyLine::PolyLine(QString idIn,
 PolyLine::~PolyLine()
 {
 
+}
+
+void PolyLine::Print(QTextStream &output)
+{
+    output << "ShapeId: " << id << endl;
+    output << "ShapeType: Polyline" << endl;
+    output << "ShapeDimensions: ";
+    for (int i = 0; i < points.size(); i++)
+    {
+        output << points[i].x() << ", " << points[i].y();
+        i++;
+        if (i != points.size() - 1)
+        {
+            output << ", ";
+        }
+        else
+        {
+            output << ", " << points[i].x() << ", " << points[i].y();
+        }
+    }
+    output << endl;
+    output << "PenColor: " << ColorToString(penColorEdit) << endl;
+    output << "PenWidth: " << penWidthEdit << endl;
+    output << "PenStyle: " << PenToString(penStyleEdit) << endl;
+    output << "PenCapStyle: " << CapToString(penCapEdit) << endl;
+    output << "PenJoinStyle: " << JoinToString(PenJoinEdit) << endl;
 }
 
 void PolyLine::Draw(Canvas *drawArea)
@@ -45,8 +106,18 @@ void PolyLine::push_Back_point(QPoint xy)
 }
 void PolyLine::push_Back_point(int x, int y)
 {
-    point_counter++;
-    points << QPoint(x,y);
+    QPoint xy(x,y);
+    if(point_counter>=2)
+    {
+        points << points.point(point_counter-1);
+        points << xy;
+        point_counter+=2;
+    }
+    else
+    {
+        points <<xy;
+        point_counter++;
+    }
 }
 void PolyLine::moveLastPoint(QPoint e)
 {

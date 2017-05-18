@@ -31,7 +31,7 @@ void newnew::onUserSent(const singleUser &userData)
 
 void newnew::on_loginButton_clicked()
 {
-    if(userObject.isUser(ui->nameEdit->text(), ui->passwordEdit->text()) != INVALID)
+    //if(userObject.isUser(ui->nameEdit->text(), ui->passwordEdit->text()) != INVALID)
     {
         //close first window
         this->close();

@@ -29,7 +29,9 @@ SOURCES += main.cpp\
     contact.cpp \
     Polygon.cpp \
     help.cpp \
-    newnew.cpp
+    newnew.cpp \
+    textmanip.cpp \
+    text.cpp
 
 HEADERS  += \
     loginscreen.h \
@@ -49,7 +51,9 @@ HEADERS  += \
     testimonials.h \
     contact.h \
     help.h \
-    newnew.h
+    newnew.h \
+    textmanip.h \
+    text.h
 
 FORMS    += \
     loginscreen.ui \
