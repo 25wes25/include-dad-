@@ -146,6 +146,8 @@ private slots:
     void on_ShapeTypeEdit_currentIndexChanged(int index);
     void OnHorizontaAxisEllipseChanged();
 
+    void FullScreenClicked();
+    void MaximizedClicked();
     void MaintenanceNotesClicked();
     void TestimonialsClicked();
     void ContactClicked();

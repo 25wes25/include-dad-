@@ -47,6 +47,8 @@ public:
     QAction *actionNew;
     QAction *actionLoad;
     QAction *actionHelp;
+    QAction *actionFull_Screen;
+    QAction *actionMaximize;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QTabWidget *Tabs;
@@ -94,6 +96,7 @@ public:
     QMenu *menuEdit;
     QMenu *menuAbout;
     QMenu *menuHelp;
+    QMenu *menuView;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainInterface)
@@ -130,6 +133,10 @@ public:
         actionLoad->setObjectName(QStringLiteral("actionLoad"));
         actionHelp = new QAction(MainInterface);
         actionHelp->setObjectName(QStringLiteral("actionHelp"));
+        actionFull_Screen = new QAction(MainInterface);
+        actionFull_Screen->setObjectName(QStringLiteral("actionFull_Screen"));
+        actionMaximize = new QAction(MainInterface);
+        actionMaximize->setObjectName(QStringLiteral("actionMaximize"));
         centralwidget = new QWidget(MainInterface);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
@@ -431,11 +438,6 @@ public:
         verticalLayout->addWidget(button_SortPerimeter);
 
         Tabs->addTab(Table, QString());
-        tableWidget->raise();
-        layoutWidget->raise();
-        button_SortID->raise();
-        button_SortPerimeter->raise();
-        button_SortArea->raise();
 
         gridLayout->addWidget(Tabs, 0, 0, 1, 1);
 
@@ -451,6 +453,8 @@ public:
         menuAbout->setObjectName(QStringLiteral("menuAbout"));
         menuHelp = new QMenu(menubar);
         menuHelp->setObjectName(QStringLiteral("menuHelp"));
+        menuView = new QMenu(menubar);
+        menuView->setObjectName(QStringLiteral("menuView"));
         MainInterface->setMenuBar(menubar);
         statusbar = new QStatusBar(MainInterface);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -458,6 +462,7 @@ public:
 
         menubar->addAction(menuFile->menuAction());
         menubar->addAction(menuEdit->menuAction());
+        menubar->addAction(menuView->menuAction());
         menubar->addAction(menuAbout->menuAction());
         menubar->addAction(menuHelp->menuAction());
         menuFile->addAction(actionNew);
@@ -470,6 +475,8 @@ public:
         menuAbout->addAction(actionTestimonials);
         menuAbout->addAction(actionContact_Us);
         menuHelp->addAction(actionHelp);
+        menuView->addAction(actionFull_Screen);
+        menuView->addAction(actionMaximize);
 
         retranslateUi(MainInterface);
 
@@ -494,6 +501,8 @@ public:
         actionNew->setText(QApplication::translate("MainInterface", "New", Q_NULLPTR));
         actionLoad->setText(QApplication::translate("MainInterface", "Load", Q_NULLPTR));
         actionHelp->setText(QApplication::translate("MainInterface", "Help", Q_NULLPTR));
+        actionFull_Screen->setText(QApplication::translate("MainInterface", "Full Screen", Q_NULLPTR));
+        actionMaximize->setText(QApplication::translate("MainInterface", "Maximize", Q_NULLPTR));
         ShapeTypeLabel->setText(QApplication::translate("MainInterface", "Add Shape:", Q_NULLPTR));
         shapeIdLabel->setText(QApplication::translate("MainInterface", "Shape ID:", Q_NULLPTR));
         penColorLabel->setText(QApplication::translate("MainInterface", "Pen Color:", Q_NULLPTR));
@@ -554,6 +563,7 @@ public:
         menuEdit->setTitle(QApplication::translate("MainInterface", "Edit", Q_NULLPTR));
         menuAbout->setTitle(QApplication::translate("MainInterface", "About", Q_NULLPTR));
         menuHelp->setTitle(QApplication::translate("MainInterface", "Help", Q_NULLPTR));
+        menuView->setTitle(QApplication::translate("MainInterface", "View", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -13,6 +13,8 @@ MainInterface::MainInterface(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowState(Qt::WindowMaximized);
     //BEGIN MENU BAR SIGNAL AND SLOT CONNECTIONS
+    connect(ui->actionFull_Screen, SIGNAL(triggered(bool)), this, SLOT(FullScreenClicked()));
+    connect(ui->actionMaximize, SIGNAL(triggered(bool)), this, SLOT(MaximizedClicked()));
     connect(ui->actionMaintenance_Notes, SIGNAL(triggered(bool)), this, SLOT(MaintenanceNotesClicked()));
     connect(ui->actionTestimonials, SIGNAL(triggered(bool)), this, SLOT(TestimonialsClicked()));
     connect(ui->actionContact_Us, SIGNAL(triggered(bool)), this, SLOT(ContactClicked()));
@@ -534,6 +536,16 @@ void MainInterface::on_ShapeTypeEdit_currentIndexChanged(int index)
         break;
     }
     canvas->setCurrentShape(nullptr);
+}
+
+void MainInterface::FullScreenClicked()
+{
+    this->setWindowState(Qt::WindowFullScreen);
+}
+
+void MainInterface::MaximizedClicked()
+{
+    this->setWindowState(Qt::WindowMaximized);
 }
 
 void MainInterface::MaintenanceNotesClicked()

@@ -642,11 +642,6 @@
          </item>
         </layout>
        </widget>
-       <zorder>tableWidget</zorder>
-       <zorder>layoutWidget</zorder>
-       <zorder>button_SortID</zorder>
-       <zorder>button_SortPerimeter</zorder>
-       <zorder>button_SortArea</zorder>
       </widget>
      </widget>
     </item>
@@ -691,8 +686,16 @@
     </property>
     <addaction name="actionHelp"/>
    </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionFull_Screen"/>
+    <addaction name="actionMaximize"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
+   <addaction name="menuView"/>
    <addaction name="menuAbout"/>
    <addaction name="menuHelp"/>
   </widget>
@@ -753,6 +756,16 @@
   <action name="actionHelp">
    <property name="text">
     <string>Help</string>
+   </property>
+  </action>
+  <action name="actionFull_Screen">
+   <property name="text">
+    <string>Full Screen</string>
+   </property>
+  </action>
+  <action name="actionMaximize">
+   <property name="text">
+    <string>Maximize</string>
    </property>
   </action>
  </widget>
