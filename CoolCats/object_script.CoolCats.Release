@@ -16,6 +16,9 @@ INPUT(
 ./release\contact.o
 ./release\Polygon.o
 ./release\help.o
+./release\newnew.o
+./release\textmanip.o
+./release\text.o
 ./release\qrc_resources.o
 ./release\moc_loginscreen.o
 ./release\moc_maininterface.o
@@ -24,4 +27,5 @@ INPUT(
 ./release\moc_testimonials.o
 ./release\moc_contact.o
 ./release\moc_help.o
+./release\moc_newnew.o
 );

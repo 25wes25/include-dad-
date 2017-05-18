@@ -361,3 +361,9 @@ QString Shape::GetBrushStyle()
         break;
     }
 }
+
+void Shape::Print(QTextStream &output)
+{
+    output << "ShapeId: " << id << endl;
+    output << "ShapeType: Unidentified" << endl;
+}

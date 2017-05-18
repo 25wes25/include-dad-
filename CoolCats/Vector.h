@@ -5,7 +5,6 @@
 #include <iomanip>
 #include <iostream>
 #include <algorithm> // std::copy
-#include "shape.h"
 
 using namespace std;
 
@@ -26,11 +25,13 @@ class Vector
         void resize(int newsize);
         void push_back(Type element);
         void reserve(int newalloc);
+        void clear();
 
 
         // Accessors
         int size() const;
         int capacity() const;
+        Type& GetElemAt(int i);
 
         // Operator Overloads
         Vector<Type>& operator=(const Vector<Type>& src);
@@ -45,6 +46,7 @@ class Vector
         iterator end();
         const_iterator end() const;
         iterator insert(iterator p, const Type& val); 	// Insert a new element val before i
+
         iterator erase(iterator p);						// Remove element pointed to by i
 };
 
@@ -95,10 +97,6 @@ void Vector<Type>::push_back(Type element)
     {
         reserve(8); // start with space for 8 elements
     }
-    else if (size_v == 0 && space == 0)
-    {
-        reserve(1); // get more space
-    }
     else if (size_v == space)
     {
         reserve(2*space); // get more space
@@ -124,6 +122,13 @@ void Vector<Type>::reserve(int newalloc)
     space = newalloc;
 }
 
+template<class Type>
+void Vector<Type>::clear()
+{
+    delete[] elem;
+    size_v = 0;
+}
+
 /*
  * **************************** Accessors *************************************
  */
@@ -133,6 +138,9 @@ int Vector<Type>::size() const {return size_v;}
 
 template<class Type>
 int Vector<Type>::capacity() const {return space;}
+
+template<class Type>
+Type& Vector<Type>::GetElemAt(int i) {return elem[i];}
 
 /*
  * ************************** Operator Overloads ******************************

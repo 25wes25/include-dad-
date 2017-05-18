@@ -24,6 +24,8 @@ void Canvas::mousePressEvent(QMouseEvent *event)
         {
             qDebug() << "stop getting mouse inputs(mouse)";
             getPointInputs=false;
+            currentShape = nullptr;
+            emit isClicked();
         }
         if(!getPointInputs)
         {
@@ -158,6 +160,15 @@ Shape& Canvas::GetShapeAt(int i)
     return *area.GetElemAt(i);
 }
 
+void Canvas::setShapeList(const Vector<Shape *>& newArea)
+{
+    area = newArea;
+}
+
+Vector<Shape *> &Canvas::getShapeList()
+{
+    return area;
+}
 
 Shape* Canvas::operator[](int x)
 {

@@ -12,7 +12,44 @@ Polygon::Polygon(QString idIn,
 {}
 Polygon::Polygon():PolyLine(){}
 
+Polygon::Polygon(int tempId, QTextStream &input) : PolyLine(tempId, input)
+{
+    Ignore(input, ' ');
+    brushColorEdit = StringToColor(input.readLine());
+
+    Ignore(input, ' ');
+    brushStyle =  StringToBrush(input.readLine());
+}
+
 Polygon::~Polygon(){}
+
+void Polygon::Print(QTextStream &output)
+{
+    output << "ShapeId: " << id << endl;
+    output << "ShapeType: Polygon" << endl;
+    output << "ShapeDimensions: ";
+    for (int i = 0; i < points.size(); i++)
+    {
+        output << points[i].x() << ", " << points[i].y();
+        i++;
+        if (i != points.size() - 1)
+        {
+            output << ", ";
+        }
+        else
+        {
+            output << ", " << points[i].x() << ", " << points[i].y();
+        }
+    }
+    output << endl;
+    output << "PenColor: " << ColorToString(penColorEdit) << endl;
+    output << "PenWidth: " << penWidthEdit << endl;
+    output << "PenStyle: " << PenToString(penStyleEdit) << endl;
+    output << "PenCapStyle: " << CapToString(penCapEdit) << endl;
+    output << "PenJoinStyle: " << JoinToString(PenJoinEdit) << endl;
+    output << "BrushColor: " << ColorToString(brushColorEdit) << endl;
+    output << "BrushStyle: " << BrushToString(brushStyle) << endl;
+}
 
 void Polygon::push_Back_point(QPoint xy)
 {

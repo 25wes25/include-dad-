@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'maininterface.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -100,7 +100,7 @@ public:
     {
         if (MainInterface->objectName().isEmpty())
             MainInterface->setObjectName(QStringLiteral("MainInterface"));
-        MainInterface->resize(1300, 700);
+        MainInterface->resize(1920, 1080);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -363,38 +363,55 @@ public:
         Table = new QWidget();
         Table->setObjectName(QStringLiteral("Table"));
         tableWidget = new QTableWidget(Table);
-        if (tableWidget->columnCount() < 11)
-            tableWidget->setColumnCount(11);
+        if (tableWidget->columnCount() < 12)
+            tableWidget->setColumnCount(12);
         QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
         __qtablewidgetitem2->setTextAlignment(Qt::AlignCenter);
         tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem2);
         QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        __qtablewidgetitem3->setTextAlignment(Qt::AlignCenter);
         tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem3);
         QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        __qtablewidgetitem4->setTextAlignment(Qt::AlignCenter);
         tableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem4);
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        __qtablewidgetitem5->setTextAlignment(Qt::AlignCenter);
         tableWidget->setHorizontalHeaderItem(3, __qtablewidgetitem5);
         QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        __qtablewidgetitem6->setTextAlignment(Qt::AlignCenter);
         tableWidget->setHorizontalHeaderItem(4, __qtablewidgetitem6);
         QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
+        __qtablewidgetitem7->setTextAlignment(Qt::AlignCenter);
         tableWidget->setHorizontalHeaderItem(5, __qtablewidgetitem7);
         QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
+        __qtablewidgetitem8->setTextAlignment(Qt::AlignCenter);
         tableWidget->setHorizontalHeaderItem(6, __qtablewidgetitem8);
         QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
+        __qtablewidgetitem9->setTextAlignment(Qt::AlignCenter);
         tableWidget->setHorizontalHeaderItem(7, __qtablewidgetitem9);
         QTableWidgetItem *__qtablewidgetitem10 = new QTableWidgetItem();
+        __qtablewidgetitem10->setTextAlignment(Qt::AlignCenter);
         tableWidget->setHorizontalHeaderItem(8, __qtablewidgetitem10);
         QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
+        __qtablewidgetitem11->setTextAlignment(Qt::AlignCenter);
         tableWidget->setHorizontalHeaderItem(9, __qtablewidgetitem11);
         QTableWidgetItem *__qtablewidgetitem12 = new QTableWidgetItem();
+        __qtablewidgetitem12->setTextAlignment(Qt::AlignCenter);
         tableWidget->setHorizontalHeaderItem(10, __qtablewidgetitem12);
+        QTableWidgetItem *__qtablewidgetitem13 = new QTableWidgetItem();
+        __qtablewidgetitem13->setTextAlignment(Qt::AlignCenter);
+        tableWidget->setHorizontalHeaderItem(11, __qtablewidgetitem13);
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
-        tableWidget->setGeometry(QRect(10, 10, 1101, 581));
+        tableWidget->setGeometry(QRect(10, 10, 1780, 950));
+        tableWidget->setFrameShape(QFrame::StyledPanel);
         tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
-        tableWidget->setSortingEnabled(false);
+        tableWidget->setTextElideMode(Qt::ElideRight);
+        tableWidget->setCornerButtonEnabled(true);
+        tableWidget->horizontalHeader()->setCascadingSectionResizes(false);
+        tableWidget->verticalHeader()->setCascadingSectionResizes(false);
         layoutWidget = new QWidget(Table);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(1120, 10, 94, 83));
+        layoutWidget->setGeometry(QRect(1800, 10, 94, 77));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -414,13 +431,18 @@ public:
         verticalLayout->addWidget(button_SortPerimeter);
 
         Tabs->addTab(Table, QString());
+        tableWidget->raise();
+        layoutWidget->raise();
+        button_SortID->raise();
+        button_SortPerimeter->raise();
+        button_SortArea->raise();
 
         gridLayout->addWidget(Tabs, 0, 0, 1, 1);
 
         MainInterface->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainInterface);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1300, 21));
+        menubar->setGeometry(QRect(0, 0, 1920, 20));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         menuEdit = new QMenu(menubar);
@@ -459,77 +481,79 @@ public:
 
     void retranslateUi(QMainWindow *MainInterface)
     {
-        MainInterface->setWindowTitle(QApplication::translate("MainInterface", "MainWindow", 0));
-        actionMaintenance_Notes->setText(QApplication::translate("MainInterface", "Maintenance Notes", 0));
-        actionTestimonials->setText(QApplication::translate("MainInterface", "Testimonials", 0));
-        actionContact_Us->setText(QApplication::translate("MainInterface", "Contact Us", 0));
-        actionTBD->setText(QApplication::translate("MainInterface", "TBD", 0));
-        actionSave->setText(QApplication::translate("MainInterface", "Save            (Ctrl + S)", 0));
-        actionSave->setShortcut(QApplication::translate("MainInterface", "Ctrl+S", 0));
-        actionSave_As->setText(QApplication::translate("MainInterface", "Save As...", 0));
-        actionOpen->setText(QApplication::translate("MainInterface", "Open", 0));
-        actionExit->setText(QApplication::translate("MainInterface", "Exit               (Esc)", 0));
-        actionNew->setText(QApplication::translate("MainInterface", "New", 0));
-        actionLoad->setText(QApplication::translate("MainInterface", "Load", 0));
-        actionHelp->setText(QApplication::translate("MainInterface", "Help", 0));
-        ShapeTypeLabel->setText(QApplication::translate("MainInterface", "Add Shape:", 0));
-        shapeIdLabel->setText(QApplication::translate("MainInterface", "Shape ID:", 0));
-        penColorLabel->setText(QApplication::translate("MainInterface", "Pen Color:", 0));
-        penWidthLabel->setText(QApplication::translate("MainInterface", "Pen Width", 0));
-        penStyleLabel->setText(QApplication::translate("MainInterface", "Pen Style:", 0));
-        penCapStyleLabel->setText(QApplication::translate("MainInterface", "Pen Cap Style:", 0));
-        PenJoinLabel->setText(QApplication::translate("MainInterface", "Pen Join Style:", 0));
-        BrushColorLabel->setText(QApplication::translate("MainInterface", "Brush Color:", 0));
-        brushStyleLabel->setText(QApplication::translate("MainInterface", "Brush Style:", 0));
+        MainInterface->setWindowTitle(QApplication::translate("MainInterface", "MainWindow", Q_NULLPTR));
+        actionMaintenance_Notes->setText(QApplication::translate("MainInterface", "Maintenance Notes", Q_NULLPTR));
+        actionTestimonials->setText(QApplication::translate("MainInterface", "Testimonials", Q_NULLPTR));
+        actionContact_Us->setText(QApplication::translate("MainInterface", "Contact Us", Q_NULLPTR));
+        actionTBD->setText(QApplication::translate("MainInterface", "TBD", Q_NULLPTR));
+        actionSave->setText(QApplication::translate("MainInterface", "Save            (Ctrl + S)", Q_NULLPTR));
+        actionSave->setShortcut(QApplication::translate("MainInterface", "Ctrl+S", Q_NULLPTR));
+        actionSave_As->setText(QApplication::translate("MainInterface", "Save As...", Q_NULLPTR));
+        actionOpen->setText(QApplication::translate("MainInterface", "Open", Q_NULLPTR));
+        actionExit->setText(QApplication::translate("MainInterface", "Exit               (Esc)", Q_NULLPTR));
+        actionNew->setText(QApplication::translate("MainInterface", "New", Q_NULLPTR));
+        actionLoad->setText(QApplication::translate("MainInterface", "Load", Q_NULLPTR));
+        actionHelp->setText(QApplication::translate("MainInterface", "Help", Q_NULLPTR));
+        ShapeTypeLabel->setText(QApplication::translate("MainInterface", "Add Shape:", Q_NULLPTR));
+        shapeIdLabel->setText(QApplication::translate("MainInterface", "Shape ID:", Q_NULLPTR));
+        penColorLabel->setText(QApplication::translate("MainInterface", "Pen Color:", Q_NULLPTR));
+        penWidthLabel->setText(QApplication::translate("MainInterface", "Pen Width", Q_NULLPTR));
+        penStyleLabel->setText(QApplication::translate("MainInterface", "Pen Style:", Q_NULLPTR));
+        penCapStyleLabel->setText(QApplication::translate("MainInterface", "Pen Cap Style:", Q_NULLPTR));
+        PenJoinLabel->setText(QApplication::translate("MainInterface", "Pen Join Style:", Q_NULLPTR));
+        BrushColorLabel->setText(QApplication::translate("MainInterface", "Brush Color:", Q_NULLPTR));
+        brushStyleLabel->setText(QApplication::translate("MainInterface", "Brush Style:", Q_NULLPTR));
         ShapeTypeEdit->clear();
         ShapeTypeEdit->insertItems(0, QStringList()
-         << QApplication::translate("MainInterface", "Line", 0)
-         << QApplication::translate("MainInterface", "PolyLine", 0)
-         << QApplication::translate("MainInterface", "PolyGon", 0)
-         << QApplication::translate("MainInterface", "Circle", 0)
-         << QApplication::translate("MainInterface", "Ellipse", 0)
-         << QApplication::translate("MainInterface", "Square", 0)
-         << QApplication::translate("MainInterface", "Rectangle", 0)
-         << QApplication::translate("MainInterface", "Text", 0)
+         << QApplication::translate("MainInterface", "Line", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "PolyLine", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "PolyGon", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "Circle", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "Ellipse", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "Square", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "Rectangle", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "Text", Q_NULLPTR)
         );
         shapeIdEdit->setText(QString());
         QTableWidgetItem *___qtablewidgetitem = layerTable->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("MainInterface", "Visability", 0));
+        ___qtablewidgetitem->setText(QApplication::translate("MainInterface", "Visability", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem1 = layerTable->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("MainInterface", "ID", 0));
-        AddObject->setText(QApplication::translate("MainInterface", "Add", 0));
-        DeleteObj->setText(QApplication::translate("MainInterface", "Delete", 0));
-        Tabs->setTabText(Tabs->indexOf(Canvas), QApplication::translate("MainInterface", "Canvas", 0));
+        ___qtablewidgetitem1->setText(QApplication::translate("MainInterface", "ID", Q_NULLPTR));
+        AddObject->setText(QApplication::translate("MainInterface", "Add", Q_NULLPTR));
+        DeleteObj->setText(QApplication::translate("MainInterface", "Delete", Q_NULLPTR));
+        Tabs->setTabText(Tabs->indexOf(Canvas), QApplication::translate("MainInterface", "Canvas", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(0);
-        ___qtablewidgetitem2->setText(QApplication::translate("MainInterface", "Shape ID", 0));
+        ___qtablewidgetitem2->setText(QApplication::translate("MainInterface", "Shape ID", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem3 = tableWidget->horizontalHeaderItem(1);
-        ___qtablewidgetitem3->setText(QApplication::translate("MainInterface", "Type", 0));
+        ___qtablewidgetitem3->setText(QApplication::translate("MainInterface", "Type", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem4 = tableWidget->horizontalHeaderItem(2);
-        ___qtablewidgetitem4->setText(QApplication::translate("MainInterface", "Area", 0));
+        ___qtablewidgetitem4->setText(QApplication::translate("MainInterface", "Area", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem5 = tableWidget->horizontalHeaderItem(3);
-        ___qtablewidgetitem5->setText(QApplication::translate("MainInterface", "Perimeter", 0));
+        ___qtablewidgetitem5->setText(QApplication::translate("MainInterface", "Perimeter", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem6 = tableWidget->horizontalHeaderItem(4);
-        ___qtablewidgetitem6->setText(QApplication::translate("MainInterface", "Pen Color", 0));
+        ___qtablewidgetitem6->setText(QApplication::translate("MainInterface", "Pen Color/Text Color", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem7 = tableWidget->horizontalHeaderItem(5);
-        ___qtablewidgetitem7->setText(QApplication::translate("MainInterface", "Pen Width", 0));
+        ___qtablewidgetitem7->setText(QApplication::translate("MainInterface", "Pen Width/Text Size", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem8 = tableWidget->horizontalHeaderItem(6);
-        ___qtablewidgetitem8->setText(QApplication::translate("MainInterface", "Pen Style", 0));
+        ___qtablewidgetitem8->setText(QApplication::translate("MainInterface", "Pen Style/Text Font", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem9 = tableWidget->horizontalHeaderItem(7);
-        ___qtablewidgetitem9->setText(QApplication::translate("MainInterface", "Pen Cap Style", 0));
+        ___qtablewidgetitem9->setText(QApplication::translate("MainInterface", "Pen Cap Style/Text Alignment", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem10 = tableWidget->horizontalHeaderItem(8);
-        ___qtablewidgetitem10->setText(QApplication::translate("MainInterface", "Pen Join Style", 0));
+        ___qtablewidgetitem10->setText(QApplication::translate("MainInterface", "Pen Join Style", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem11 = tableWidget->horizontalHeaderItem(9);
-        ___qtablewidgetitem11->setText(QApplication::translate("MainInterface", "Brush Color", 0));
+        ___qtablewidgetitem11->setText(QApplication::translate("MainInterface", "Brush Color/Font Weight", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem12 = tableWidget->horizontalHeaderItem(10);
-        ___qtablewidgetitem12->setText(QApplication::translate("MainInterface", "Brush Style", 0));
-        button_SortID->setText(QApplication::translate("MainInterface", "Sort by ID", 0));
-        button_SortArea->setText(QApplication::translate("MainInterface", "Sort by Area", 0));
-        button_SortPerimeter->setText(QApplication::translate("MainInterface", "Sort by Perimeter", 0));
-        Tabs->setTabText(Tabs->indexOf(Table), QApplication::translate("MainInterface", "Table", 0));
-        menuFile->setTitle(QApplication::translate("MainInterface", "File", 0));
-        menuEdit->setTitle(QApplication::translate("MainInterface", "Edit", 0));
-        menuAbout->setTitle(QApplication::translate("MainInterface", "About", 0));
-        menuHelp->setTitle(QApplication::translate("MainInterface", "Help", 0));
+        ___qtablewidgetitem12->setText(QApplication::translate("MainInterface", "Brush Style/Font Style", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem13 = tableWidget->horizontalHeaderItem(11);
+        ___qtablewidgetitem13->setText(QApplication::translate("MainInterface", "Text", Q_NULLPTR));
+        button_SortID->setText(QApplication::translate("MainInterface", "Sort by ID", Q_NULLPTR));
+        button_SortArea->setText(QApplication::translate("MainInterface", "Sort by Area", Q_NULLPTR));
+        button_SortPerimeter->setText(QApplication::translate("MainInterface", "Sort by Perimeter", Q_NULLPTR));
+        Tabs->setTabText(Tabs->indexOf(Table), QApplication::translate("MainInterface", "Table", Q_NULLPTR));
+        menuFile->setTitle(QApplication::translate("MainInterface", "File", Q_NULLPTR));
+        menuEdit->setTitle(QApplication::translate("MainInterface", "Edit", Q_NULLPTR));
+        menuAbout->setTitle(QApplication::translate("MainInterface", "About", Q_NULLPTR));
+        menuHelp->setTitle(QApplication::translate("MainInterface", "Help", Q_NULLPTR));
     } // retranslateUi
 
 };
