@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'maininterface.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -14,7 +14,6 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
-#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -45,6 +44,11 @@ public:
     QAction *actionSave_As;
     QAction *actionOpen;
     QAction *actionExit;
+    QAction *actionNew;
+    QAction *actionLoad;
+    QAction *actionHelp;
+    QAction *actionFull_Screen;
+    QAction *actionMaximize;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QTabWidget *Tabs;
@@ -55,6 +59,7 @@ public:
     QSplitter *InputSplitter;
     QWidget *layoutWidget_2;
     QVBoxLayout *LabelLayout;
+    QLabel *ShapeTypeLabel;
     QLabel *shapeIdLabel;
     QLabel *penColorLabel;
     QLabel *penWidthLabel;
@@ -65,6 +70,7 @@ public:
     QLabel *brushStyleLabel;
     QWidget *layoutWidget_3;
     QVBoxLayout *InputLayout;
+    QComboBox *ShapeTypeEdit;
     QLineEdit *shapeIdEdit;
     QComboBox *penColorEdit;
     QSlider *penWidthEdit;
@@ -75,23 +81,29 @@ public:
     QComboBox *brushStyleEdit;
     QTableWidget *layerTable;
     QWidget *layoutWidget_4;
-    QHBoxLayout *Adddelete_3;
-    QPushButton *AddObject_4;
+    QHBoxLayout *Adddelete;
+    QPushButton *AddObject;
     QPushButton *DeleteObj;
-    QGraphicsView *RenderArea;
     QWidget *Table;
     QTableWidget *tableWidget;
+    QWidget *layoutWidget;
+    QVBoxLayout *verticalLayout;
+    QPushButton *button_SortID;
+    QPushButton *button_SortArea;
+    QPushButton *button_SortPerimeter;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuEdit;
     QMenu *menuAbout;
+    QMenu *menuHelp;
+    QMenu *menuView;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainInterface)
     {
         if (MainInterface->objectName().isEmpty())
             MainInterface->setObjectName(QStringLiteral("MainInterface"));
-        MainInterface->resize(1300, 700);
+        MainInterface->resize(1920, 1080);
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -115,6 +127,16 @@ public:
         actionOpen->setObjectName(QStringLiteral("actionOpen"));
         actionExit = new QAction(MainInterface);
         actionExit->setObjectName(QStringLiteral("actionExit"));
+        actionNew = new QAction(MainInterface);
+        actionNew->setObjectName(QStringLiteral("actionNew"));
+        actionLoad = new QAction(MainInterface);
+        actionLoad->setObjectName(QStringLiteral("actionLoad"));
+        actionHelp = new QAction(MainInterface);
+        actionHelp->setObjectName(QStringLiteral("actionHelp"));
+        actionFull_Screen = new QAction(MainInterface);
+        actionFull_Screen->setObjectName(QStringLiteral("actionFull_Screen"));
+        actionMaximize = new QAction(MainInterface);
+        actionMaximize->setObjectName(QStringLiteral("actionMaximize"));
         centralwidget = new QWidget(MainInterface);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
@@ -151,6 +173,13 @@ public:
         LabelLayout->setSpacing(0);
         LabelLayout->setObjectName(QStringLiteral("LabelLayout"));
         LabelLayout->setContentsMargins(0, 30, 0, 30);
+        ShapeTypeLabel = new QLabel(layoutWidget_2);
+        ShapeTypeLabel->setObjectName(QStringLiteral("ShapeTypeLabel"));
+        sizePolicy1.setHeightForWidth(ShapeTypeLabel->sizePolicy().hasHeightForWidth());
+        ShapeTypeLabel->setSizePolicy(sizePolicy1);
+
+        LabelLayout->addWidget(ShapeTypeLabel);
+
         shapeIdLabel = new QLabel(layoutWidget_2);
         shapeIdLabel->setObjectName(QStringLiteral("shapeIdLabel"));
         sizePolicy1.setHeightForWidth(shapeIdLabel->sizePolicy().hasHeightForWidth());
@@ -222,12 +251,17 @@ public:
         InputLayout->setSpacing(0);
         InputLayout->setObjectName(QStringLiteral("InputLayout"));
         InputLayout->setContentsMargins(0, 30, 0, 30);
+        ShapeTypeEdit = new QComboBox(layoutWidget_3);
+        ShapeTypeEdit->setObjectName(QStringLiteral("ShapeTypeEdit"));
+
+        InputLayout->addWidget(ShapeTypeEdit);
+
         shapeIdEdit = new QLineEdit(layoutWidget_3);
         shapeIdEdit->setObjectName(QStringLiteral("shapeIdEdit"));
         sizePolicy1.setHeightForWidth(shapeIdEdit->sizePolicy().hasHeightForWidth());
         shapeIdEdit->setSizePolicy(sizePolicy1);
         shapeIdEdit->setLayoutDirection(Qt::LeftToRight);
-        shapeIdEdit->setMaxLength(3);
+        shapeIdEdit->setMaxLength(10);
         shapeIdEdit->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         InputLayout->addWidget(shapeIdEdit);
@@ -312,31 +346,22 @@ public:
         CanvasInfoSplitter->addWidget(layerTable);
         layoutWidget_4 = new QWidget(CanvasInfoSplitter);
         layoutWidget_4->setObjectName(QStringLiteral("layoutWidget_4"));
-        Adddelete_3 = new QHBoxLayout(layoutWidget_4);
-        Adddelete_3->setObjectName(QStringLiteral("Adddelete_3"));
-        Adddelete_3->setContentsMargins(0, 0, 0, 0);
-        AddObject_4 = new QPushButton(layoutWidget_4);
-        AddObject_4->setObjectName(QStringLiteral("AddObject_4"));
+        Adddelete = new QHBoxLayout(layoutWidget_4);
+        Adddelete->setObjectName(QStringLiteral("Adddelete"));
+        Adddelete->setContentsMargins(0, 0, 0, 0);
+        AddObject = new QPushButton(layoutWidget_4);
+        AddObject->setObjectName(QStringLiteral("AddObject"));
 
-        Adddelete_3->addWidget(AddObject_4);
+        Adddelete->addWidget(AddObject);
 
         DeleteObj = new QPushButton(layoutWidget_4);
         DeleteObj->setObjectName(QStringLiteral("DeleteObj"));
 
-        Adddelete_3->addWidget(DeleteObj);
+        Adddelete->addWidget(DeleteObj);
 
         CanvasInfoSplitter->addWidget(layoutWidget_4);
 
         horizontalLayout->addWidget(CanvasInfoSplitter);
-
-        RenderArea = new QGraphicsView(Canvas);
-        RenderArea->setObjectName(QStringLiteral("RenderArea"));
-        sizePolicy1.setHeightForWidth(RenderArea->sizePolicy().hasHeightForWidth());
-        RenderArea->setSizePolicy(sizePolicy1);
-        RenderArea->setMinimumSize(QSize(1000, 500));
-        RenderArea->setMaximumSize(QSize(0, 500));
-
-        horizontalLayout->addWidget(RenderArea);
 
 
         gridLayout_2->addLayout(horizontalLayout, 0, 0, 1, 1);
@@ -345,8 +370,73 @@ public:
         Table = new QWidget();
         Table->setObjectName(QStringLiteral("Table"));
         tableWidget = new QTableWidget(Table);
+        if (tableWidget->columnCount() < 12)
+            tableWidget->setColumnCount(12);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        __qtablewidgetitem2->setTextAlignment(Qt::AlignCenter);
+        tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem2);
+        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        __qtablewidgetitem3->setTextAlignment(Qt::AlignCenter);
+        tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        __qtablewidgetitem4->setTextAlignment(Qt::AlignCenter);
+        tableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem4);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        __qtablewidgetitem5->setTextAlignment(Qt::AlignCenter);
+        tableWidget->setHorizontalHeaderItem(3, __qtablewidgetitem5);
+        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        __qtablewidgetitem6->setTextAlignment(Qt::AlignCenter);
+        tableWidget->setHorizontalHeaderItem(4, __qtablewidgetitem6);
+        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
+        __qtablewidgetitem7->setTextAlignment(Qt::AlignCenter);
+        tableWidget->setHorizontalHeaderItem(5, __qtablewidgetitem7);
+        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
+        __qtablewidgetitem8->setTextAlignment(Qt::AlignCenter);
+        tableWidget->setHorizontalHeaderItem(6, __qtablewidgetitem8);
+        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
+        __qtablewidgetitem9->setTextAlignment(Qt::AlignCenter);
+        tableWidget->setHorizontalHeaderItem(7, __qtablewidgetitem9);
+        QTableWidgetItem *__qtablewidgetitem10 = new QTableWidgetItem();
+        __qtablewidgetitem10->setTextAlignment(Qt::AlignCenter);
+        tableWidget->setHorizontalHeaderItem(8, __qtablewidgetitem10);
+        QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
+        __qtablewidgetitem11->setTextAlignment(Qt::AlignCenter);
+        tableWidget->setHorizontalHeaderItem(9, __qtablewidgetitem11);
+        QTableWidgetItem *__qtablewidgetitem12 = new QTableWidgetItem();
+        __qtablewidgetitem12->setTextAlignment(Qt::AlignCenter);
+        tableWidget->setHorizontalHeaderItem(10, __qtablewidgetitem12);
+        QTableWidgetItem *__qtablewidgetitem13 = new QTableWidgetItem();
+        __qtablewidgetitem13->setTextAlignment(Qt::AlignCenter);
+        tableWidget->setHorizontalHeaderItem(11, __qtablewidgetitem13);
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
-        tableWidget->setGeometry(QRect(10, 10, 931, 581));
+        tableWidget->setGeometry(QRect(10, 10, 1780, 950));
+        tableWidget->setFrameShape(QFrame::StyledPanel);
+        tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        tableWidget->setTextElideMode(Qt::ElideRight);
+        tableWidget->setCornerButtonEnabled(true);
+        tableWidget->horizontalHeader()->setCascadingSectionResizes(false);
+        tableWidget->verticalHeader()->setCascadingSectionResizes(false);
+        layoutWidget = new QWidget(Table);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(1800, 10, 94, 83));
+        verticalLayout = new QVBoxLayout(layoutWidget);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        button_SortID = new QPushButton(layoutWidget);
+        button_SortID->setObjectName(QStringLiteral("button_SortID"));
+
+        verticalLayout->addWidget(button_SortID);
+
+        button_SortArea = new QPushButton(layoutWidget);
+        button_SortArea->setObjectName(QStringLiteral("button_SortArea"));
+
+        verticalLayout->addWidget(button_SortArea);
+
+        button_SortPerimeter = new QPushButton(layoutWidget);
+        button_SortPerimeter->setObjectName(QStringLiteral("button_SortPerimeter"));
+
+        verticalLayout->addWidget(button_SortPerimeter);
+
         Tabs->addTab(Table, QString());
 
         gridLayout->addWidget(Tabs, 0, 0, 1, 1);
@@ -354,13 +444,17 @@ public:
         MainInterface->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainInterface);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1300, 21));
+        menubar->setGeometry(QRect(0, 0, 1920, 21));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         menuEdit = new QMenu(menubar);
         menuEdit->setObjectName(QStringLiteral("menuEdit"));
         menuAbout = new QMenu(menubar);
         menuAbout->setObjectName(QStringLiteral("menuAbout"));
+        menuHelp = new QMenu(menubar);
+        menuHelp->setObjectName(QStringLiteral("menuHelp"));
+        menuView = new QMenu(menubar);
+        menuView->setObjectName(QStringLiteral("menuView"));
         MainInterface->setMenuBar(menubar);
         statusbar = new QStatusBar(MainInterface);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -368,7 +462,10 @@ public:
 
         menubar->addAction(menuFile->menuAction());
         menubar->addAction(menuEdit->menuAction());
+        menubar->addAction(menuView->menuAction());
         menubar->addAction(menuAbout->menuAction());
+        menubar->addAction(menuHelp->menuAction());
+        menuFile->addAction(actionNew);
         menuFile->addAction(actionSave);
         menuFile->addAction(actionSave_As);
         menuFile->addAction(actionOpen);
@@ -377,6 +474,9 @@ public:
         menuAbout->addAction(actionMaintenance_Notes);
         menuAbout->addAction(actionTestimonials);
         menuAbout->addAction(actionContact_Us);
+        menuHelp->addAction(actionHelp);
+        menuView->addAction(actionFull_Screen);
+        menuView->addAction(actionMaximize);
 
         retranslateUi(MainInterface);
 
@@ -388,87 +488,82 @@ public:
 
     void retranslateUi(QMainWindow *MainInterface)
     {
-        MainInterface->setWindowTitle(QApplication::translate("MainInterface", "MainWindow", 0));
-        actionMaintenance_Notes->setText(QApplication::translate("MainInterface", "Maintenance Notes", 0));
-        actionTestimonials->setText(QApplication::translate("MainInterface", "Testimonials", 0));
-        actionContact_Us->setText(QApplication::translate("MainInterface", "Contact Us", 0));
-        actionTBD->setText(QApplication::translate("MainInterface", "TBD", 0));
-        actionSave->setText(QApplication::translate("MainInterface", "Save            (Ctrl + S)", 0));
-        actionSave_As->setText(QApplication::translate("MainInterface", "Save As...", 0));
-        actionOpen->setText(QApplication::translate("MainInterface", "Open", 0));
-        actionExit->setText(QApplication::translate("MainInterface", "Exit               (Esc)", 0));
-        shapeIdLabel->setText(QApplication::translate("MainInterface", "Shape ID:", 0));
-        penColorLabel->setText(QApplication::translate("MainInterface", "Pen Color:", 0));
-        penWidthLabel->setText(QApplication::translate("MainInterface", "Pen Width", 0));
-        penStyleLabel->setText(QApplication::translate("MainInterface", "Pen Style:", 0));
-        penCapStyleLabel->setText(QApplication::translate("MainInterface", "Pen Cap Style:", 0));
-        PenJoinLabel->setText(QApplication::translate("MainInterface", "Pen Join Style:", 0));
-        BrushColorLabel->setText(QApplication::translate("MainInterface", "Brush Color:", 0));
-        brushStyleLabel->setText(QApplication::translate("MainInterface", "Brush Style:", 0));
+        MainInterface->setWindowTitle(QApplication::translate("MainInterface", "MainWindow", Q_NULLPTR));
+        actionMaintenance_Notes->setText(QApplication::translate("MainInterface", "Maintenance Notes", Q_NULLPTR));
+        actionTestimonials->setText(QApplication::translate("MainInterface", "Testimonials", Q_NULLPTR));
+        actionContact_Us->setText(QApplication::translate("MainInterface", "Contact Us", Q_NULLPTR));
+        actionTBD->setText(QApplication::translate("MainInterface", "TBD", Q_NULLPTR));
+        actionSave->setText(QApplication::translate("MainInterface", "Save            (Ctrl + S)", Q_NULLPTR));
+        actionSave->setShortcut(QApplication::translate("MainInterface", "Ctrl+S", Q_NULLPTR));
+        actionSave_As->setText(QApplication::translate("MainInterface", "Save As...", Q_NULLPTR));
+        actionOpen->setText(QApplication::translate("MainInterface", "Open", Q_NULLPTR));
+        actionExit->setText(QApplication::translate("MainInterface", "Exit               (Esc)", Q_NULLPTR));
+        actionNew->setText(QApplication::translate("MainInterface", "New", Q_NULLPTR));
+        actionLoad->setText(QApplication::translate("MainInterface", "Load", Q_NULLPTR));
+        actionHelp->setText(QApplication::translate("MainInterface", "Help", Q_NULLPTR));
+        actionFull_Screen->setText(QApplication::translate("MainInterface", "Full Screen", Q_NULLPTR));
+        actionMaximize->setText(QApplication::translate("MainInterface", "Maximize", Q_NULLPTR));
+        ShapeTypeLabel->setText(QApplication::translate("MainInterface", "Add Shape:", Q_NULLPTR));
+        shapeIdLabel->setText(QApplication::translate("MainInterface", "Shape ID:", Q_NULLPTR));
+        penColorLabel->setText(QApplication::translate("MainInterface", "Pen Color:", Q_NULLPTR));
+        penWidthLabel->setText(QApplication::translate("MainInterface", "Pen Width", Q_NULLPTR));
+        penStyleLabel->setText(QApplication::translate("MainInterface", "Pen Style:", Q_NULLPTR));
+        penCapStyleLabel->setText(QApplication::translate("MainInterface", "Pen Cap Style:", Q_NULLPTR));
+        PenJoinLabel->setText(QApplication::translate("MainInterface", "Pen Join Style:", Q_NULLPTR));
+        BrushColorLabel->setText(QApplication::translate("MainInterface", "Brush Color:", Q_NULLPTR));
+        brushStyleLabel->setText(QApplication::translate("MainInterface", "Brush Style:", Q_NULLPTR));
+        ShapeTypeEdit->clear();
+        ShapeTypeEdit->insertItems(0, QStringList()
+         << QApplication::translate("MainInterface", "Line", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "PolyLine", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "PolyGon", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "Circle", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "Ellipse", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "Square", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "Rectangle", Q_NULLPTR)
+         << QApplication::translate("MainInterface", "Text", Q_NULLPTR)
+        );
         shapeIdEdit->setText(QString());
-        penColorEdit->clear();
-        penColorEdit->insertItems(0, QStringList()
-         << QApplication::translate("MainInterface", "Black", 0)
-         << QApplication::translate("MainInterface", "White", 0)
-         << QApplication::translate("MainInterface", "Gray", 0)
-         << QApplication::translate("MainInterface", "Red", 0)
-         << QApplication::translate("MainInterface", "Blue", 0)
-         << QApplication::translate("MainInterface", "Green", 0)
-         << QApplication::translate("MainInterface", "Yellow", 0)
-         << QApplication::translate("MainInterface", "Cyan", 0)
-         << QApplication::translate("MainInterface", "Magenta", 0)
-        );
-        penStyleEdit->clear();
-        penStyleEdit->insertItems(0, QStringList()
-         << QApplication::translate("MainInterface", "No Pen", 0)
-         << QApplication::translate("MainInterface", "Solid", 0)
-         << QApplication::translate("MainInterface", "Dashed", 0)
-         << QApplication::translate("MainInterface", "Dotted", 0)
-         << QApplication::translate("MainInterface", "Dash-Dotted", 0)
-         << QApplication::translate("MainInterface", "Dash-Dot-Dotted", 0)
-        );
-        PenCapEdit->clear();
-        PenCapEdit->insertItems(0, QStringList()
-         << QApplication::translate("MainInterface", "Flat", 0)
-         << QApplication::translate("MainInterface", "Square", 0)
-         << QApplication::translate("MainInterface", "Round", 0)
-        );
-        PenJoinEdit->clear();
-        PenJoinEdit->insertItems(0, QStringList()
-         << QApplication::translate("MainInterface", "Miter", 0)
-         << QApplication::translate("MainInterface", "Bevel", 0)
-         << QApplication::translate("MainInterface", "Round", 0)
-        );
-        brushColorEdit->clear();
-        brushColorEdit->insertItems(0, QStringList()
-         << QApplication::translate("MainInterface", "Black", 0)
-         << QApplication::translate("MainInterface", "White", 0)
-         << QApplication::translate("MainInterface", "Gray", 0)
-         << QApplication::translate("MainInterface", "Red", 0)
-         << QApplication::translate("MainInterface", "Green", 0)
-         << QApplication::translate("MainInterface", "Blue", 0)
-         << QApplication::translate("MainInterface", "Yellow", 0)
-         << QApplication::translate("MainInterface", "Cyan", 0)
-         << QApplication::translate("MainInterface", "Magenta", 0)
-        );
-        brushStyleEdit->clear();
-        brushStyleEdit->insertItems(0, QStringList()
-         << QApplication::translate("MainInterface", "No Brush", 0)
-         << QApplication::translate("MainInterface", "Solid", 0)
-         << QApplication::translate("MainInterface", "Horizontal", 0)
-         << QApplication::translate("MainInterface", "Vertical", 0)
-        );
         QTableWidgetItem *___qtablewidgetitem = layerTable->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("MainInterface", "Visability", 0));
+        ___qtablewidgetitem->setText(QApplication::translate("MainInterface", "Visability", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem1 = layerTable->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("MainInterface", "ID", 0));
-        AddObject_4->setText(QApplication::translate("MainInterface", "Add", 0));
-        DeleteObj->setText(QApplication::translate("MainInterface", "Delete", 0));
-        Tabs->setTabText(Tabs->indexOf(Canvas), QApplication::translate("MainInterface", "Canvas", 0));
-        Tabs->setTabText(Tabs->indexOf(Table), QApplication::translate("MainInterface", "Table", 0));
-        menuFile->setTitle(QApplication::translate("MainInterface", "File", 0));
-        menuEdit->setTitle(QApplication::translate("MainInterface", "Edit", 0));
-        menuAbout->setTitle(QApplication::translate("MainInterface", "About", 0));
+        ___qtablewidgetitem1->setText(QApplication::translate("MainInterface", "ID", Q_NULLPTR));
+        AddObject->setText(QApplication::translate("MainInterface", "Add", Q_NULLPTR));
+        DeleteObj->setText(QApplication::translate("MainInterface", "Delete", Q_NULLPTR));
+        Tabs->setTabText(Tabs->indexOf(Canvas), QApplication::translate("MainInterface", "Canvas", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(0);
+        ___qtablewidgetitem2->setText(QApplication::translate("MainInterface", "Shape ID", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem3 = tableWidget->horizontalHeaderItem(1);
+        ___qtablewidgetitem3->setText(QApplication::translate("MainInterface", "Type", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem4 = tableWidget->horizontalHeaderItem(2);
+        ___qtablewidgetitem4->setText(QApplication::translate("MainInterface", "Area", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem5 = tableWidget->horizontalHeaderItem(3);
+        ___qtablewidgetitem5->setText(QApplication::translate("MainInterface", "Perimeter", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem6 = tableWidget->horizontalHeaderItem(4);
+        ___qtablewidgetitem6->setText(QApplication::translate("MainInterface", "Pen Color/Text Color", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem7 = tableWidget->horizontalHeaderItem(5);
+        ___qtablewidgetitem7->setText(QApplication::translate("MainInterface", "Pen Width/Text Size", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem8 = tableWidget->horizontalHeaderItem(6);
+        ___qtablewidgetitem8->setText(QApplication::translate("MainInterface", "Pen Style/Text Font", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem9 = tableWidget->horizontalHeaderItem(7);
+        ___qtablewidgetitem9->setText(QApplication::translate("MainInterface", "Pen Cap Style/Text Alignment", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem10 = tableWidget->horizontalHeaderItem(8);
+        ___qtablewidgetitem10->setText(QApplication::translate("MainInterface", "Pen Join Style", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem11 = tableWidget->horizontalHeaderItem(9);
+        ___qtablewidgetitem11->setText(QApplication::translate("MainInterface", "Brush Color/Font Weight", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem12 = tableWidget->horizontalHeaderItem(10);
+        ___qtablewidgetitem12->setText(QApplication::translate("MainInterface", "Brush Style/Font Style", Q_NULLPTR));
+        QTableWidgetItem *___qtablewidgetitem13 = tableWidget->horizontalHeaderItem(11);
+        ___qtablewidgetitem13->setText(QApplication::translate("MainInterface", "Text", Q_NULLPTR));
+        button_SortID->setText(QApplication::translate("MainInterface", "Sort by ID", Q_NULLPTR));
+        button_SortArea->setText(QApplication::translate("MainInterface", "Sort by Area", Q_NULLPTR));
+        button_SortPerimeter->setText(QApplication::translate("MainInterface", "Sort by Perimeter", Q_NULLPTR));
+        Tabs->setTabText(Tabs->indexOf(Table), QApplication::translate("MainInterface", "Table", Q_NULLPTR));
+        menuFile->setTitle(QApplication::translate("MainInterface", "File", Q_NULLPTR));
+        menuEdit->setTitle(QApplication::translate("MainInterface", "Edit", Q_NULLPTR));
+        menuAbout->setTitle(QApplication::translate("MainInterface", "About", Q_NULLPTR));
+        menuHelp->setTitle(QApplication::translate("MainInterface", "Help", Q_NULLPTR));
+        menuView->setTitle(QApplication::translate("MainInterface", "View", Q_NULLPTR));
     } // retranslateUi
 
 };

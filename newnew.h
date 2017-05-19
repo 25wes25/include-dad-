@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "users.h"
 #include "maininterface.h"
+
 namespace Ui {
 class newnew;
 }
@@ -27,11 +28,14 @@ private slots:
     void on_userswitch_toggled(bool checked);
 
     void on_userCombo_currentIndexChanged(const QString &arg1);
+public slots:
+    void onLogout();
 
 private:
     Ui::newnew *ui;
     MainInterface interface;
     UserList userObject;
+
     //admin code to create an admin user
     QString adminGUID = "12345";
 };
