@@ -1,0 +1,11 @@
+ShapeId: 
+ShapeType: Circle
+ShapeDimensions: 353, 233, 100
+PenColor: red
+PenWidth: 15
+PenStyle: DashLine
+PenCapStyle: FlatCap
+PenJoinStyle: MiterJoin
+BrushColor: blue
+BrushStyle: SolidPattern
+
