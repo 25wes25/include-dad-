@@ -50,6 +50,7 @@ MainInterface::MainInterface(QWidget *parent) :
     ui->PenCapEdit->addItem(tr("Square"), static_cast<int>(Qt::SquareCap));
     ui->PenCapEdit->addItem(tr("Round"), static_cast<int>(Qt::RoundCap));
 
+
     //PEN JOIN STYLE ENUMS
     ui->PenJoinEdit->addItem(tr("Miter"),static_cast<int>(Qt::MiterJoin));
     ui->PenJoinEdit->addItem(tr("Bevel"),static_cast<int>(Qt::BevelJoin));
