@@ -155,6 +155,10 @@ int Canvas::getShapeNum() const
 {
     return area.size();
 }
+Shape& Canvas::GetShapeAt(int i)
+{
+    return *area.GetElemAt(i);
+}
 
 void Canvas::setShapeList(const Vector<Shape *>& newArea)
 {
@@ -166,8 +170,8 @@ Vector<Shape *> &Canvas::getShapeList()
     return area;
 }
 
-Shape& Canvas::operator[](int x)
+Shape* Canvas::operator[](int x)
 {
-    return *area[x];
+    return area[x];
 }
 

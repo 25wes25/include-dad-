@@ -43,10 +43,12 @@ public:
     int getShapeNum() const;
     void setCurrentShape(Shape* e){currentShape = e;}
     void setShapeList(const Vector<Shape *>& newArea);
+    Shape& GetShapeAt(int i);
     Vector<Shape *>& getShapeList();
     void clear();
     void render();
-    Shape& operator[](int x);
+    Shape* operator[](int x);
+    void deleteCurrentShape(){area.erase(&currentShape);}
 protected:
     void mousePressEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);

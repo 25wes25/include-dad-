@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1300</width>
-    <height>700</height>
+    <width>1920</width>
+    <height>1080</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -490,70 +490,129 @@
          <rect>
           <x>10</x>
           <y>10</y>
-          <width>1101</width>
-          <height>581</height>
+          <width>1780</width>
+          <height>950</height>
          </rect>
         </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="textElideMode">
+         <enum>Qt::ElideRight</enum>
+        </property>
+        <property name="cornerButtonEnabled">
+         <bool>true</bool>
+        </property>
+        <attribute name="horizontalHeaderCascadingSectionResizes">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="verticalHeaderCascadingSectionResizes">
+         <bool>false</bool>
+        </attribute>
         <column>
          <property name="text">
           <string>Shape ID</string>
+         </property>
+         <property name="textAlignment">
+          <set>AlignCenter</set>
          </property>
         </column>
         <column>
          <property name="text">
           <string>Type</string>
          </property>
+         <property name="textAlignment">
+          <set>AlignCenter</set>
+         </property>
         </column>
         <column>
          <property name="text">
           <string>Area</string>
+         </property>
+         <property name="textAlignment">
+          <set>AlignCenter</set>
          </property>
         </column>
         <column>
          <property name="text">
           <string>Perimeter</string>
          </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Pen Color</string>
+         <property name="textAlignment">
+          <set>AlignCenter</set>
          </property>
         </column>
         <column>
          <property name="text">
-          <string>Pen Width</string>
+          <string>Pen Color/Text Color</string>
+         </property>
+         <property name="textAlignment">
+          <set>AlignCenter</set>
          </property>
         </column>
         <column>
          <property name="text">
-          <string>Pen Style</string>
+          <string>Pen Width/Text Size</string>
+         </property>
+         <property name="textAlignment">
+          <set>AlignCenter</set>
          </property>
         </column>
         <column>
          <property name="text">
-          <string>Pen Cap Style</string>
+          <string>Pen Style/Text Font</string>
+         </property>
+         <property name="textAlignment">
+          <set>AlignCenter</set>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Pen Cap Style/Text Alignment</string>
+         </property>
+         <property name="textAlignment">
+          <set>AlignCenter</set>
          </property>
         </column>
         <column>
          <property name="text">
           <string>Pen Join Style</string>
          </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Brush Color</string>
+         <property name="textAlignment">
+          <set>AlignCenter</set>
          </property>
         </column>
         <column>
          <property name="text">
-          <string>Brush Style</string>
+          <string>Brush Color/Font Weight</string>
+         </property>
+         <property name="textAlignment">
+          <set>AlignCenter</set>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Brush Style/Font Style</string>
+         </property>
+         <property name="textAlignment">
+          <set>AlignCenter</set>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Text</string>
+         </property>
+         <property name="textAlignment">
+          <set>AlignCenter</set>
          </property>
         </column>
        </widget>
        <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
-          <x>1120</x>
+          <x>1800</x>
           <y>10</y>
           <width>94</width>
           <height>83</height>
@@ -593,8 +652,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1300</width>
-     <height>20</height>
+     <width>1920</width>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -627,8 +686,16 @@
     </property>
     <addaction name="actionHelp"/>
    </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionFull_Screen"/>
+    <addaction name="actionMaximize"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
+   <addaction name="menuView"/>
    <addaction name="menuAbout"/>
    <addaction name="menuHelp"/>
   </widget>
@@ -689,6 +756,16 @@
   <action name="actionHelp">
    <property name="text">
     <string>Help</string>
+   </property>
+  </action>
+  <action name="actionFull_Screen">
+   <property name="text">
+    <string>Full Screen</string>
+   </property>
+  </action>
+  <action name="actionMaximize">
+   <property name="text">
+    <string>Maximize</string>
    </property>
   </action>
  </widget>
