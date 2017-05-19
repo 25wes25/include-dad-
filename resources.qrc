@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/Images">
+        <file>2D Graphic Label.png</file>
+        <file>fallingleaves.gif</file>
+        <file>Inter-Protocol.png</file>
+        <file>On Play.png</file>
+        <file>Cloud Based Software.png</file>
+        <file>Picstagram.png</file>
+        <file>Increment Systems.png</file>
+        <file>News Prints.png</file>
+        <file>MaintenanceNotes.png</file>
+        <file>CantactUs.png</file>
+        <file>Help_About.jpg</file>
+        <file>Help_Canvas.jpg</file>
+        <file>Help_Edit.jpg</file>
+        <file>Help_File.jpg</file>
+        <file>Help_Help.jpg</file>
+        <file>Help_Login.jpg</file>
+        <file>Help_Table.jpg</file>
+        <file>Help_View.jpg</file>
+    </qresource>
+</RCC>
