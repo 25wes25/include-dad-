@@ -17,6 +17,15 @@ public:
     virtual void Draw(Canvas *paintArea);
     virtual bool is_Left_Clicked(QPoint e){return false;}
 
+    // Accessors
+    QString GetTextString();
+    QString GetTextColor();
+    QString GetAlignment();
+    QString GetTextSize();
+    QString GetFont();
+    QString GetFontStyle();
+    QString GetFontWeight();
+
 private:
     int               xCorner;
     int               yCorner;

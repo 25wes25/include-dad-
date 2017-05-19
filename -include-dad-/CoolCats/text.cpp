@@ -103,3 +103,106 @@ void Text::Draw(Canvas *paintArea)
     painter.drawText(xCorner,yCorner,width,height,alignment|textPointSize|textColor,textString);
     painter.restore();
 }
+
+QString Text::GetTextString()
+{
+    return textString;
+}
+
+QString Text::GetTextColor()
+{
+    switch(textColor)
+    {
+    case Qt::black: return "Black";
+        break;
+    case Qt::white: return "White";
+        break;
+    case Qt::gray: return "Gray";
+        break;
+    case Qt::red: return "Red";
+        break;
+    case Qt::green: return "Green";
+        break;
+    case Qt::blue: return "Blue";
+        break;
+    case Qt::yellow: return "Yellow";
+        break;
+    case Qt::cyan: return "Cyan";
+        break;
+    case Qt::magenta: return "Magenta";
+        break;
+    default: return "Error";
+        break;
+    }
+}
+
+QString Text::GetAlignment()
+{
+    switch(alignment)
+    {
+    case Qt::AlignTop: return "Top";
+        break;
+    case Qt::AlignCenter: return "Center";
+        break;
+    case Qt::AlignBottom: return "Bottom";
+        break;
+    case Qt::AlignLeft: return "Left";
+        break;
+    case Qt::AlignRight: return "Right";
+        break;
+    default: return "Error";
+        break;
+    }
+}
+
+QString Text::GetTextSize()
+{
+    return QString::number(textPointSize);
+}
+
+QString Text::GetFont()
+{
+    return font;
+}
+
+QString Text::GetFontStyle()
+{
+    switch(fontStyle)
+    {
+    case QFont::StyleNormal: return "Normal";
+        break;
+    case QFont::StyleItalic: return "Italic";
+        break;
+    case QFont::StyleOblique: return "Oblique";
+        break;
+    default: return "Error";
+        break;
+    }
+}
+
+QString Text::GetFontWeight()
+{
+    switch(fontWeight)
+    {
+    case QFont::Thin: return "Thin";
+        break;
+    case QFont::ExtraLight: return "ExtraLight";
+        break;
+    case QFont::Light: return "Light";
+        break;
+    case QFont::Normal: return "Normal";
+        break;
+    case QFont::Medium: return "Medium";
+        break;
+    case QFont::DemiBold: return "DemiBold";
+        break;
+    case QFont::Bold: return "Bold";
+        break;
+    case QFont::ExtraBold: return "ExtraBold";
+        break;
+    case QFont::Black: return "Black";
+        break;
+    default: return "Error";
+        break;
+    }
+}

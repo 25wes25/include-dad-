@@ -31,6 +31,7 @@ class Vector
         // Accessors
         int size() const;
         int capacity() const;
+        Type& GetElemAt(int i);
 
         // Operator Overloads
         Vector<Type>& operator=(const Vector<Type>& src);
@@ -137,6 +138,9 @@ int Vector<Type>::size() const {return size_v;}
 
 template<class Type>
 int Vector<Type>::capacity() const {return space;}
+
+template<class Type>
+Type& Vector<Type>::GetElemAt(int i) {return elem[i];}
 
 /*
  * ************************** Operator Overloads ******************************

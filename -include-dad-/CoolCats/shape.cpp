@@ -48,7 +48,18 @@ Shape::Shape(    QString idIn,
                   PenJoinEdit{penJoinIn},
                   brushColorEdit{brushColorIn},
                   penStyleEdit{penStyleIn}{}
-
+Shape::Shape(const Shape& src)
+{
+    id=src.id;
+    isRender=src.isRender;
+    brushStyle=src.brushStyle;
+    penColorEdit=src.penColorEdit;
+    penWidthEdit=src.penWidthEdit;
+    penCapEdit=src.penCapEdit;
+    PenJoinEdit=src.PenJoinEdit;
+    brushColorEdit=src.brushColorEdit;
+    penStyleEdit=src.penStyleEdit;
+}
 
 Shape::~Shape()
 {
@@ -199,6 +210,23 @@ Qt::PenStyle  Shape::intToPenStyle(int index)
     return tempEnum;
 }
 
+// ********************** Operator Overloads ************************
+
+Shape& Shape::operator=(const Shape& src)
+{
+    this->id=src.id;
+    this->isRender=src.isRender;
+    this->brushStyle=src.brushStyle;
+    this->penColorEdit=src.penColorEdit;
+    this->penWidthEdit=src.penWidthEdit;
+    this->penCapEdit=src.penCapEdit;
+    this->PenJoinEdit=src.PenJoinEdit;
+    this->brushColorEdit=src.brushColorEdit;
+    this->penStyleEdit=src.penStyleEdit;
+    Shape* temp = this;
+    return *temp;
+}
+
 // **************************** ACCESSORS ****************************
 
 QString Shape::GetID()
@@ -228,7 +256,7 @@ QString Shape::GetPenColor()
         break;
     case Qt::magenta: return "Magenta";
         break;
-    default: return "Blue";
+    default: return "Error";
         break;
     }
 }
@@ -256,7 +284,7 @@ QString Shape::GetPenStyle()
         break;
     case Qt::CustomDashLine: return "Custom Dash";
         break;
-    default: return "Solid";
+    default: return "Error";
     }
 }
 
@@ -270,7 +298,7 @@ QString Shape::GetPenCapStyle()
         break;
     case Qt::RoundCap: return "Round";
         break;
-    default: return "Round";
+    default: return "Error";
     }
 }
 
@@ -286,7 +314,7 @@ QString Shape::GetPenJoinStyle()
         break;
     case Qt::SvgMiterJoin: return "Svg Miter";
         break;
-    default: return "Round";
+    default: return "Error";
     }
 }
 
@@ -312,7 +340,7 @@ QString Shape::GetBrushColor()
         break;
     case Qt::magenta: return "Magenta";
         break;
-    default: return "Blue";
+    default: return "Error";
         break;
     }
 }
@@ -325,9 +353,11 @@ QString Shape::GetBrushStyle()
         break;
     case Qt::SolidPattern: return "Solid";
         break;
-    case Qt::HorPattern: return "Hor";
+    case Qt::HorPattern: return "Horizontal";
         break;
-    default: return "Solid";
+    case Qt::VerPattern: return "Vertical";
+        break;
+    default: return "Error";
         break;
     }
 }

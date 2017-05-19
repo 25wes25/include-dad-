@@ -58,6 +58,8 @@ class Shape
               int PenJoinIn,
               int BrushColorIn,
               int PenStyleIn);
+        Shape(const Shape& src);// Copy Constructor
+
         Qt::BrushStyle intToBrushStyle(int index);
         Qt::GlobalColor intToColor(int index);
         Qt::PenCapStyle intToPenCap(int index);
@@ -66,6 +68,10 @@ class Shape
         bool isRendered();
         virtual ~Shape();
         void configurePainter(QPainter &p);
+
+        // Operator Overloads
+        Shape& operator=(const Shape& src);
+
         // Accessors
         QString GetID();
         QString GetPenColor();
@@ -76,6 +82,15 @@ class Shape
         QString GetPenJoinStyle();
         QString GetBrushColor();
         QString GetBrushStyle();
+
+        //mutators
+        void setPenColor(Qt::GlobalColor penIn){penColorEdit= penIn;}
+        void setPenWidth(int widthIn){penWidthEdit=widthIn;}
+        void setPenStyle(Qt::PenStyle pStyleIn){penStyleEdit=pStyleIn;}
+        void setPenCapStyle(Qt::PenCapStyle pcStyleIn){penCapEdit=pcStyleIn;}
+        void setPenJoinStyle(Qt::PenJoinStyle pjStyleIn){PenJoinEdit=pjStyleIn;}
+        void setBrushColor(Qt::GlobalColor brushColorIn){brushColorEdit = brushColorIn;}
+        void setBrushStyle(Qt::BrushStyle bsIn){brushStyle = bsIn;}
 
 
         virtual void Print(QTextStream& output);
