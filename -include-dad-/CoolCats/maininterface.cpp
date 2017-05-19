@@ -303,18 +303,6 @@ QString MainInterface::GetShapePerimeterArea(Shape* shape, bool choice)
             return QString::number(r->getPerimeter());
         }
     }
-    else if(Polygon* pg = dynamic_cast<Polygon*>(shape))
-    {
-//        if (choice == AREA)
-//        {
-//            return QString::number(pg->getArea());
-//        }
-//        else if (choice == PERIMETER)
-//        {
-//            return QString::number(pg->getPerimeter());
-//        }
-        return "To Be Added";
-    }
     else
     {
         return "";
